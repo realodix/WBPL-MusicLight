@@ -70,9 +70,19 @@
 
 <div class="container">
 
+    <div class="row">
+    <div class="span6">
 	<h3>Welcome to Music Light</h3>
-
-	<form class="form-horizontal">
+	
+	<p>Music Light is a famous musical instrument shop in the town. It sells a wide range of musical instruments from the common to the rare. As time passed, the owner of this store realized how important the internet today and decided to develop a website that can ease customer to make transactions in Music Light. This website will be used by the customer/member to order musical instruments via online and promote Music Light’s product to non-member visitor.</p>
+	
+	</div>
+	
+    <div class="span3">
+		
+		<h4>Login</h4>
+		
+		<form class="form-horizontal">
 		<div class="control-group">
 			<label class="control-label" for="inputUsername">Username</label>
 			<div class="controls">
@@ -93,6 +103,9 @@
 			</div>
 		</div>
     </form>
+	</div>
+    </div>
+
 	
 </div>
 
