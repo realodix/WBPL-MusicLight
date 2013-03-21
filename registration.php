@@ -11,7 +11,7 @@
 	<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
 </head>
 
-<body>
+<body class="registration">
 
 <!-- Navbar
     ================================================== -->
@@ -69,7 +69,7 @@
     </div>
 
 
-<div class="container register">
+<div class="container">
 	
 	<h3>Registration Page</h3>
 	

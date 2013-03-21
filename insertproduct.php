@@ -11,7 +11,7 @@
 	<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
 </head>
 
-<body>
+<body class="product">
 
 <!-- Navbar
     ================================================== -->
