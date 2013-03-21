@@ -69,7 +69,55 @@
     </div>
 
 <div class="container">
-	<h1>Hello, world!</h1>
+	<h3>Insert Product</h3>
+	
+	<form class="form-horizontal">
+		<div class="control-group">
+			<label class="control-label" for="inputBrand">Brand</label>
+			<div class="controls">
+				<input type="text" id="inputName" placeholder="Brand">
+			</div>
+		</div>
+	
+		<div class="control-group">
+			<label class="control-label" for="inputUsername">Instrument Type</label>
+			<div class="controls">
+				<select>
+					<option>Blues</option>
+					<option>Pop</option>
+					<option>Rock</option>
+				</select>
+			</div>
+		</div>
+	
+		<div class="control-group">
+			<label class="control-label" for="inputPrice">Price</label>
+			<div class="controls">
+				<input type="text" id="inputPrice" placeholder="Price">
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="inputStock">Stock</label>
+			<div class="controls">
+				<input type="text" id="inputStock" placeholder="Stock">
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="inputImage">Image</label>
+			<div class="controls">
+				<input type="text" id="inputImage" placeholder="Image">
+			</div>
+		</div>
+	
+		<div class="control-group">
+			<div class="controls">
+				<input type="button" value="Insert" class="btn btn-primary" onclick="Cek()" />
+				<input type="reset" value="Reset" class="btn" onclick="Reset()" />
+			</div>
+		</div>
+    </form>
 </div>
 
 
