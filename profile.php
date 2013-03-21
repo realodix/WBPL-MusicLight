@@ -69,7 +69,65 @@
     </div>
 
 <div class="container">
-	<h1>Hello, world!</h1>
+	<h3>Registration Page</h3>
+	
+	<form class="form-horizontal">
+		<div class="control-group">
+			<label class="control-label" for="inputName">Name</label>
+			<div class="controls">
+				<input type="text" id="inputName" placeholder="Name">
+			</div>
+		</div>
+	
+		<div class="control-group">
+			<label class="control-label" for="inputEmail">Email</label>
+			<div class="controls">
+				<input type="text" id="inputEmail" placeholder="Email">
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="inputAddress">Address</label>
+			<div class="controls">
+				<textarea rows="3"></textarea>
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="inputPhone ">Phone </label>
+			<div class="controls">
+				<input type="text" id="inputPhone" placeholder="Phone ">
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="inputOPassword">Old Password</label>
+			<div class="controls">
+				<input type="password" id="inputOPassword" placeholder="Old Password">
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="inputNPassword">New Password</label>
+			<div class="controls">
+				<input type="password" id="inputNPassword" placeholder="New Password">
+			</div>
+		</div>
+		
+		<div class="control-group">
+			<label class="control-label" for="inputCPassword">Confirm Password</label>
+			<div class="controls">
+				<input type="password" id="inputCPassword" placeholder="Confirm Password">
+			</div>
+		</div>
+	
+		<div class="control-group">
+			<div class="controls">
+				<input type="button" value="Save" class="btn btn-primary" onclick="Cek()" />
+				<input type="reset" value="Reset" class="btn" onclick="Reset()" />
+			</div>
+		</div>
+    </form>
 </div>
 
 
