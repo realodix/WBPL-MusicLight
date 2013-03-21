@@ -69,7 +69,30 @@
     </div>
 
 <div class="container">
-	<h1>Hello, world!</h1>
+	<h2>Member</h2>
+    <table border="1" width="500px">
+      <th><td><b>Nama User</b></a></td><td><b>Level</b></td></th>
+ 
+		<!-- example 1 :menampilkan data di tabel-->
+		<?php
+ 
+		require_once('koneksi.php');
+		$query1="select * from user ";
+ 
+		$result=mysql_query($query1) or die(mysql_error());
+		$no=1; //penomoran
+		while($rows=mysql_fetch_object($result)){
+		?>
+		<tr>
+        <td><?php echo $no
+        ?></td>
+        <td><?php    echo $rows -> user_id_user;?></td>
+        <td><?php    echo $rows -> user_level;?></td>
+		</tr>
+		<?php
+		$no++;
+		}?>
+    </table>
 </div>
 
 
