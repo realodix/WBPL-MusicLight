@@ -84,10 +84,9 @@
 		while($rows=mysql_fetch_object($result)){
 		?>
 		<tr>
-        <td><?php echo $no
-        ?></td>
-        <td><?php    echo $rows -> user_id_user;?></td>
-        <td><?php    echo $rows -> user_level;?></td>
+        <td><?php echo $no ?></td>
+        <td><?php echo $rows -> user_id_user; ?></td>
+        <td><?php echo $rows -> user_level; ?></td>
 		</tr>
 		<?php
 		$no++;
