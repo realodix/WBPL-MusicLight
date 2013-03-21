@@ -137,7 +137,7 @@
 	
 		<div class="control-group">
 			<div class="controls">
-				<input type="button" value="Submit" class="btn" onclick="Cek()" />
+				<input type="button" value="Submit" class="btn btn-primary" onclick="Cek()" />
 				<input type="reset" value="Reset" class="btn" onclick="Reset()" />
 			</div>
 		</div>
