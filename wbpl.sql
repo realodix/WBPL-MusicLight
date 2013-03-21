@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 21, 2013 at 02:03 PM
+-- Generation Time: Mar 21, 2013 at 04:20 PM
 -- Server version: 5.5.27
 -- PHP Version: 5.4.7
 
@@ -41,6 +41,18 @@ CREATE TABLE IF NOT EXISTS `product` (
 
 INSERT INTO `product` (`product_brand`, `product_instrument_type`, `product_price`, `product_stock`, `product_image`) VALUES
 ('Bening Audio', 'Pop', '100000', '10', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimony`
+--
+
+CREATE TABLE IF NOT EXISTS `testimony` (
+  `testimony_id` int(11) NOT NULL,
+  `testimony_konten` varchar(160) NOT NULL,
+  PRIMARY KEY (`testimony_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
