@@ -36,7 +36,7 @@
                 <a href="">Product</a>
               </li>
               <li class="">
-                <a href="./insertproduct.php">Insert Product Page</a>
+                <a href="./insertproduct.php">Insert Product</a>
               </li>
               <li class="">
                 <a href="./updateproduct.php">Update Product</a>

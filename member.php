@@ -23,7 +23,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="./index.html">Music Light</a>
+          <a class="brand" href="./index.html">MusicLight</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="">
@@ -36,7 +36,7 @@
                 <a href="./product.php">Product</a>
               </li>
               <li class="">
-                <a href="./insertproduct.php">Insert Product Page</a>
+                <a href="./insertproduct.php">Insert Product</a>
               </li>
               <li class="">
                 <a href="./updateproduct.php">Update Product</a>
