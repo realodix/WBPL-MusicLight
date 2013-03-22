@@ -70,6 +70,7 @@
 
 <div class="container">
 	<h2>Member</h2>
+	<br/>
     <table border="1" width="500px">
       <th><td><b>Nama User</b></a></td><td><b>Level</b></td></th>
  
