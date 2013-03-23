@@ -129,9 +129,9 @@
 
 		<td>
 			<a href="index.php?page=biaya_kirim_form_edit&id=<? echo $rows['product_brand']?>">
-			<img src="image/b_edit.png"></a>
+			<img src="../image/b_edit.png"></a>
 			<a href="product.php?&del=true&id=<? echo $rows['product_brand']?>"  onclick="return askUser()";>
-			<img src="image/b_drop.png"></a>
+			<img src="../image/b_drop.png"></a>
 		</td>
 	</tr>
 
@@ -152,7 +152,7 @@ if(isset($_GET['status'])) {
 }?>
 </td>
 <td align=right><a href="index.php?page=biaya_kirim_form_add">
-<img src="image/add.jpg"> Add</a></td></tr>
+<img src="../image/add.jpg"> Add</a></td></tr>
 <tr></tr>
 	</table>
 <?
