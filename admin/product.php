@@ -82,7 +82,13 @@
 	*/
 	//===================paging
 	$batas=4;
+	
+	/*$_GET['halaman'] baru bisa digunakan ketikan 'halaman' sudah terbentuk
+	* untuk paging ketika ia belum terbentuk, diguakan isset agar tidak
+	* menimbulkan "error Undefined:"*/
+	if(isset($_GET['halaman'])){
 	$halaman=$_GET['halaman'];
+	}
 	$posisi=null;
 	if(empty($halaman)){
 	$posisi=0;
