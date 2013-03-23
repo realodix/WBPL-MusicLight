@@ -1,7 +1,15 @@
 <?php
+// ** Pengaturan MySQL ** //
+/** MySQL hostname */
 define('db_host','localhost');
-define('db_user','root'); //user database
-define('db_pass',''); //passwd database
+
+/** MySQL database username */
+define('db_user','root');
+
+/** MySQL database password */
+define('db_pass','');
+
+/** Nama untuk database */
 define('db_name','wbpl');
  
 mysql_connect(db_host,db_user,db_pass);
