@@ -27,7 +27,7 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="">
-                <a href="./index.php">Home</a>
+                <a href="./index.php">Dashboard</a>
               </li>
               <li class="">
                 <a href="./product.php">Product</a>

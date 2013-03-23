@@ -26,8 +26,8 @@
           <a class="brand" href="./index.html">Music Light</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="">
-                <a href="./index.php">Home</a>
+              <li class="active">
+                <a href="./index.php">Dashboard</a>
               </li>
               <li class="">
                 <a href="./product.php">Product</a>
@@ -48,7 +48,7 @@
 			  <li class="">
                 <a href="./transaction.php">Transaction</a>
               </li>
-			  <li class="active">
+			  <li class="">
                 <a href="">Detail</a>
               </li>
 			  <li class="">
