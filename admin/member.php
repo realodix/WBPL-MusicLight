@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Music Light | Member</title>
+	<title>Administrator Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
 	<link href="../css/style.css" rel="stylesheet" media="screen">
