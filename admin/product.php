@@ -64,7 +64,7 @@
 <br/>
 <br/>
 	<?php
-	require_once('koneksi.php');?>
+	require_once('../koneksi.php');?>
 	
 	<table  width="600px" border=0>
 		<tr style="background-color:#F79307">
