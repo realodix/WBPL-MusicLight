@@ -69,9 +69,119 @@
     </div>
 
 <div class="container">
-	<h1>Hello, world!</h1>
+<br/>
+<br/>
+	<?php
+	require_once('koneksi.php');?>
+	
+	<table  width="600px" border=0>
+		<tr style="background-color:#F79307">
+			<td>No.</td>
+			<td>Brand</td>
+			<td>Instrument Type</td>
+			<td>Price</td>
+			<td>Stock</td>
+			<td>Operation</td>
+		</tr>
+
+	<?php
+	/*
+	* kode untuk menghapus data
+	*/
+	//===================paging
+	$batas=4;
+	$halaman=$_GET['halaman'];
+	$posisi=null;
+	if(empty($halaman)){
+	$posisi=0;
+	$halaman=1;
+	}else{
+	$posisi=($halaman-1)* $batas;
+	}
+	//===========================
+	if(isset($_GET['del'])){
+	$product_brand=$_GET['id'];
+	$hapus ="delete from product where product_brand='$product_brand'";
+	mysql_query($hapus);
+	}
+	
+	$sql="";
+	if(isset($_POST['btnCari'])){
+	$cari=$_POST['cari'];
+	
+	//ambil data dari table admin
+	$sql="SELECT * FROM  product where 	product_brand like '%$cari%'";
+	}else{
+	$sql="SELECT * FROM  product limit $posisi,$batas";
+	}
+
+	$result=mysql_query($sql) or die(mysql_error());
+	$no=1;
+	
+	//proses menampilkan data
+	while($rows=mysql_fetch_array($result)){
+	?>
+	
+	<tr>
+		<td><?echo $no+$posisi;?></td>
+		<td><?echo $rows['product_brand'];?></td>
+		<td><?echo $rows['product_instrument_type'];?></td>
+		<td><?echo $rows['product_price'];?></td>
+		<td><?echo $rows['product_stock'];?></td>
+
+		<td>
+			<a href="index.php?page=biaya_kirim_form_edit&id=<? echo $rows['product_brand']?>">
+			<img src="image/b_edit.png"></a>
+			<a href="product.php?&del=true&id=<? echo $rows['product_brand']?>"  onclick="return askUser()";>
+			<img src="image/b_drop.png"></a>
+		</td>
+	</tr>
+
+<?
+$no++;
+}
+
+//tutup koneksi
+?>
+<tr><td align=right colspan='2'>
+<?php
+if(isset($_GET['status'])) {
+	if($_GET['status'] == 0) {
+		echo " Operasi data berhasil";
+	} else {
+		echo "operasi gagal";
+	}
+}?>
+</td>
+<td align=right><a href="index.php?page=biaya_kirim_form_add">
+<img src="image/add.jpg"> Add</a></td></tr>
+<tr></tr>
+	</table>
+<?
+	//=============CUT HERE====================================
+	$tampil2 = mysql_query("select * from product");
+	$jmldata = mysql_num_rows($tampil2);
+	$jumlah_halaman = ceil($jmldata / $batas);
+
+	echo "Halaman :";
+	for($i = 1; $i <= $jumlah_halaman; $i++)
+		if($i != $halaman) {
+			echo "<a href=product.php?page=biaya_view&halaman=$i>$i</a>|";
+		} else {
+			echo "<b>$i</b>|";
+		}
+	mysql_close();?>
+<br>
+Jumlah data :<?=$jmldata;?>
+	
 </div>
 
+
+<script type="text/javascript">
+	function askUser() {
+		return window.confirm("Yakin ingin menghapus record ini?");
+	}
+  </script>
 
     <!-- Le javascript
     ================================================== -->
