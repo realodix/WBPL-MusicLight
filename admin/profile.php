@@ -30,9 +30,6 @@
                 <a href="./index.php">Home</a>
               </li>
               <li class="">
-                <a href="./registration.php">Registration</a>
-              </li>
-              <li class="">
                 <a href="./product.php">Product</a>
               </li>
               <li class="">
@@ -42,22 +39,17 @@
                 <a href="./updateproduct.php">Update Product</a>
               </li>
               <li class="active">
-                <a href="">Profile</a>
+                <a href="./profile.php">Profile</a>
               </li>
               <li class="">
                 <a href="./member.php">Member</a>
               </li>
-			  <li class="">
-                <a href="./cart.php">Cart</a>
-              </li>
+
 			  <li class="">
                 <a href="./transaction.php">Transaction</a>
               </li>
 			  <li class="">
-                <a href="./detail.php">Detail</a>
-              </li>
-			  <li class="">
-                <a href="./testimony.php">Testimony</a>
+                <a href="">Detail</a>
               </li>
 			  <li class="">
                 <a href="./logout.php">Logout</a>

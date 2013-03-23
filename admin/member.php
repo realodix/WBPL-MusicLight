@@ -23,14 +23,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="brand" href="./index.html">MusicLight</a>
+          <a class="brand" href="./index.html">Music Light</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="">
                 <a href="./index.php">Home</a>
-              </li>
-              <li class="">
-                <a href="./registration.php">Registration</a>
               </li>
               <li class="">
                 <a href="./product.php">Product</a>
@@ -45,19 +42,13 @@
                 <a href="./profile.php">Profile</a>
               </li>
               <li class="active">
-                <a href="">Member</a>
-              </li>
-			  <li class="">
-                <a href="./cart.php">Cart</a>
+                <a href="./member.php">Member</a>
               </li>
 			  <li class="">
                 <a href="./transaction.php">Transaction</a>
               </li>
 			  <li class="">
-                <a href="./detail.php">Detail</a>
-              </li>
-			  <li class="">
-                <a href="./testimony.php">Testimony</a>
+                <a href="">Detail</a>
               </li>
 			  <li class="">
                 <a href="./logout.php">Logout</a>
