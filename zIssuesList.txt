@@ -12,7 +12,6 @@
 
 #15 Penyesuaian isi konten
 #14 Menghapus file yang tidak dibutuhkan
-#16 Menghapus Dokumentasi
 #17 Issues List Update
 
 #13 Mengimplementasikan Bootstrap
@@ -21,3 +20,4 @@
 ### Fixes Issues
 #12 Logout page (logout.php)
 #18 Terjadi error saat logout.
+#16 Menghapus Dokumentasi (fullahead)
