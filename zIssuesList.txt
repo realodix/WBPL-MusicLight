@@ -20,3 +20,4 @@
 
 ### Fixes Issues
 #12 Logout page (logout.php)
+#18 Terjadi error saat logout.

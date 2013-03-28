@@ -160,7 +160,7 @@ if (isset($_GET['page'])) {
 
 
     <p>
-    copyright(c) 2012,|<a href="../index.php">home</a>|<a href="pengelola_logout.php">Logout</a>
+    copyright(c) 2012,|<a href="../index.php">home</a>|<a href="logout.php">Logout</a>
     </p>
 
   </div>
