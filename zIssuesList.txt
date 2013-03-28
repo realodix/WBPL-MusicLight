@@ -1,0 +1,15 @@
+#1 Home page (index.php)
+#2 Registration page (registration.php)
+#3 Product page (product.php)
+#4 Insert product page (insertproduct.php)
+#5 Update product page (updateproduct.php)
+#6 Profile page (profile.php)
+#7 Member page (member.php)
+#8 Cart page (cart.php)
+#9 Transaction page (transaction.php)
+#10 Detail page (detail.php)
+#11 Testimony page (testimony.php)
+#12 Logout page (logout.php)
+#13 Mengimplementasikan Bootstrap
+#14 Menghapus file yang tidak dibutuhkan
+#15 Penyesuaian isi konten 
