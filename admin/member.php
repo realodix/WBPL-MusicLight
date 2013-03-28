@@ -1,112 +1,75 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Administrator Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php
+
+include ('inc/config.php');
+
+?>
+<h1> Tabel Member</h1>
+<form action='index.php?page=pengelola_view'method="post">
+	<input type='text' name='cari' value=''>
+	<input type='submit' name='btnCari' value='cari'>
 	
-	<link href="../css/style.css" rel="stylesheet" media="screen">
-	
-	<!-- Bootstrap -->
-	<link href="../css/bootstrap.css" rel="stylesheet" media="screen">
-	<link href="../css/bootstrap-responsive.css" rel="stylesheet" media="screen">
-</head>
+</form>
+<a href='index.php?page=pengelola_view'>all data</a>
+<table  width="600px" border=0>
+	<tr style="background-color:#F79307">
+		<td width="200px">Username</td><td width="100px">Operation</td>
+	</tr>
+	<?php
+/*
+ * kode untuk menghapus data
+ */
+if(isset($_GET['del'])){
+	$username=$_GET['id'];
+	$hapus ="delete from pengelola where username='$username'";
+	mysql_query($hapus)or die(mysql_error());
+}
 
-<body>
+$sql="";
+if(isset($_POST['btnCari'])){
+$cari=$_POST['cari'];
+//ambil data dari table admin
+$sql="SELECT * FROM  pengelola where username like '%$cari%'";
+}else{
+$sql="SELECT * FROM  pengelola";
+}
 
-<!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="./index.html">Music Light</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="">
-                <a href="./index.php">Dashboard</a>
-              </li>
-              <li class="">
-                <a href="./product.php">Product</a>
-              </li>
-              <li class="">
-                <a href="./insertproduct.php">Insert Product</a>
-              </li>
-              <li class="">
-                <a href="./updateproduct.php">Update Product</a>
-              </li>
-              <li class="">
-                <a href="./profile.php">Profile</a>
-              </li>
-              <li class="active">
-                <a href="./member.php">Member</a>
-              </li>
-			  <li class="">
-                <a href="./transaction.php">Transaction</a>
-              </li>
-			  <li class="">
-                <a href="">Detail</a>
-              </li>
-			  <li class="">
-                <a href="./logout.php">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+$result=mysql_query($sql) or die(mysql_error());
 
-<div class="container">
-	<h2>Member</h2>
-	<br/>
-    <table border="1" width="500px">
-      <th><td><b>Nama User</b></a></td><td><b>Level</b></td></th>
- 
-		<!-- example 1 :menampilkan data di tabel-->
-		<?php
- 
-		require_once('koneksi.php');
-		$query1="select * from user ";
- 
-		$result=mysql_query($query1) or die(mysql_error());
-		$no=1; //penomoran
-		while($rows=mysql_fetch_object($result)){
+
+//proses menampilkan data 
+while($rows=mysql_fetch_array($result)){
+?>
+	<tr>
+		<td><?  echo $rows['username'];?></td>
+		
+		<td><a href="index.php?page=pengelola_form_edit&id=<? echo $rows['username']?>"> <img src="image/b_edit.png"></a>
+			<a href="index.php?page=pengelola_view&del=true&id=<? echo $rows['username']?>"  onclick="return askUser()";> <img src="image/b_drop.png"></a></td>
+	</tr>
+	<?
+	}
+
+	//tutup koneksi
+	?>
+	<tr>
+		<td align=right colspan='1'><?php
+		if (isset($_GET['status'])) {
+			if ($_GET['status'] == 0) {
+				echo " <div style='color:blue'>Operasi data berhasil</div>";
+			} else {
+				echo "operasi gagal";
+			}
+		}
 		?>
-		<tr>
-        <td><?php echo $no ?></td>
-        <td><?php echo $rows -> user_id_user; ?></td>
-        <td><?php echo $rows -> user_level; ?></td>
-		</tr>
-		<?php
-		$no++;
-		}?>
-    </table>
-</div>
+		</td>
+		<td align=right><a href="index.php?page=pengelola_form_add"> <img src="image/add.jpg"> Add</a></td>
+	</tr>
+	<tr></tr>
+</table>
+<?
 
+mysql_close();
+//close database
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="../js/jquery.js"></script>
-    <script src="../js/bootstrap-transition.js"></script>
-    <script src="../js/bootstrap-alert.js"></script>
-    <script src="../js/bootstrap-modal.js"></script>
-    <script src="../js/bootstrap-dropdown.js"></script>
-    <script src="../js/bootstrap-scrollspy.js"></script>
-    <script src="../js/bootstrap-tab.js"></script>
-    <script src="../js/bootstrap-tooltip.js"></script>
-    <script src="../js/bootstrap-popover.js"></script>
-    <script src="../js/bootstrap-button.js"></script>
-    <script src="../js/bootstrap-collapse.js"></script>
-    <script src="../js/bootstrap-carousel.js"></script>
-    <script src="../js/bootstrap-typeahead.js"></script>
-    <script src="../js/bootstrap-affix.js"></script>
+//tampilan siapa yang pengelola
+?>
 
-    <script src="../js/application.js"></script>
-
-</body>
-</html>

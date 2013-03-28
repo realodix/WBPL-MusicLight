@@ -1,74 +1,181 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Music Light | Cart</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<link href="css/style.css" rel="stylesheet" media="screen">
-	
-	<!-- Bootstrap -->
-	<link href="css/bootstrap.css" rel="stylesheet" media="screen">
-	<link href="css/bootstrap-responsive.css" rel="stylesheet" media="screen">
-</head>
+<?
+// Include MySQL class
+require_once ('inc/mysql.class.php');
+// Include database connection
+require_once ('inc/global.inc.php');
+// Include functions
+require_once ('inc/functions.inc.php');
+// Start the session
+//session_start();
 
-<body>
+// Process actions
+$cart = $_SESSION['cart'];
+$action = $_GET['action'];
+switch ($action) {
+	case 'add' :
+		if ($cart) {
+			$cart .= ',' . $_GET['id'];
+		} else {
+			$cart = $_GET['id'];
+		}
+		break;
+		//
+		//B002,5,B003,10
+	case 'delete' :
+		if ($cart) {
+			$items = explode(',', $cart);
+			$newcart = '';
+			foreach ($items as $item) {
+				if ($_GET['id'] != $item) {
+					if ($newcart != '') {
+						$newcart .= ',' . $item;
+					} else {
+						$newcart = $item;
+					}
+				}
+			}
+			$cart = $newcart;
+		}
+		break;
+	case 'update' :
+		if ($cart) {
+			$newcart = '';
+			foreach ($_POST as $key => $value) {
+				if (stristr($key, 'qty')) {
+					$id = str_replace('qty', '', $key);
+					$items = ($newcart != '') ? explode(',', $newcart) : explode(',', $cart);
+					$newcart = '';
+					foreach ($items as $item) {
+						if ($id != $item) {
+							if ($newcart != '') {
+								$newcart .= ',' . $item;
+							} else {
+								$newcart = $item;
+							}
+						}
+					}
+					for ($i = 1; $i <= $value; $i++) {
+						if ($newcart != '') {
+							$newcart .= ',' . $id;
+						} else {
+							$newcart = $id;
+						}
+					}
+				}
+			}
+		}
 
-<!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="./index.html">Music Light</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="">
-                <a href="./index.php">Home</a>
-              </li>
-              <li class="">
-                <a href="./registration.php">Registration</a>
-              </li>
-			  <li class="active">
-                <a href="">Cart</a>
-              </li>
-			  <li class="">
-                <a href="./testimony.php">Testimony</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+		$cart = $newcart;
+		break;
+}
+$_SESSION['cart'] = $cart;
+?>
 
-<div class="container">
-	<h1>Hello, world!</h1>
+<div id="shoppingcart">
+	<h3>Keranjang belanja anda</h3>
+	<?php
+	echo writeShoppingCart();
+	?>
 </div>
+<div id="contents">
+	<h3>Cek keranjang belanja</h3>
+	<?php
+	echo showCart();
+	?>
 
+	<h3>Form Pengiriman barang</h3>
+	<a href="index.php?page=cart&action=finish&kirim=true">Isi Data pembeli</a>
+	<?php
+if(isset($_GET['kirim'])){
+	?>
+	<form id="form1" name="form1" method="post" action="pemesan_add.php">
+		<td>
+		<table>
+			<!--<tr>
+			<td width="120">kd_pemesan</td>
 
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap-transition.js"></script>
-    <script src="js/bootstrap-alert.js"></script>
-    <script src="js/bootstrap-modal.js"></script>
-    <script src="js/bootstrap-dropdown.js"></script>
-    <script src="js/bootstrap-scrollspy.js"></script>
-    <script src="js/bootstrap-tab.js"></script>
-    <script src="js/bootstrap-tooltip.js"></script>
-    <script src="js/bootstrap-popover.js"></script>
-    <script src="js/bootstrap-button.js"></script>
-    <script src="js/bootstrap-collapse.js"></script>
-    <script src="js/bootstrap-carousel.js"></script>
-    <script src="js/bootstrap-typeahead.js"></script>
-    <script src="js/bootstrap-affix.js"></script>
+			<td width="350"><input name="kd_pemesan" type="text" id="kd_pemesan" size="40" /></td>
+			</tr>-->
+			<tr>
+				<td width="120">Nama</td>
+				<td width="350">
+				<input name="Nama" type="Nama" id="Nama" size="40" />
+				</td>
+			</tr>
+			<tr>
+				<td width="120">Alamat</td>
+				<td width="350">
+				<input name="Alamat" type="Alamat" id="Alamat" size="40" />
+				</td>
+			</tr>
+			<tr>
+				<td width="120">kd_pos</td>
+				<td width="350">
+				<input name="kd_pos" type="kd_pos" id="kd_pos" size="40" />
+				</td>
+			</tr>
+			<tr>
+				<td width="120">No_telp</td>
+				<td width="350">
+				<input name="No_telp" type="No_telp" id="No_telp" size="40" />
+				</td>
+			</tr>
+			<tr>
+				<td width="120">Email</td>
+				<td width="350">
+				<input name="Email" type="Email" id="Email" size="40" />
+				</td>
+			</tr>
+			<?php?>
+			<tr>
+				<td width="120">Kota</td>
+				<td width="350">
+				<select name='id_kota' id='id_kota'>
+					<?
+$get_kota=mysql_query('select * from biaya_kirim order by nama_kota');
+while ($rows=mysql_fetch_array($get_kota)){
+					?>
+					<option value="<?=$rows['id_kota']?>"><?=$rows['nama_kota']
+						?></option>
+					<?
+					}//end while
+					?>
+				</select></td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			
+				<td>
+				<input type="submit" name="tambah" value="Tambah" />
+				<input type="reset" name="resetbtn" value="Reset" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan='2'><div id="form1_errorloc" style="color:red"></div></td>
+			</tr>
+		</table></td>
+	</form>
+	<script language="javaScript" type="text/javascript"
+	xml:space="preserve">
+		//You should create the validator only after the definition of the HTML form
+		var frmvalidator = new Validator("form1");
+		frmvalidator.EnableOnPageErrorDisplaySingleBox();
+		frmvalidator.EnableMsgsTogether();
 
-    <script src="js/application.js"></script>
+		frmvalidator.addValidation("kd_pemesan", "req", "kode pemesan masih kosong ");
+		frmvalidator.addValidation("Nama", "req", "nama  masih kosong ");
+		frmvalidator.addValidation("Alamat", "req", "alamat masih kosong ");
+		frmvalidator.addValidation("kd_pos", "req", "kode pos masih kosong ");
+		frmvalidator.addValidation("No_telp", "req", "no. telp masih kosong");
+		frmvalidator.addValidation("email", "req", "email masih kosong");
+		frmvalidator.addValidation("kd_pemesan", "alnum_s ", "kode pemesan tidak boleh ada spasi ");
+		frmvalidator.addValidation("Alamat", "minlen=10", "alamat kurang lengkap ");
+		frmvalidator.addValidation("kd_pos", "num", "input harus angka ");
+		frmvalidator.addValidation("No_telp", "num", "input harus angka ");
+		frmvalidator.addValidation("email", "maxlen=50", "maksimal panjang email 50 karakter");
 
-</body>
-</html>
+	</script>
+	<?
+}
+	?>
+</div>

@@ -1,148 +1,92 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Administrator Page</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	
-	<link href="../css/style.css" rel="stylesheet" media="screen">
-	
-	<!-- Bootstrap -->
-	<link href="../css/bootstrap.css" rel="stylesheet" media="screen">
-	<link href="../css/bootstrap-responsive.css" rel="stylesheet" media="screen">
-</head>
+<?php
 
-<body>
+include ('inc/config.php');
 
-<!-- Navbar
-    ================================================== -->
-    <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="./index.html">Music Light</a>
-          <div class="nav-collapse collapse">
-            <ul class="nav">
-              <li class="">
-                <a href="./index.php">Dashboard</a>
-              </li>
-              <li class="">
-                <a href="./product.php">Product</a>
-              </li>
-              <li class="">
-                <a href="./insertproduct.php">Insert Product</a>
-              </li>
-              <li class="">
-                <a href="./updateproduct.php">Update Product</a>
-              </li>
-              <li class="active">
-                <a href="./profile.php">Profile</a>
-              </li>
-              <li class="">
-                <a href="./member.php">Member</a>
-              </li>
+?>
+<h1> Tabel Profile</h1>
 
-			  <li class="">
-                <a href="./transaction.php">Transaction</a>
-              </li>
-			  <li class="">
-                <a href="">Detail</a>
-              </li>
-			  <li class="">
-                <a href="./logout.php">Logout</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+<?php 
+//$sql="SELECT * FROM  buku";
+//$result=mysql_query($sql) or die(mysql_error());
+//while($rows=mysql_fetch_array($result)){
+?>
 
-<div class="container">
-	<h3>Registration Page</h3>
-	
-	<form class="form-horizontal">
-		<div class="control-group">
-			<label class="control-label" for="inputName">Name</label>
-			<div class="controls">
-				<input type="text" id="inputName" placeholder="Name">
-			</div>
-		</div>
-	
-		<div class="control-group">
-			<label class="control-label" for="inputEmail">Email</label>
-			<div class="controls">
-				<input type="text" id="inputEmail" placeholder="Email">
-			</div>
-		</div>
-		
-		<div class="control-group">
-			<label class="control-label" for="inputAddress">Address</label>
-			<div class="controls">
-				<textarea rows="3"></textarea>
-			</div>
-		</div>
-		
-		<div class="control-group">
-			<label class="control-label" for="inputPhone ">Phone </label>
-			<div class="controls">
-				<input type="text" id="inputPhone" placeholder="Phone ">
-			</div>
-		</div>
-		
-		<div class="control-group">
-			<label class="control-label" for="inputOPassword">Old Password</label>
-			<div class="controls">
-				<input type="password" id="inputOPassword" placeholder="Old Password">
-			</div>
-		</div>
-		
-		<div class="control-group">
-			<label class="control-label" for="inputNPassword">New Password</label>
-			<div class="controls">
-				<input type="password" id="inputNPassword" placeholder="New Password">
-			</div>
-		</div>
-		
-		<div class="control-group">
-			<label class="control-label" for="inputCPassword">Confirm Password</label>
-			<div class="controls">
-				<input type="password" id="inputCPassword" placeholder="Confirm Password">
-			</div>
-		</div>
-	
-		<div class="control-group">
-			<div class="controls">
-				<input type="button" value="Save" class="btn btn-primary" onclick="Cek()" />
-				<input type="reset" value="Reset" class="btn" onclick="Reset()" />
-			</div>
-		</div>
-    </form>
-</div>
+<form id="form1" name="form1" method="post" action="member_edit.php">
+	<td>
+		<table>
+<?php 
+$sql="SELECT * FROM  wbpl_member";
+$result=mysql_query($sql) or die(mysql_error());
+while($rows=mysql_fetch_array($result)){
+?>
+			<tr>
+				<td width="120">Name</td>
+				<td width="350">
+				<input name="Name" type="Name" id="Name" size="40" value="<?php echo $rows['member_name'];?>"/>
+				</td>
+			</tr>
+			<tr>
+				<td width="120">Address</td>
+				<td width="350">
+				<input name="Address" type="Address" id="Address" size="40" value="<?php echo $rows['member_address'];?>"/
+				</td>
+			</tr>
+			<tr>
+				<td width="120">Phone</td>
+				<td width="350">
+				<input name="Phone" type="Phone" id="Phone" size="40" value="<?php echo $rows['member_phone'];?>"/
+				</td>
+			</tr>
+			<tr>
+				<td width="120">Email</td>
+				<td width="350">
+				<input name="Email" type="Email" id="Email" size="40" value="<?php echo $rows['member_email'];?>"/
+				</td>
+			</tr>
+<?php } ?>
+			<tr>
+				<td colspan='2'><div id="form1_errorloc" style="color:red"></div></td>
+			</tr>
+			<tr>
+				<td colspan='2'><div id="form1_errorloc" style="color:red"></div></td>
+			</tr>
+			<tr>
+				<td width="120">Old Password</td>
+				<td width="350">
+				<input name="Email" type="Email" id="Email" size="40" />
+				</td>
+			</tr>
+			<tr>
+				<td width="120">New Password</td>
+				<td width="350">
+				<input name="Email" type="Email" id="Email" size="40" />
+				</td>
+			</tr>
+			<tr>
+				<td width="120">Confirm Password</td>
+				<td width="350">
+				<input name="Email" type="Email" id="Email" size="40" />
+				</td>
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+			
+				<td>
+				<input type="submit" name="UpdateProfile" value="Update" />
+				<input type="reset" name="resetbtn" value="Reset" />
+				</td>
+			</tr>
+			<tr>
+				<td colspan='2'><div id="form1_errorloc" style="color:red"></div></td>
+			</tr>
+		</table>
+	</td>
+</form>
+<?php
 
+mysql_close();
+//close database
 
-   <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-    <script src="../js/jquery.js"></script>
-    <script src="../js/bootstrap-transition.js"></script>
-    <script src="../js/bootstrap-alert.js"></script>
-    <script src="../js/bootstrap-modal.js"></script>
-    <script src="../js/bootstrap-dropdown.js"></script>
-    <script src="../js/bootstrap-scrollspy.js"></script>
-    <script src="../js/bootstrap-tab.js"></script>
-    <script src="../js/bootstrap-tooltip.js"></script>
-    <script src="../js/bootstrap-popover.js"></script>
-    <script src="../js/bootstrap-button.js"></script>
-    <script src="../js/bootstrap-collapse.js"></script>
-    <script src="../js/bootstrap-carousel.js"></script>
-    <script src="../js/bootstrap-typeahead.js"></script>
-    <script src="../js/bootstrap-affix.js"></script>
+//tampilan siapa yang pengelola
+?>
 
-    <script src="../js/application.js"></script>
-
-</body>
-</html>
