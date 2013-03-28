@@ -3,17 +3,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-<!--
- ____________________________________________________________
-|                                                            |
-|      CODE + Pat Heard { http://fullahead.org }             |
-|      DATE + 2007.11.08                                     |
-| COPYRIGHT + Creative Commons Attribution 3.0 Unported      |
-|             http://creativecommons.org/licenses/by/3.0/    |
-|____________________________________________________________|
-
--->
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
