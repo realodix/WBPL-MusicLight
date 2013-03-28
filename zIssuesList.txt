@@ -10,12 +10,12 @@
 #10 Detail page (detail.php)
 #11 Testimony page (testimony.php)
 
-#13 Mengimplementasikan Bootstrap
 #15 Penyesuaian isi konten
-
 #14 Menghapus file yang tidak dibutuhkan
 #16 Menghapus Dokumentasi
 #17 Issues List Update
+
+#13 Mengimplementasikan Bootstrap
 
 
 ### Fixes Issues
