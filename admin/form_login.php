@@ -78,8 +78,13 @@
           <td colspan='2'>
        <!--     <div id="form1_errorloc" style="color:green">
 			<?php
+			//if (isset($_GET['status'] == 0)) {
+				//echo "The username or password you entered is incorrect";
+			//}
 			if (isset($_GET['status'])) {
-				echo "The username or password you entered is incorrect";
+				if ($_GET['status'] == 1) {
+					echo "The username or password you entered is incorrect";
+				}
 			}
 		?>
          </div>-->
