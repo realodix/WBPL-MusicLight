@@ -12,4 +12,6 @@
 #12 Logout page (logout.php)
 #13 Mengimplementasikan Bootstrap
 #14 Menghapus file yang tidak dibutuhkan
-#15 Penyesuaian isi konten 
+#15 Penyesuaian isi konten
+#16 Menghapus Dokuentasi
+#17 Issues List Update
