@@ -9,7 +9,6 @@
 #9 Transaction page (transaction.php)
 #10 Detail page (detail.php)
 #11 Testimony page (testimony.php)
-#12 Logout page (logout.php)
 
 #13 Mengimplementasikan Bootstrap
 #15 Penyesuaian isi konten
@@ -17,3 +16,7 @@
 #14 Menghapus file yang tidak dibutuhkan
 #16 Menghapus Dokumentasi
 #17 Issues List Update
+
+
+### Fixes Issues
+#12 Logout page (logout.php)
