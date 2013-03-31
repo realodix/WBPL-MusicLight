@@ -19,6 +19,6 @@
 
 
 ### Fixes Issues
-#12 Logout page (logout.php)
-#18 Terjadi error saat logout.
-#16 Menghapus Dokumentasi (fullahead)
+[closed] #12 Logout page (logout.php)
+[closed] #18 Terjadi error saat logout.
+[closed] #16 Menghapus Dokumentasi (fullahead)
