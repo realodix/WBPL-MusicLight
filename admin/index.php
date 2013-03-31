@@ -46,10 +46,11 @@ require_once('../inc/common_function.php');
     <div class="floatLeft width100 rightBorder">
 
       <div id="title">
-        <h1>Admin page</h1>
+        <a href="./"><h1>Admin page</h1>
         <p>
          Halaman Administrasi
         </p>
+		</a>
       </div>
 
 
