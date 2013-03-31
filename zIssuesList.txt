@@ -17,6 +17,10 @@
 
 #13 Mengimplementasikan Bootstrap
 #22 Merubah class pada tombol menyesuaikan Bootstrap
+#23 Menyesuaikan susunan html admin dengan Bootstrap
+#24 Menyesuaikan susunan html home dengan Bootstrap
+#25 Merombak UI home
+#26 Merombak UI admin
 #20 Menempatkan file koneksi database ke dalam 1 folder
 #21 Update jQuery ke versi terbaru
 
