@@ -9,7 +9,7 @@
 * kode untuk menghapus data
 */
 if(isset($_GET['del'])){
-$kd_kategori=$_GET['id'];
+$kd_brand=$_GET['id'];
 $hapus ="delete from wbpl_brand where kd_brand='$kd_brand'";
 mysql_query($hapus);
 }
