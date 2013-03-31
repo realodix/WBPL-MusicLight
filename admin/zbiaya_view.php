@@ -46,9 +46,9 @@ while($rows=mysql_fetch_array($result)){
 <td><?echo $rows['biaya'];?></td>
 
 <td>
-<a href="index.php?page=biaya_kirim_form_edit&id=<? echo $rows['id_kota']?>">
+<a href="index.php?page=zbiaya_kirim_form_edit&id=<? echo $rows['id_kota']?>">
 <img src="image/b_edit.png"></a>
-<a href="index.php?page=biaya_view&del=true&id=<? echo $rows['id_kota']?>"  onclick="return askUser()";>
+<a href="index.php?page=zbiaya_view&del=true&id=<? echo $rows['id_kota']?>"  onclick="return askUser()";>
 <img src="image/b_drop.png"></a>
 </td>
 </tr>
@@ -69,7 +69,7 @@ if(isset($_GET['status'])) {
 	}
 }?>
 </td>
-<td align=right><a href="index.php?page=biaya_kirim_form_add">
+<td align=right><a href="index.php?page=zbiaya_kirim_form_add">
 <img src="image/add.jpg"> Add</a></td></tr>
 <tr></tr>
 </table>
@@ -82,7 +82,7 @@ if(isset($_GET['status'])) {
 	echo "Halaman :";
 	for($i = 1; $i <= $jumlah_halaman; $i++)
 		if($i != $halaman) {
-			echo "<a href=index.php?page=biaya_view&halaman=$i>$i</a>|";
+			echo "<a href=index.php?page=zbiaya_view&halaman=$i>$i</a>|";
 		} else {
 			echo "<b>$i</b>|";
 		}

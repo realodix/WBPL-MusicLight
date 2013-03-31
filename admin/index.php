@@ -92,7 +92,7 @@ require_once('../inc/common_function.php');
          <li>
 		         <h2>Biaya kirim</h2>
 				  <ul  class="arrow">
-				  <li><a href="index.php?page=biaya_view">Biaya per kota</a></li>
+				  <li><a href="index.php?page=zbiaya_view">Biaya per kota</a></li>
 
 				  </ul>
         </li>
