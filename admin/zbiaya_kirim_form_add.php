@@ -1,4 +1,4 @@
-<form id="form1" name="form1" method="post" action="biaya_add.php">
+<form id="form1" name="form1" method="post" action="zbiaya_add.php">
 	<td>
 	<table>
 	

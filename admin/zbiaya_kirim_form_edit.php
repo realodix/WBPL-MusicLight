@@ -7,7 +7,7 @@ $result = mysql_query($sql) or die(mysql_error());
 ?>
 <h2>Change Biaya Kirim</h2>
 <table>
-	<form id="form1" name="form1" name="form2" method="post" action="biaya_edit.php">
+	<form id="form1" name="form1" name="form2" method="post" action="zbiaya_edit.php">
 		<?
 //proses menampilkan data
 while($rows=mysql_fetch_array($result)){
