@@ -13,12 +13,12 @@
 #15 Penyesuaian isi konten
 #19 Menambah huruf 'z' pada semua file di halaman admin
 #14 Menghapus file yang tidak dibutuhkan
-#20 Menempatkan file koneksi database ke dalam 1 folder
-#21 Update jQuery ke versi terbaru
 #17 Issues List Update
 
 #13 Mengimplementasikan Bootstrap
-
+#22 Merubah class pada tombol menyesuaikan Bootstrap
+#20 Menempatkan file koneksi database ke dalam 1 folder
+#21 Update jQuery ke versi terbaru
 
 ### Fixes Issues
 [closed] #12 Logout page (logout.php)
