@@ -1,4 +1,4 @@
-	<form id="form1" name="form1" method="post" action="penerbit_add.php">
+	<form id="form1" name="form1" method="post" action="instrument_add.php">
 	
 		<table>
 			<tr>

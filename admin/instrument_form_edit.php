@@ -8,7 +8,7 @@ $rows=mysql_fetch_array($result);
 ?>
 <h2>Change penerbit</h2>
 <table>
-	<form id="form1" name="form1" name="form2" method="post" action="penerbit_edit.php">
+	<form id="form1" name="form1" name="form2" method="post" action="instrument_edit.php">
 
 		<tr>
 			<td width="120">kd penerbit</td>

@@ -36,9 +36,9 @@ while($rows=mysql_fetch_array($result)){
 <td><?  echo $rows['alamat'];?></td>
 
 <td>
-<a href="index.php?page=penerbit_form_edit&id=<? echo $rows['kd_penerbit']?>">
+<a href="index.php?page=instrument_form_edit&id=<? echo $rows['kd_penerbit']?>">
 <img src="image/b_edit.png"></a>
-<a href="index.php?page=penerbit_view&del=true&id=<? echo $rows['kd_penerbit']?>"  onclick="return askUser()";>
+<a href="index.php?page=instrument_view&del=true&id=<? echo $rows['kd_penerbit']?>"  onclick="return askUser()";>
 <img src="image/b_drop.png"></a>|
 detail
 </td>
@@ -60,7 +60,7 @@ if (isset($_GET['status'])) {
 }
 ?>
 </td>
-<td align=right><a href="index.php?page=penerbit_form_add">
+<td align=right><a href="index.php?page=instrument_form_add">
 <img src="image/add.jpg"> Tambah</a></td></tr>
 <tr></tr>
 </table>
