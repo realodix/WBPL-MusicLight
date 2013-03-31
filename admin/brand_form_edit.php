@@ -2,10 +2,10 @@
 include ('inc/config.php');
 $id = $_GET['id'];
 //ambil data dari table feedback
-$sql = "select * from kategori where kd_kategori='$id' ";
+$sql = "select * from wbpl_brand where kd_brand='$id' ";
 $result = mysql_query($sql) or die(mysql_error());
 ?>
-<h2>Change kategori buku</h2>
+<h2>Change Brand</h2>
 <table>
 	<form id="form1" name="form1" method="post" action="brand_edit.php">
 		<?
@@ -13,14 +13,14 @@ $result = mysql_query($sql) or die(mysql_error());
 while($rows=mysql_fetch_array($result)){
 		?>
 
-		<td width="120">kd_kategori</td>
+		<td width="120">Kode Brand</td>
 		<td width="350">
-		<input type="text" id="kd_kategori" name="kd_kategori" value=<? echo $rows['kd_kategori'];?>  readonly />
+		<input type="text" id="kd_brand" name="kd_brand" value=<? echo $rows['kd_brand'];?>  readonly />
 		</td>
-		</tr> <td width="120">nama</td>
+		</tr> <td width="120">Brand</td>
 		<td width="350">
-		<input name="nama_kategori" type="nama_kategori" id="nama_kategori" size="40"
-		value='<? echo $rows['nama_kategori'];?>'>
+		<input name="nama_brand" type="nama_brand" id="nama_brand" size="40"
+		value='<? echo $rows['nama_brand'];?>'>
 		</td>
 		</tr>
 	
@@ -48,9 +48,9 @@ var frmvalidator  = new Validator("form1");
 frmvalidator.EnableOnPageErrorDisplaySingleBox();
 frmvalidator.EnableMsgsTogether();
 
-frmvalidator.addValidation("kd_kategori","req","kode kategori masih kosong ");
-frmvalidator.addValidation("nama_kategori","req","nama kategori  masih kosong ");
+frmvalidator.addValidation("kd_brand","req","kode brand masih kosong ");
+frmvalidator.addValidation("nama_brand","req","nama brand masih kosong ");
 
-frmvalidator.addValidation("kd_kategori","alnum_s","kode kategori tidak boleh ada spasi ");
-frmvalidator.addValidation("nama_kategori","minlen=1","nama kategori  tidak boleh lebih dari 1 karakter ");
+frmvalidator.addValidation("kd_brand","alnum_s","kode brand tidak boleh ada spasi ");
+frmvalidator.addValidation("nama_brand","minlen=1","nama brand tidak boleh kurang dari 1 karakter ");
 </script>

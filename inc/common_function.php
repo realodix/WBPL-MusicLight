@@ -299,20 +299,20 @@ function kode_buku() {
 	}
 	return $kode;
 }
-function kode_kategori() {
-	$kode_temp = fetch_row("SELECT kd_kategori FROM kategori ORDER BY kd_kategori DESC LIMIT 0,1");
+function kode_brand() {
+	$kode_temp = fetch_row("SELECT kd_brand FROM wbpl_brand ORDER BY kd_brand DESC LIMIT 0,1");
 	if ($kode_temp == '')
-		$kode = "K01";
+		$kode = "B01";
 	else {
 		$jum = substr($kode_temp, 1, 2);
 		$jum++;
 		if ($jum <= 9)
-			$kode = "K0" . $jum;
+			$kode = "B0" . $jum;
 		elseif ($jum <= 99)
-			$kode = "K" . $jum;
+			$kode = "B" . $jum;
 	
 		else
-			die("Kode Kategori melebihi batas");
+			die("Kode Brand melebihi batas");
 	}
 	return $kode;
 }

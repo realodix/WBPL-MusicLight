@@ -2,7 +2,7 @@
 //include ('inc/config.php');
 ?><table  width="600px" border=0>
 <tr style="background-color:#F79307">
-<td>Kode</td><td>Nama kategori</td><td>Operasi</td></tr>
+<td>Kode</td><td>Brand</td><td>Operation</td></tr>
 
 <?php
 /*
@@ -10,16 +10,16 @@
 */
 if(isset($_GET['del'])){
 $kd_kategori=$_GET['id'];
-$hapus ="delete from kategori where kd_kategori='$kd_kategori'";
+$hapus ="delete from wbpl_brand where kd_brand='$kd_brand'";
 mysql_query($hapus);
 }
 $sql="";
 if(isset($_POST['btnCari'])){
 $cari=$_POST['cari'];
 //ambil data dari table admin
-$sql="SELECT * FROM  kategori where kd_kategori like '%$cari%'";
+$sql="SELECT * FROM  wbpl_brand where kd_brand like '%$cari%'";
 }else{
-$sql="SELECT * FROM  kategori";
+$sql="SELECT * FROM  wbpl_brand";
 }
 
 $result=mysql_query($sql) or die(mysql_error());
@@ -29,16 +29,16 @@ while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
 
-<td><?  echo $rows['kd_kategori'];?></td>
+<td><?  echo $rows['kd_brand'];?></td>
 
-<td><?  echo $rows['nama_kategori'];?></td>
+<td><?  echo $rows['nama_brand'];?></td>
 
 
 
 <td>
-<a href="index.php?page=brand_form_edit&id=<? echo $rows['kd_kategori']?>">
+<a href="index.php?page=brand_form_edit&id=<? echo $rows['kd_brand']?>">
 <img src="image/b_edit.png"></a>
-<a href="index.php?page=brand_view&del=true&id=<? echo $rows['kd_kategori']?>"  onclick="return askUser()";>
+<a href="index.php?page=brand_view&del=true&id=<? echo $rows['kd_brand']?>"  onclick="return askUser()";>
 <img src="image/b_drop.png"></a>
 </td>
 </tr>

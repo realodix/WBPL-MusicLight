@@ -2,13 +2,13 @@
 include ('inc/config.php');
 //data dari user
 if (isset($_POST['submitUser'])) {
-	$kd_kategori = $_POST['kd_kategori'];
-	$nama_kategori = $_POST['nama_kategori'];
+	$kd_brand = $_POST['kd_brand'];
+	$nama_brand = $_POST['nama_brand'];
 
 
-	$sql = " update kategori set 
-	nama_kategori='$nama_kategori'
-	where kd_kategori='$kd_kategori'";
+	$sql = " update wbpl_brand set 
+	nama_brand='$nama_brand'
+	where kd_brand='$kd_brand'";
 
 	//echo $sql;
 	$result = mysql_query($sql) or die(mysql_error());
