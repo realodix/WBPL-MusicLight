@@ -13,9 +13,9 @@ if (isset($_POST['submitUser'])) {
 
 	//check if query successful
 	if ($result) {
-		header('location:index.php?page=biaya_view&status=0');
+		header('location:index.php?page=zbiaya_view&status=0');
 	} else {
-		header('location:index.php?page=biaya_view&status=1');
+		header('location:index.php?page=zbiaya_view&status=1');
 	}
 	mysql_close();
 }
