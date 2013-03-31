@@ -85,7 +85,7 @@ require_once('../inc/common_function.php');
 		  <li><a href="index.php?page=customer_view">Customer</a></li>
 		  <li><a href="index.php?page=pesan_view">Pesan</a></li>
 		  <li><a href="index.php?page=det_pesan_view">Detail pemesanan</a></li>
-		  <li><a href="index.php?page=bayar_view">pembayaran</a></li>
+		  <li><a href="index.php?page=zbayar_view">pembayaran</a></li>
 		  </ul>
 
         </li>
