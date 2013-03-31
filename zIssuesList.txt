@@ -11,6 +11,7 @@
 #11 Testimony page (testimony.php)
 
 #15 Penyesuaian isi konten
+#19 Menambah huruf 'z' pada semua file di halaman admin
 #14 Menghapus file yang tidak dibutuhkan
 #17 Issues List Update
 
