@@ -7,7 +7,7 @@ $result = mysql_query($sql) or die(mysql_error());
 ?>
 <h2>Change kategori buku</h2>
 <table>
-	<form id="form1" name="form1" method="post" action="kategori_edit.php">
+	<form id="form1" name="form1" method="post" action="brand_edit.php">
 		<?
 //proses menampilkan data
 while($rows=mysql_fetch_array($result)){

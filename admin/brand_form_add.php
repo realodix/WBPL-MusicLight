@@ -1,4 +1,4 @@
-<form id="form1" name="form1" method="post" action="kategori_add.php">
+<form id="form1" name="form1" method="post" action="brand_add.php">
 	<td>
 	<table>
 		<tr>

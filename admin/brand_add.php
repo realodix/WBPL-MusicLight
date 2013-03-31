@@ -12,9 +12,9 @@ if (isset($_POST['tambahLogin'])) {
 
 	//check if query successful
 	if ($result) {
-		header('location:index.php?page=kategori_view&status=0');
+		header('location:index.php?page=brand_view&status=0');
 	} else {
-		header('location:index.php?page=kategori_view&status=1');
+		header('location:index.php?page=brand_view&status=1');
 	}
 	mysql_close();
 }
