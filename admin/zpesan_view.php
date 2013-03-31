@@ -35,7 +35,7 @@ while($rows=mysql_fetch_array($result)){
 <td><?  echo $rows['tgl_pesan'];?></td>
 <td><?  echo $rows['total_bayar'];?></td>
 <td>
-<!-- -<a href="index.php?page=pesan_form_edit&id=<? echo $rows['no_pesan']?>">
+<!--<a href="index.php?page=pesan_form_edit&id=<? echo $rows['kd_pesan']?>">
 <img src="image/b_edit.png"></a>-->
 <a href="index.php?page=pesan_view&del=true&id=<? echo $rows['kd_pesan']?>"  onclick="return askUser()";>
 <img src="image/b_drop.png"></a>

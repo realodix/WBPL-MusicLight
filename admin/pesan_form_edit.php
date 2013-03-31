@@ -2,7 +2,7 @@
 include ('inc/config.php');
 $id = $_GET['id'];
 //ambil data dari table feedback
-$sql = "select * from pesan where no_pesan='$id' ";
+$sql = "select * from pesan where kd_pesan='$id' ";
 $result = mysql_query($sql) or die(mysql_error());
 ?>
 <h2>Change Pesan</h2>
@@ -14,9 +14,9 @@ while($rows=mysql_fetch_array($result)){
 		?>
 
 		<td width="120">no_pesan</td>
-		<td width="350"><?  echo $rows['no_pesan'];?></td>
+		<td width="350"><?  echo $rows['kd_pesan'];?></td>
 		</tr>
-		<input type="hidden" id="no_pesan" name="no_pesan" value=<? echo $rows['no_pesan'];?> />
+		<input type="hidden" id="no_pesan" name="no_pesan" value=<? echo $rows['kd_pesan'];?> />
 		<tr>
 			<td width="120">tgl_pesan</td>
 			<td width="350">
