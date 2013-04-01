@@ -4,6 +4,41 @@
 
 <table  width="320px" border=0 style="float: left;">
 
+
+
+<form id="form1" name="form1" method="post" action="brand_add.php">
+	<tr><td colspan="3" >
+	<table>
+		<tr>
+			<td width="120">Kode</td>
+			<td width="150">
+			<input name="kd_brand" type="text" id="kd_brand" 
+			value=<?=kode_brand()?> size="10" />
+			</td>
+		</tr>
+		<tr>
+			<td width="120">Brand</td>
+			<td width="150">
+			<input name="nama_brand" type="nama_brand" id="nama_brand" size="20" />
+			</td>
+		</tr>
+	
+		<tr>
+			<td>&nbsp;</td>
+			
+			<td>
+			<input type="submit" name="tambahLogin" value="Tambah" />
+			<input type="reset" name="resetbtn" value="Reset" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan='2'><div id="form1_errorloc" style="color:red"></div></td>
+		</tr>
+	</table></td></tr>
+</form>
+
+
+
 <tr style="background-color:#F79307">
 	<td>Kode</td>
 	<td>Brand</td>
@@ -88,6 +123,41 @@ while($rows=mysql_fetch_array($result)){
 
 
 <table  width="320px" border=0 style="float: right;">
+
+
+
+<form id="form1" name="form1" method="post" action="brand_add.php">
+	<tr><td colspan="3" >
+	<table>
+		<tr>
+			<td width="120">Kode</td>
+			<td width="150">
+			<input name="kd_brand" type="text" id="kd_brand" 
+			value=<?=kode_brand()?> size="10" />
+			</td>
+		</tr>
+		<tr>
+			<td width="120">Brand</td>
+			<td width="150">
+			<input name="nama_brand" type="nama_brand" id="nama_brand" size="20" />
+			</td>
+		</tr>
+	
+		<tr>
+			<td>&nbsp;</td>
+			
+			<td>
+			<input type="submit" name="tambahLogin" value="Tambah" />
+			<input type="reset" name="resetbtn" value="Reset" />
+			</td>
+		</tr>
+		<tr>
+			<td colspan='2'><div id="form1_errorloc" style="color:red"></div></td>
+		</tr>
+	</table></td></tr>
+</form>
+
+
 
 <tr style="background-color:#F79307">
 	<td>Kode</td>

@@ -3,15 +3,15 @@
 	<table>
 		<tr>
 			<td width="120">Kode brand</td>
-			<td width="350">
+			<td width="150">
 			<input name="kd_brand" type="text" id="kd_brand" 
 			value=<?=kode_brand()?> size="10" />
 			</td>
 		</tr>
 		<tr>
 			<td width="120">Brand</td>
-			<td width="350">
-			<input name="nama_brand" type="nama_brand" id="nama_brand" size="40" />
+			<td width="150">
+			<input name="nama_brand" type="nama_brand" id="nama_brand" size="20" />
 			</td>
 		</tr>
 	
