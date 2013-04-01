@@ -11,7 +11,6 @@
 #11 Testimony page (testimony.php)
 
 #15 Penyesuaian isi konten
-#19 Menambah huruf 'z' pada semua file di halaman admin
 #14 Menghapus file yang tidak dibutuhkan
 #17 Issues List Update
 
@@ -29,3 +28,4 @@
 [closed] #18 Terjadi error saat logout.
 [closed] #16 Menghapus Dokumentasi (fullahead)
 [closed] #27 Menyatukan halaman Brand & Instrument Type
+[closed] #19 Menambah huruf 'z' pada semua file di halaman admin
