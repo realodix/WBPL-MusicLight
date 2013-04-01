@@ -76,7 +76,7 @@ require_once('../inc/common_function.php');
          <h2>Koleksi</h2>
 		  <ul  class="arrow">
 		  <li><a href="index.php?page=buku_view">Product</a></li>
-		  <li><a href="index.php?page=brand_view">Brand</a></li>
+		  <li><a href="index.php?page=brand_view">Brand & Ins. Type</a></li>
 		  	  <li><a href="index.php?page=instrument_view">Instrument Type</a></li>
 		  </ul>
         </li>
