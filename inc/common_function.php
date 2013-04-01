@@ -335,23 +335,6 @@ function kode_instype() {
 	return $kode;
 }
 
-function kode_penerbit() {
-	$kode_temp = fetch_row("SELECT kd_penerbit FROM penerbit ORDER BY kd_penerbit DESC LIMIT 0,1");
-	if ($kode_temp == '')
-		$kode = "P01";
-	else {
-		$jum = substr($kode_temp, 1, 2);
-		$jum++;
-		if ($jum <= 9)
-			$kode = "P0" . $jum;
-		elseif ($jum <= 99)
-			$kode = "P" . $jum;
-	
-		else
-			die("Kode Penerbit melebihi batas");
-	}
-	return $kode;
-}
 
 function format_uang($duit, $space = false) {
 	$rp = ($space) ? "Rp. " : "Rp.";
