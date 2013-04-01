@@ -193,7 +193,7 @@ while($rows=mysql_fetch_array($result)){
 	<td><?  echo $rows['nama_instype'];?></td>
 
 	<td>
-		<a href="index.php?page=brand_form_edit&id=<? echo $rows['kd_instype']?>">
+		<a href="index.php?page=brandINS_form_edit&id=<? echo $rows['kd_instype']?>">
 		<img src="image/b_edit.png"></a>
 		<a href="index.php?page=brand_view&del=true&id=<? echo $rows['kd_instype']?>"  onclick="return askUser()";>
 		<img src="image/b_drop.png"></a>
