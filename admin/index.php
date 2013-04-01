@@ -2,7 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['username'])){
-header("location:form_login.php");
+header("location:login.php");
 }
 
 	require_once 'inc/config.php';
