@@ -132,14 +132,14 @@ while($rows=mysql_fetch_array($result)){
 		<tr>
 			<td width="120">Kode</td>
 			<td width="150">
-			<input name="kd_brand" type="text" id="kd_brand" 
-			value=<?=kode_brand()?> size="10" />
+			<input name="kd_instype" type="text" id="kd_instype" 
+			value=<?=kode_instype()?> size="10" />
 			</td>
 		</tr>
 		<tr>
-			<td width="120">Brand</td>
+			<td width="120">Instrument Type</td>
 			<td width="150">
-			<input name="nama_brand" type="nama_brand" id="nama_brand" size="20" />
+			<input name="nama_instype" type="nama_instype" id="nama_instype" size="20" />
 			</td>
 		</tr>
 	
@@ -147,7 +147,7 @@ while($rows=mysql_fetch_array($result)){
 			<td>&nbsp;</td>
 			
 			<td>
-			<input type="submit" name="tambahLogin" value="Tambah" />
+			<input type="submit" name="tambahLoginIT" value="Tambah" />
 			<input type="reset" name="resetbtn" value="Reset" />
 			</td>
 		</tr>
@@ -170,8 +170,8 @@ while($rows=mysql_fetch_array($result)){
 * kode untuk menghapus data
 */
 if(isset($_GET['del'])){
-$kd_brand=$_GET['id'];
-$hapus ="delete from wbpl_brand where kd_brand='$kd_brand'";
+$kd_instype=$_GET['id'];
+$hapus ="delete from wbpl_instype where kd_instype='$kd_instype'";
 mysql_query($hapus);
 }
 $sql="";
@@ -193,9 +193,9 @@ while($rows=mysql_fetch_array($result)){
 	<td><?  echo $rows['nama_instype'];?></td>
 
 	<td>
-		<a href="index.php?page=brand_form_edit&id=<? echo $rows['kd_brand']?>">
+		<a href="index.php?page=brand_form_edit&id=<? echo $rows['kd_instype']?>">
 		<img src="image/b_edit.png"></a>
-		<a href="index.php?page=brand_view&del=true&id=<? echo $rows['kd_brand']?>"  onclick="return askUser()";>
+		<a href="index.php?page=brand_view&del=true&id=<? echo $rows['kd_instype']?>"  onclick="return askUser()";>
 		<img src="image/b_drop.png"></a>
 	</td>
 </tr>

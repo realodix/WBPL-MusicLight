@@ -18,4 +18,24 @@ if (isset($_POST['tambahLogin'])) {
 	}
 	mysql_close();
 }
+
+
+
+if (isset($_POST['tambahLoginIT'])) {
+	$kd_instype = $_POST['kd_instype'];
+	$nama_instype = $_POST['nama_instype'];
+
+
+	$sql = "INSERT INTO wbpl_instype(kd_instype,nama_instype)
+		VALUES('$kd_instype', '$nama_instype')";
+	$result = mysql_query($sql) or die(mysql_error());
+
+	//check if query successful
+	if ($result) {
+		header('location:index.php?page=brand_view&status=0');
+	} else {
+		header('location:index.php?page=brand_view&status=1');
+	}
+	mysql_close();
+}
 ?>
