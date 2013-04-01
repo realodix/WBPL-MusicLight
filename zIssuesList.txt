@@ -22,6 +22,7 @@
 #25 Merombak UI home
 #26 Merombak UI admin
 #20 Menempatkan file koneksi database ke dalam 1 folder
+#27 Menyatukan halaman Brand & Instrument Type
 #21 Update jQuery ke versi terbaru
 
 ### Fixes Issues
