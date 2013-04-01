@@ -316,6 +316,25 @@ function kode_brand() {
 	}
 	return $kode;
 }
+
+function kode_instype() {
+	$kode_temp = fetch_row("SELECT kd_instype FROM wbpl_instype ORDER BY kd_instype DESC LIMIT 0,1");
+	if ($kode_temp == '')
+		$kode = "I01";
+	else {
+		$jum = substr($kode_temp, 1, 2);
+		$jum++;
+		if ($jum <= 9)
+			$kode = "I0" . $jum;
+		elseif ($jum <= 99)
+			$kode = "I" . $jum;
+	
+		else
+			die("Kode Instrument Type melebihi batas");
+	}
+	return $kode;
+}
+
 function kode_penerbit() {
 	$kode_temp = fetch_row("SELECT kd_penerbit FROM penerbit ORDER BY kd_penerbit DESC LIMIT 0,1");
 	if ($kode_temp == '')
