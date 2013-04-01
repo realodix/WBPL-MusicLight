@@ -34,7 +34,7 @@ while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
 
-<td><? echo $rows['kd_customer']; ?></td>
+<td><? echo $rows['kd_pemesan']; ?></td>
 
 <td><? echo $rows['Nama']; ?></td>
 
