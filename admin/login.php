@@ -40,7 +40,7 @@
 	
 		<!--table pengolahan data nanti disini-->
 		<h1> Login page</h1>
-		<form id="form1" name="form1" method="post" action="pengelola_check_login.php">
+		<form id="form1" name="form1" method="post" action="login_check.php">
 		<table  align="center">
 			<tr>
 				<td >username</td>
