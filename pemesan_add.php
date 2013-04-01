@@ -4,14 +4,20 @@ include ('admin/inc/config.php');
 // Include MySQL class
 require_once ('inc/mysql.class.php');
 // Include database connection
-require_once ('inc/global.inc.php');
+//require_once ('inc/global.inc.php');
 // Include functions
 require_once ('inc/functions.inc.php');
 require_once ('inc/common_function.php');
 // Start the session
 
-session_register('id_kota');
-session_register('kd_pesan');
+//session_register('id_kota');
+//session_register('kd_pesan');
+
+session_start();
+$id_kota = array();
+session_start();
+$kd_pesan = array();
+
 //data dari user
 if (isset($_POST['tambah'])) {
 	/* menambahkan kode pesan dan detail pesan kedalam database*/
