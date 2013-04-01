@@ -14,8 +14,10 @@ include ('inc/config.php');
 <form id="form1" name="form1" method="post" action="profile_edit.php">
 	<td>
 		<table>
-<?php 
-$sql="SELECT * FROM  wbpl_member";
+<?php
+/*where kd_member='M0001' ditambahkan agar
+* data yang muncul tidak semuanya*/
+$sql="SELECT * FROM  wbpl_member where kd_member='M0001' ";
 $result=mysql_query($sql) or die(mysql_error());
 while($rows=mysql_fetch_array($result)){
 ?>
