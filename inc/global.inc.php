@@ -2,6 +2,6 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$name = 'bookdb';
+$name = 'wbpl_ml';
 $db = &new MySQL($host, $user, $pass, $name);
 ?>
