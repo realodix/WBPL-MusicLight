@@ -137,7 +137,7 @@ while($rows=mysql_fetch_array($result)){
 			</td>
 		</tr>
 		<tr>
-			<td width="120">Instrument Type</td>
+			<td width="120">Ins. Type</td>
 			<td width="150">
 			<input name="nama_instype" type="nama_instype" id="nama_instype" size="20" />
 			</td>
