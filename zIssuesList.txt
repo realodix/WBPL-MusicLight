@@ -22,10 +22,10 @@
 #25 Merombak UI home
 #26 Merombak UI admin
 #20 Menempatkan file koneksi database ke dalam 1 folder
-#27 Menyatukan halaman Brand & Instrument Type
 #21 Update jQuery ke versi terbaru
 
 ### Fixes Issues
 [closed] #12 Logout page (logout.php)
 [closed] #18 Terjadi error saat logout.
 [closed] #16 Menghapus Dokumentasi (fullahead)
+[closed] #27 Menyatukan halaman Brand & Instrument Type
