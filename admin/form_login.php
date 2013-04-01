@@ -93,20 +93,18 @@
         </tr>
 </table>
 </form>
-<script language="JavaScript" type="text/javascript"
-			xml:space="preserve">//<![CDATA[
-				//You should create the validator only after the definition of the HTML form
-				var frmvalidator = new Validator("form1");
-			frmvalidator.EnableOnPageErrorDisplaySingleBox();
-				frmvalidator.EnableMsgsTogether();
-				frmvalidator.addValidation("username", "req");
+<script language="JavaScript" type="text/javascript" xml:space="preserve">
+//<![CDATA[
+//You should create the validator only after the definition of the HTML form
+var frmvalidator = new Validator("form1");
+frmvalidator.EnableOnPageErrorDisplaySingleBox();
+frmvalidator.EnableMsgsTogether();
+frmvalidator.addValidation("username", "req");
 				
-						frmvalidator.addValidation("password", "req");
-			
-			
-		
+frmvalidator.addValidation("password", "req");
 
-				//]]></script>
+	//]]>
+</script>
     </div>
     <!-- end left column, 75% width -->
 
