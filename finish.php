@@ -17,16 +17,9 @@ $totalBayar = $_SESSION['totalbayar'];
 <h3>Total Transfer:<?=($totalBayar+$biaya)
 ?></h2>
 <p>
-	Silahkan transfer uang ke
+	Silahkan transfer uangnya yaa... ^_^
 </p>
-<blockquote>
-	Candra Adi putra
-	<br>
-	BNI Syariah Yogyakarta
-	<br>
-	No Rek 12345678
-	<br>
-</blockquote>
+
 <hr>
 <p>
 	Konfirmasi pembayaran dapat anda lakukan di menu konfirmasi pembayaran, setelah anda melakukan
