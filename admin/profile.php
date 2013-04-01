@@ -11,7 +11,7 @@ include ('inc/config.php');
 //while($rows=mysql_fetch_array($result)){
 ?>
 
-<form id="form1" name="form1" method="post" action="member_edit.php">
+<form id="form1" name="form1" method="post" action="profile_edit.php">
 	<td>
 		<table>
 <?php 
