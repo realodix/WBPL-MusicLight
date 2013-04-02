@@ -64,6 +64,10 @@
 				<li>
 					<a href="index.php?page=bayar_form_add">Pembayaran</a>
 				</li>
+				
+				<li>
+					<a href="#">Registration</a>
+				</li>
 							
 			</ul>	
         </div> <!-- end of templatemo_menu -->
