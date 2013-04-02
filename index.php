@@ -183,11 +183,7 @@
 					?>
 					<h2>Alamat kami</h2>
 					<p>
-						Jl Lurus no 5 Yogyakarta
-						<br>
-						Telp (0274) 123456
-						<br>
-						Email:bukumurah@gmail.com
+						Jakarta
 					</p>
                 </div>
                 
