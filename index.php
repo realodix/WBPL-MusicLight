@@ -50,6 +50,10 @@
 				</li>
 				
 				<li>
+					<a href="#">Product</a>
+				</li>
+				
+				<li>
 					<a href="index.php?page=cart">Cart</a>
 				</li>
 				

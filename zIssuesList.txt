@@ -1,6 +1,6 @@
 #1 Home page (index.php)
 #2 Registration page (registration.php)
-#3 [admin]Product page (product.php)
+#3 Product page (product.php)
 #4 [admin]Insert product page (insertproduct.php)
 #5 [admin]Update product page (updateproduct.php)
 #6 [admin]Profile page (profile.php)
