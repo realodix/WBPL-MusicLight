@@ -70,7 +70,7 @@
 				</li>
 				
 				<li>
-					<a href="#">Registration</a>
+					<a href="index.php?page=registration">Registration</a>
 				</li>
 							
 			</ul>	
