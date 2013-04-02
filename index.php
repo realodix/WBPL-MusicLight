@@ -50,7 +50,7 @@
 				</li>
 				
 				<li>
-					<a href="#">Product</a>
+					<a href="index.php?page=product">Product</a>
 				</li>
 				
 				<li>
@@ -177,7 +177,7 @@
 				include ($page);
 
 				} else {
-					include ('detail.php');
+					include ('home.php');
 				}?>
                 	
             </div>
