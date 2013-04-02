@@ -126,7 +126,7 @@ if(isset($_GET['kirim'])){
 				<input name="Email" type="Email" id="Email" size="40" />
 				</td>
 			</tr>
-			<?php?>
+			<?php ?>
 			<tr>
 				<td width="120">Kota</td>
 				<td width="350">
