@@ -10,7 +10,7 @@
 		</p>
 		<hr>
 		<br/>
-		<?php?>
+		<?php ?>
 		<table align='center'>
 			<tr style="background-color:#F79307">
 				<td>No</td><td>Kd buku</td><td>Judul</td><td>Pengarang</td>
