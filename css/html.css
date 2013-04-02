@@ -63,7 +63,7 @@ ul.arrow {
 }
 ul.arrow li {
 	padding-left: 25px;
-	background: url(../img/bg/li_bullet.gif) no-repeat;
+	background: url(../img/images/li_bullet.gif) no-repeat;
 	background-position: 8px 5px;
 }
 ol {
@@ -96,7 +96,7 @@ dl dt {
 	padding: 3px 0;
 	font-weight: bold;
 	color: #42210B;
-	background: url(../img/bg/dotted_line.gif) repeat-x 0 16px;
+	background: url(../images/bg/dotted_line.gif) repeat-x 0 16px;
 }
 dl dd {
 	float: left;
