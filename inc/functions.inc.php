@@ -67,7 +67,7 @@ function showCart() {
 		$qty = getQty();
 		
 	
-		$output[] = '<p>total		: <strong> Rp.' . $total . '</strong></p>';
+		$output[] = '<p>Sub Total: <strong> Rp.' . $total . '</strong></p>';
 	
 
 
