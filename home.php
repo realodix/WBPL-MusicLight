@@ -1,5 +1,4 @@
-<h3>Selamat datang di toko buku murah</h3>
+<h3>Selamat datang di Music Light</h3>
 <P>
-	disini anda bisa membeli dan memesan buku dengan mudah, anda tinggal klik, maka buku sampai di tempat anda.
-	tidak perlu lagi jauh jauh ke toko buku
+	Di sini Anda bisa membeli dan memesan peralatan musik dengan mudah. Anda tinggal klik, maka bisa mendapatkan yang Anda inginkan. Tidak perlu lagi jauh jauh ke toko musik.
 </p>

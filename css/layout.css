@@ -5,7 +5,7 @@
 
 #header {
 	margin-top: 25px;
-	background: #D1FFFE url(../img/bg/branch.jpg) repeat bottom right;
+	background: #D1FFFE url(../img/images/branch.jpg) repeat bottom right;
 }
 /**************************************************************
  #title: Red block with leaves, title and tagline
@@ -13,13 +13,13 @@
 
 #header #title {
 	color: #FFF;
-	background: #c02b0e url(../img/bg/title.gif) repeat-x top left;
+	background: #c02b0e url(../images/bg/title.gif) repeat-x top left;
 	border-bottom: 1px solid #9a2116;
 }
 #header #title h1 {
 	padding-top: 60px;
 	color: #FFF;
-	background: url(../img/bg/title_leaves.gif) no-repeat top right;
+	background: url(../images/bg/title_leaves.gif) no-repeat top right;
 }
 #header #title a {
 	color: #FFF5BD;
@@ -55,7 +55,7 @@
 }
 #header #menu li a:hover {
 	color: #FFF;
-	background: #40200A url(../img/bg/menu_arrow.gif) no-repeat center left;
+	background: #40200A url(../images/bg/menu_arrow.gif) no-repeat center left;
 }
 #header #menu li ul {
 	display: none;
@@ -63,14 +63,14 @@
 #header #menu li.here {
 	display: block;
 	padding: 5px 0 3px 0;
-	background: #401F09 url(../img/bg/menu_active.gif) repeat-x top left;
+	background: #401F09 url(../images/bg/menu_active.gif) repeat-x top left;
 	border-top: 6px solid #FFF;
 }
 #header #menu li.here a {
 	display: inline;
 	padding: 0 12px;
 	color: #FFF;
-	background: url(../img/bg/menu_arrow.gif) no-repeat center left;
+	background: url(../images/bg/menu_arrow.gif) no-repeat center left;
 	border: 0;
 }
 #header #menu li.here ul {
@@ -99,7 +99,7 @@
 #header #subMenu {
 	font-size: 0.8em;
 	color: #fff;
-	/*  background: #fff; url(../img/bg/subMenu.gif) repeat-x bottom left;*/
+	/*  background: #fff; url(../img/images/subMenu.gif) repeat-x bottom left;*/
 }
 #header #subMenu form {
 	margin: 0;
@@ -158,7 +158,7 @@
 #footer {
 	font-size: 0.85em;
 	color: #BF9A82;
-	background: #D65600; /*url(../img/bg/footer.gif) repeat-x top left;*/
+	background: #D65600; /*url(../images/bg/footer.gif) repeat-x top left;*/
 	/* Force all browsers to respect space underneath footer - margins are inconsistent */
 	border-top: 5px solid #FFF;
 	border-bottom: 5px solid #FFF;
@@ -193,7 +193,7 @@
 
 .post {
 	margin-bottom: 20px;
-	background: #FFFDCD; /*url(../img/bg/meta.gif) repeat-x bottom left;*/
+	background: #FFFDCD; /*url(../images/bg/meta.gif) repeat-x bottom left;*/
 }
 .post .meta {
 	border-top: 20px solid #FFF;
@@ -235,7 +235,7 @@ ul.bigLinks li a, ul.bigLinks li a:visited {
 	border: 0;
 }
 ul.bigLinks li a:hover {
- -background: #b7fffc url(../img/bg/meta.gif) repeat-x bottom left;
+ -background: #b7fffc url(../images/bg/meta.gif) repeat-x bottom left;
 	border: 0;
 }
 ul.bigLinks li a span.title {
