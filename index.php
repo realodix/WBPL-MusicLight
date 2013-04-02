@@ -45,23 +45,27 @@
         
         <div id="templatemo_menu">
            <ul  >
-						<li>
-							<a href="index.php?page=home">Home</a>
-						</li>
-						<li>
-							<a href="index.php?page=cart"> keranjang </a>
-						</li>
-					<li>
-							<a href="index.php?page=cara_pesan">Cara pesan</a>
-						</li>
-						<li>
-							<a href="index.php?page=profil">profil</a>
-						</li>
-						<li>
-							<a href="index.php?page=bayar_form_add"> Pembayaran</a>
-						</li>
+				<li>
+					<a href="index.php?page=home">Home</a>
+				</li>
+				
+				<li>
+					<a href="index.php?page=cart">Cart</a>
+				</li>
+				
+				<li>
+					<a href="index.php?page=cara_pesan">Cara pesan</a>
+				</li>
+				
+				<li>
+					<a href="index.php?page=profil">Profile</a>
+				</li>
+
+				<li>
+					<a href="index.php?page=bayar_form_add">Pembayaran</a>
+				</li>
 							
-					</ul>	
+			</ul>	
         </div> <!-- end of templatemo_menu -->
         
         <div id="templatemo_slider_wrapper">
