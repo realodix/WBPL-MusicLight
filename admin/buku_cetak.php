@@ -3,10 +3,10 @@
 		<link rel="stylesheet" type="text/css" media="screen" href="style2.css" />
 	</head>
 	<body>
-		<h2 align="center"> Laporan Daftar Buku </h2>
-		<h1 align="center"> Toko Buku murah </h1>
+		<h2 align="center"> List Product </h2>
+		<h1 align="center"> Music Light </h1>
 		<p align="center">
-			jl Lurus no 5 Yogyakarta
+			Jakarta Barat
 		</p>
 		<hr>
 		<br/>
