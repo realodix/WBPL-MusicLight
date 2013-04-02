@@ -1,13 +1,13 @@
-<?		// Include MySQL class
+<?	// Include MySQL class
 	session_start();
 	include('admin/inc/config.php');
-					require_once ('inc/mysql.class.php');
-					// Include database connection
-					require_once ('inc/global.inc.php');
-					// Include functions
-					require_once ('inc/functions.inc.php');
-					// Start the session
-				?>
+		require_once ('inc/mysql.class.php');
+		// Include database connection
+		require_once ('inc/global.inc.php');
+		// Include functions
+		require_once ('inc/functions.inc.php');
+		// Start the session
+?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -35,7 +35,7 @@
 			</div> <!-- end of site_title -->
 
 				<ul id="social_box">
-					<li><a href="http://www.facebook.com/templatemo"><img src="images/facebook.png" alt="facebook" /></a></li>
+					<li><a href="#"><img src="images/facebook.png" alt="facebook" /></a></li>
 					<li><a href="#"><img src="images/twitter.png" alt="twitter" /></a></li>
 					         
 				</ul>
@@ -75,32 +75,32 @@
                         $sql="select * from buku order by rand() limit 3";
                         $hasil=mysql_query($sql) or die(mysql_error());
 
-while($get_data=mysql_fetch_array($hasil)){
+						while($get_data=mysql_fetch_array($hasil)){
 	
 
 
                         ?>
                       
-                            <div class="cs_article">
-                            	<div class="slider_content_wrapper">
+                        <div class="cs_article">
+                            <div class="slider_content_wrapper">
 									
-									<div class="slider_image">
-										<img src="cover/<?=$get_data['cover']?>" width='150px' heigth='150px'>
-									</div>
-									
-									<div class="slider_content">
-                                        <h2><?=$get_data['judul']
-?></h2>	<?=$get_data['deskripsi'];?>
-                                   
-										<div class="btn_more"><a href="index.php?page=cart&action=add&id=<?=$get_data['kd_buku']?>">Add to cart</a></div>
-									</div>
-                                
+								<div class="slider_image">
+									<img src="cover/<?=$get_data['cover']?>" width='150px' heigth='150px'>
 								</div>
-                            </div><!-- End cs_article -->
+									
+								<div class="slider_content">
+                                    <h2><?=$get_data['judul']?></h2>
+										<?=$get_data['deskripsi'];?>
+                                   
+									<div class="btn_more"><a href="index.php?page=cart&action=add&id=<?=$get_data['kd_buku']?>">Add to cart</a></div>
+								</div>
+                                
+							</div>
+                        </div><!-- End cs_article -->
                             
-   <?
-}//end while
-?>
+						<?php
+						}//end while
+						?>
                             
             
                       
@@ -156,15 +156,15 @@ while($get_data=mysql_fetch_array($hasil)){
                 <div class="hr_divider"></div>
                 
                 <div class="col_w560">
-                		<?php
-/* kode untuk meload halaman yang berbeda*/
-if(isset($_GET['page'])) {
-	$page = $_GET['page'] . ".php";
-	include ($page);
+                	<?php
+					/* kode untuk meload halaman yang berbeda*/
+					if(isset($_GET['page'])) {
+					$page = $_GET['page'] . ".php";
+					include ($page);
 
-} else {
-	include ('detail.php');
-}?>
+					} else {
+					include ('detail.php');
+					}?>
                 	
                 </div>
                 
@@ -173,14 +173,14 @@ if(isset($_GET['page'])) {
             		<?php
             		include('kategori.php');
 					?>
-                  <h2>Alamat kami</h2>
-						<p>
-							Jl Lurus no 5 Yogyakarta
-							<br>
-							Telp (0274) 123456
-							<br>
-							Email:bukumurah@gmail.com
-						</p>
+					<h2>Alamat kami</h2>
+					<p>
+						Jl Lurus no 5 Yogyakarta
+						<br>
+						Telp (0274) 123456
+						<br>
+						Email:bukumurah@gmail.com
+					</p>
                 </div>
                 
                 <div class="cleaner"></div>
