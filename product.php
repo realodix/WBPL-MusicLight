@@ -31,26 +31,26 @@ while($get_data=mysql_fetch_array($hasil)){
 	
 
 ?>
-<h2><?=$get_data['judul']
+<h2><?php =$get_data['judul']
 ?></h2>
-<div class="image_wrapper image_fl"><img src="cover/<?=$get_data['cover']?>" width='150px' heigth='150px'></a>
+<div class="image_wrapper image_fl"><img src="cover/<?php =$get_data['cover']?>" width='150px' heigth='150px'></a>
 </div>
 <p>
-	<em>Penulis:.<?=$get_data['pengarang']
+	<em>Penulis:.<?php =$get_data['pengarang']
 	?></em>
 </p>
 <p>
-	<em>harga:.<?=$get_data['harga']
+	<em>harga:.<?php =$get_data['harga']
 	?></em>
 </p>
 <p>
-	<?=$get_data['deskripsi'];?>
+	<?php =$get_data['deskripsi'];?>
 </p>
 <div class="btn_more">
 	<a href="index.php?page=cart&action=add&id=<?=$get_data['kd_buku']?>">Add to cart</a>
 </div>
 <div style="clear: both"></div>
-<?
+<?php
 }
 
 //=============CUT HERE====================================
@@ -67,7 +67,7 @@ echo "<b>$i</b>|";
 }
 mysql_close();
 ?>
+
 <br>
-Jumlah data :<?=$jmldata;
-?>
+Jumlah Halaman :<?php =$jmldata; ?>
 
