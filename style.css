@@ -1,3 +1,5 @@
+
+
 body {
 	margin: 0px;
 	padding: 0px;
@@ -338,8 +340,8 @@ em { color: #fff; }
 }
 
 .col_w280 {
-	float: right;
-	/*width: 240px;*/
+	float: left;
+	width: 240px;
 	padding-right: 40px;
 }
 
