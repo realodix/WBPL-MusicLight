@@ -31,26 +31,24 @@ while($get_data=mysql_fetch_array($hasil)){
 	
 
 ?>
-<h2><?php =$get_data['judul']
+<h2><?=$get_data['judul']
 ?></h2>
-<div class="image_wrapper image_fl"><img src="cover/<?php =$get_data['cover']?>" width='150px' heigth='150px'></a>
+<div class="image_wrapper image_fl"><img src="cover/<?=$get_data['cover']?>" width='150px' heigth='150px'></a>
 </div>
 <p>
-	<em>Penulis:.<?php =$get_data['pengarang']
-	?></em>
+	<em>Penulis: <?php echo $get_data['pengarang'];	?></em>
 </p>
 <p>
-	<em>harga:.<?php =$get_data['harga']
-	?></em>
+	<em>Harga: <?php echo $get_data['harga']; ?></em>
 </p>
 <p>
-	<?php =$get_data['deskripsi'];?>
+	<?php echo $get_data['deskripsi']; ?>
 </p>
 <div class="btn_more">
-	<a href="index.php?page=cart&action=add&id=<?=$get_data['kd_buku']?>">Add to cart</a>
+	<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_buku']; ?>">Add to cart</a>
 </div>
 <div style="clear: both"></div>
-<?php
+<?
 }
 
 //=============CUT HERE====================================
@@ -69,5 +67,5 @@ mysql_close();
 ?>
 
 <br>
-Jumlah Halaman :<?php =$jmldata; ?>
+Jumlah Halaman :<?php echo $jmldata; ?>
 
