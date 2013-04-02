@@ -76,9 +76,9 @@
 			</ul>	
         </div> <!-- end of templatemo_menu -->
         
-        <div id="templatemo_slider_wrapper">
+    <div id="templatemo_slider_wrapper">
         
-        	<div id="templatemo_slider">
+		<div id="templatemo_slider">
             
 				<div id="one" class="contentslider">
                     <div class="cs_wrapper">
@@ -134,78 +134,76 @@
                     });
                     });
                 </script>
-                <script src="js/jquery.chili-2.2.js" type="text/javascript"></script>
-                <script src="js/chili/recipes.js" type="text/javascript"></script>
-                <div class="cleaner"></div>
+				
+            <script src="js/jquery.chili-2.2.js" type="text/javascript"></script>
+            <script src="js/chili/recipes.js" type="text/javascript"></script>
+            
+			<div class="cleaner"></div>
             	
-            </div>
-        
         </div>
         
-        <div id="templatemo_content_wrapper">
-			<div id="content">
-            	
-                <h2>Mengapa membeli product di sini adalah pilihan tepat</h2>
-                
-                <div class="reasons">
-                	<h3>Murah</h3>
-                    <img src="images/reason1.png" alt="Reason1" />
-                    <p>Product yang anda dapat mempunyai harga dibawah rata rata toko </p>
-                </div>
-                
-                <div class="reasons">
-                	<h3>Cepat</h3>
-                    <img src="images/reason2.png" alt="Reason2" />
-                    <p>Pemesanan cepat dan mudah </p>
-                </div>
-                
-                <div class="reasons">
-                	<h3>100% Satisfaction</h3>
-                    <img src="images/reason3.png" alt="Reason3" />
-                    <p> Anda tidak puas, uang kembali </p>
-                </div>
-                
-                <div class="hr_divider"></div>
-                
-                <div class="col_w560">
-                	<?php
-					/* kode untuk meload halaman yang berbeda*/
-					if(isset($_GET['page'])) {
-					$page = $_GET['page'] . ".php";
-					include ($page);
-
-					} else {
-					include ('detail.php');
-					}?>
-                	
-                </div>
-                
-                <div class="col_w280">
-                	<h3>Brand</h3>
-            		<?php
-            		include('kategori.php');
-					?>
-					<h2>Alamat kami</h2>
-					<p>
-						Jakarta
-					</p>
-                </div>
-                
-                <div class="cleaner"></div>
-                
-            </div>
-			
-            <div class="cleaner"></div>        
+    </div>
         
-		</div>
+    <div id="templatemo_content_wrapper">
+		<div id="content">
+            	
+            <h2>Mengapa membeli product di sini adalah pilihan tepat</h2>
+                
+            <div class="reasons">
+                <h3>Murah</h3>
+                <img src="images/reason1.png" alt="Reason1" />
+                <p>Product yang anda dapat mempunyai harga dibawah rata rata toko </p>
+            </div>
+                
+            <div class="reasons">
+                <h3>Cepat</h3>
+                <img src="images/reason2.png" alt="Reason2" />
+                <p>Pemesanan cepat dan mudah </p>
+            </div>
+                
+            <div class="reasons">
+				<h3>100% Satisfaction</h3>
+                <img src="images/reason3.png" alt="Reason3" />
+                <p> Anda tidak puas, uang kembali </p>
+            </div>
+                
+            <div class="hr_divider"></div>
+                
+            <div class="col_w560">
+                <?php
+				/* kode untuk meload halaman yang berbeda*/
+				if(isset($_GET['page'])) {
+				$page = $_GET['page'] . ".php";
+				include ($page);
+
+				} else {
+					include ('detail.php');
+				}?>
+                	
+            </div>
+                
+            <div class="col_w280">
+                <h3>Brand</h3>
+            	<?php
+            	include('kategori.php');
+				?>
+				<h2>Alamat kami</h2>
+				<p>Jakarta</p>
+            </div>
+                
+            <div class="cleaner"></div>
+                
+        </div>
+			
+        <div class="cleaner"></div>        
+        
+	</div>
 		
-		<div id="templatemo_content_wrapper_bottm"></div>
+	<div id="templatemo_content_wrapper_bottm"></div>
    
-		<div id="templatemo_footer">
-		
-             Copyright &copy 2013 <a href="#">Budi Hermawan</a>  
-			 
-       </div>
+	<div id="templatemo_footer">
+        Copyright &copy 2013 <a href="#">Budi Hermawan</a>  	 
+    </div>
         
 	</div> <!-- end of wrapper -->
 </div> <!-- end of wrapper_outer -->
