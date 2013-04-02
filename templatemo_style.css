@@ -340,8 +340,8 @@ em { color: #fff; }
 }
 
 .col_w280 {
-	float: left;
-	width: 240px;
+	float: right;
+	/*width: 240px;*/
 	padding-right: 40px;
 }
 
