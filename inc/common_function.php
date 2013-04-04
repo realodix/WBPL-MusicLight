@@ -335,6 +335,28 @@ function kode_instype() {
 	return $kode;
 }
 
+/*function kode_member() {
+	$kode_temp = fetch_row("SELECT kd_member FROM wbpl_member ORDER BY kd_instype DESC LIMIT 0,1");
+	if ($kode_temp == '')
+		$kode = "M0001";
+	else {
+		$jum = substr($kode_temp, 1, 4);
+		$jum++;
+		if ($jum <= 9)
+			$kode = "M000" . $jum;
+		elseif ($jum <= 99)
+			$kode = "M00" . $jum;
+		elseif ($jum <= 999)
+			$kode = "M0" . $jum;
+		elseif ($jum <= 9999)
+			$kode = "M" . $jum;
+	
+		else
+			die("Kode member melebihi batas");
+	}
+	return $kode;
+}*/
+
 
 function format_uang($duit, $space = false) {
 	$rp = ($space) ? "Rp. " : "Rp.";
