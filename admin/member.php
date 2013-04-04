@@ -42,8 +42,8 @@ $result=mysql_query($sql) or die(mysql_error());
 while($rows=mysql_fetch_array($result)){
 ?>
 	<tr>
-		<td><?php echo $rows['Kd_member'];?></td>
-		<td><?php echo $rows['member_name'];?></td>
+		<td><a href="index.php?page=profile&id=<?php echo $rows['Kd_member']?>"><?php echo $rows['Kd_member'];?></a></td>
+		<td><a href="index.php?page=profile&id=<?php echo $rows['Kd_member']?>"><?php echo $rows['member_name'];?></a></td>
 		
 		<td>
 			<a href="index.php?page=pengelola_form_edit&id=<?php echo $rows['Kd_member']?>"> <img src="image/b_edit.png"></a>
