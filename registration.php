@@ -35,8 +35,8 @@
 		<td></td>
 		<td></td>
 		<td>
-			<input type="radio" name="gender_user" id="gender_user_male">Male</input>
-			<input type="radio" name="gender_user" id="gender_female">Female</input>
+			<input type="radio" name="gender_user" id="gender_user_male" value="Male">Male</input>
+			<input type="radio" name="gender_user" id="gender_female" value="Female">Female</input>
 		</td>
 	</tr>
 	
