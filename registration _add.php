@@ -1,8 +1,10 @@
 <?php
 include ('admin/inc/config.php');
+require_once('inc/common_function.php');
 
 //data dari user
 if (isset($_POST['register_user'])) {
+	$Kd_member = kode_member();
 	$name_user = $_POST['name_user'];
 	$username_user = $_POST['username_user'];
 	$cpass_user = $_POST['cpass_user'];
@@ -11,15 +13,15 @@ if (isset($_POST['register_user'])) {
 	$phone_user = $_POST['phone_user'];
 	$email_user = $_POST['email_user'];
 
-
-	$sql = "INSERT INTO wbpl_member(member_name,
+	
+	$sql = "INSERT INTO wbpl_member(Kd_member,member_name,
 									member_username,
 									member_password,
 									member_gender,
 									member_address,
 									member_phone,
 									member_email)
-		VALUES('$name_user',
+		VALUES('$Kd_member','$name_user',
 				'$username_user',
 				'$cpass_user',
 				'$gender_user',

@@ -335,8 +335,8 @@ function kode_instype() {
 	return $kode;
 }
 
-/*function kode_member() {
-	$kode_temp = fetch_row("SELECT kd_member FROM wbpl_member ORDER BY kd_instype DESC LIMIT 0,1");
+function kode_member() {
+	$kode_temp = fetch_row("SELECT kd_member FROM wbpl_member ORDER BY kd_member DESC LIMIT 0,1");
 	if ($kode_temp == '')
 		$kode = "M0001";
 	else {
@@ -355,7 +355,7 @@ function kode_instype() {
 			die("Kode member melebihi batas");
 	}
 	return $kode;
-}*/
+}
 
 
 function format_uang($duit, $space = false) {
