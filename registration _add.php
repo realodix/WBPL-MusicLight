@@ -1,3 +1,3 @@
 <?php
-include ('inc/config.php');
+include ('admin/inc/config.php');
 ?>
