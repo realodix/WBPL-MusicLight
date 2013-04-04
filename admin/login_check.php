@@ -22,7 +22,7 @@ if (mysql_num_rows($userquery) == 1) {
 }
 
 if ($valid == false) {
-	header("Location:form_login.php?status=1");
+	header("Location:login.php?status=1");
 }
 ?>
 
