@@ -42,12 +42,12 @@ $result=mysql_query($sql) or die(mysql_error());
 while($rows=mysql_fetch_array($result)){
 ?>
 	<tr>
-		<td><?  echo $rows['Kd_member'];?></td>
-		<td><?  echo $rows['member_name'];?></td>
+		<td><?php echo $rows['Kd_member'];?></td>
+		<td><?php echo $rows['member_name'];?></td>
 		
 		<td>
-			<a href="index.php?page=pengelola_form_edit&id=<? echo $rows['Kd_member']?>"> <img src="image/b_edit.png"></a>
-			<a href="index.php?page=member&del=true&id=<? echo $rows['Kd_member']?>"  onclick="return askUser()";> <img src="image/b_drop.png"></a>
+			<a href="index.php?page=pengelola_form_edit&id=<?php echo $rows['Kd_member']?>"> <img src="image/b_edit.png"></a>
+			<a href="index.php?page=member&del=true&id=<?php echo $rows['Kd_member']?>"  onclick="return askUser()";> <img src="image/b_drop.png"></a>
 		</td>
 	</tr>
 	<?
