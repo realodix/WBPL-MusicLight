@@ -31,8 +31,7 @@ while($get_data=mysql_fetch_array($hasil)){
 	
 
 ?>
-<h2><?=$get_data['judul']
-?></h2>
+<h2><?php echo $get_data['judul']?></h2>
 <div class="image_wrapper image_fl"><img src="cover/<?=$get_data['cover']?>" width='150px' heigth='150px'></a>
 </div>
 <p>
