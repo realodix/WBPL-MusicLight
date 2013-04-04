@@ -64,5 +64,19 @@
 		<td></td>
 		<td><input type="submit" name="register_user" value="Register" /></td>
 	</tr>
+	
+	<tr>
+		<td align=right colspan='4'>
+			<?php
+			if (isset($_GET['status'])) {
+			if ($_GET['status'] == 0) {
+				echo "Registrasi berhasil";
+				} else {
+				echo "Registrasi gagal";
+				}
+			}
+	?>
+		</td>
+	</tr>
 </table>
 </form>
