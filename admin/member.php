@@ -4,12 +4,12 @@ include ('inc/config.php');
 
 ?>
 <h1> Tabel Member</h1>
-<form action='index.php?page=pengelola_view'method="post">
+<form action='index.php?page=member'method="post">
 	<input type='text' name='cari' value=''>
 	<input type='submit' name='btnCari' value='cari'>
 	
 </form>
-<a href='index.php?page=pengelola_view'>all data</a>
+<a href='index.php?page=member'>all data</a>
 <table  width="600px" border=0>
 	<tr style="background-color:#F79307">
 		<td width="200px">Username</td><td width="100px">Operation</td>
