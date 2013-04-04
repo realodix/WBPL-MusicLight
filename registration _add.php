@@ -13,6 +13,7 @@ if (isset($_POST['register_user'])) {
 	$phone_user = $_POST['phone_user'];
 	$email_user = $_POST['email_user'];
 
+	$cpass_user = md5($cpass_user);
 	
 	$sql = "INSERT INTO wbpl_member(Kd_member,member_name,
 									member_username,
