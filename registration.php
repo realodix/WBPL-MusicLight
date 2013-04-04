@@ -41,7 +41,7 @@
 		<td>Address</td>
 		<td></td>
 		<td></td>
-		<td><input type="text" name="address_user" id="address_user"></input></td>
+		<td><textarea name="address_user" id="address_user"></textarea></td>
 	</tr>
 	
 	<tr>
