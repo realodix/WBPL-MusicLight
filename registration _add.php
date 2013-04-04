@@ -1,6 +1,6 @@
 <h1>Registration</h2>
 
-<form id="registration" name="registration" method="post" action="registration _add.php">
+<form id="registration" name="registration" method="post" action="">
 <table>
 	<tr>
 		<td>Name</td>
