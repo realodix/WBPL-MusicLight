@@ -59,13 +59,6 @@
 	</tr>
 	
 	<tr>
-		<td>E-Mail</td>
-		<td></td>
-		<td></td>
-		<td><input type="text"></input></td>
-	</tr>
-	
-	<tr>
 		<td></td>
 		<td></td>
 		<td></td>
