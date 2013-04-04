@@ -17,7 +17,8 @@ include ('inc/config.php');
 <?php
 /*where kd_member='M0001' ditambahkan agar
 * data yang muncul tidak semuanya*/
-$sql="SELECT * FROM  wbpl_member where kd_member='M0001' ";
+$id = $_GET['id'];
+$sql="SELECT * FROM  wbpl_member where kd_member='$id' ";
 $result=mysql_query($sql) or die(mysql_error());
 while($rows=mysql_fetch_array($result)){
 ?>
