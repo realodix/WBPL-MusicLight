@@ -34,7 +34,7 @@
 		<td>Gender</td>
 		<td></td>
 		<td></td>
-		<td><input type="text"></input></td>
+		<td><input type="text" name="gender_user" id="gender_user"></input></td>
 	</tr>
 	
 	<tr>
