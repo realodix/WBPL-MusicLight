@@ -30,11 +30,8 @@ while($rows=mysql_fetch_array($result)){
 <tr>
 
 <td><?  echo $rows['no_det_pesan'];?></td>
-
 <td><?  echo $rows['no_pesan'];?></td>
-
 <td><?  echo $rows['kd_buku'];?></td>
-
 <td><?  echo $rows['total_pesan'];?></td>
 
 <td>

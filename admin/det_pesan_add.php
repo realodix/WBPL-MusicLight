@@ -7,8 +7,14 @@ if (isset($_POST['tambahLogin'])) {
 	$kd_buku = $_POST['kd_buku'];
 	$total_pesan = $_POST['total_pesan'];
 
-	$sql = "INSERT INTO det_pesan(no_det_pesan,no_pesan,kd_buku,total_pesan)
-		VALUES('$no_det_pesan', '$no_pesan', '$kd_buku','$total_pesan')";
+	$sql = "INSERT INTO det_pesan(no_det_pesan,
+									no_pesan,
+									kd_buku,
+									total_pesan)
+	VALUES('$no_det_pesan',
+			'$no_pesan',
+			'$kd_buku',
+			'$total_pesan')";
 	$result = mysql_query($sql) or die(mysql_error());
 
 	//check if query successful

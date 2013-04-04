@@ -9,8 +9,17 @@ if(isset($_POST['tambahLogin'])){
 	$No_telp=$_POST['No_telp'];
 	$Email=$_POST['Email'];
 	
-				$sql="INSERT INTO pemesan(kd_pemesan,Nama,Alamat,kd_pos,No_telp,Email)
-		VALUES('$kd_pemesan', '$Nama', '$Alamat','kd_pos','No_telp','Email')";
+		$sql="INSERT INTO pemesan(kd_pemesan,
+									Nama,Alamat,
+									kd_pos,
+									No_telp,
+									Email)
+		VALUES('$kd_pemesan', 
+				'$Nama', 
+				'$Alamat',
+				'kd_pos',
+				'No_telp',
+				'Email')";
 		$result=mysql_query($sql) or die(mysql_error());
 
 		//check if query successful 

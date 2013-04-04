@@ -10,8 +10,7 @@ $password = $_POST['password'];
 
 $password = md5($password);
 
-$sql= "select * from pengelola where username='$username'
-  and password='$password' ";
+$sql= "select * from pengelola where username='$username' and password='$password' ";
 
 $userquery = mysql_query($sql) or die(mysql_error());
 // 	$valid=false;

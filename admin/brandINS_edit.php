@@ -7,8 +7,8 @@ if (isset($_POST['submitUser'])) {
 
 
 	$sql = " update wbpl_instype set 
-	nama_instype='$nama_instype'
-	where kd_instype='$kd_instype'";
+				nama_instype='$nama_instype'
+			where kd_instype='$kd_instype'";
 
 	//echo $sql;
 	$result = mysql_query($sql) or die(mysql_error());

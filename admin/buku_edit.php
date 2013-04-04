@@ -8,7 +8,10 @@ if (isset($_POST['submitUser'])) {
 
 	//$kd_kategori=md5($kd_kategori);
 	//	$ukuran=md5($ukuran);
-	$sql = " update buku set kd_kategori='$kd_kategori' , ukuran='$ukuran' where kd_buku='$kd_buku'";
+	$sql = " update buku set 
+				kd_kategori='$kd_kategori' , 
+				ukuran='$ukuran' 
+			where kd_buku='$kd_buku'";
 
 	//echo $sql;
 	$result = mysql_query($sql) or die(mysql_error());

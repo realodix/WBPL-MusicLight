@@ -35,11 +35,8 @@ while($rows=mysql_fetch_array($result)){
 <tr>
 
 <td><?  echo $rows['no'];?></td>
-
 <td><?  echo $rows['tanggal'];?></td>
-
 <td><?  echo $rows['kd_pesan'];?></td>
-
 <td><?  echo $rows['total_bayar'];?></td>
 <td><?  echo $rows['status'];?></td>
 

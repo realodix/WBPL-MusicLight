@@ -31,7 +31,6 @@ while($rows=mysql_fetch_array($result)){
 <tr>
 
 <td><?  echo $rows['kd_pesan'];?></td>
-
 <td><?  echo $rows['tgl_pesan'];?></td>
 <td><?  echo $rows['total_bayar'];?></td>
 <td>

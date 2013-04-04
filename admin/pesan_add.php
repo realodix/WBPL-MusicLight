@@ -6,8 +6,12 @@ if (isset($_POST['tambahLogin'])) {
 	$kd_kategori = $_POST['kd_kategori'];
 	$kd_pemesan = $_POST['kd_pemesan'];
 
-	$sql = "INSERT INTO jenis_buku(no_pesan,tgl_pesan,kd_pemesan)
-		VALUES('$no_pesan', '$tgl_pesan', '$kd_pemesan')";
+	$sql = "INSERT INTO jenis_buku(no_pesan,
+									tgl_pesan,
+									kd_pemesan)
+		VALUES('$no_pesan',
+				'$tgl_pesan',
+				'$kd_pemesan')";
 	$result = mysql_query($sql) or die(mysql_error());
 
 	//check if query successful

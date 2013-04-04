@@ -20,8 +20,22 @@ $direktori = "../cover/$nama_file";
 
 if (move_uploaded_file($lokasi_file, $direktori)) {
 
-	$sql = "INSERT INTO buku(kd_buku,judul,pengarang,kd_penerbit,kd_kategori,harga,cover,deskripsi)
-		VALUES('$kd_buku','$judul','$pengarang','$kd_penerbit','$kd_kategori','$harga','$cover','$deskripsi')";
+	$sql = "INSERT INTO buku(kd_buku,
+							judul,
+							pengarang,
+							kd_penerbit,
+							kd_kategori,
+							harga,
+							cover,
+							deskripsi)
+		VALUES('$kd_buku',
+				'$judul',
+				'$pengarang',
+				'$kd_penerbit',
+				'$kd_kategori',
+				'$harga',
+				'$cover',
+				'$deskripsi')";
 	$result = mysql_query($sql) or die(mysql_error());
 
 	//check if query successful
