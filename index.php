@@ -6,7 +6,7 @@
 		require_once ('inc/global.inc.php');
 		// Include functions
 		require_once ('inc/functions.inc.php');
-		// Start the session
+		
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
