@@ -5,6 +5,10 @@ $session = array('username');
 //file konfigurasi
 include ('inc/config.php');
 
+
+/**
+* Validasi khusus untuk halaman login.
+*/
 $username = $_POST['username'];
 $password = $_POST['password'];
 
@@ -25,6 +29,9 @@ if ($valid == false) {
 	header("Location:login.php?status=1");
 }
 
+/**
+* Validasi khusus untuk halaman home.
+*/
 if (isset($_POST['Home_Submit_Login'])) {
 
 	$username = $_POST['username'];
