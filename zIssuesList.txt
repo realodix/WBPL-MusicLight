@@ -21,6 +21,7 @@
 #26 Merombak UI admin
 #20 Menempatkan file koneksi database ke dalam 1 folder
 #21 Update jQuery ke versi terbaru
+#35 Menyatukan file index.php & home.php
 
 ### Fixes Issues
 [closed] #12 Logout page (logout.php)
