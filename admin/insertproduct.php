@@ -1,5 +1,5 @@
 <form id="form1" name="form1" method="post" enctype="multipart/form-data"
- action="buku_add.php">
+ action="insertproduct_add.php">
 	<td>
 	<table>
 		<tr>
