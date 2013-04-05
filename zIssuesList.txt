@@ -30,3 +30,4 @@
 [closed] #27 Menyatukan halaman Brand & Instrument Type
 [closed] #19 Menambah huruf 'z' pada semua file di halaman admin
 [closed] #2 Registration page (registration.php)
+[closed] #28 Membuat 2 halaman home.
