@@ -50,7 +50,7 @@ if (isset($_POST['Home_Submit_Login'])) {
 	}
 
 	if ($valid == false) {
-		header("Location:index.php?status=1");
+		header("Location:../index.php?status=1");
 	}
 
 }
