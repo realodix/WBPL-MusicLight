@@ -99,7 +99,6 @@ require_once('../inc/common_function.php');
 
         <li> <h2>Setting</h2>
 		  <ul  class="arrow">
-			<li><a href="index.php?page=profile&id=M0001">Profile</a></li>
 			<li><a href="index.php?page=member">Member</a></li>
 		  </ul>
         </li>
