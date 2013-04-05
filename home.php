@@ -51,7 +51,7 @@
         <div id="templatemo_menu">
            <ul  >
 				<li>
-					<a href="home.php?page=home">Home</a>
+					<a href="./">Home</a>
 				</li>
 				
 				<li>
