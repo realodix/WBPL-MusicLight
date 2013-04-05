@@ -1,8 +1,6 @@
 
 <ul>
 	<?php
-	
-	
 	/**
 	* Boneka Kategori
 	*/
@@ -17,14 +15,14 @@
 	?>
 	
 	<li>
-	<a href="index.php?page=detail&id=<?=$get_data['kd_kategori']?>">
-		<? echo $get_data['nama_kategori'];
+	<a href="index.php?page=detail&id=<?php echo $get_data['kd_kategori']?>">
+		<?php echo $get_data['nama_kategori'];
 		echo "(".$get_data['jumlah'].")";
 		?>
-		<!--(<?=$get_data['jumlah']?>)-->
+		<!--(<?php echo $get_data['jumlah']?>)-->
 	</a>
 	</li>
-	<?
+	<?php
 	}
 	?>
 </ul>
@@ -45,13 +43,13 @@ while($get_data=mysql_fetch_array($hasil)){
 
 	?>
 	<li>
-	<a href="index.php?page=detail&p=<?=$get_data['kd_penerbit']
+	<a href="index.php?page=detail&p=<?php echo $get_data['kd_penerbit']
 		?>">
-		<? echo $get_data['nama']?>
-		(<?=$get_data['jumlah']?>)
+		<?php echo $get_data['nama']?>
+		(<?php echo $get_data['jumlah']?>)
 	</a>
 	</li>
-	<?
+	<?php
 	}
 	?>
 </ul>
