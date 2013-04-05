@@ -13,13 +13,13 @@
 			<td width="120">Kode</td>
 			<td width="150">
 			<input name="kd_brand" type="text" id="kd_brand" 
-			value=<?=kode_brand()?> size="10" />
+			value=<?=kode_brand()?> size="10" disabled/>
 			</td>
 		</tr>
 		<tr>
 			<td width="120">Brand</td>
 			<td width="150">
-			<input name="nama_brand" type="nama_brand" id="nama_brand" size="20" />
+			<input name="nama_brand" type="nama_brand" id="nama_brand" size="20"/>
 			</td>
 		</tr>
 	
@@ -133,7 +133,7 @@ while($rows=mysql_fetch_array($result)){
 			<td width="120">Kode</td>
 			<td width="150">
 			<input name="kd_instype" type="text" id="kd_instype" 
-			value=<?=kode_instype()?> size="10" />
+			value=<?=kode_instype()?> size="10" disabled/>
 			</td>
 		</tr>
 		<tr>
