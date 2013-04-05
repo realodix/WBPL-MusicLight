@@ -24,5 +24,28 @@ if (mysql_num_rows($userquery) == 1) {
 if ($valid == false) {
 	header("Location:login.php?status=1");
 }
+
+if (isset($_POST['Home_Submit_Login'])) {
+
+	$username = $_POST['username'];
+	$password = $_POST['password'];
+
+	$password = md5($password);
+
+	$sql= "select * from pengelola where username='$username' and password='$password' ";
+
+	$userquery = mysql_query($sql) or die(mysql_error());
+	// 	$valid=false;
+	if (mysql_num_rows($userquery) == 1) {
+		header('location:../home.php');
+		$valid = true;
+		$_SESSION['username'] = $username;
+	}
+
+	if ($valid == false) {
+		header("Location:index.php?status=1");
+	}
+
+}
 ?>
 
