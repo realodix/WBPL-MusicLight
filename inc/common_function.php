@@ -174,7 +174,7 @@ function selected($t1, $t2) {
 
 function combo_brand($kode) {
 	echo "<option value='' selected>- Pilih Brand-</option>";
-	$query = query("SELECT kd_brand, product_brand FROM wbpl_product ORDER BY product_brand ASC");
+	$query = query("SELECT kd_brand, nama_brand FROM wbpl_brand ORDER BY nama_brand ASC");
 	while ($row = mysql_fetch_row($query)) {
 		if ($kode == "")
 			echo "<option value='$row[0]'> " . ucwords($row[1]) . " </option>";
@@ -184,7 +184,7 @@ function combo_brand($kode) {
 }
 function combo_ins_type($kode) {
 	echo "<option value='' selected>- Pilih Instrument Type-</option>";
-	$query = query("SELECT kd_ins_type, product_ins_type FROM wbpl_product ORDER BY product_ins_type ASC");
+	$query = query("SELECT kd_instype, nama_instype FROM wbpl_instype ORDER BY nama_instype ASC");
 	while ($row = mysql_fetch_row($query)) {
 		if ($kode == "")
 			echo "<option value='$row[0]'> " . ucwords($row[1]) . " </option>";
