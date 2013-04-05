@@ -3,7 +3,7 @@
 	<td>
 	<table>
 		<tr>
-			<td width="120">Kode Product</td>
+			<td width="120">Product ID</td>
 			<td width="350">
 			<input name="kd_product" type="text" id="kd_product" size="10" 
 			value=<?=kode_product();?> />

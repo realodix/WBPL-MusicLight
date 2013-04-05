@@ -76,7 +76,7 @@ cetak</a></td></tr>
 
 <table   border=0>
 <tr style="background-color:#F79307">
-<td>Kode Product</td><td>Brand</td><td>Instrument Type</td><td>Price</td><td>Stock</td><td>Operasi</td></tr>
+<td>Product ID</td><td>Brand</td><td>Instrument Type</td><td>Price</td><td>Stock</td><td>Operasi</td></tr>
 
 <?php
 /*
