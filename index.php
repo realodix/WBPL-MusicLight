@@ -178,7 +178,52 @@
                 	
             </div>
                 
-            <div class="col_w280">
+        <div class="col_w280">
+			
+				<h1> Login page</h1>
+				<form id="form1" name="form1" method="post" action="admin/login_check.php">
+					<table  align="center">
+						<tr>
+							<td>Username</td>
+							<td><input name="username" type="text" id="username"  />
+								<div id="form1_username_errorloc" style="color:red"></div>
+							</td>
+						</tr>
+			
+						<tr>
+							<td>Password</td>
+							<td><input name="password" type="text" id="password"  />  <div id="form1_password_errorloc" style="color:red">
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="3" align="right">
+								<input type="submit" name="Home_Submit_Login" value="Submit" /> 
+								<input type="reset" name="" value="Reset" />
+							</td>
+						</tr>
+			
+						<tr>
+							<td colspan='2'>
+						<!--     <div id="form1_errorloc" style="color:green">
+								<?php
+								//if (isset($_GET['status'] == 0)) {
+								//echo "The username or password you entered is incorrect";
+								//}
+								if (isset($_GET['status'])) {
+									if ($_GET['status'] == 1) {
+									echo "The username or password you entered is incorrect";
+									}
+								}
+								?>
+								</div>-->
+			
+							</td>
+						</tr>
+					</table>
+				</form>
+			
+			
                 <h3>Brand</h3>
             	<?php
             	include('kategori.php');
