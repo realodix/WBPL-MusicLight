@@ -14,7 +14,7 @@ $password = $_POST['password'];
 
 $password = md5($password);
 
-$sql= "select * from pengelola where username='$username' and password='$password' ";
+$sql= "select * from wbpl_member where member_username='$username' and member_password='$password' ";
 
 $userquery = mysql_query($sql) or die(mysql_error());
 // 	$valid=false;
@@ -39,7 +39,7 @@ if (isset($_POST['Home_Submit_Login'])) {
 
 	$password = md5($password);
 
-	$sql= "select * from pengelola where username='$username' and password='$password' ";
+	$sql= "select * from wbpl_member where member_username='$username' and member_password='$password' ";
 
 	$userquery = mysql_query($sql) or die(mysql_error());
 	// 	$valid=false;
