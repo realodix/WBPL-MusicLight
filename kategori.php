@@ -15,12 +15,22 @@
 	?>
 	
 	<li>
-	<a href="index.php?page=detail&id=<?php echo $get_data['kd_kategori']?>">
-		<?php echo $get_data['nama_kategori'];
+		<a href="
+		<?php
+		if(isset($_SESSION['username'])){
+			echo 'home.php?page=detail&id=';
+		}else{
+			echo 'index.php?page=detail&id=';
+		}
+		echo $get_data['kd_kategori']
+		?>
+		">
+		<?php
+		echo $get_data['nama_kategori'];
 		echo "(".$get_data['jumlah'].")";
 		?>
 		<!--(<?php echo $get_data['jumlah']?>)-->
-	</a>
+		</a>
 	</li>
 	<?php
 	}
@@ -43,11 +53,21 @@ while($get_data=mysql_fetch_array($hasil)){
 
 	?>
 	<li>
-	<a href="index.php?page=detail&p=<?php echo $get_data['kd_penerbit']
-		?>">
-		<?php echo $get_data['nama']?>
-		(<?php echo $get_data['jumlah']?>)
-	</a>
+		<a href="
+		<?php
+		if(isset($_SESSION['username'])){
+			echo 'home.php?page=detail&p=';
+		}else{
+			echo 'index.php?page=detail&p=';
+		}
+		echo $get_data['kd_penerbit']
+		?>
+		">
+		<?php
+		echo $get_data['nama'];
+		echo "(".$get_data['jumlah'].")";
+		?>
+		</a>
 	</li>
 	<?php
 	}
