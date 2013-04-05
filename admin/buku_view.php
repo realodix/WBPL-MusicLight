@@ -134,7 +134,7 @@ if (isset($_GET['status'])) {
 }
 ?>
 </td>
-<td align=right><a href="index.php?page=buku_form_add">
+<td align=right><a href="index.php?page=insertproduct">
 <img src="image/add.jpg"> Tambah</a></td></tr>
 <td align=right><a href="buku_cetak.php" target='_blank'>
 cetak</a></td></tr>
