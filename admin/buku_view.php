@@ -76,7 +76,7 @@ cetak</a></td></tr>
 
 <table   border=0>
 <tr style="background-color:#F79307">
-<td>Kode Product</td><td>Brand</td><td>Instrument Type</td><td>Price</td><td>Operasi</td></tr>
+<td>Kode Product</td><td>Brand</td><td>Instrument Type</td><td>Price</td><td>Stock</td><td>Operasi</td></tr>
 
 <?php
 /*
@@ -110,6 +110,7 @@ while($rows=mysql_fetch_array($result)){
 
 <td><?  echo $rows['product_ins_type'];?></td>
 <td><?  echo $rows['product_price'];?></td>
+<td><?  echo $rows['product_stock'];?></td>
 <td>
 <!--<a href="index.php?page=buku_form_edit&id=<?// echo $rows['kd_buku']?>">
 <img src="image/b_edit.png"></a>-->
@@ -124,7 +125,7 @@ detail
 
 //tutup koneksi
 ?>
-<tr><td align=right colspan='4'>
+<tr><td align=right colspan='5'>
 <?php
 if (isset($_GET['status'])) {
 	if ($_GET['status'] == 0) {
