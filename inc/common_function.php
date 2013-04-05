@@ -172,6 +172,26 @@ function selected($t1, $t2) {
 		return "";
 }
 
+function combo_brand($kode) {
+	echo "<option value='' selected>- Pilih Brand-</option>";
+	$query = query("SELECT kd_brand, product_brand FROM wbpl_product ORDER BY product_brand ASC");
+	while ($row = mysql_fetch_row($query)) {
+		if ($kode == "")
+			echo "<option value='$row[0]'> " . ucwords($row[1]) . " </option>";
+		else
+			echo "<option value='$row[0]'" . selected($row[0], $kode) . "> " . ucwords($row[1]) . " </option>";
+	}
+}
+function combo_ins_type($kode) {
+	echo "<option value='' selected>- Pilih Instrument Type-</option>";
+	$query = query("SELECT kd_ins_type, product_ins_type FROM wbpl_product ORDER BY product_ins_type ASC");
+	while ($row = mysql_fetch_row($query)) {
+		if ($kode == "")
+			echo "<option value='$row[0]'> " . ucwords($row[1]) . " </option>";
+		else
+			echo "<option value='$row[0]'" . selected($row[0], $kode) . "> " . ucwords($row[1]) . " </option>";
+	}
+}
 function combo_kategori($kode) {
 	echo "<option value='' selected>- Pilih Kategori-</option>";
 	$query = query("SELECT kd_kategori, nama_kategori FROM kategori ORDER BY nama_kategori ASC");
@@ -296,6 +316,27 @@ function kode_buku() {
 	
 		else
 			die("Kode buku melebihi batas");
+	}
+	return $kode;
+}
+function kode_product() {
+	$kode_temp = fetch_row("SELECT kd_product FROM wbpl_product ORDER BY kd_product DESC LIMIT 0,1");
+	if ($kode_temp == '')
+		$kode = "P0001";
+	else {
+		$jum = substr($kode_temp, 1, 4);
+		$jum++;
+		if ($jum <= 9)
+			$kode = "P000" . $jum;
+		elseif ($jum <= 99)
+			$kode = "P00" . $jum;
+		elseif ($jum <= 999)
+			$kode = "P0" . $jum;
+		elseif ($jum <= 9999)
+			$kode = "P" . $jum;
+	
+		else
+			die("Kode product melebihi batas");
 	}
 	return $kode;
 }
