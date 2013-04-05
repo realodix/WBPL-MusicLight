@@ -7,6 +7,7 @@
 #9 Transaction page (transaction.php)
 #10 [admin]Detail page (detail.php)
 #11 Testimony page (testimony.php)
+#31 Menampilkan kategori sesuai data wbpl pada halaman home
 
 #15 Penyesuaian isi konten
 #14 Menghapus file yang tidak dibutuhkan
