@@ -1,6 +1,11 @@
 
 <ul>
 	<?php
+	
+	
+	/**
+	* Boneka Kategori
+	*/
 	include('admin/inc/config.php');
 	$kat="select kategori.nama_kategori, kategori.kd_kategori,
             count(buku.kd_buku) as jumlah 
@@ -26,6 +31,9 @@
 <h3> BonekaInstrument Type</h3>
 <ul>
 	<?php
+	/**
+	* Boneka Instrument Type
+	*/
 include('admin/inc/config.php');
 $kat="select penerbit.nama,penerbit.kd_penerbit,
                        count(buku.kd_buku) as jumlah 
