@@ -1,4 +1,3 @@
-#1 Home page (index.php)
 #3 Product page (product.php)
 #4 [admin]Insert product page (insertproduct.php)
 #5 [admin]Update product page (updateproduct.php)
@@ -31,3 +30,4 @@
 [closed] #19 Menambah huruf 'z' pada semua file di halaman admin
 [closed] #2 Registration page (registration.php)
 [closed] #28 Membuat 2 halaman home.
+[closed] #1 Home page (index.php)
