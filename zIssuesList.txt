@@ -7,7 +7,6 @@
 #9 Transaction page (transaction.php)
 #10 [admin]Detail page (detail.php)
 #11 Testimony page (testimony.php)
-#30 Admin Login, Home Masih Tidak Login
 
 #15 Penyesuaian isi konten
 #14 Menghapus file yang tidak dibutuhkan
@@ -32,3 +31,4 @@
 [closed] #28 Membuat 2 halaman home.
 [closed] #1 Home page (index.php)
 [closed] #29 Login: Menggunakan member dari wbpl_member.
+[closed] #30 Admin Login, Home Masih Tidak Login

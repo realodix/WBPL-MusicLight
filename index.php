@@ -1,5 +1,10 @@
 <?	// Include MySQL class
 	session_start();
+	
+	if(isset($_SESSION['username'])){
+		header("location:home.php");
+	}
+	
 	include('admin/inc/config.php');
 		require_once ('inc/mysql.class.php');
 		// Include database connection
