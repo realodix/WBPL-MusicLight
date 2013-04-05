@@ -10,7 +10,7 @@
 	<tr><td colspan="3" >
 	<table>
 		<tr>
-			<td width="120">Kode</td>
+			<td width="120">ID</td>
 			<td width="150">
 			<input name="kd_brand" type="text" id="kd_brand" 
 			value=<?=kode_brand()?> size="10" disabled/>
@@ -40,7 +40,7 @@
 
 
 <tr style="background-color:#F79307">
-	<td>Kode</td>
+	<td>ID</td>
 	<td>Brand</td>
 	<td>Operation</td>
 </tr>
@@ -101,17 +101,6 @@ while($rows=mysql_fetch_array($result)){
 	<td align=right><a href="index.php?page=brand_form_add">
 	<img src="image/add.jpg"> Add</a></td>
 
-	<td align=right colspan='4'>
-	<?php
-	if (isset($_GET['status'])) {
-		if ($_GET['status'] == 0) {
-		echo " Operasi data berhasil";
-		} else {
-		echo "operasi gagal";
-		}
-	}
-	?>
-	</td>
 </tr>
 
 </table>
@@ -130,7 +119,7 @@ while($rows=mysql_fetch_array($result)){
 	<tr><td colspan="3" >
 	<table>
 		<tr>
-			<td width="120">Kode</td>
+			<td width="120">ID</td>
 			<td width="150">
 			<input name="kd_instype" type="text" id="kd_instype" 
 			value=<?=kode_instype()?> size="10" disabled/>
@@ -160,7 +149,7 @@ while($rows=mysql_fetch_array($result)){
 
 
 <tr style="background-color:#F79307">
-	<td>Kode</td>
+	<td>ID</td>
 	<td>Instrument Type</td>
 	<td>Operation</td>
 </tr>
@@ -221,17 +210,6 @@ while($rows=mysql_fetch_array($result)){
 	<td align=right><a href="index.php?page=brand_form_add">
 	<img src="image/add.jpg"> Add</a></td>
 
-	<td align=right colspan='4'>
-	<?php
-	if (isset($_GET['status'])) {
-		if ($_GET['status'] == 0) {
-		echo " Operasi data berhasil";
-		} else {
-		echo "operasi gagal";
-		}
-	}
-	?>
-	</td>
 </tr>
 
 </table>
