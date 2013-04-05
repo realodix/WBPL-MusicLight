@@ -51,23 +51,23 @@
         <div id="templatemo_menu">
            <ul  >
 				<li>
-					<a href="index.php?page=home">Home</a>
+					<a href="home.php?page=home">Home</a>
 				</li>
 				
 				<li>
-					<a href="index.php?page=product">Product</a>
+					<a href="home.php?page=product">Product</a>
 				</li>
 				
 				<li>
-					<a href="index.php?page=cart">Cart</a>
+					<a href="home.php?page=cart">Cart</a>
 				</li>
 				
 				<li>
-					<a href="index.php?page=cara_pesan">Cara pesan</a>
+					<a href="home.php?page=cara_pesan">Cara pesan</a>
 				</li>
 
 				<li>
-					<a href="index.php?page=bayar_form_add">Pembayaran</a>
+					<a href="home.php?page=bayar_form_add">Pembayaran</a>
 				</li>
 							
 			</ul>	

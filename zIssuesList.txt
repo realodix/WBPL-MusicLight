@@ -9,7 +9,6 @@
 #11 Testimony page (testimony.php)
 #31 Menampilkan kategori sesuai data wbpl pada halaman home
 #33 URL Halaman harus dinamis
-#34 Kesalahan penulisan url pada halaman home
 
 #15 Penyesuaian isi konten
 #14 Menghapus file yang tidak dibutuhkan
@@ -36,3 +35,4 @@
 [closed] #29 Login: Menggunakan member dari wbpl_member.
 [closed] #30 Admin Login, Home Masih Tidak Login
 [closed] #32 URL Kategori harus dinamis
+[closed] #34 Kesalahan penulisan url pada halaman home
