@@ -179,7 +179,8 @@
             </div>
                 
         <div class="col_w280">
-			
+				<?php echo date("d-m-Y"); ?>
+				
 				<h1> Login page</h1>
 				<form id="form1" name="form1" method="post" action="admin/login_check.php">
 					<table  align="center">

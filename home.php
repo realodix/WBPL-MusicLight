@@ -180,6 +180,8 @@
             </div>
                 
             <div class="col_w280">
+				<?php echo date("d-m-Y"); ?>
+			
 				<form id="form1" name="form1" method="post" action="admin/logout.php">
 					<table  align="center">
 						<input type="submit" name="Home_Submit_Logout" value="Logout" />
