@@ -190,7 +190,7 @@
 				
 				</br>
 				
-                <h3>Brand</h3>
+                <h3>BonekaBrand</h3>
             	<?php
             	include('kategori.php');
 				?>

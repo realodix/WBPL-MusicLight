@@ -23,7 +23,7 @@
 	}
 	?>
 </ul>
-<h3> Instrument Type</h3>
+<h3> BonekaInstrument Type</h3>
 <ul>
 	<?php
 include('admin/inc/config.php');
