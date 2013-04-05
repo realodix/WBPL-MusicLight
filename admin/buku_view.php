@@ -105,9 +105,7 @@ while($rows=mysql_fetch_array($result)){
 <tr>
 
 <td><?  echo $rows['kd_product'];?></td>
-
 <td><?  echo $rows['product_brand'];?></td>
-
 <td><?  echo $rows['product_ins_type'];?></td>
 <td><?  echo $rows['product_price'];?></td>
 <td><?  echo $rows['product_stock'];?></td>
