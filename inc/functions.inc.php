@@ -81,6 +81,63 @@ function showCart() {
 	return join('', $output);
 }
 
+function wbpl_showCart() {
+	global $db;
+	$cart = $_SESSION['cart'];
+	if ($cart) {
+		$items = explode(',', $cart);
+		$contents = array();
+		foreach ($items as $item) {
+			$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
+		}
+		$output[] = '<form action="index.php?page=cart&action=update" method="post" id="cart">';
+		$output[] = '<table border=0 align="center">';
+		foreach ($contents as $id => $qty) {
+			$sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
+			$result = $db -> query($sql);
+			$row = $result -> fetch();
+			extract($row);
+			$output[] = '<tr>
+							<td>Product ID</td>
+							<td>'. $kd_product .'</td>
+						<tr>';
+			$output[] = '<tr>
+							<td>Brand</td>
+							<td>'. $product_brand .'</td>
+						<tr>';
+			$output[] = '<tr>
+							<td>Instrument Type</td>
+							<td>'. $product_ins_type .'</td>
+						<tr>';
+			$output[] = '<tr>';
+			$output[] = '<td>Price</td>';
+			$output[] = '<td>Rp.' . $product_price . '</td>';
+			$output[] = '<td><input type="text" name="qty' . $id . '" value="' . $qty . '" size="3" maxlength="3" /></td>';
+
+			$output[] = '<td>Rp.' . ($product_price * $qty) . '</td>';
+			$total = $product_price * $qty;
+
+			$output[] = '<td><a href="index.php?page=cart&action=delete&id=' . $id . '" class="r">Hapus</a></td>';
+			$output[] = '</tr>';
+		}
+		$output[] = '</table>';
+		$qty = getQty();
+		
+	
+		$output[] = '<p>Sub Total: <strong> Rp.' . $total . '</strong></p>';
+	
+
+
+		//session_register('totalbayar');
+		$_SESSION['totalbayar'] = $total;
+		$output[] = '<div><button type="submit">Update cart</button></div>';
+		$output[] = '</form>';
+	} else {
+		$output[] = '<p>Keranjang belanja masih kosong.</p>';
+	}
+	return join('', $output);
+}
+
 function insertToDB($kode_pesan) {
 	global $db;
 	$total_bayar=$_SESSION['totalbayar'];

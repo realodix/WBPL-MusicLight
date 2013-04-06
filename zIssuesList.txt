@@ -3,7 +3,6 @@
 #5 [admin]Update product page (updateproduct.php)
 #6 [admin]Profile page (profile.php)
 #7 [admin]Member page (member.php)
-#8 Cart page (cart.php)
 #9 Transaction page (transaction.php)
 #10 [admin]Detail page (detail.php)
 #11 Testimony page (testimony.php)
@@ -40,3 +39,4 @@
 [closed] #31 Menampilkan kategori sesuai data wbpl pada halaman home
 [closed] #37 Sidebar: Berisi tentang informasi sesuai soal.
 [closed] #35 Menyatukan file index.php & home.php
+[closed] #8 Cart page (cart.php)

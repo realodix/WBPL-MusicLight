@@ -80,7 +80,8 @@ $_SESSION['cart'] = $cart;
 <div id="contents">
 	<h3>Cek keranjang belanja</h3>
 	<?php
-	echo showCart();
+	//echo showCart();
+	echo wbpl_showCart();
 	?>
 
 	<h3>Form Pengiriman barang</h3>
