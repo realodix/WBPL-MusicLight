@@ -11,7 +11,6 @@
 
 #15 Penyesuaian isi konten
 #14 Menghapus file yang tidak dibutuhkan
-#17 Issues List Update
 
 #13 Mengimplementasikan Bootstrap
 #22 Merubah class pada tombol menyesuaikan Bootstrap
@@ -38,3 +37,4 @@
 [closed] #32 URL Kategori harus dinamis
 [closed] #34 Kesalahan penulisan url pada halaman home
 [closed] #33 URL Halaman harus dinamis
+[closed] #17 Issues List Update
