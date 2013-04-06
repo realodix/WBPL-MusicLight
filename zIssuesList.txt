@@ -22,6 +22,7 @@
 #20 Menempatkan file koneksi database ke dalam 1 folder
 #21 Update jQuery ke versi terbaru
 #35 Menyatukan file index.php & home.php
+#36 Session time out in PHP
 
 ### Fixes Issues
 [closed] #12 Logout page (logout.php)
