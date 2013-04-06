@@ -41,7 +41,7 @@ while($get_data=mysql_fetch_array($hasil)){
 	<em>Brand: <?php echo $get_data['product_brand']?></em><br>
 	<em>Instrument Type: <?php echo $get_data['product_ins_type']?></em><br>
 	<em>Price: Rp. <?php echo $get_data['product_price']?></em><br>
-	<em>Stock: Rp. <?php echo $get_data['product_stock']?></em>
+	<em>Stock: <?php echo $get_data['product_stock']?></em>
 </p>
 <p>
 	<?php echo $get_data['product_deskripsi'];?>
