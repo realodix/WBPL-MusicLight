@@ -64,7 +64,7 @@
 			
 			<tr>
 				<td colspan='2'>
-       <!--     <div id="form1_errorloc" style="color:green">
+				<div id="form1_errorloc" style="color:green">
 				<?php
 				//if (isset($_GET['status'] == 0)) {
 				//echo "The username or password you entered is incorrect";
@@ -75,7 +75,7 @@
 						}
 					}
 					?>
-				</div>-->
+				</div>
 			
 				</td>
 			</tr>
