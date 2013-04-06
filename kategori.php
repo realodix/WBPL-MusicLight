@@ -48,22 +48,34 @@
 	}
 	?>
 </ul>
-<h3> BonekaInstrument Type</h3>
+<h3>Instrument Type</h3>
 <ul>
 	<?php
 	/**
-	* Boneka Instrument Type
+	* Instrument Type
 	*/
-include('admin/inc/config.php');
-$kat="select penerbit.nama,penerbit.kd_penerbit,
+	include('admin/inc/config.php');
+	$kat="select wbpl_instype.nama_instype,wbpl_instype.kd_instype,
+            count(wbpl_product.kd_product) as jumlah 
+            from wbpl_instype, wbpl_product 
+            where wbpl_product.kd_instype=wbpl_instype.kd_instype 
+            group by wbpl_instype.nama_instype";
+	$hasil=mysql_query($kat) or die(mysql_error());
+	while($get_data=mysql_fetch_array($hasil)){
+	
+	/**
+	* Boneka Instrument Type
+	
+	include('admin/inc/config.php');
+	$kat="select penerbit.nama,penerbit.kd_penerbit,
                        count(buku.kd_buku) as jumlah 
                        from penerbit, buku 
                        where buku.kd_penerbit=penerbit.kd_penerbit 
                        group by penerbit.nama";
-$hasil=mysql_query($kat) or die(mysql_error());
-while($get_data=mysql_fetch_array($hasil)){
-
+	$hasil=mysql_query($kat) or die(mysql_error());
+	while($get_data=mysql_fetch_array($hasil)){*/
 	?>
+	
 	<li>
 		<a href="
 		<?php
@@ -72,11 +84,11 @@ while($get_data=mysql_fetch_array($hasil)){
 		}else{
 			echo 'index.php?page=detail&p=';
 		}
-		echo $get_data['kd_penerbit']
+		echo $get_data['kd_instype']
 		?>
 		">
 		<?php
-		echo $get_data['nama'];
+		echo $get_data['nama_instype'];
 		echo "(".$get_data['jumlah'].")";
 		?>
 		</a>

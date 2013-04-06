@@ -7,7 +7,6 @@
 #9 Transaction page (transaction.php)
 #10 [admin]Detail page (detail.php)
 #11 Testimony page (testimony.php)
-#31 Menampilkan kategori sesuai data wbpl pada halaman home
 
 #15 Penyesuaian isi konten
 #14 Menghapus file yang tidak dibutuhkan
@@ -38,3 +37,4 @@
 [closed] #34 Kesalahan penulisan url pada halaman home
 [closed] #33 URL Halaman harus dinamis
 [closed] #17 Issues List Update
+[closed] #31 Menampilkan kategori sesuai data wbpl pada halaman home
