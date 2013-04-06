@@ -14,15 +14,15 @@ if(empty($halaman)){
 }
 $sql=null;
 if(isset($_GET['id'])){
-	$kd_kategori=$_GET['id'];
-	$sql="select * from buku where kd_kategori='$kd_kategori' 
+	$kd_brand=$_GET['id'];
+	$sql="select * from wbpl_product where kd_brand='$kd_brand' 
 	limit $posisi,$batas";
 }else if(isset($_GET['p'])){
-	$kd_penerbit=$_GET['p'];
-	$sql="select * from buku where kd_penerbit='$kd_penerbit' 
+	$kd_instype=$_GET['p'];
+	$sql="select * from wbpl_product where kd_instype='$kd_instype' 
 	limit $posisi,$batas ";
 }else{
-	$sql="select * from buku  limit $posisi,$batas";
+	$sql="select * from wbpl_product  limit $posisi,$batas";
 }
 
 include('admin/inc/config.php');
@@ -33,30 +33,28 @@ while($get_data=mysql_fetch_array($hasil)){
 	
 
 ?>
-<h2><?php echo $get_data['judul']
-?></h2>
-<div class="image_wrapper image_fl"><img src="cover/<?php echo $get_data['cover']?>" width='150px' heigth='150px'></a>
+
+<div class="image_wrapper image_fl"><img src="cover/<?php echo $get_data['product_image']?>" width='150px' heigth='150px'></a>
 </div>
 <p>
-	<em>Penulis:.<?php echo $get_data['pengarang']
-	?></em>
+	<em>Product ID: <?php echo $get_data['kd_product']?></em><br>
+	<em>Brand: <?php echo $get_data['product_brand']?></em><br>
+	<em>Instrument Type: <?php echo $get_data['product_ins_type']?></em><br>
+	<em>Price: Rp. <?php echo $get_data['product_price']?></em><br>
+	<em>Stock: Rp. <?php echo $get_data['product_stock']?></em>
 </p>
 <p>
-	<em>harga:.<?php echo $get_data['harga']
-	?></em>
-</p>
-<p>
-	<?php echo $get_data['deskripsi'];?>
+	<?php echo $get_data['product_deskripsi'];?>
 </p>
 <div class="btn_more">
-	<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_buku']?>">Add to cart</a>
+	<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>">Add to cart</a>
 </div>
 <div style="clear: both"></div>
 <?php
 }
 
 //=============CUT HERE====================================
-$tampil2=mysql_query("select * from buku");
+$tampil2=mysql_query("select * from wbpl_product");
 $jmldata=mysql_num_rows($tampil2);
 $jumlah_halaman=ceil($jmldata/$batas);
 

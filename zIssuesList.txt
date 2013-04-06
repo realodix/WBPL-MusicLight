@@ -38,3 +38,4 @@
 [closed] #33 URL Halaman harus dinamis
 [closed] #17 Issues List Update
 [closed] #31 Menampilkan kategori sesuai data wbpl pada halaman home
+[closed] #37 Sidebar: Berisi tentang informasi sesuai soal.
