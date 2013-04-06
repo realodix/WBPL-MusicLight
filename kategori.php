@@ -27,16 +27,7 @@
 	?>
 	
 	<li>
-		<a href="
-		<?php
-		if(isset($_SESSION['username'])){
-			echo 'home.php?page=detail&id=';
-		}else{
-			echo 'index.php?page=detail&id=';
-		}
-		echo $get_data['kd_brand']
-		?>
-		">
+		<a href="index.php?page=detail&id=<?php echo $get_data['kd_brand']?>">
 		<?php
 		echo $get_data['nama_brand'];
 		echo "(".$get_data['jumlah'].")";
