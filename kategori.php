@@ -2,8 +2,20 @@
 <ul>
 	<?php
 	/**
-	* Boneka Kategori
+	* Kategori Brand
 	*/
+	include('admin/inc/config.php');
+	$kat="select wbpl_brand.nama_brand, wbpl_brand.kd_brand,
+            count(wbpl_product.kd_product) as jumlah 
+          from wbpl_brand, wbpl_product 
+          where wbpl_product.kd_brand=wbpl_brand.kd_brand 
+          group by wbpl_brand.nama_brand";
+	$hasil=mysql_query($kat) or die(mysql_error());
+	while($get_data=mysql_fetch_array($hasil)){
+
+	/**
+	* Boneka Kategori
+	*
 	include('admin/inc/config.php');
 	$kat="select kategori.nama_kategori, kategori.kd_kategori,
             count(buku.kd_buku) as jumlah 
@@ -11,7 +23,7 @@
           where buku.kd_kategori=kategori.kd_kategori 
           group by kategori.nama_kategori";
 	$hasil=mysql_query($kat) or die(mysql_error());
-	while($get_data=mysql_fetch_array($hasil)){
+	while($get_data=mysql_fetch_array($hasil)){*/
 	?>
 	
 	<li>
@@ -22,11 +34,11 @@
 		}else{
 			echo 'index.php?page=detail&id=';
 		}
-		echo $get_data['kd_kategori']
+		echo $get_data['kd_brand']
 		?>
 		">
 		<?php
-		echo $get_data['nama_kategori'];
+		echo $get_data['nama_brand'];
 		echo "(".$get_data['jumlah'].")";
 		?>
 		<!--(<?php echo $get_data['jumlah']?>)-->
