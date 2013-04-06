@@ -44,7 +44,7 @@ if (isset($_POST['Home_Submit_Login'])) {
 	$userquery = mysql_query($sql) or die(mysql_error());
 	// 	$valid=false;
 	if (mysql_num_rows($userquery) == 1) {
-		header('location:../home.php');
+		header('location:../index.php');
 		$valid = true;
 		$_SESSION['username'] = $username;
 	}

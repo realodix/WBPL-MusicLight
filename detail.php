@@ -69,11 +69,7 @@ $jumlah_halaman=ceil($jmldata/$batas);
 echo "Halaman :";
 for($i=1;$i<=$jumlah_halaman;$i++)
 if ($i!=$halaman){
-	if(isset($_SESSION['username'])){
-		echo "<a href=home.php?page=detail&halaman=$i>$i</a>|";
-	}else{
-		echo "<a href=index.php?page=detail&halaman=$i>$i</a>|";
-	}
+	echo "<a href=index.php?page=detail&halaman=$i>$i</a>|";
 }else{
 	echo "<b>$i</b>|";
 }

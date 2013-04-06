@@ -77,16 +77,7 @@
 	?>
 	
 	<li>
-		<a href="
-		<?php
-		if(isset($_SESSION['username'])){
-			echo 'home.php?page=detail&p=';
-		}else{
-			echo 'index.php?page=detail&p=';
-		}
-		echo $get_data['kd_instype']
-		?>
-		">
+		<a href="index.php?page=detail&p=<?php echo $get_data['kd_instype']	?>">
 		<?php
 		echo $get_data['nama_instype'];
 		echo "(".$get_data['jumlah'].")";
