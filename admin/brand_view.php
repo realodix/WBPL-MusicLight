@@ -13,7 +13,7 @@
 			<td width="120">ID</td>
 			<td width="150">
 			<input name="kd_brand" type="text" id="kd_brand" 
-			value=<?=kode_brand()?> size="10" disabled/>
+			value=<?=kode_brand()?> size="10"/>
 			</td>
 		</tr>
 		<tr>
@@ -122,7 +122,7 @@ while($rows=mysql_fetch_array($result)){
 			<td width="120">ID</td>
 			<td width="150">
 			<input name="kd_instype" type="text" id="kd_instype" 
-			value=<?=kode_instype()?> size="10" disabled/>
+			value=<?=kode_instype()?> size="10"/>
 			</td>
 		</tr>
 		<tr>
