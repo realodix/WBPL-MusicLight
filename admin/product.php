@@ -22,7 +22,9 @@ $cari=$_POST['cari'];
 //ambil data dari table admin
 $sql="SELECT * FROM  wbpl_product where wbpl_product like '%$cari%'";
 }else{
-$sql="SELECT * FROM  wbpl_product";
+$sql="select * from wbpl_product, wbpl_brand, wbpl_instype
+          where wbpl_product.kd_brand = wbpl_brand.kd_brand AND
+				wbpl_product.kd_instype = wbpl_instype.kd_instype";
 }
 
 $result=mysql_query($sql) or die(mysql_error());
@@ -31,19 +33,17 @@ $result=mysql_query($sql) or die(mysql_error());
 while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
-
-<td><?  echo $rows['kd_product'];?></td>
-<td><?  echo $rows['product_brand'];?></td>
-<td><?  echo $rows['product_ins_type'];?></td>
-<td><?  echo $rows['product_price'];?></td>
-<td><?  echo $rows['product_stock'];?></td>
-<td>
-<!--<a href="index.php?page=buku_form_edit&id=<?// echo $rows['kd_buku']?>">
-<img src="image/b_edit.png"></a>-->
-<a href="index.php?page=product&del=true&id=<? echo $rows['kd_product']?>"  onclick="return askUser()";>
-<img src="image/b_drop.png"></a>|
-detail
-</td>
+	<td><?  echo $rows['kd_product'];?></td>
+	<td><?  echo $rows['nama_brand'];?></td>
+	<td><?  echo $rows['nama_instype'];?></td>
+	<td><?  echo $rows['product_price'];?></td>
+	<td><?  echo $rows['product_stock'];?></td>
+	<td>
+		<!--<a href="index.php?page=buku_form_edit&id=<?// echo $rows['kd_buku']?>">
+		<img src="image/b_edit.png"></a>-->
+		<a href="index.php?page=product&del=true&id=<? echo $rows['kd_product']?>"  onclick="return askUser()";>
+		<img src="image/b_drop.png"></a>|detail
+	</td>
 </tr>
 
 <?
