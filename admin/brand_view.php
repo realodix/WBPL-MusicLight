@@ -89,11 +89,11 @@ while($rows=mysql_fetch_array($result)){
 	<td align=right colspan='2'>
 	<?php
 	if (isset($_GET['status'])) {
-	if ($_GET['status'] == 0) {
-		echo " Operasi data berhasil";
-	} else {
-		echo "operasi gagal";
-	}
+		if ($_GET['status'] == 0) {
+			echo " Operasi data berhasil";
+		} else if ($_GET['status'] == 1) {
+			echo "operasi gagal";
+		}
 	}
 	?>
 	</td>
@@ -198,11 +198,11 @@ while($rows=mysql_fetch_array($result)){
 	<td align=right colspan='2'>
 	<?php
 	if (isset($_GET['status'])) {
-	if ($_GET['status'] == 0) {
-		echo " Operasi data berhasil";
-	} else {
-		echo "operasi gagal";
-	}
+		if ($_GET['status'] == 2) {
+			echo " Operasi data berhasil";
+		} else if ($_GET['status'] == 3) {
+			echo "operasi gagal";
+		}
 	}
 	?>
 	</td>

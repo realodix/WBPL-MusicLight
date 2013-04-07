@@ -32,9 +32,9 @@ if (isset($_POST['tambahLoginIT'])) {
 
 	//check if query successful
 	if ($result) {
-		header('location:index.php?page=brand_view&status=0');
+		header('location:index.php?page=brand_view&status=2');
 	} else {
-		header('location:index.php?page=brand_view&status=1');
+		header('location:index.php?page=brand_view&status=3');
 	}
 	mysql_close();
 }
