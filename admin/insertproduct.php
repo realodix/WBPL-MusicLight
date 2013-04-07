@@ -24,7 +24,7 @@
 			<td width="120">Instrument Type</td>
 			<td width="350">
 				<select
-				 name='kd_ins_type'><?=combo_ins_type()?></select>
+				 name='kd_instype'><?=combo_ins_type()?></select>
 			
 			</td>
 		</tr>
@@ -32,14 +32,14 @@
 		<tr>
 			<td width="120">Price</td>
 			<td width="350">
-			<input name="harga" type="text" id="harga" size="10" style="width:164px;"/>
+			<input name="product_price" type="text" id="harga" size="10" style="width:164px;"/>
 			</td>
 		</tr>
 		
 		<tr>
 			<td width="120">Image</td>
 			<td width="350">
-			<input name="cover" type="file" id="cover" size="40" />
+			<input name="product_image" type="file" id="cover" size="40" />
 			</td>
 		</tr>
 		<tr>
