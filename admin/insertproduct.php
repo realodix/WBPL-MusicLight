@@ -45,7 +45,7 @@
 		<tr>
 			<td width="120">Deskription</td>
 			<td width="350">
-			<textarea name='deskripsi' cols='60' rows='10'></textarea>
+			<textarea name='product_deskripsi' cols='60' rows='10'></textarea>
 			</td>
 		</tr>
 	
