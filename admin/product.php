@@ -11,8 +11,8 @@
 * kode untuk menghapus data
 */
 if(isset($_GET['del'])){
-$wbpl_product=$_GET['id'];
-$hapus ="delete from wbpl_product where wbpl_product='$wbpl_product'";
+$kd_product=$_GET['id'];
+$hapus ="delete from wbpl_product where kd_product='$kd_product'";
 mysql_query($hapus) or die(mysql_error());
 
 }
