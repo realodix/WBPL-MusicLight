@@ -6,14 +6,14 @@
 			<td width="120">Product ID</td>
 			<td width="350">
 			<input name="kd_product" type="text" id="kd_product" size="10" 
-			value=<?=kode_product();?> disabled/>
+			value=<?=kode_product();?> style="width:164px;"/>
 			</td>
 		</tr>
 		
 		<tr>
 			<td width="120">Brand</td>
 			<td width="350">
-				<select name='kd_brand'>
+				<select name='kd_brand' style="width:164px;">
 						<?=combo_brand();?>
 				</select>
 		
@@ -32,7 +32,7 @@
 		<tr>
 			<td width="120">Price</td>
 			<td width="350">
-			<input name="harga" type="text" id="harga" size="10" />
+			<input name="harga" type="text" id="harga" size="10" style="width:164px;"/>
 			</td>
 		</tr>
 		
@@ -43,7 +43,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="120">deskripsi</td>
+			<td width="120">Deskription</td>
 			<td width="350">
 			<textarea name='deskripsi' cols='60' rows='10'></textarea>
 			</td>
@@ -53,7 +53,7 @@
 			<td>&nbsp;</td>
 
 			<td>
-			<input type="submit" name="tambah" value="Tambah" />
+			<input type="submit" name="tambah" value="Insert" />
 			<input type="reset" name="resetbtn" value="Reset" />
 			</td>
 		</tr>
