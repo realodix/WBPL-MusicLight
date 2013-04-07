@@ -185,7 +185,11 @@
             </div>
                 
         <div class="col_w280">
-				<?php echo date("d-m-Y"); ?>
+				<?php
+				if(isset($_SESSION['username'])){
+				echo sprintf('Selamat Datang %s <br>', $_SESSION['username']);
+				}
+				echo date("d-m-Y"); ?>
 				
 				<?php
 				if(!isset($_SESSION['username'])){
