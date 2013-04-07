@@ -37,6 +37,13 @@
 		</tr>
 		
 		<tr>
+			<td width="120">Stock</td>
+			<td width="350">
+			<input name="product_stock" type="text" id="product_stock" size="10" style="width:164px;"/>
+			</td>
+		</tr>
+		
+		<tr>
 			<td width="120">Image</td>
 			<td width="350">
 			<input name="product_image" type="file" id="cover" size="40" />

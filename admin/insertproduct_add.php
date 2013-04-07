@@ -6,6 +6,7 @@ if (isset($_POST['tambah'])) {
 	$kd_brand = $_POST['kd_brand'];
 	$kd_instype = $_POST['kd_instype'];
 	$product_price = $_POST['product_price'];
+	$product_stock = $_POST['product_stock'];
 	$product_deskripsi = $_POST['product_deskripsi'];
 
 	$lokasi_file = $_FILES['product_image']['tmp_name'];
@@ -19,12 +20,14 @@ if (move_uploaded_file($lokasi_file, $direktori)) {
 							kd_brand,
 							kd_instype,
 							product_price,
+							product_stock,
 							product_image,
 							product_deskripsi)
 		VALUES('$kd_product',
 				'$kd_brand',
 				'$kd_instype',
 				'$product_price',
+				'$product_stock',
 				'$product_image',
 				'$product_deskripsi')";
 	$result = mysql_query($sql) or die(mysql_error());
