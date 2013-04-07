@@ -8,7 +8,7 @@
 	$kat="select wbpl_brand.nama_brand, wbpl_brand.kd_brand,
             count(wbpl_product.kd_product) as jumlah 
           from wbpl_brand, wbpl_product 
-          where wbpl_product.kd_brand=wbpl_brand.kd_brand 
+          where wbpl_product.kd_brand = wbpl_brand.kd_brand 
           group by wbpl_brand.nama_brand";
 	$hasil=mysql_query($kat) or die(mysql_error());
 	while($get_data=mysql_fetch_array($hasil)){
