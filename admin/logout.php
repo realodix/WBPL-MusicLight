@@ -10,7 +10,9 @@ header("location:login.php");
 /**
 * Logout ke halaman home.
 */
-if (isset($_POST['Home_Submit_Logout'])) {
-	header("location:../index.php");
+if (isset($_GET['logout'])) {
+	if ($_GET['logout'] == 1) {
+		header("location:../index.php");
+	}
 }
 ?>

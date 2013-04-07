@@ -191,11 +191,9 @@
 				if(!isset($_SESSION['username'])){
 					include('index _login.php');
 				}else{?>
-					<form id="form1" name="form1" method="post" action="admin/logout.php">
-						<table  align="center">
-							<input type="submit" name="Home_Submit_Logout" value="Logout" />
-						</table>
-					</form>
+					
+					<a href="admin/logout.php?logout=1" name="Home_Submit_Logout">Logout</a>				
+					
 				<?php }	?>
 			
                 <h3>Brand</h3>
