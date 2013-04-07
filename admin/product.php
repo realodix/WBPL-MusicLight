@@ -40,7 +40,7 @@ while($rows=mysql_fetch_array($result)){
 <td>
 <!--<a href="index.php?page=buku_form_edit&id=<?// echo $rows['kd_buku']?>">
 <img src="image/b_edit.png"></a>-->
-<a href="index.php?page=buku_view&del=true&id=<? echo $rows['kd_product']?>"  onclick="return askUser()";>
+<a href="index.php?page=product&del=true&id=<? echo $rows['kd_product']?>"  onclick="return askUser()";>
 <img src="image/b_drop.png"></a>|
 detail
 </td>
