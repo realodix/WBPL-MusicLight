@@ -198,8 +198,7 @@
 					
 					<a href="admin/logout.php?logout=1" name="Home_Submit_Logout">Logout</a> </br>
 					<a href="./admin">Go to Admin page</a> </br></br>
-					
-					
+				
 				<?php }	?>
 			
                 <h3>Brand</h3>
