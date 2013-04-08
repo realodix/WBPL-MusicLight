@@ -22,8 +22,8 @@ if(isset($_GET['id'])){
 				wbpl_product.kd_instype = wbpl_instype.kd_instype
 		limit $posisi,$batas";*/
 }else if(isset($_GET['p'])){
-	$kd_instype=$_GET['p'];
-	$sql="select * from wbpl_product where kd_instype='$kd_instype' 
+	$product_ins_type=$_GET['p'];
+	$sql="select * from wbpl_product where product_ins_type='$product_ins_type' 
 	limit $posisi,$batas ";
 }else{
 	$sql="select * from wbpl_product  limit $posisi,$batas";
@@ -66,7 +66,14 @@ while($get_data=mysql_fetch_array($hasil)){
 }
 
 //=============CUT HERE====================================
-$tampil2=mysql_query("select * from wbpl_product where product_brand='$product_brand'");
+if(isset($_GET['id'])){
+	$product_brand=$_GET['id'];
+	$tampil2=mysql_query("select * from wbpl_product where product_brand='$product_brand'");
+}else if(isset($_GET['p'])){
+	$product_ins_type=$_GET['p'];
+	$tampil2=mysql_query("select * from wbpl_product where product_ins_type='$product_ins_type'");
+}
+
 $jmldata=mysql_num_rows($tampil2);
 $jumlah_halaman=ceil($jmldata/$batas);
 
