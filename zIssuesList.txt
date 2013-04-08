@@ -41,3 +41,4 @@
 [closed] #35 Menyatukan file index.php & home.php
 [closed] #8 Cart page (cart.php)
 [closed] #38 [admin] Product page
+[closed] #39 Merubah Struktur Database Untuk Menampilkan Table Produk

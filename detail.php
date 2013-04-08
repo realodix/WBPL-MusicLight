@@ -14,13 +14,13 @@ if(empty($halaman)){
 }
 $sql=null;
 if(isset($_GET['id'])){
-	$kd_brand=$_GET['id'];
-	//$sql="select * from wbpl_product where kd_brand='$kd_brand' 
-	//limit $posisi,$batas";
-	$sql="select * from wbpl_product, wbpl_brand, wbpl_instype
+	$product_brand=$_GET['id'];
+	$sql="select * from wbpl_product where product_brand='$product_brand' 
+	limit $posisi,$batas";
+	/*$sql="select * from wbpl_product, wbpl_brand, wbpl_instype
           where wbpl_product.kd_brand = wbpl_brand.kd_brand AND
 				wbpl_product.kd_instype = wbpl_instype.kd_instype
-		limit $posisi,$batas";
+		limit $posisi,$batas";*/
 }else if(isset($_GET['p'])){
 	$kd_instype=$_GET['p'];
 	$sql="select * from wbpl_product where kd_instype='$kd_instype' 
@@ -42,8 +42,8 @@ while($get_data=mysql_fetch_array($hasil)){
 </div>
 <p>
 	<em>Product ID: <?php echo $get_data['kd_product']?></em><br>
-	<em>Brand: <?php echo $get_data['nama_brand']?></em><br>
-	<em>Instrument Type: <?php echo $get_data['nama_instype']?></em><br>
+	<em>Brand: <?php echo $get_data['product_brand']?></em><br>
+	<em>Instrument Type: <?php echo $get_data['product_ins_type']?></em><br>
 	<em>Price: Rp. <?php echo $get_data['product_price']?></em><br>
 	<em>Stock: <?php
 				$product_stock = $get_data['product_stock'];

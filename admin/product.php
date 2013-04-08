@@ -23,8 +23,8 @@ $cari=$_POST['cari'];
 $sql="SELECT * FROM  wbpl_product where wbpl_product like '%$cari%'";
 }else{
 $sql="select * from wbpl_product, wbpl_brand, wbpl_instype
-          where wbpl_product.kd_brand = wbpl_brand.kd_brand AND
-				wbpl_product.kd_instype = wbpl_instype.kd_instype";
+          where wbpl_product.product_brand = wbpl_brand.nama_brand AND
+				wbpl_product.product_ins_type = wbpl_instype.nama_instype";
 }
 
 $result=mysql_query($sql) or die(mysql_error());

@@ -174,22 +174,22 @@ function selected($t1, $t2) {
 
 function combo_brand($kode) {
 	echo "<option value='' selected>- Pilih Brand-</option>";
-	$query = query("SELECT kd_brand, nama_brand FROM wbpl_brand ORDER BY nama_brand ASC");
+	$query = query("SELECT nama_brand FROM wbpl_brand ORDER BY nama_brand ASC");
 	while ($row = mysql_fetch_row($query)) {
 		if ($kode == "")
-			echo "<option value='$row[0]'> " . ucwords($row[1]) . " </option>";
+			echo "<option value='$row[0]'> " . ucwords($row[0]) . " </option>";
 		else
-			echo "<option value='$row[0]'" . selected($row[0], $kode) . "> " . ucwords($row[1]) . " </option>";
+			echo "<option value='$row[0]'" . selected($row[0], $kode) . "> " . ucwords($row[0]) . " </option>";
 	}
 }
 function combo_ins_type($kode) {
 	echo "<option value='' selected>- Pilih Instrument Type-</option>";
-	$query = query("SELECT kd_instype, nama_instype FROM wbpl_instype ORDER BY nama_instype ASC");
+	$query = query("SELECT nama_instype FROM wbpl_instype ORDER BY nama_instype ASC");
 	while ($row = mysql_fetch_row($query)) {
 		if ($kode == "")
-			echo "<option value='$row[0]'> " . ucwords($row[1]) . " </option>";
+			echo "<option value='$row[0]'> " . ucwords($row[0]) . " </option>";
 		else
-			echo "<option value='$row[0]'" . selected($row[0], $kode) . "> " . ucwords($row[1]) . " </option>";
+			echo "<option value='$row[0]'" . selected($row[0], $kode) . "> " . ucwords($row[0]) . " </option>";
 	}
 }
 function combo_kategori($kode) {
