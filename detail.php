@@ -66,7 +66,7 @@ while($get_data=mysql_fetch_array($hasil)){
 }
 
 //=============CUT HERE====================================
-$tampil2=mysql_query("select * from wbpl_product");
+$tampil2=mysql_query("select * from wbpl_product where product_brand='$product_brand'");
 $jmldata=mysql_num_rows($tampil2);
 $jumlah_halaman=ceil($jmldata/$batas);
 
