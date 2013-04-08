@@ -7,7 +7,6 @@
 #10 [admin]Detail page (detail.php)
 #11 Testimony page (testimony.php)
 
-#15 Penyesuaian isi konten
 #14 Menghapus file yang tidak dibutuhkan
 
 #13 Mengimplementasikan Bootstrap
@@ -43,3 +42,4 @@
 [closed] #38 [admin] Product page
 [closed] #39 Merubah Struktur Database Untuk Menampilkan Table Produk
 [closed] #40 Limit Halaman Di Kategori Tidak Berfungsi
+[closed] #15 Penyesuaian isi konten
