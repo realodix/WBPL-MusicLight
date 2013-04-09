@@ -12,11 +12,11 @@ $biaya = $biaya['biaya'];
 $totalBayar = $_SESSION['totalbayar'];
 ?>
 
-<h3> Selamat,Transaksi sukses di lakukan</h2>
-<h3> Kode Pesan :<?php echo $kd_pesan;?></h2>
-<h3>Total Harga :<?php echo $totalBayar;?></h2>
-<h3> Biaya kirim :<?php echo $biaya;?></h2>
-<h3>Total Transfer:<?php echo ($totalBayar+$biaya); ?></h2>
+<h3>Selamat,Transaksi sukses di lakukan</h2>
+<h3>Kode Pesan : <?php echo $kd_pesan;?></h2>
+<h3>Total Harga : Rp. <?php echo $totalBayar;?></h2>
+<h3>Biaya kirim : Rp. <?php echo $biaya;?></h2>
+<h3>Total Transfer: Rp. <?php echo ($totalBayar+$biaya); ?></h2>
 <p>
 	Silahkan transfer uangnya yaa... ^_^
 </p>
