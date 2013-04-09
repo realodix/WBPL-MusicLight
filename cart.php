@@ -92,11 +92,6 @@ if(isset($_GET['kirim'])){
 	<form id="form1" name="form1" method="post" action="pemesan_add.php">
 		<td>
 		<table>
-			<!--<tr>
-			<td width="120">kd_pemesan</td>
-
-			<td width="350"><input name="kd_pemesan" type="text" id="kd_pemesan" size="40" /></td>
-			</tr>-->
 			<tr>
 				<td width="120">Nama</td>
 				<td width="350">
