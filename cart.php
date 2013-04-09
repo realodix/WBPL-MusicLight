@@ -110,19 +110,19 @@ if(isset($_GET['kirim'])){
 				</td>
 			</tr>
 			<tr>
-				<td width="120">kd_pos</td>
+				<td width="120">Kode Pos</td>
 				<td width="350">
 				<input name="kd_pos" type="kd_pos" id="kd_pos" size="40" />
 				</td>
 			</tr>
 			<tr>
-				<td width="120">No_telp</td>
+				<td width="120">No. Telepon</td>
 				<td width="350">
 				<input name="No_telp" type="No_telp" id="No_telp" size="40" />
 				</td>
 			</tr>
 			<tr>
-				<td width="120">Email</td>
+				<td width="120">E-Mail</td>
 				<td width="350">
 				<input name="Email" type="Email" id="Email" size="40" />
 				</td>
@@ -147,8 +147,8 @@ while ($rows=mysql_fetch_array($get_kota)){
 				<td>&nbsp;</td>
 			
 				<td>
-				<input type="submit" name="tambah" value="Tambah" />
-				<input type="reset" name="resetbtn" value="Reset" />
+				<input type="submit" name="tambah" value="Tambah" class="btn" />
+				<input type="reset" name="resetbtn" value="Reset" class="btn" />
 				</td>
 			</tr>
 			<tr>
