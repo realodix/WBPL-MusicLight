@@ -119,6 +119,7 @@ function wbpl_showCart() {
 
 			$output[] = '<td><a href="index.php?page=cart&action=delete&id=' . $id . '" class="r">Hapus</a></td>';
 			$output[] = '</tr>';
+			$output[] = '<tr><td><br></td></tr>';
 		}
 		$output[] = '</table>';
 		$qty = getQty();
