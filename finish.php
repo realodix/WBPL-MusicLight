@@ -1,4 +1,4 @@
-<?
+<?php
 
 //$id_kota = $_SESSION['id_kota'];
 $id_kota = isset($_SESSION['id_kota'])?$_SESSION['id_kota']:false;
@@ -9,8 +9,7 @@ $kd_pesan = isset($_SESSION['kd_pesan'])?$_SESSION['kd_pesan']:false;
 $get_data = mysql_query("select biaya from biaya_kirim where id_kota='$id_kota'") or die(mysql_error());
 $biaya = mysql_fetch_array($get_data);
 $biaya = $biaya['biaya'];
-//$totalBayar = $_SESSION['totalbayar'];
-$totalBayar = isset($_SESSION['totalBayar'])?$_SESSION['totalBayar']:false;
+$totalBayar = $_SESSION['totalbayar'];
 ?>
 
 <h3> Selamat,Transaksi sukses di lakukan</h2>
