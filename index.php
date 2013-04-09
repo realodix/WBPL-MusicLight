@@ -86,27 +86,25 @@
                     <div class="cs_wrapper">
                         <div class="cs_slider">
                         <?php
-                        $sql="select * from buku order by rand() limit 3";
+                        $sql="select * from wbpl_product order by rand() limit 3";
                         $hasil=mysql_query($sql) or die(mysql_error());
 
 						while($get_data=mysql_fetch_array($hasil)){
-	
-
-
                         ?>
                       
                         <div class="cs_article">
                             <div class="slider_content_wrapper">
 									
 								<div class="slider_image">
-									<img src="cover/<?=$get_data['cover']?>" width='150px' heigth='150px'>
+									<img src="cover/<?php echo $get_data['product_image']?>" width='150px' heigth='150px'>
 								</div>
 									
 								<div class="slider_content">
-                                    <h2><?=$get_data['judul']?></h2>
-										<?=$get_data['deskripsi'];?>
+                                    <h2><?php echo $get_data['product_brand']?></h2>
+									<p>Price: Rp. <?php echo $get_data['product_price'];?></p>
+									<p>aa<?php echo $get_data['product_deskripsi'];?></p>
                                    
-									<div class="btn_more"><a href="index.php?page=cart&action=add&id=<?=$get_data['kd_buku']?>">Add to cart</a></div>
+									<div class="btn_more"><a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>">Add to cart</a></div>
 								</div>
                                 
 							</div>
