@@ -17,7 +17,7 @@
 
 		<tr>
 			<td colspan="3" align="right">
-				<input class="btn" type="submit" name="Home_Submit_Login" value="Submit" /> 
+				<input class="btn" type="submit" name="Home_Submit_Login" value="Log In" /> 
 				<input class="btn btn-primary" type="submit" name="Home_Submit_Regiter" value="Regiter"/>
 			</td>
 		</tr>
