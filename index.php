@@ -125,7 +125,7 @@
 				<input type="checkbox"> Remember me
 			</label>
 			
-			<input type="submit" class="btn" name="Home_Submit_Regiter" value="Sign in"/>
+			<input type="submit" class="btn" name="Home_Submit_Login" value="Sign in"/>
 			or
 			<input class="btn btn-primary" type="submit" name="Home_Submit_Regiter" value="Regiter"/>
 		</form>
