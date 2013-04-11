@@ -1,17 +1,16 @@
 <form id="form1" name="form1" method="post" action="admin/login_check.php">
 	<table  align="center">
 		<tr>
+			<h2>Login</h2>
 			<td colspan='2'>
-				Username<br>
-				<input name="username" type="text" id="username"  />
+				<input name="username" type="text" id="username" placeholder="Username" />
 				<div id="form1_username_errorloc" style="color:red"></div>
 			</td>
 		</tr>
 			
 		<tr>
 			<td colspan='2'>
-				Password<br>
-				<input name="password" type="text" id="password"  />
+				<input name="password" type="password" id="password" placeholder="Password"/>
 				<div id="form1_password_errorloc" style="color:red">
 			</td>
 		</tr>
