@@ -136,15 +136,7 @@
 				<li>
 					<a href="index.php?page=bayar_form_add">Pembayaran</a>
 				</li>
-				
-				<?php
-				if(!isset($_SESSION['username'])){
-				echo
-				'<li>
-					<a href="index.php?page=registration">Registration</a>
-				</li>';
-				}
-				?>
+
               </ul>
             </div>
           </div>
