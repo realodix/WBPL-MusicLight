@@ -65,7 +65,7 @@
 		<td></td>
 		<td></td>
 		<td></td>
-		<td><input type="submit" name="register_user" value="Register" /></td>
+		<td><input class="btn btn-primary" type="submit" name="register_user" value="Register" /></td>
 	</tr>
 	
 	<tr>
