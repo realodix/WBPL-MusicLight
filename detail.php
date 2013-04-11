@@ -15,7 +15,7 @@ if(empty($halaman)){
 $sql=null;
 if(isset($_GET['id'])){
 	$product_brand=$_GET['id'];
-	$sql="select * from wbpl_product where product_brand='$product_brand' 
+	$sql="select * from wbpl_product where nama_brand='$product_brand' 
 	limit $posisi,$batas";
 	/*$sql="select * from wbpl_product, wbpl_brand, wbpl_instype
           where wbpl_product.kd_brand = wbpl_brand.kd_brand AND
@@ -23,7 +23,7 @@ if(isset($_GET['id'])){
 		limit $posisi,$batas";*/
 }else if(isset($_GET['p'])){
 	$product_ins_type=$_GET['p'];
-	$sql="select * from wbpl_product where product_ins_type='$product_ins_type' 
+	$sql="select * from wbpl_product where nama_instype='$product_ins_type' 
 	limit $posisi,$batas ";
 }else{
 	$sql="select * from wbpl_product  limit $posisi,$batas";
@@ -38,25 +38,25 @@ while($get_data=mysql_fetch_array($hasil)){
 
 ?>
 
-<div class="image_wrapper image_fl"><img src="cover/<?php echo $get_data['product_image']?>" width='150px' heigth='150px'></a>
+<div class="image_wrapper image_fl"><img class="img-polaroid" src="cover/<?php echo $get_data['image']?>" width='150px' heigth='150px'></a>
 </div>
 <p>
 	<em>Product ID: <?php echo $get_data['kd_product']?></em><br>
-	<em>Brand: <?php echo $get_data['product_brand']?></em><br>
-	<em>Instrument Type: <?php echo $get_data['product_ins_type']?></em><br>
-	<em>Price: Rp. <?php echo $get_data['product_price']?></em><br>
+	<em>Brand: <?php echo $get_data['nama_brand']?></em><br>
+	<em>Instrument Type: <?php echo $get_data['nama_instype']?></em><br>
+	<em>Price: Rp. <?php echo $get_data['price']?></em><br>
 	<em>Stock: <?php
-				$product_stock = $get_data['product_stock'];
+				$product_stock = $get_data['stock'];
 				if ($product_stock == 0 ){
 					echo 'Stock Not Avaible';
 				}else{
-					echo $get_data['product_stock'];
+					echo $get_data['stock'];
 				}
 				?>
 	</em>
 </p>
 <p>
-	<?php echo $get_data['product_deskripsi'];?>
+	<?php echo $get_data['deskripsi'];?>
 </p>
 <div class="btn_more">
 	<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>">Add to cart</a>
@@ -68,10 +68,10 @@ while($get_data=mysql_fetch_array($hasil)){
 //=============CUT HERE====================================
 if(isset($_GET['id'])){
 	$product_brand=$_GET['id'];
-	$tampil2=mysql_query("select * from wbpl_product where product_brand='$product_brand'");
+	$tampil2=mysql_query("select * from wbpl_product where nama_brand='$product_brand'");
 }else if(isset($_GET['p'])){
 	$product_ins_type=$_GET['p'];
-	$tampil2=mysql_query("select * from wbpl_product where product_ins_type='$product_ins_type'");
+	$tampil2=mysql_query("select * from wbpl_product where nama_instype='$product_ins_type'");
 }
 
 $jmldata=mysql_num_rows($tampil2);

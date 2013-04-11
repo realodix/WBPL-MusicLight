@@ -1,8 +1,9 @@
-<?
+<?php
 // Include MySQL class
 require_once ('inc/mysql.class.php');
 // Include database connection
-require_once ('inc/global.inc.php');
+//require_once ('inc/global.inc.php');
+require_once ('admin/inc/config.php');
 // Include functions
 require_once ('inc/functions.inc.php');
 // Start the session
@@ -93,47 +94,47 @@ if(isset($_GET['kirim'])){
 		<td>
 		<table>
 			<tr>
-				<td width="120">Nama</td>
+				<td width="120"><b>Nama</b></td>
 				<td width="350">
-				<input name="Nama" type="Nama" id="Nama" size="40" />
+				<input name="Nama" type="text" id="Nama" size="40" />
 				</td>
 			</tr>
 			<tr>
-				<td width="120">Alamat</td>
+				<td width="120"><b>Alamat</b></td>
 				<td width="350">
-				<input name="Alamat" type="Alamat" id="Alamat" size="40" />
+				<input name="Alamat" type="text" id="Alamat" size="40" />
 				</td>
 			</tr>
 			<tr>
-				<td width="120">Kode Pos</td>
+				<td width="120"><b>Kode Pos</b></td>
 				<td width="350">
-				<input name="kd_pos" type="kd_pos" id="kd_pos" size="40" />
+				<input name="kd_pos" type="text" id="kd_pos" size="40" />
 				</td>
 			</tr>
 			<tr>
-				<td width="120">No. Telepon</td>
+				<td width="120"><b>No. Telepon</b></td>
 				<td width="350">
-				<input name="No_telp" type="No_telp" id="No_telp" size="40" />
+				<input name="No_telp" type="text" id="No_telp" size="40" />
 				</td>
 			</tr>
 			<tr>
-				<td width="120">E-Mail</td>
+				<td width="120"><b>E-Mail</b></td>
 				<td width="350">
 				<input name="Email" type="Email" id="Email" size="40" />
 				</td>
 			</tr>
 			<?php ?>
 			<tr>
-				<td width="120">Kota</td>
+				<td width="120"><b>Kota</b></td>
 				<td width="350">
 				<select name='id_kota' id='id_kota'>
-					<?
+					<?php
 $get_kota=mysql_query('select * from biaya_kirim order by nama_kota');
 while ($rows=mysql_fetch_array($get_kota)){
 					?>
-					<option value="<?=$rows['id_kota']?>"><?=$rows['nama_kota']
+					<option value="<?php echo $rows['id_kota']?>"><?php echo $rows['nama_kota']
 						?></option>
-					<?
+					<?php
 					}//end while
 					?>
 				</select></td>
@@ -171,7 +172,7 @@ while ($rows=mysql_fetch_array($get_kota)){
 		frmvalidator.addValidation("email", "maxlen=50", "maksimal panjang email 50 karakter");
 
 	</script>
-	<?
+	<?php
 }
 	?>
 </div>

@@ -18,8 +18,8 @@
 
 		<tr>
 			<td colspan="3" align="right">
-				<input type="submit" name="Home_Submit_Login" value="Submit" /> 
-				<input type="reset" name="" value="Reset" />
+				<input class="btn" type="submit" name="Home_Submit_Login" value="Submit" /> 
+				<input class="btn" type="reset" name="" value="Reset" />
 			</td>
 		</tr>
 			

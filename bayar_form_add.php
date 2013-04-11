@@ -1,23 +1,24 @@
+<br>
 <form id="form1" name="form1" method="post" action="bayar_add.php">
 	<td>
 	<table>
 	
 		<tr>
-			<td width="120">tanggal</td>
+			<td width="120">Tanggal</td>
 			
 			<td width="350">
 			<input name="tanggal" type="text" id="tanggal" size="40" />
 			</td>
 		</tr>
 		<tr>
-			<td width="120">kd_pesan</td>
+			<td width="120">Kode Pesan</td>
 			
 			<td width="350">
 			<input name="kd_pesan" type="text" id="kd_pesan" size="40" />
 			</td>
 		</tr>
 		<tr>
-			<td width="120">total_bayar</td>
+			<td width="120">Total Bayar</td>
 			
 			<td width="350">
 			<input name="total_bayar" type="text" id="total_bayar" size="40" />
@@ -27,8 +28,8 @@
 			<td>&nbsp;</td>
 		
 			<td>
-			<input type="submit" name="tambah" value="Tambah" />
-			<input type="reset" name="resetbtn" value="Reset" />
+			<input class="btn" type="submit" name="tambah" value="Tambah" />
+			<input class="btn" type="reset" name="resetbtn" value="Reset" />
 			</td>
 		</tr>
 		<tr>

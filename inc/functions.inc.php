@@ -91,35 +91,36 @@ function wbpl_showCart() {
 			$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
 		}
 		$output[] = '<form action="index.php?page=cart&action=update" method="post" id="cart">';
-		$output[] = '<table border=0 align="center">';
+		$output[] = '<table border=0 align="center" class="table table-bordered">';
 		foreach ($contents as $id => $qty) {
 			$sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
 			$result = $db -> query($sql);
 			$row = $result -> fetch();
 			extract($row);
-			$output[] = '<tr>
+			$output[] = '<tr">
 							<td>Product ID</td>
-							<td>'. $kd_product .'</td>
+							<td colspan="4">'. $kd_product .'</td>
 						<tr>';
 			$output[] = '<tr>
 							<td>Brand</td>
-							<td>'. $product_brand .'</td>
+							<td colspan="4">'. $nama_brand .'</td>
 						<tr>';
 			$output[] = '<tr>
 							<td>Instrument Type</td>
-							<td>'. $product_ins_type .'</td>
-						<tr>';
-			$output[] = '<tr>';
-			$output[] = '<td>Price</td>';
-			$output[] = '<td>Rp.' . $product_price . '</td>';
-			$output[] = '<td><input type="text" name="qty' . $id . '" value="' . $qty . '" size="3" maxlength="3" /></td>';
+							<td colspan="4">'. $nama_instype .'</td>
+						</tr>';
+			$output[] = '<tr">';
+			$output[] = '<td rowspan="2">Price</td>';
+			$output[] = '<td rowspan="2">Rp.' . $price . '</td>';
+			$output[] = '<td rowspan="2"><input type="text" name="qty' . $id . '" value="' . $qty . '" size="2" maxlength="2" /></td>';
 
-			$output[] = '<td>Rp.' . ($product_price * $qty) . '</td>';
-			$total = $product_price * $qty;
+			$output[] = '<td rowspan="2">Rp.' . ($price * $qty) . '</td>';
+			$total = $price * $qty;
 
-			$output[] = '<td><a href="index.php?page=cart&action=delete&id=' . $id . '" class="r">Hapus</a></td>';
+			$output[] = '<td><a href="index.php?page=cart&action=delete&id=' . $id . '" class="btn btn-danger">Hapus</a></td>';
 			$output[] = '</tr>';
 			$output[] = '<tr><td><br></td></tr>';
+			
 		}
 		$output[] = '</table>';
 		$qty = getQty();
@@ -131,7 +132,7 @@ function wbpl_showCart() {
 
 		//session_register('totalbayar');
 		$_SESSION['totalbayar'] = $total;
-		$output[] = '<div><button type="submit">Update cart</button></div>';
+		$output[] = '<div><button type="submit" class="btn btn-primary">Update cart</button></div>';
 		$output[] = '</form>';
 	} else {
 		$output[] = '<p>Keranjang belanja masih kosong.</p>';

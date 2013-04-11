@@ -1,3 +1,59 @@
+.clear {
+  clear: both;
+}
+.reasons {
+	float: left;
+	width: 240px;
+	padding-right: 40px;
+	text-align: justify;
+}
+
+.reasons img {
+	float: left;
+	margin-top: 3px;
+	margin-right: 10px;
+}
+
+.btn_more a {
+	float: right;
+	display: block;
+	width: 100px;
+	height: 26px;
+	margin-top: 10px;
+	padding-top: 4px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #a9a9a9;
+	text-align: center;
+	background: url(../images/templatemo_btn.png) no-repeat;
+}
+
+.btn_more a:hover {
+	/* text-shadow: 1px 1px 1px #000; */
+	text-decoration: none;
+	background: url(../images/templatemo_btn_hover.png) no-repeat;
+}
+#templatemo_slider_wrapper {
+	clear: both;
+	width: 940px;
+	padding: 30px 10px 0;
+	background: url(../images/templateo_slider_wrapper.png) repeat-y center;
+}
+
+#templatemo_slider {
+	width: 720px;
+	height: 156px;
+	padding: 40px 0;
+	background-color: rgb(249, 249, 249);
+}
+
+.image_fl { float: left; margin: 3px 15px 0 0; }
+
+/*
+ * CONTENT SLIDER
+ */
+
+
 /*
  * Color, Border, and Button Rules
  */
@@ -75,7 +131,7 @@
 	background: #1a191c;
 	padding: 8px;
 	border: 1px solid #000;
-	margin-right: 50px;
+	margin-right: 20px;
 }
 
 
@@ -86,20 +142,20 @@
 
 .cs_article .slider_content {
 	float: left;
-	width: 370px;
+	width: 400px;
 }
 
 .cs_article h2 {
-	margin: 0 0 20px 0;
+	margin:0px;
 	padding: 0;
 	line-height: 26px;
-	color: #fff;
+	color: black;
 }
 
 .cs_article p{
-	color: #e1f4fb;
+	color: black;
 	font-size: 14px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
 .cs_leftBtn, .cs_rightBtn {
