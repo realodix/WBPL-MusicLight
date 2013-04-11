@@ -16,7 +16,7 @@ $password = md5($password);
 
 $sql= "select * from wbpl_member
 		where
-		username='$username' and password='$password' ";
+		username='$username' or email='$username' or kd_member='$username' and password='$password' ";
 
 $userquery = mysql_query($sql) or die(mysql_error());
 // 	$valid=false;

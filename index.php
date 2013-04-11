@@ -107,7 +107,38 @@
     <div class="container">
 
       <div class="masthead">
-        <h3 class="muted">Music Light | musical instrument shop</h3>
+        <h3 class="muted" style="float:left;" >Music Light | musical instrument shop</h3>
+		
+		<div style="float:right;">
+		<?php
+		if(isset($_SESSION['username'])){
+			echo sprintf('<p>Selamat Datang %s </p>', $_SESSION['username']);
+		}
+		?>
+		
+		<?php
+		if(!isset($_SESSION['username'])){ ?>
+		<form style="float:right;" method="post" action="admin/login_check.php">
+			<input name="username" type="text" class="input-small" placeholder="Username">
+			<input name="password" type="password" class="input-small" placeholder="Password">
+			<label class="checkbox">
+				<input type="checkbox"> Remember me
+			</label>
+			
+			<input type="submit" class="btn" name="Home_Submit_Regiter" value="Sign in"/>
+			or
+			<input class="btn btn-primary" type="submit" name="Home_Submit_Regiter" value="Regiter"/>
+		</form>
+		<?php
+		}else{ ?>
+			<a href="admin/logout.php?logout=1" name="Home_Submit_Logout">Logout</a> </br>
+			<a href="./admin">Go to Admin page</a> </br></br>
+		<?php
+		}	?>
+		</div>
+		
+	<div class="clear"></div>
+	
         <div class="navbar">
           <div class="navbar-inner">
             <div class="container">
@@ -182,7 +213,8 @@
                         $hasil=mysql_query($sql) or die(mysql_error());
 
 						while($get_data=mysql_fetch_array($hasil)){
-                        ?>
+						?>
+
                       
                         <div class="cs_article">
                             <div class="slider_content_wrapper">
