@@ -9,11 +9,9 @@
 
 #14 Menghapus file yang tidak dibutuhkan
 
-#13 Mengimplementasikan Bootstrap
 #22 Merubah class pada tombol menyesuaikan Bootstrap
 #23 Menyesuaikan susunan html admin dengan Bootstrap
 #24 Menyesuaikan susunan html home dengan Bootstrap
-#25 Merombak UI home
 #26 Merombak UI admin
 #20 Menempatkan file koneksi database ke dalam 1 folder
 #21 Update jQuery ke versi terbaru
@@ -43,3 +41,5 @@
 [closed] #40 Limit Halaman Di Kategori Tidak Berfungsi
 [closed] #15 Penyesuaian isi konten
 [closed] #35 Menyatukan file index.php & home.php
+[closed] #13 Mengimplementasikan Bootstrap
+[closed] #25 Merombak UI home
