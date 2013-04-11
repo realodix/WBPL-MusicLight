@@ -120,9 +120,14 @@
 					<a href="index.php?page=product">Product</a>
 				</li>
 				
-				<li>
+				<?php
+				if(isset($_SESSION['username'])){
+				echo
+				'<li>
 					<a href="index.php?page=cart">Cart</a>
-				</li>
+				</li>';
+				}
+				?>
 				
 				<li>
 					<a href="index.php?page=cara_pesan">Cara pesan</a>
