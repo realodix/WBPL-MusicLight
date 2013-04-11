@@ -43,3 +43,4 @@
 [closed] #39 Merubah Struktur Database Untuk Menampilkan Table Produk
 [closed] #40 Limit Halaman Di Kategori Tidak Berfungsi
 [closed] #15 Penyesuaian isi konten
+[closed] #35 Menyatukan file index.php & home.php
