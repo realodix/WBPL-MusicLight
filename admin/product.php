@@ -23,8 +23,8 @@ $cari=$_POST['cari'];
 $sql="SELECT * FROM  wbpl_product where wbpl_product like '%$cari%'";
 }else{
 $sql="select * from wbpl_product, wbpl_brand, wbpl_instype
-          where wbpl_product.product_brand = wbpl_brand.nama_brand AND
-				wbpl_product.product_ins_type = wbpl_instype.nama_instype";
+          where wbpl_product.nama_brand = wbpl_brand.nama_brand AND
+				wbpl_product.nama_instype = wbpl_instype.nama_instype";
 }
 
 $result=mysql_query($sql) or die(mysql_error());
@@ -33,11 +33,11 @@ $result=mysql_query($sql) or die(mysql_error());
 while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
-	<td><?  echo $rows['kd_product'];?></td>
-	<td><?  echo $rows['nama_brand'];?></td>
-	<td><?  echo $rows['nama_instype'];?></td>
-	<td><?  echo $rows['product_price'];?></td>
-	<td><?  echo $rows['product_stock'];?></td>
+	<td><?php  echo $rows['kd_product'];?></td>
+	<td><?php  echo $rows['nama_brand'];?></td>
+	<td><?php  echo $rows['nama_instype'];?></td>
+	<td><?php  echo $rows['price'];?></td>
+	<td><?php  echo $rows['stock'];?></td>
 	<td>
 		<a href="index.php?page=updateproduct&id=<?php echo $rows['kd_product']?>">
 		<img src="image/b_edit.png"></a>
@@ -46,7 +46,7 @@ while($rows=mysql_fetch_array($result)){
 	</td>
 </tr>
 
-<?
+<?php
 }
 
 //tutup koneksi
@@ -72,7 +72,7 @@ cetak</a></td></tr>
 
 
 
-<?
+<?php
 
 mysql_close();
 //close database

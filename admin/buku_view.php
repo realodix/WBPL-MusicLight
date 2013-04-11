@@ -29,23 +29,20 @@ $result=mysql_query($sql) or die(mysql_error());
 while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
-
-<td><?  echo $rows['kd_buku'];?></td>
-
-<td><?  echo $rows['judul'];?></td>
-
-<td><?  echo $rows['pengarang'];?></td>
-<td><?  echo $rows['harga'];?></td>
-<td>
-<!--<a href="index.php?page=buku_form_edit&id=<? echo $rows['kd_buku']?>">
+	<td><?php  echo $rows['kd_buku'];?></td>
+	<td><?php  echo $rows['judul'];?></td>
+	<td><?php echo $rows['pengarang'];?></td>
+	<td><?php  echo $rows['harga'];?></td>
+	<td>
+<!--<a href="index.php?page=buku_form_edit&id=<?php echo $rows['kd_buku']?>">
 <img src="image/b_edit.png"></a>-->
-<a href="index.php?page=buku_view&del=true&id=<? echo $rows['kd_buku']?>"  onclick="return askUser()";>
+<a href="index.php?page=buku_view&del=true&id=<?php echo $rows['kd_buku']?>"  onclick="return askUser()";>
 <img src="image/b_drop.png"></a>|
 detail
 </td>
 </tr>
 
-<?
+<?php
 }
 
 //tutup koneksi
@@ -104,21 +101,21 @@ while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
 
-<td><?  echo $rows['kd_product'];?></td>
-<td><?  echo $rows['product_brand'];?></td>
-<td><?  echo $rows['product_ins_type'];?></td>
-<td><?  echo $rows['product_price'];?></td>
-<td><?  echo $rows['product_stock'];?></td>
+<td><?php  echo $rows['kd_product'];?></td>
+<td><?php  echo $rows['product_brand'];?></td>
+<td><?php  echo $rows['product_ins_type'];?></td>
+<td><?php  echo $rows['product_price'];?></td>
+<td><?php  echo $rows['product_stock'];?></td>
 <td>
-<!--<a href="index.php?page=buku_form_edit&id=<?// echo $rows['kd_buku']?>">
+<!--<a href="index.php?page=buku_form_edit&id=<?php// echo $rows['kd_buku']?>">
 <img src="image/b_edit.png"></a>-->
-<a href="index.php?page=buku_view&del=true&id=<? echo $rows['kd_product']?>"  onclick="return askUser()";>
+<a href="index.php?page=buku_view&del=true&id=<?php echo $rows['kd_product']?>"  onclick="return askUser()";>
 <img src="image/b_drop.png"></a>|
 detail
 </td>
 </tr>
 
-<?
+<?php
 }
 
 //tutup koneksi
@@ -144,7 +141,7 @@ cetak</a></td></tr>
 
 
 
-<?
+<?php
 
 mysql_close();
 //close database

@@ -34,21 +34,21 @@ while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
 
-<td><?  echo $rows['no'];?></td>
-<td><?  echo $rows['tanggal'];?></td>
-<td><?  echo $rows['kd_pesan'];?></td>
-<td><?  echo $rows['total_bayar'];?></td>
-<td><?  echo $rows['status'];?></td>
+<td><?php  echo $rows['no'];?></td>
+<td><?php  echo $rows['tanggal'];?></td>
+<td><?php  echo $rows['kd_pesan'];?></td>
+<td><?php  echo $rows['total_bayar'];?></td>
+<td><?php  echo $rows['status'];?></td>
 
 <td>
-<a href="index.php?page=bayar_view&app=true&id=<? echo $rows['no']?>">
+<a href="index.php?page=bayar_view&app=true&id=<?php echo $rows['no']?>">
 <img src="image/approve.jpg"></a>
-<a href="index.php?page=bayar_view&del=true&id=<? echo $rows['no']?>"  onclick="return askUser()";>
+<a href="index.php?page=bayar_view&del=true&id=<?php echo $rows['no']?>"  onclick="return askUser()";>
 <img src="image/b_drop.png"></a>
 </td>
 </tr>
 
-<?
+<?php
 }
 
 //tutup koneksi
@@ -67,7 +67,7 @@ if (isset($_GET['status'])) {
 <td align=right></td></tr>
 <tr></tr>
 </table>
-<?
+<?php
 
 mysql_close();
 //close database

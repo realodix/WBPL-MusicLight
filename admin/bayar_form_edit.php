@@ -8,34 +8,34 @@ $result = mysql_query($sql) or die(mysql_error());
 <h2>Change Bayar</h2>
 <table>
 	<form id="form1" name="form1"  method="post" action="bayar_edit.php">
-		<?
+		<?php
 //proses menampilkan data
 while($rows=mysql_fetch_array($result)){
 		?>
 
 		<td width="120">no_bayar</td>
-		<td width="350"><?  echo $rows['no_bayar'];?></td>
+		<td width="350"><?php  echo $rows['no_bayar'];?></td>
 		</tr>
-		<input type="text" id="no_bayar" name="no_bayar" value=<? echo $rows['no_bayar'];?> />
+		<input type="text" id="no_bayar" name="no_bayar" value=<?php echo $rows['no_bayar'];?> />
 		<tr>
 			<td width="120">tgl_bayar</td>
 			<td width="350">
 			<input name="tgl_bayar" type="tgl_bayar" id="tgl_bayar" size="40"
-			value=<? echo $rows['tgl_bayar'];?>>
+			value=<?php echo $rows['tgl_bayar'];?>>
 			</td>
 		</tr>
 		<tr>
 			<td width="120">no_pesan</td>
 			<td width="350">
 			<input name="no_pesan" type="no_pesan" id="no_pesan" size="40"
-			value=<? echo $rows['no_pesan'];?>>
+			value=<?php echo $rows['no_pesan'];?>>
 			</td>
 		</tr>
 		<tr>
 			<td width="120">total_harga</td>
 			<td width="350">
 			<input name="total_harga" type="total_harga" id="total_harga" size="40"
-			value=<? echo $rows['total_harga'];?>>
+			value=<?php echo $rows['total_harga'];?>>
 			</td>
 		</tr>
 		<tr>
@@ -46,7 +46,7 @@ while($rows=mysql_fetch_array($result)){
 			<input type="reset" name="resetbtn" value="Reset" />
 			</td>
 		</tr>
-		<?
+		<?php
 		//loop while
 		}
 		?>

@@ -8,19 +8,19 @@ $result = mysql_query($sql) or die(mysql_error());
 <h2>Change Brand</h2>
 <table>
 	<form id="form1" name="form1" method="post" action="brand_edit.php">
-		<?
+		<?php
 //proses menampilkan data
 while($rows=mysql_fetch_array($result)){
 		?>
 
 		<td width="120">Kode Brand</td>
 		<td width="350">
-		<input type="text" id="kd_brand" name="kd_brand" value=<? echo $rows['kd_brand'];?>  readonly />
+		<input type="text" id="kd_brand" name="kd_brand" value=<?php echo $rows['kd_brand'];?>  readonly />
 		</td>
 		</tr> <td width="120">Brand</td>
 		<td width="350">
 		<input name="nama_brand" type="nama_brand" id="nama_brand" size="40"
-		value='<? echo $rows['nama_brand'];?>'>
+		value='<?php echo $rows['nama_brand'];?>'>
 		</td>
 		</tr>
 	
@@ -32,7 +32,7 @@ while($rows=mysql_fetch_array($result)){
 			<input type="reset" name="resetbtn" value="Reset" />
 			</td>
 		</tr>
-		<?
+		<?php
 		//loop while
 		}
 		?>

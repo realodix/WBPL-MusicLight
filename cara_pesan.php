@@ -11,17 +11,12 @@
 	</li>
 	Setelah melakukan pembayaran, konfirmasi pembayaran dikirim ke
 	<blockquote>
-		Candra Adi putra
-		<br>
-		BNI Syariah Yogyakarta
-		<br>
-		No Rek 12345678
-		<br>
+		SMS GAN!!
 	</blockquote>
-	buku yang telah dipesan akan dibuat dan dikirimkan dalam waktu maksimal 10 Hari.
+	Product yang telah dipesan akan dibuat dan dikirimkan dalam waktu maksimal 10 Hari.
 	</li>
 	<li>
-		* Harga buku belum termasuk ongkos kirim dan ongkos kirim akan disesuaikan dengan tujuan pengiriman.
+		* Harga product belum termasuk ongkos kirim dan ongkos kirim akan disesuaikan dengan tujuan pengiriman.
 	</li>
 	<li>
 		Kami mengirimkan barang dengan menggunakan jasa pengiriman barang via TIKI & JNE.

@@ -13,7 +13,7 @@
 			<td width="120">ID</td>
 			<td width="150">
 			<input name="kd_brand" type="text" id="kd_brand" 
-			value=<?=kode_brand()?> size="10"/>
+			value=<?php echo kode_brand()?> size="10"/>
 			</td>
 		</tr>
 		<tr>
@@ -69,18 +69,18 @@ $result=mysql_query($sql) or die(mysql_error());
 while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
-	<td><?  echo $rows['kd_brand'];?></td>
-	<td><?  echo $rows['nama_brand'];?></td>
+	<td><?php  echo $rows['kd_brand'];?></td>
+	<td><?php  echo $rows['nama_brand'];?></td>
 
 	<td>
-		<a href="index.php?page=brand_form_edit&id=<? echo $rows['kd_brand']?>">
+		<a href="index.php?page=brand_form_edit&id=<?php echo $rows['kd_brand']?>">
 		<img src="image/b_edit.png"></a>
-		<a href="index.php?page=brand_view&del=true&id=<? echo $rows['kd_brand']?>"  onclick="return askUser()";>
+		<a href="index.php?page=brand_view&del=true&id=<?php echo $rows['kd_brand']?>"  onclick="return askUser()";>
 		<img src="image/b_drop.png"></a>
 	</td>
 </tr>
 
-<?
+<?php
 }
 
 //tutup koneksi
@@ -122,7 +122,7 @@ while($rows=mysql_fetch_array($result)){
 			<td width="120">ID</td>
 			<td width="150">
 			<input name="kd_instype" type="text" id="kd_instype" 
-			value=<?=kode_instype()?> size="10"/>
+			value=<?php echo kode_instype()?> size="10"/>
 			</td>
 		</tr>
 		<tr>
@@ -178,18 +178,18 @@ $result=mysql_query($sql) or die(mysql_error());
 while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
-	<td><?  echo $rows['kd_instype'];?></td>
-	<td><?  echo $rows['nama_instype'];?></td>
+	<td><?php  echo $rows['kd_instype'];?></td>
+	<td><?php  echo $rows['nama_instype'];?></td>
 
 	<td>
-		<a href="index.php?page=brandINS_form_edit&id=<? echo $rows['kd_instype']?>">
+		<a href="index.php?page=brandINS_form_edit&id=<?php echo $rows['kd_instype']?>">
 		<img src="image/b_edit.png"></a>
-		<a href="index.php?page=brand_view&del=true&id=<? echo $rows['kd_instype']?>"  onclick="return askUser()";>
+		<a href="index.php?page=brand_view&del=true&id=<?php echo $rows['kd_instype']?>"  onclick="return askUser()";>
 		<img src="image/b_drop.png"></a>
 	</td>
 </tr>
 
-<?
+<?php
 }
 
 //tutup koneksi
@@ -217,7 +217,7 @@ while($rows=mysql_fetch_array($result)){
 
 
 
-<?
+<?php
 
 mysql_close();
 //close database

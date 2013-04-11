@@ -10,10 +10,10 @@ if (isset($_POST['UpdateProfile'])) {
 
 
 	$sql = " update wbpl_member set 
-				member_address='$member_address',
-				member_phone='$member_phone',
-				member_email='$member_email'
-			where member_name='$member_name'";
+				address='$member_address',
+				phone='$member_phone',
+				email='$member_email'
+			where name='$member_name'";
 
 	//echo $sql;
 	$result = mysql_query($sql) or die(mysql_error());

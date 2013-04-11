@@ -1,118 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
+    <!-- Le styles -->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    </style>
+    <link href="../css/bootstrap-responsive.css" rel="stylesheet">
 
-<head>
-	<title>Login toko buku </title>
-	
-	<link rel="stylesheet" type="text/css" media="screen, tv, projection" href="../css/html.css" />
-	<link rel="stylesheet" type="text/css" media="screen, tv, projection" href="../css/layout.css" />
-    <script type="text/javascript" src="../js/validjs.js"></script>
-</head>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
 
-<body>
+  </head>
 
-<!-- Full site width container -->
-<div class="width100">
+  <body>
 
-  <!-- #header: holds main image, menu and top actions bar -->
-	<div id="header" class="floatLeft width100">
+    <div class="container">
 
-    <div class="floatLeft width100 rightBorder">
-      <div id="title">
-        <h1>Administrasi</h1>
-        <p>
-         Halaman Administrasi 
-        </p>
-      </div>
-    </div>
-	</div>
-	<!-- end #header -->
-
-
-
-    <!-- end right column, 25% width -->
-    <!-- Left column, 75% width -->
-	<div>
-	
-		<!--table pengolahan data nanti disini-->
-		<h1> Login page</h1>
-		<form id="form1" name="form1" method="post" action="login_check.php">
-		<table  align="center">
-			<tr>
-				<td >username</td>
-				<td ><input name="username" type="text" id="username"  />
-				<div id="form1_username_errorloc" style="color:red"></div>
-				</td>
-			</tr>
-			
-			<tr>
-				<td>password</td>
-				<td><input name="password" type="text" id="password"  />  <div id="form1_password_errorloc" style="color:red">
-				</td>
-			</tr>
-
-			<tr>
-				<td colspan="3" align="right">
-					<input type="submit" name="Submit" value="Submit" /> 
-					<input type="reset" name="" value="Reset" />
-				</td>
-			</tr>
-			
-			<tr>
-				<td colspan='2'>
-				<div id="form1_errorloc" style="color:green">
-				<?php
-				//if (isset($_GET['status'] == 0)) {
-				//echo "The username or password you entered is incorrect";
-				//}
-					if (isset($_GET['status'])) {
-						if ($_GET['status'] == 1) {
-					echo "The username or password you entered is incorrect";
-						}
-					}
-					?>
-				</div>
-			
-				</td>
-			</tr>
-		</table>
-		</form>
+      <form class="form-signin" method="post" action="login_check.php">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <input name="username" id="username" type="text" class="input-block-level" placeholder="Username">
+        <input name="password" id="password" type="text" class="input-block-level" placeholder="Password">
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+		<input type="submit" class="btn btn-large btn-primary" name="Submit" value="Sign in" />
 		
-		
-<script language="JavaScript" type="text/javascript" xml:space="preserve">
-//<![CDATA[
-//You should create the validator only after the definition of the HTML form
-var frmvalidator = new Validator("form1");
-frmvalidator.EnableOnPageErrorDisplaySingleBox();
-frmvalidator.EnableMsgsTogether();
-frmvalidator.addValidation("username", "req");
-				
-frmvalidator.addValidation("password", "req");
+		<label class="text-error">
+        <?php
+		//if (isset($_GET['status'] == 0)) {
+		//echo "The username or password you entered is incorrect";
+		//}
+		if (isset($_GET['status'])) {
+			if ($_GET['status'] == 1) {
+				echo "The username or password you entered is incorrect";
+			}
+		}
+		?>
+        </label>
+      </form>
+    </div> <!-- /container -->
 
-	//]]>
-</script>
-    </div>
-    <!-- end left column, 75% width -->
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="../assets/js/jquery.js"></script>
+    <script src="../assets/js/bootstrap-transition.js"></script>
+    <script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
 
-  
-  <!-- end #content -->
-
-
-
-  <!-- #footer: holds submenu and copyright info -->
-	<div id="footer" class="floatRight  width100">
-		<p>copyright(c) 2012, Toko murah|<a href="../index.php">home</a> </p>
-	</div>
-  <!-- end #footer -->
-
-
-	</div>
-	<!-- end full site width container -->
-
-
-</body>
-</html
+  </body>
+</html>

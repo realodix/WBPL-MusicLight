@@ -8,19 +8,19 @@ $result = mysql_query($sql) or die(mysql_error());
 <h2>Change Instrument</h2>
 <table>
 	<form id="form1" name="form1" method="post" action="brandINS_edit.php">
-		<?
+		<?php
 //proses menampilkan data
 while($rows=mysql_fetch_array($result)){
 		?>
 
 		<td width="120">Kode Instrument</td>
 		<td width="350">
-		<input type="text" id="kd_instype" name="kd_instype" value=<? echo $rows['kd_instype'];?>  readonly />
+		<input type="text" id="kd_instype" name="kd_instype" value=<?php echo $rows['kd_instype'];?>  readonly />
 		</td>
 		</tr> <td width="120">Instrument Type</td>
 		<td width="350">
 		<input name="nama_instype" type="nama_instype" id="nama_instype" size="40"
-		value='<? echo $rows['nama_instype'];?>'>
+		value='<?php echo $rows['nama_instype'];?>'>
 		</td>
 		</tr>
 	
@@ -32,7 +32,7 @@ while($rows=mysql_fetch_array($result)){
 			<input type="reset" name="resetbtn" value="Reset" />
 			</td>
 		</tr>
-		<?
+		<?php
 		//loop while
 		}
 		?>

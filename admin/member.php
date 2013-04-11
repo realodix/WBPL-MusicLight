@@ -16,7 +16,8 @@ include ('inc/config.php');
 		<td width="250px">Username</td>
 		<td width="60px">Operation</td>
 	</tr>
-	<?php
+
+<?php
 /*
  * kode untuk menghapus data
  */
@@ -30,7 +31,7 @@ $sql="";
 if(isset($_POST['btnCari'])){
 $cari=$_POST['cari'];
 //ambil data dari table admin
-$sql="SELECT * FROM  wbpl_member where member_name like '%$cari%'";
+$sql="SELECT * FROM  wbpl_member where name like '%$cari%'";
 }else{
 $sql="SELECT * FROM  wbpl_member";
 }
@@ -42,15 +43,15 @@ $result=mysql_query($sql) or die(mysql_error());
 while($rows=mysql_fetch_array($result)){
 ?>
 	<tr>
-		<td><a href="index.php?page=profile&id=<?php echo $rows['Kd_member']?>"><?php echo $rows['Kd_member'];?></a></td>
-		<td><a href="index.php?page=profile&id=<?php echo $rows['Kd_member']?>"><?php echo $rows['member_name'];?></a></td>
+		<td><a href="index.php?page=profile&id=<?php echo $rows['kd_member']?>"><?php echo $rows['kd_member'];?></a></td>
+		<td><a href="index.php?page=profile&id=<?php echo $rows['kd_member']?>"><?php echo $rows['name'];?></a></td>
 		
 		<td>
-			<a href="index.php?page=profile&id=<?php echo $rows['Kd_member']?>"> <img src="image/b_edit.png"></a>
-			<a href="index.php?page=member&del=true&id=<?php echo $rows['Kd_member']?>"  onclick="return askUser()";> <img src="image/b_drop.png"></a>
+			<a href="index.php?page=profile&id=<?php echo $rows['kd_member']?>"> <img src="image/b_edit.png"></a>
+			<a href="index.php?page=member&del=true&id=<?php echo $rows['kd_member']?>"  onclick="return askUser()";> <img src="image/b_drop.png"></a>
 		</td>
 	</tr>
-	<?
+	<?php
 	}
 
 	//tutup koneksi
@@ -90,7 +91,8 @@ while($rows=mysql_fetch_array($result)){
 	<tr style="background-color:#F79307">
 		<td width="200px">Username</td><td width="100px">Operation</td>
 	</tr>
-	<?php
+	
+<?php
 /*
  * kode untuk menghapus data
  */
@@ -116,12 +118,12 @@ $result=mysql_query($sql) or die(mysql_error());
 while($rows=mysql_fetch_array($result)){
 ?>
 	<tr>
-		<td><?  echo $rows['username'];?></td>
+		<td><?php  echo $rows['username'];?></td>
 		
 		<td><a href="index.php?page=pengelola_form_edit&id=<? echo $rows['username']?>"> <img src="image/b_edit.png"></a>
 			<a href="index.php?page=member&del=true&id=<? echo $rows['username']?>"  onclick="return askUser()";> <img src="image/b_drop.png"></a></td>
 	</tr>
-	<?
+	<?php
 	}
 
 	//tutup koneksi
@@ -141,11 +143,10 @@ while($rows=mysql_fetch_array($result)){
 	</tr>
 	<tr></tr>
 </table>
-<?
+<?php
 
 mysql_close();
 //close database
 
 //tampilan siapa yang pengelola
 ?>
-

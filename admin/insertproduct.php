@@ -14,7 +14,7 @@
 			<td width="120">Brand</td>
 			<td width="350">
 				<select name='kd_brand' style="width:164px;">
-						<?=combo_brand();?>
+						<?php echo combo_brand();?>
 				</select>
 		
 			</td>
@@ -24,7 +24,7 @@
 			<td width="120">Instrument Type</td>
 			<td width="350">
 				<select
-				 name='kd_instype'><?=combo_ins_type()?></select>
+				 name='kd_instype'><?php echo combo_ins_type()?></select>
 			
 			</td>
 		</tr>

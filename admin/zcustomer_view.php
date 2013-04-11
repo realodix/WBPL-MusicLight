@@ -34,29 +34,29 @@ while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
 
-<td><? echo $rows['kd_pemesan']; ?></td>
+<td><?php echo $rows['kd_pemesan']; ?></td>
 
-<td><? echo $rows['Nama']; ?></td>
+<td><?php echo $rows['Nama']; ?></td>
 
-<td><? echo $rows['Alamat']; ?></td>
+<td><?php echo $rows['Alamat']; ?></td>
 
-<td><? echo $rows['kd_pos']; ?></td>
+<td><?php echo $rows['kd_pos']; ?></td>
 
-<td><? echo $rows['No_telp']; ?></td>
+<td><?php echo $rows['No_telp']; ?></td>
 
-<td><? echo $rows['Email']; ?></td>
-<td><? echo $rows['kd_pesan']; ?></td>
+<td><?php echo $rows['Email']; ?></td>
+<td><?php echo $rows['kd_pesan']; ?></td>
 
 
 <td>
-<!--<a href="index.php?page=customer_form_edit&id=<? echo $rows['kd_customer']?>">
+<!--<a href="index.php?page=customer_form_edit&id=<?php echo $rows['kd_customer']?>">
 <img src="image/b_edit.png"></a>-->
-<a href="index.php?page=customer_view&del=true&id=<? echo $rows['kd_customer']?>"  onclick="return askUser()";>
+<a href="index.php?page=customer_view&del=true&id=<?php echo $rows['kd_customer']?>"  onclick="return askUser()";>
 <img src="image/b_drop.png"></a>
 </td>
 </tr>
 
-<?
+<?php
 }
 
 //tutup koneksi
@@ -78,7 +78,7 @@ echo "operasi gagal";
 <tr></tr>
 </table>
 
-<?
+<?php
 
 mysql_close(); //close database
 

@@ -39,21 +39,21 @@ while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
 
-<td><?echo $no+$posisi;?></td>
+<td><?php echo $no+$posisi;?></td>
 
-<td><?echo $rows['nama_kota'];?></td>
+<td><?php echo $rows['nama_kota'];?></td>
 
-<td><?echo $rows['biaya'];?></td>
+<td><?php echo $rows['biaya'];?></td>
 
 <td>
-<a href="index.php?page=zbiaya_kirim_form_edit&id=<? echo $rows['id_kota']?>">
+<a href="index.php?page=zbiaya_kirim_form_edit&id=<?php echo $rows['id_kota']?>">
 <img src="image/b_edit.png"></a>
-<a href="index.php?page=zbiaya_view&del=true&id=<? echo $rows['id_kota']?>"  onclick="return askUser()";>
+<a href="index.php?page=zbiaya_view&del=true&id=<?php echo $rows['id_kota']?>"  onclick="return askUser()";>
 <img src="image/b_drop.png"></a>
 </td>
 </tr>
 
-<?
+<?php
 $no++;
 }
 
@@ -73,7 +73,7 @@ if(isset($_GET['status'])) {
 <img src="image/add.jpg"> Add</a></td></tr>
 <tr></tr>
 </table>
-<?
+<?php
 	//=============CUT HERE====================================
 	$tampil2 = mysql_query("select * from biaya_kirim");
 	$jmldata = mysql_num_rows($tampil2);
@@ -88,9 +88,9 @@ if(isset($_GET['status'])) {
 		}
 	mysql_close();?>
 <br>
-Jumlah data :<?=$jmldata;?>
+Jumlah data :<?php echo $jmldata;?>
 
-<?mysql_close();
+<?php mysql_close();
 //close database
 
 //tampilan siapa yang login?>

@@ -8,8 +8,8 @@
 	$id = $_GET['id'];
 	//$sql="SELECT * FROM  wbpl_member where kd_member='$id' ";
 	$sql="select * from wbpl_product, wbpl_brand, wbpl_instype
-          where kd_product='$id' AND wbpl_product.kd_brand = wbpl_brand.kd_brand AND
-				wbpl_product.kd_instype = wbpl_instype.kd_instype";
+          where kd_product='$id' AND wbpl_product.nama_brand = wbpl_brand.nama_brand AND
+				wbpl_product.nama_instype = wbpl_instype.nama_instype";
 	$result=mysql_query($sql) or die(mysql_error());
 	while($rows=mysql_fetch_array($result)){
 	?>
@@ -38,14 +38,14 @@
 		<tr>
 			<td width="120">Price</td>
 			<td width="350">
-			<input name="product_price" type="text" id="product_price" size="10" value="<?php echo $rows['product_price'];?>" style="width:164px;"/>
+			<input name="product_price" type="text" id="product_price" size="10" value="<?php echo $rows['price'];?>" style="width:164px;"/>
 			</td>
 		</tr>
 		
 		<tr>
 			<td width="120">Stock</td>
 			<td width="350">
-			<input name="product_stock" type="text" id="product_stock" size="10" value="<?php echo $rows['product_stock'];?>" style="width:164px;"/>
+			<input name="product_stock" type="text" id="product_stock" size="10" value="<?php echo $rows['stock'];?>" style="width:164px;"/>
 			</td>
 		</tr>
 		
@@ -59,7 +59,7 @@
 			<td width="120">Deskription</td>
 			<td width="350">
 			<textarea name='product_deskripsi' cols='60' rows='10'>
-				<?php echo $rows['product_deskripsi'];?></textarea>
+				<?php echo $rows['deskripsi'];?></textarea>
 			</td>
 		</tr>
 		

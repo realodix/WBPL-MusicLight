@@ -17,12 +17,12 @@ if (isset($_POST['tambah'])) {
 if (move_uploaded_file($lokasi_file, $direktori)) {
 
 	$sql = "INSERT INTO wbpl_product(kd_product,
-							product_brand,
-							product_ins_type,
-							product_price,
-							product_stock,
-							product_image,
-							product_deskripsi)
+							nama_brand,
+							nama_instype,
+							price,
+							stock,
+							image,
+							deskripsi)
 		VALUES('$kd_product',
 				'$kd_brand',
 				'$kd_instype',

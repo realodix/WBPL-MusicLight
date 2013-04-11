@@ -27,18 +27,20 @@ $result=mysql_query($sql) or die(mysql_error());
 $no=1;
 while($rows=mysql_fetch_array($result)){
 			?>
-			<tr>	<td><?=$no;?></td>
-				<td><?		echo $rows['kd_buku'];?></td>
-				<td><?		echo $rows['judul'];?></td>
-				<td><?		echo $rows['pengarang'];?></td>
-				<td><?		echo $rows['harga'];?></td>
+			<tr>
+				<td><?php echo $no;?></td>
+				<td><?php echo $rows['kd_buku'];?></td>
+				<td><?php echo $rows['judul'];?></td>
+				<td><?php echo $rows['pengarang'];?></td>
+				<td><?php echo $rows['harga'];?></td>
 			</tr>
-			<?	
+			<?php
 			$no++;	
 				}
 			?>
 		</table>
-		<?mysql_close();
+<?php
+mysql_close();
 ?>
 	</body>
 </html>

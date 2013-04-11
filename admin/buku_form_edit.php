@@ -8,27 +8,27 @@ $result = mysql_query($sql) or die(mysql_error());
 <h2>Change buku</h2>
 <table>
 	<form id="form1" name="form1" name="form2" method="post" action="buku_edit.php">
-		<?
+		<?php
 //proses menampilkan data
 while($rows=mysql_fetch_array($result)){
 		?>
 
 		<td width="120">kd_buku</td>
-		<td width="350"><?  echo $rows['kd_buku'];?></td>
+		<td width="350"><?php  echo $rows['kd_buku'];?></td>
 		</tr>
-		<input type="hidden" id="kd_buku" name="kd_buku" value=<? echo $rows['kd_buku'];?> />
+		<input type="hidden" id="kd_buku" name="kd_buku" value=<?php echo $rows['kd_buku'];?> />
 		<tr>
 			<td width="120">kd_kategori</td>
 			<td width="350">
 			<input name="kd_kategori" type="kd_kategori" id="kd_kategori" size="40"
-			value=<? echo $rows['kd_kategori'];?>>
+			value=<?php echo $rows['kd_kategori'];?>>
 			</td>
 		</tr>
 		<tr>
 			<td width="120">ukuran</td>
 			<td width="350">
 			<input name="ukuran" type="ukuran" id="ukuran" size="40"
-			value=<? echo $rows['ukuran'];?>>
+			value=<?php echo $rows['ukuran'];?>>
 			</td>
 		</tr>
 		<tr>

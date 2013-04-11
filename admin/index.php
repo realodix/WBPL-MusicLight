@@ -71,41 +71,41 @@ require_once('../inc/common_function.php');
 
     <!-- Right column, 25% width -->
     <div class="floatLeft width25 rightMargin">
-<ul id="menu">
-               <li>
+
+               
          <h2>Koleksi</h2>
-		  <ul  class="arrow">
+		  <ul >
 		  <li><a href="index.php?page=buku_view">[DEL]Product</a></li>
 		  <li><a href="index.php?page=product">Product</a></li>
 		  <li><a href="index.php?page=brand_view">Brand & Ins. Type</a></li>
 		  </ul>
-        </li>
-		   <li>
+        
+		 
          <h2>Pesan</h2>
-		  <ul  class="arrow">
+		  <ul>
 		  <li><a href="index.php?page=detail">Detail</a></li>
 		  <li><a href="index.php?page=zcustomer_view">Customer</a></li>
 		  <li><a href="index.php?page=zpesan_view">Pesan</a></li>
 		  <li><a href="index.php?page=zbayar_view">pembayaran</a></li>
 		  </ul>
 
-        </li>
-         <li>
+        
+       
 		         <h2>Biaya kirim</h2>
-				  <ul  class="arrow">
+				  <ul>
 				  <li><a href="index.php?page=zbiaya_view">Biaya per kota</a></li>
 
 				  </ul>
-        </li>
+        
 
-        <li> <h2>Setting</h2>
-		  <ul  class="arrow">
+        <h2>Setting</h2>
+		  <ul>
 			<li><a href="index.php?page=member">Member</a></li>
 		  </ul>
-        </li>
+        
 
 
-      </ul>
+
       <!--<h1>help</h1>
 
       <blockquote>
@@ -140,7 +140,7 @@ if (isset($_GET['page'])) {
 	include ($page);
 
 } else {
-	include ('buku_view.php');
+	include ('product.php');
 }
 ?>
 
@@ -174,7 +174,7 @@ if (isset($_GET['page'])) {
 </body>
 </html
 
-<?
+<?php
 /*
 }else{
 header("location:form_login.php");

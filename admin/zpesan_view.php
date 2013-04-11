@@ -30,18 +30,18 @@ while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
 
-<td><?  echo $rows['kd_pesan'];?></td>
-<td><?  echo $rows['tgl_pesan'];?></td>
-<td><?  echo $rows['total_bayar'];?></td>
+<td><?php  echo $rows['kd_pesan'];?></td>
+<td><?php  echo $rows['tgl_pesan'];?></td>
+<td><?php  echo $rows['total_bayar'];?></td>
 <td>
-<!--<a href="index.php?page=pesan_form_edit&id=<? echo $rows['kd_pesan']?>">
+<!--<a href="index.php?page=pesan_form_edit&id=<?php echo $rows['kd_pesan']?>">
 <img src="image/b_edit.png"></a>-->
-<a href="index.php?page=pesan_view&del=true&id=<? echo $rows['kd_pesan']?>"  onclick="return askUser()";>
+<a href="index.php?page=pesan_view&del=true&id=<?php echo $rows['kd_pesan']?>"  onclick="return askUser()";>
 <img src="image/b_drop.png"></a>
 </td>
 </tr>
 
-<?
+<?php
 }
 
 //tutup koneksi
@@ -61,7 +61,7 @@ if (isset($_GET['status'])) {
 <img src="image/add.jpg"> Add</a>--> </td></tr>
 <tr></tr>
 </table>
-<?
+<?php
 
 mysql_close();
 //close database

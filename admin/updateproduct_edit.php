@@ -16,14 +16,30 @@ if (isset($_POST['tambah'])) {
 
 if (move_uploaded_file($lokasi_file, $direktori)) {
 				
-	$sql = "UPDATE wbpl_product SET
-		product_price='$product_price',
-		product_stock='$product_stock',
-		product_image='$product_image',
-		product_deskripsi='$product_deskripsi'";
+	$sql = "UPDATE wbpl_product
+			SET
+				price='$product_price',
+				stock='$product_stock',
+				image='$product_image',
+				deskripsi='$product_deskripsi'";
 
 	
 	$result = mysql_query($sql) or die(mysql_error());
+
+	
+}else{
+
+	$sql = "UPDATE wbpl_product
+			SET
+				price='$product_price',
+				stock='$product_stock',
+				image='$product_image',
+				deskripsi='$product_deskripsi'";
+
+	
+	$result = mysql_query($sql) or die(mysql_error());
+
+}
 
 	//check if query successful
 	if ($result) {
@@ -32,6 +48,6 @@ if (move_uploaded_file($lokasi_file, $direktori)) {
 		header('location:index.php?page=product&status=1');
 	}
 	mysql_close();
-}
+	
 }
 ?>

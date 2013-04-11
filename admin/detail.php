@@ -29,20 +29,20 @@ while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
 
-<td><?  echo $rows['no_det_pesan'];?></td>
-<td><?  echo $rows['no_pesan'];?></td>
-<td><?  echo $rows['kd_buku'];?></td>
-<td><?  echo $rows['total_pesan'];?></td>
+<td><?php  echo $rows['no_det_pesan'];?></td>
+<td><?php  echo $rows['no_pesan'];?></td>
+<td><?php  echo $rows['kd_buku'];?></td>
+<td><?php  echo $rows['total_pesan'];?></td>
 
 <td>
-<!--<a href="index.php?page=det_pesan_form_edit&id=<? echo $rows['no_det_pesan']?>">
+<!--<a href="index.php?page=det_pesan_form_edit&id=<?php echo $rows['no_det_pesan']?>">
 <img src="image/b_edit.png"></a>-->
-<a href="index.php?page=det_pesan_view&del=true&id=<? echo $rows['no_det_pesan']?>"  onclick="return askUser()";>
+<a href="index.php?page=det_pesan_view&del=true&id=<?php echo $rows['no_det_pesan']?>"  onclick="return askUser()";>
 <img src="image/b_drop.png"></a>
 </td>
 </tr>
 
-<?
+<?php
 }
 
 //tutup koneksi
@@ -61,7 +61,7 @@ if (isset($_GET['status'])) {
 <td align=right></td></tr>
 
 </table>
-<?
+<?php
 
 mysql_close();
 //close database
