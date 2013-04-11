@@ -58,5 +58,11 @@ if (isset($_POST['Home_Submit_Login'])) {
 	}
 
 }
+
+if (isset($_POST['Home_Submit_Regiter'])) {
+
+	header("Location:../index.php?page=registration");
+
+}
 ?>
 

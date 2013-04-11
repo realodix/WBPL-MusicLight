@@ -18,7 +18,7 @@
 		<tr>
 			<td colspan="3" align="right">
 				<input class="btn" type="submit" name="Home_Submit_Login" value="Submit" /> 
-				<a href="index.php?page=registration" class="btn btn-primary">Register</a>
+				<input class="btn btn-primary" type="submit" name="Home_Submit_Regiter" value="Regiter"/>
 			</td>
 		</tr>
 			
