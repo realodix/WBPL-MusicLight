@@ -112,7 +112,7 @@
 		<div style="float:right;">
 		<?php
 		if(isset($_SESSION['username'])){
-			echo sprintf('<p>Selamat Datang %s </p>', $_SESSION['username']);
+			echo sprintf('<p>Selamat datang, %s.</p>', ucfirst($_SESSION['username']));
 		}
 		?>
 		
@@ -276,7 +276,7 @@
         <div class="span3">
           <?php
 				if(isset($_SESSION['username'])){
-				echo sprintf('Selamat Datang %s <br>', $_SESSION['username']);
+					echo sprintf('Selamat datang, %s.</br>', ucfirst($_SESSION['username']));
 				}
 				echo date("d-m-Y"); ?>
 				
