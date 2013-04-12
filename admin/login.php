@@ -82,7 +82,7 @@
 		<input type="submit" class="btn btn-large" name="Submit" value="Sign in"/>
 		or
 		<input class="btn btn-large btn-primary" type="submit" name="Home_Submit_Regiter" value="Register"/> </br></br>
-		<a href="./">← Back to Music Light</a>
+		<a href="../">← Back to Music Light</a>
       </form>
     </div> <!-- /container -->
 
