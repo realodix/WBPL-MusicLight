@@ -127,7 +127,7 @@
 			
 			<input type="submit" class="btn" name="Home_Submit_Login" value="Sign in"/>
 			or
-			<input class="btn btn-primary" type="submit" name="Home_Submit_Regiter" value="Regiter"/>
+			<input class="btn btn-primary" type="submit" name="Home_Submit_Regiter" value="Register"/>
 		</form>
 		<?php
 		}else{ ?>

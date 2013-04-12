@@ -60,12 +60,6 @@
         <h2 class="form-signin-heading">Music Light</h2>
         <input name="username" id="username" type="text" class="input-block-level" placeholder="Username">
         <input name="password" id="password" type="password" class="input-block-level" placeholder="Password">
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-		<input type="submit" class="btn btn-large" name="Home_Submit_Login" value="Sign in"/>
-		or
-		<input class="btn btn-large btn-primary" type="submit" name="Home_Submit_Regiter" value="Register"/>
 		
 		<label class="text-error">
         <?php
@@ -79,6 +73,14 @@
 		}
 		?>
         </label>
+		
+        <label class="checkbox">
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+		<input type="submit" class="btn btn-large" name="Home_Submit_Login" value="Sign in"/>
+		or
+		<input class="btn btn-large btn-primary" type="submit" name="Home_Submit_Regiter" value="Register"/> </br></br>
+		<a href="./">← Back to Music Light</a>
       </form>
     </div> <!-- /container -->
 
