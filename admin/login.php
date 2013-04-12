@@ -65,7 +65,7 @@
         </label>
 		<input type="submit" class="btn btn-large" name="Home_Submit_Login" value="Sign in"/>
 		or
-		<input class="btn btn-large btn-primary" type="submit" name="Home_Submit_Regiter" value="Regiter"/>
+		<input class="btn btn-large btn-primary" type="submit" name="Home_Submit_Regiter" value="Register"/>
 		
 		<label class="text-error">
         <?php
