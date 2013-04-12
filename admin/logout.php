@@ -5,7 +5,7 @@ session_destroy();
 /**
 * Logout ke halaman login.
 */
-header("location:login.php");
+header("location:login.php?status=2");
 
 /**
 * Logout ke halaman home.
