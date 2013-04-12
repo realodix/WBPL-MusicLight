@@ -43,6 +43,7 @@
 
     </style>
     <link href="../css/bootstrap-responsive.css" rel="stylesheet">
+	<link href="../css/master.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -51,12 +52,12 @@
 
   </head>
 
-  <body>
+  <body class="login">
 
     <div class="container">
 
       <form class="form-signin" method="post" action="login_check.php">
-        <h2 class="form-signin-heading">Please sign in</h2>
+        <h2 class="form-signin-heading">Music Light</h2>
         <input name="username" id="username" type="text" class="input-block-level" placeholder="Username">
         <input name="password" id="password" type="password" class="input-block-level" placeholder="Password">
         <label class="checkbox">
