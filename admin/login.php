@@ -63,7 +63,9 @@
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
         </label>
-		<input type="submit" class="btn btn-large btn-primary" name="Submit" value="Sign in" />
+		<input type="submit" class="btn btn-large" name="Home_Submit_Login" value="Sign in"/>
+		or
+		<input class="btn btn-large btn-primary" type="submit" name="Home_Submit_Regiter" value="Regiter"/>
 		
 		<label class="text-error">
         <?php
