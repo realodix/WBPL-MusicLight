@@ -1,6 +1,9 @@
 .clear {
   clear: both;
 }
+body{
+	background:url("../images/bg.jpg") repeat scroll 0% 0% transparent;
+}
 .reasons {
 	float: left;
 	width: 240px;
