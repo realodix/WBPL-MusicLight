@@ -75,7 +75,6 @@ require_once('../inc/common_function.php');
                
          <h2>Koleksi</h2>
 		  <ul >
-		  <li><a href="index.php?page=buku_view">[DEL]Product</a></li>
 		  <li><a href="index.php?page=product">Product</a></li>
 		  <li><a href="index.php?page=brand_view">Brand & Ins. Type</a></li>
 		  </ul>
@@ -86,7 +85,6 @@ require_once('../inc/common_function.php');
 		  <li><a href="index.php?page=detail">Detail</a></li>
 		  <li><a href="index.php?page=zcustomer_view">Customer</a></li>
 		  <li><a href="index.php?page=zpesan_view">Pesan</a></li>
-		  <li><a href="index.php?page=zbayar_view">pembayaran</a></li>
 		  </ul>
 
         
@@ -102,30 +100,6 @@ require_once('../inc/common_function.php');
 		  <ul>
 			<li><a href="index.php?page=member">Member</a></li>
 		  </ul>
-        
-
-
-
-      <!--<h1>help</h1>
-
-      <blockquote>
-        <h2>Koleksi</h2>
-			<p>Pengolahan data untuk jenis buku dan daftar buku
-
-        </p>
-		<h2>Pesan</h2>
-			<p>Pengolahan data tabel pemesan(pembeli), pesan, detail pesan dan pembayaran
-
-
-        </p>
-		<h2>Setting</h2>
-			<p>Bagian ini untuk mengganti text halaman dan user/password pengelola
-
-        </p>
-      </blockquote>
--->
-
-
 
     </div>
     <!-- end right column, 25% width -->

@@ -38,22 +38,6 @@ function pass_member($user, $pass) {
 		return false;
 }
 
-function cek_email($email, $check_domain = false) {
-	if ($check_domain) {
-	}
-	if (ereg('^[-!#$%&\'*+\\./0-9=?A-Z^_`a-z{|}~]+' . '@' . '[-!#$%&\'*+\\/0-9=?A-Z^_`a-z{|}~]+\.' . '[-!#$%&\'*+\\./0-9=?A-Z^_`a-z{|}~]+$', $email)) {
-		if ($check_domain && function_exists('checkdnsrr')) {
-			list(, $domain) = explode('@', $email);
-			if (checkdnsrr($domain, 'MX') || checkdnsrr($domain, 'A')) {
-				return true;
-			}
-			return false;
-		}
-		return true;
-	}
-	return false;
-}
-
 function no_baris($j = "") {
 	if ($j == "")
 		$jum = 15;
@@ -109,62 +93,6 @@ function pesan_submit($url = '') {
 	echo "<META HTTP-EQUIV = 'Refresh' Content = '0; URL = $url'>";
 }
 
-function konversi_bulan($bln) {
-	switch($bln) {
-		case "01" :
-			$bulan = "Januari";
-			break;
-		case "02" :
-			$bulan = "Februari";
-			break;
-		case "03" :
-			$bulan = "Maret";
-			break;
-		case "04" :
-			$bulan = "April";
-			break;
-		case "05" :
-			$bulan = "Mei";
-			break;
-		case "06" :
-			$bulan = "Juni";
-			break;
-		case "07" :
-			$bulan = "Juli";
-			break;
-		case "08" :
-			$bulan = "Agustus";
-			break;
-		case "09" :
-			$bulan = "September";
-			break;
-		case "10" :
-			$bulan = "Oktober";
-			break;
-		case "11" :
-			$bulan = "November";
-			break;
-		case "12" :
-			$bulan = "Desember";
-			break;
-		default :
-			$bulan = "Error!, Kode bulan diluar range";
-	}
-	return $bulan;
-}
-
-function konversi_tanggal($time) {
-	list($thn, $bln, $tgl) = explode('-', $time);
-	$tmp = $tgl . " " . konversi_bulan($bln) . " " . $thn;
-	return $tmp;
-}
-
-function tampil_tanggal($time) {
-	list($date, $time) = explode(' ', $time);
-	$tmp = konversi_tanggal($date) . " " . $time;
-	return $tmp;
-}
-
 function selected($t1, $t2) {
 	if (trim($t1) == trim($t2))
 		return "selected";
@@ -190,73 +118,6 @@ function combo_ins_type($kode) {
 			echo "<option value='$row[0]'> " . ucwords($row[0]) . " </option>";
 		else
 			echo "<option value='$row[0]'" . selected($row[0], $kode) . "> " . ucwords($row[0]) . " </option>";
-	}
-}
-function combo_kategori($kode) {
-	echo "<option value='' selected>- Pilih Kategori-</option>";
-	$query = query("SELECT kd_kategori, nama_kategori FROM kategori ORDER BY nama_kategori ASC");
-	while ($row = mysql_fetch_row($query)) {
-		if ($kode == "")
-			echo "<option value='$row[0]'> " . ucwords($row[1]) . " </option>";
-		else
-			echo "<option value='$row[0]'" . selected($row[0], $kode) . "> " . ucwords($row[1]) . " </option>";
-	}
-}
-function combo_penerbit($kode) {
-	echo "<option value='' selected>- Pilih Penerbit-</option>";
-	$query = query("SELECT kd_penerbit, nama FROM penerbit ORDER BY nama ASC");
-	while ($row = mysql_fetch_row($query)) {
-		if ($kode == "")
-			echo "<option value='$row[0]'> " . ucwords($row[1]) . " </option>";
-		else
-			echo "<option value='$row[0]'" . selected($row[0], $kode) . "> " . ucwords($row[1]) . " </option>";
-	}
-}
-function combo_sex($sex) {
-	echo "<option value='' selected>- Jenis Kelamin -</option>";
-	if ($sex == "") {
-		echo "<option value='Pria'> Pria </option>";
-		echo "<option value='Wanita'> Wanita </option>";
-	} else {
-		echo "<option value='Pria'" . selected('Pria', $sex) . "> Pria </option>";
-		echo "<option value='Wanita'" . selected('Wanita', $sex) . "> Wanita </option>";
-	}
-}
-
-function get_date($tgl = '') {
-	if ($tgl == "")
-		$now = date("d");
-	else
-		$now = $tgl;
-	$jum_hr = date("t");
-	for ($i = 1; $i <= $jum_hr; $i++) {
-		echo "<option value='$i' " . selected($i, $now) . ">$i</option>";
-	}
-}
-
-function get_month($bln = '') {
-	if ($bln == "")
-		$now = date("m");
-	else
-		$now = $bln;
-	$jum_bl = 12;
-	for ($i = 1; $i <= $jum_bl; $i++) {
-		echo "<option value='$i' " . selected($i, $now) . ">" . konversi_bulan($i) . "</option>";
-	}
-}
-
-function get_year($thn = '') {
-	if ($thn == "") {
-		$now = date("Y");
-		$thn = date("Y");
-	} else {
-		$now = date("Y");
-		$thn = $thn;
-	}
-	$jum_th = 3;
-	for ($i = 1; $i <= $jum_th; $i++) {
-		echo "<option value='$now' " . selected($thn, $now) . ">" . $now . "</option>";
-		$now--;
 	}
 }
 
@@ -398,7 +259,164 @@ function kode_member() {
 	return $kode;
 }
 
+function cek_bayar() {
+	$id_member = fetch_row("SELECT id_member FROM member WHERE user='" . $_SESSION['VIRTUALDOCTER_MEMBER'] . "'");
+	$temp = fetch_row("SELECT status_pesan FROM pesan WHERE status_pesan='0' AND id_member='$id_member'");
+	if ($temp == '')
+		return true;
+	else
+		return false;
+}
 
+function cek_status_bayar($kode) {
+	$br = fetch_row("SELECT status_pesan FROM pesan WHERE id_pesan='$kode'");
+	if ($br == '1')
+		return true;
+	else
+		return false;
+}
+
+/*
+function cek_email($email, $check_domain = false) {
+	if ($check_domain) {
+	}
+	if (ereg('^[-!#$%&\'*+\\./0-9=?A-Z^_`a-z{|}~]+' . '@' . '[-!#$%&\'*+\\/0-9=?A-Z^_`a-z{|}~]+\.' . '[-!#$%&\'*+\\./0-9=?A-Z^_`a-z{|}~]+$', $email)) {
+		if ($check_domain && function_exists('checkdnsrr')) {
+			list(, $domain) = explode('@', $email);
+			if (checkdnsrr($domain, 'MX') || checkdnsrr($domain, 'A')) {
+				return true;
+			}
+			return false;
+		}
+		return true;
+	}
+	return false;
+}
+
+function konversi_bulan($bln) {
+	switch($bln) {
+		case "01" :
+			$bulan = "Januari";
+			break;
+		case "02" :
+			$bulan = "Februari";
+			break;
+		case "03" :
+			$bulan = "Maret";
+			break;
+		case "04" :
+			$bulan = "April";
+			break;
+		case "05" :
+			$bulan = "Mei";
+			break;
+		case "06" :
+			$bulan = "Juni";
+			break;
+		case "07" :
+			$bulan = "Juli";
+			break;
+		case "08" :
+			$bulan = "Agustus";
+			break;
+		case "09" :
+			$bulan = "September";
+			break;
+		case "10" :
+			$bulan = "Oktober";
+			break;
+		case "11" :
+			$bulan = "November";
+			break;
+		case "12" :
+			$bulan = "Desember";
+			break;
+		default :
+			$bulan = "Error!, Kode bulan diluar range";
+	}
+	return $bulan;
+}
+
+function konversi_tanggal($time) {
+	list($thn, $bln, $tgl) = explode('-', $time);
+	$tmp = $tgl . " " . konversi_bulan($bln) . " " . $thn;
+	return $tmp;
+}
+
+function tampil_tanggal($time) {
+	list($date, $time) = explode(' ', $time);
+	$tmp = konversi_tanggal($date) . " " . $time;
+	return $tmp;
+}
+
+function combo_kategori($kode) {
+	echo "<option value='' selected>- Pilih Kategori-</option>";
+	$query = query("SELECT kd_kategori, nama_kategori FROM kategori ORDER BY nama_kategori ASC");
+	while ($row = mysql_fetch_row($query)) {
+		if ($kode == "")
+			echo "<option value='$row[0]'> " . ucwords($row[1]) . " </option>";
+		else
+			echo "<option value='$row[0]'" . selected($row[0], $kode) . "> " . ucwords($row[1]) . " </option>";
+	}
+}
+function combo_penerbit($kode) {
+	echo "<option value='' selected>- Pilih Penerbit-</option>";
+	$query = query("SELECT kd_penerbit, nama FROM penerbit ORDER BY nama ASC");
+	while ($row = mysql_fetch_row($query)) {
+		if ($kode == "")
+			echo "<option value='$row[0]'> " . ucwords($row[1]) . " </option>";
+		else
+			echo "<option value='$row[0]'" . selected($row[0], $kode) . "> " . ucwords($row[1]) . " </option>";
+	}
+}
+
+function combo_sex($sex) {
+	echo "<option value='' selected>- Jenis Kelamin -</option>";
+	if ($sex == "") {
+		echo "<option value='Pria'> Pria </option>";
+		echo "<option value='Wanita'> Wanita </option>";
+	} else {
+		echo "<option value='Pria'" . selected('Pria', $sex) . "> Pria </option>";
+		echo "<option value='Wanita'" . selected('Wanita', $sex) . "> Wanita </option>";
+	}
+}
+
+function get_date($tgl = '') {
+	if ($tgl == "")
+		$now = date("d");
+	else
+		$now = $tgl;
+	$jum_hr = date("t");
+	for ($i = 1; $i <= $jum_hr; $i++) {
+		echo "<option value='$i' " . selected($i, $now) . ">$i</option>";
+	}
+}
+
+function get_month($bln = '') {
+	if ($bln == "")
+		$now = date("m");
+	else
+		$now = $bln;
+	$jum_bl = 12;
+	for ($i = 1; $i <= $jum_bl; $i++) {
+		echo "<option value='$i' " . selected($i, $now) . ">" . konversi_bulan($i) . "</option>";
+	}
+}
+
+function get_year($thn = '') {
+	if ($thn == "") {
+		$now = date("Y");
+		$thn = date("Y");
+	} else {
+		$now = date("Y");
+		$thn = $thn;
+	}
+	$jum_th = 3;
+	for ($i = 1; $i <= $jum_th; $i++) {
+		echo "<option value='$now' " . selected($thn, $now) . ">" . $now . "</option>";
+		$now--;
+	}
+}
 function format_uang($duit, $space = false) {
 	$rp = ($space) ? "Rp. " : "Rp.";
 	return $rp . number_format($duit, 0, ",", ".") . ",- ";
@@ -455,21 +473,5 @@ function terbilang($x, $style = 4) {
 	}
 	return $hasil;
 }
-
-function cek_bayar() {
-	$id_member = fetch_row("SELECT id_member FROM member WHERE user='" . $_SESSION['VIRTUALDOCTER_MEMBER'] . "'");
-	$temp = fetch_row("SELECT status_pesan FROM pesan WHERE status_pesan='0' AND id_member='$id_member'");
-	if ($temp == '')
-		return true;
-	else
-		return false;
-}
-
-function cek_status_bayar($kode) {
-	$br = fetch_row("SELECT status_pesan FROM pesan WHERE id_pesan='$kode'");
-	if ($br == '1')
-		return true;
-	else
-		return false;
-}
+*/
 ?>
