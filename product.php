@@ -2,7 +2,9 @@
 <?php
 //tentukan nilai batas
 $batas=2;
-$halaman=$_GET['halaman'];
+if(isset($_GET['halaman'])){
+	$halaman = $_GET['halaman'];
+}
 $posisi=null;
 if(empty($halaman)){
 	$posisi=0;
