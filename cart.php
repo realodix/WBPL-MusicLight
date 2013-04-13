@@ -11,7 +11,9 @@ require_once ('inc/functions.inc.php');
 
 // Process actions
 $cart = $_SESSION['cart'];
-$action = $_GET['action'];
+if(isset($_GET['action'])){
+	$action = $_GET['action'];
+
 switch ($action) {
 	case 'add' :
 		if ($cart) {
@@ -68,6 +70,7 @@ switch ($action) {
 
 		$cart = $newcart;
 		break;
+}
 }
 $_SESSION['cart'] = $cart;
 ?>
