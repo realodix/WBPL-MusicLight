@@ -132,8 +132,8 @@ if(isset($_GET['kirim'])){
 				<td width="350">
 				<select name='id_kota' id='id_kota'>
 					<?php
-$get_kota=mysql_query('select * from biaya_kirim order by nama_kota');
-while ($rows=mysql_fetch_array($get_kota)){
+					$get_kota=mysql_query('select * from biaya_kirim order by nama_kota');
+					while ($rows=mysql_fetch_array($get_kota)){
 					?>
 					<option value="<?php echo $rows['id_kota']?>"><?php echo $rows['nama_kota']
 						?></option>
