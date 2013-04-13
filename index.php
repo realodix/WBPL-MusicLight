@@ -1,14 +1,14 @@
 <?php	// Include MySQL class
 	session_start();
-	
+
 	//include('admin/inc/config.php');
-		require_once ('inc/mysql.class.php');
-		// Include database connection
-		require_once ('inc/global.inc.php');
-		// Include functions
-		require_once ('inc/functions.inc.php');
-		
+	require_once ('inc/mysql.class.php');
+	// Include database connection
+	require_once ('inc/global.inc.php');
+	// Include functions
+	require_once ('inc/functions.inc.php');
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -114,7 +114,7 @@
 		?>
 		
 		<?php
-		if(!isset($_SESSION['username'])){ ?>
+		if(!isset($_SESSION['username'])){?>
 		<form style="float:right;" method="post" action="admin/login_check.php">
 			<input name="username" type="text" class="input-small" placeholder="Username">
 			<input name="password" type="password" class="input-small" placeholder="Password">
@@ -176,21 +176,21 @@
 	
 	<div class="row-fluid">
 	<div class="reasons span4">
-		<h3>Murah</h3>
+		<h3>Cheap</h3>
 		<img src="images/reason1.png" alt="Reason1" />
-		<p>Product yang anda dapat mempunyai harga dibawah rata rata toko </p>
+		<p>Product that you could have prices below average of other stores.</p>
 	</div>
                 
 	<div class="reasons span4">
-		<h3>Cepat</h3>
+		<h3>Fast</h3>
 		<img src="images/reason2.png" alt="Reason2" />
-		<p>Pemesanan cepat dan mudah </p>
+		<p>Fast and easy ordering. All you can get just by clicking the product.</p>
 	</div>
                 
 	<div class="reasons span4">
 		<h3>100% Satisfaction</h3>
 		<img src="images/reason3.png" alt="Reason3" />
-		<p> Anda tidak puas, uang kembali </p>
+		<p>You are not satisfied, money back.</p>
 	</div>
     </div>
 	
