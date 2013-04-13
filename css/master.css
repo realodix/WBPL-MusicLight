@@ -7,6 +7,22 @@ body{
 .masthead{
 	width: 1010px;
 }
+.masthead hgroup{
+	float: left;
+	margin-left: 10px;
+	line-height: 1;
+	padding-top: 20px;
+}
+.masthead hgroup .site-title{
+	margin: 0px;
+	padding: 0px;
+}
+.masthead hgroup .site-description{
+	font-size: 24px;
+	font-weight: 300;
+	margin: 0px;
+	padding: 0px;
+}
 .login{
 	background:url("../images/bg_login.png") repeat scroll 0% 0% transparent;
 }

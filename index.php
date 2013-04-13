@@ -104,8 +104,11 @@
     <div class="container">
 
       <div class="masthead">
-        <h3 class="muted" style="float:left;" >Music Light | musical instrument shop</h3>
-		
+		<hgroup>
+			<h1 class="site-title">MusicLight</h1>
+			<h2 class="site-description">Musical Instrument Shop</h2>
+		</hgroup>
+
 		<div style="float:right;">
 		<?php
 		if(isset($_SESSION['username'])){
