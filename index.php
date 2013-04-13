@@ -233,7 +233,8 @@
 									
 								<div class="slider_content">
                                     <h2><?php echo $get_data['nama_brand']?></h2>
-									<p>Price: Rp. <?php echo $get_data['price'];?></p>
+									<p>Product ID: <?php echo $get_data['kd_product'];?></br>
+									Price: Rp. <?php echo $get_data['price'];?></p>
 									<p>aa<?php echo $get_data['deskripsi'];?></p>
                                    
 									<div class="btn_more"><a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>">Add to cart</a></div>
@@ -245,9 +246,7 @@
 						<?php
 						}//end while
 						?>
-                            
-            
-                      
+
                         </div><!-- End cs_slider -->
                     </div><!-- End cs_wrapper -->
                 </div><!-- End contentslider -->
@@ -259,7 +258,7 @@
                 <script type="text/javascript">
                     $(function() {
                     $('#one').ContentSlider({
-                    width : '770px',
+                    width : '760px',
                     height : '240px',
                     speed : 400,
                     easing : 'easeOutSine'
