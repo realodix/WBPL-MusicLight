@@ -194,11 +194,9 @@
 	</div>
     </div>
 	
-	
-	<hr></hr>
 
       <!-- Example row of columns -->
-      <div class="row-fluid">
+      <div class="row-fluid content">
         <div class="span9">
 		<div id="templatemo_slider">
             
