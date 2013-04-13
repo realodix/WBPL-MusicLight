@@ -269,28 +269,12 @@
         </div>
 		
         <div class="span3">
-          <?php
-				if(isset($_SESSION['username'])){
-					echo sprintf('Selamat datang, %s.</br>', ucfirst($_SESSION['username']));
-				}
-				echo date("d-m-Y"); ?>
-				
-				<?php
-				if(!isset($_SESSION['username'])){
-					include('index _login.php');
-				}else{?>
-					
-					<a href="admin/logout.php?logout=1" name="Home_Submit_Logout">Logout</a> </br>
-					<a href="./admin">Go to Admin page</a> </br></br>
-				
-				<?php }	?>
-			
-                <h3>Brand</h3>
-            	<?php
-            	include('kategori.php');
-				?>
-				<h2>Alamat kami</h2>
-				<p>Jakarta</p>
+			<h3>Brand</h3>
+			<?php
+			include('kategori.php');
+			?>
+			<h2>Alamat kami</h2>
+			<p>Jakarta</p>
        </div>
        
       </div>
