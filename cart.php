@@ -147,7 +147,7 @@ while ($rows=mysql_fetch_array($get_kota)){
 			
 				<td>
 				<input type="submit" name="tambah" value="Tambah" class="btn" />
-				<input type="reset" name="resetbtn" value="Reset" class="btn" />
+				<input type="reset" name="resetbtn" value="Reset" class="btn btn-danger" />
 				</td>
 			</tr>
 			<tr>
