@@ -31,6 +31,23 @@ if (move_uploaded_file($lokasi_file, $direktori)) {
 				'$product_image',
 				'$product_deskripsi')";
 	$result = mysql_query($sql) or die(mysql_error());
+}else{
+	$sql = "INSERT INTO wbpl_product(kd_product,
+							nama_brand,
+							nama_instype,
+							price,
+							stock,
+							image,
+							deskripsi)
+		VALUES('$kd_product',
+				'$kd_brand',
+				'$kd_instype',
+				'$product_price',
+				'$product_stock',
+				'$product_image',
+				'$product_deskripsi')";
+	$result = mysql_query($sql) or die(mysql_error());
+}
 
 	//check if query successful
 	if ($result) {
@@ -40,5 +57,5 @@ if (move_uploaded_file($lokasi_file, $direktori)) {
 	}
 	mysql_close();
 }
-}
+
 ?>
