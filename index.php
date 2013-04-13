@@ -112,10 +112,20 @@
 		<div style="float:right;">
 		<?php
 		if(isset($_SESSION['username'])){
-			echo sprintf('<p>Selamat datang, %s.</p>', ucfirst($_SESSION['username']));
+		
+			$hour = date("G");
+			if ($hour >= 0 && $hour <= 11) {
+				echo "Good morning, ";
+			} else if ($hour >= 12 && $hour <= 17) {
+				echo "Good afternoon, ";
+			} else {
+				echo "Good evening, ";
+			}
+	
+			echo ucfirst($_SESSION['username']);
 		}
 		?>
-		
+		<br>
 		<?php
 		if(!isset($_SESSION['username'])){?>
 		<form style="float:right;" method="post" action="admin/login_check.php">
