@@ -7,28 +7,28 @@ $result = mysql_query($sql) or die(mysql_error());
 ?>
 <h2>Change Biaya Kirim</h2>
 <table>
-	<form id="form1" name="form1" name="form2" method="post" action="zbiaya_edit.php">
-		<?
+	<form id="form1" name="form1" name="form2" method="post" action="inc/wbpl-biaya_edit.php">
+		<?php
 //proses menampilkan data
 while($rows=mysql_fetch_array($result)){
 		?>
 
 		<td width="120">id_kota</td>
-		<td width="350"><?  echo $rows['id_kota'];?></td>
+		<td width="350"><?php  echo $rows['id_kota'];?></td>
 		</tr>
-		<input type="hidden" id="id_kota" name="id_kota" value=<? echo $rows['id_kota'];?> />
+		<input type="hidden" id="id_kota" name="id_kota" value=<?php echo $rows['id_kota'];?> />
 		<tr>
 			<td width="120">nama_kota</td>
 			<td width="350">
 			<input name="nama_kota" type="nama_kota" id="nama_kota" size="40"
-			value=<? echo $rows['nama_kota'];?>>
+			value=<?php echo $rows['nama_kota'];?>>
 			</td>
 		</tr>
 		<tr>
 			<td width="120">biaya</td>
 			<td width="350">
 			<input name="biaya" type="biaya" id="biaya" size="40"
-			value=<? echo $rows['biaya'];?>>
+			value=<?php echo $rows['biaya'];?>>
 			</td>
 		</tr>
 		<tr>
@@ -39,7 +39,7 @@ while($rows=mysql_fetch_array($result)){
 			<input type="reset" name="resetbtn" value="Reset" />
 			</td>
 		</tr>
-		<?
+		<?php
 		//loop while
 		}
 		?>

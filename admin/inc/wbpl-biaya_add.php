@@ -1,5 +1,5 @@
 <?php
-include ('inc/config.php');
+include ('config.php');
 //data dari user
 if (isset($_POST['tambahLogin'])) {
 	$id_kota = $_POST['id_kota'];
@@ -12,9 +12,9 @@ if (isset($_POST['tambahLogin'])) {
 
 	//check if query successful
 	if ($result) {
-		header('location:index.php?page=biaya_view&status=0');
+		header('location:../index.php?page=zbiaya_view&status=0');
 	} else {
-		header('location:index.php?page=biaya_view&status=1');
+		header('location:../index.php?page=zbiaya_view&status=1');
 	}
 	mysql_close();
 }

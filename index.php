@@ -128,7 +128,7 @@
 		<br>
 		<?php
 		if(!isset($_SESSION['username'])){?>
-		<form style="float:right;" method="post" action="admin/login_check.php">
+		<form style="float:right;" method="post" action="admin/inc/wbpl-login_check.php">
 			<input name="username" type="text" class="input-small" placeholder="Username">
 			<input name="password" type="password" class="input-small" placeholder="Password">
 			<label class="checkbox">

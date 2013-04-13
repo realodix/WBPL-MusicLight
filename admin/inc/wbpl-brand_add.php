@@ -1,5 +1,5 @@
 <?php
-include ('inc/config.php');
+include ('config.php');
 //data dari user
 if (isset($_POST['tambahLogin'])) {
 	$kd_brand = $_POST['kd_brand'];
@@ -12,9 +12,9 @@ if (isset($_POST['tambahLogin'])) {
 
 	//check if query successful
 	if ($result) {
-		header('location:index.php?page=brand_view&status=0');
+		header('location:../index.php?page=brand_view&status=0');
 	} else {
-		header('location:index.php?page=brand_view&status=1');
+		header('location:../index.php?page=brand_view&status=1');
 	}
 	mysql_close();
 }
@@ -32,9 +32,9 @@ if (isset($_POST['tambahLoginIT'])) {
 
 	//check if query successful
 	if ($result) {
-		header('location:index.php?page=brand_view&status=2');
+		header('location:../index.php?page=brand_view&status=2');
 	} else {
-		header('location:index.php?page=brand_view&status=3');
+		header('location:../index.php?page=brand_view&status=3');
 	}
 	mysql_close();
 }

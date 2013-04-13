@@ -56,7 +56,7 @@
 
     <div class="container">
 
-      <form class="form-signin" method="post" action="login_check.php">
+      <form class="form-signin" method="post" action="inc/wbpl-login_check.php">
         <h2 class="form-signin-heading">Music Light</h2>
         <input name="username" id="username" type="text" class="input-block-level" placeholder="Username">
         <input name="password" id="password" type="password" class="input-block-level" placeholder="Password">

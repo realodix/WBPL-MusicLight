@@ -1,5 +1,5 @@
 <?php
-include ('inc/config.php');
+include ('config.php');
 //data dari user
 if (isset($_POST['tambah'])) {
 	$kd_product = $_POST['kd_product'];
@@ -51,9 +51,9 @@ if (move_uploaded_file($lokasi_file, $direktori)) {
 
 	//check if query successful
 	if ($result) {
-		header('location:index.php?page=product&status=0');
+		header('location:../index.php?page=product&status=0');
 	} else {
-		header('location:index.php?page=product&status=1');
+		header('location:../index.php?page=product&status=1');
 	}
 	mysql_close();
 }

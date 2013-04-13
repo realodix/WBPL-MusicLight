@@ -7,7 +7,7 @@ $result = mysql_query($sql) or die(mysql_error());
 ?>
 <h2>Change Brand</h2>
 <table>
-	<form id="form1" name="form1" method="post" action="brand_edit.php">
+	<form id="form1" name="form1" method="post" action="inc/wbpl-brand_edit.php">
 		<?php
 //proses menampilkan data
 while($rows=mysql_fetch_array($result)){

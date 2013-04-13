@@ -1,6 +1,5 @@
 
-<form id="form1" name="form1" method="post" enctype="multipart/form-data"
- action="updateproduct_edit.php">
+<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="inc/wbpl-updateproduct_edit.php">
 	<td>
 	<table>
 	

@@ -1,5 +1,5 @@
 <?php
-include ('inc/config.php');
+include ('config.php');
 //data dari user
 if (isset($_POST['submitUser'])) {
 	$kd_instype = $_POST['kd_instype'];
@@ -15,9 +15,9 @@ if (isset($_POST['submitUser'])) {
 
 	//check if query successful
 	if ($result) {
-		header('location:index.php?page=brand_view&status=0');
+		header('location:../index.php?page=brand_view&status=0');
 	} else {
-		header('location:index.php?page=brand_view&status=1');
+		header('location:../index.php?page=brand_view&status=1');
 	}
 	mysql_close();
 }

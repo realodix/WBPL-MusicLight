@@ -6,7 +6,7 @@
 
 
 
-<form id="form1" name="form1" method="post" action="brand_add.php">
+<form id="form1" name="form1" method="post" action="inc/wbpl-brand_add.php">
 	<tr><td colspan="3" >
 	<table>
 		<tr>
@@ -115,7 +115,7 @@ while($rows=mysql_fetch_array($result)){
 
 
 
-<form id="form1" name="form1" method="post" action="brand_add.php">
+<form id="form1" name="form1" method="post" action="inc/wbpl-brand_add.php">
 	<tr><td colspan="3" >
 	<table>
 		<tr>
