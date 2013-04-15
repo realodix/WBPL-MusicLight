@@ -259,6 +259,28 @@ function kode_member() {
 	return $kode;
 }
 
+function kd_testimony() {
+	$kode_temp = fetch_row("SELECT kd_testimony FROM wbpl_testimony ORDER BY kd_testimony DESC LIMIT 0,1");
+	if ($kode_temp == '')
+		$kode = "T0001";
+	else {
+		$jum = substr($kode_temp, 1, 4);
+		$jum++;
+		if ($jum <= 9)
+			$kode = "T000" . $jum;
+		elseif ($jum <= 99)
+			$kode = "T00" . $jum;
+		elseif ($jum <= 999)
+			$kode = "T0" . $jum;
+		elseif ($jum <= 9999)
+			$kode = "T" . $jum;
+	
+		else
+			die("Kode member melebihi batas");
+	}
+	return $kode;
+}
+
 function cek_bayar() {
 	$id_member = fetch_row("SELECT id_member FROM member WHERE user='" . $_SESSION['VIRTUALDOCTER_MEMBER'] . "'");
 	$temp = fetch_row("SELECT status_pesan FROM pesan WHERE status_pesan='0' AND id_member='$id_member'");

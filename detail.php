@@ -38,7 +38,12 @@ while($get_data=mysql_fetch_array($hasil)){
 
 ?>
 
-<div class="image_wrapper image_fl"><img class="img-polaroid" src="cover/<?php echo $get_data['image']?>" width='150px' heigth='150px'></a>
+<div class="image_wrapper image_fl"><img class="img-polaroid" src="cover/<?php echo $get_data['image'] ?>"
+alt="<?php
+	$imagee = $get_data['image'];
+	if ($imagee == 0 ){
+		echo 'Image Not Avaible';
+	}?>" width="150px" heigth="150px"></a>
 </div>
 <p>
 	<em>Product ID: <?php echo $get_data['kd_product']?></em><br>

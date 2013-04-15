@@ -1,17 +1,16 @@
 <?php
 session_start();
-
 if(!isset($_SESSION['username'])){
-header("location:login.php");
-}
+		header("location:login.php");
+	}
 
 	require_once 'inc/config.php';
 require_once('../inc/common_function.php');
 
 ?>
 
-<h1></h1><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 
 
@@ -71,35 +70,30 @@ require_once('../inc/common_function.php');
 
     <!-- Right column, 25% width -->
     <div class="floatLeft width25 rightMargin">
-
-               
-         <h2>Koleksi</h2>
-		  <ul >
-		  <li><a href="index.php?page=product">Product</a></li>
-		  <li><a href="index.php?page=brand_view">Brand & Ins. Type</a></li>
-		  </ul>
+  
+		<h2>Koleksi</h2>
+		<ul >
+			<li><a href="index.php?page=product">Product</a></li>
+			<li><a href="index.php?page=brand_view">Brand & Ins. Type</a></li>
+		</ul>
         
-		 
-         <h2>Pesan</h2>
-		  <ul>
-		  <li><a href="index.php?page=detail">Detail</a></li>
-		  <li><a href="index.php?page=zcustomer_view">Customer</a></li>
-		  <li><a href="index.php?page=zpesan_view">Pesan</a></li>
-		  </ul>
+		<h2>Pesan</h2>
+		<ul>
+			<li><a href="index.php?page=detail">Detail</a></li>
+			<li><a href="index.php?page=zcustomer_view">Customer</a></li>
+			<li><a href="index.php?page=zpesan_view">Pesan</a></li>
+			<li><a href="index.php?page=testimony">Testimony</a></li>
+		</ul>
 
-        
-       
-		         <h2>Biaya kirim</h2>
-				  <ul>
-				  <li><a href="index.php?page=zbiaya_view">Biaya per kota</a></li>
+		<h2>Biaya kirim</h2>
+		<ul>
+			<li><a href="index.php?page=zbiaya_view">Biaya per kota</a></li>
+		</ul>
 
-				  </ul>
-        
-
-        <h2>Setting</h2>
-		  <ul>
+		<h2>Setting</h2>
+		<ul>
 			<li><a href="index.php?page=member">Member</a></li>
-		  </ul>
+		</ul>
 
     </div>
     <!-- end right column, 25% width -->
@@ -149,6 +143,7 @@ if (isset($_GET['page'])) {
 </html
 
 <?php
+
 /*
 }else{
 header("location:form_login.php");

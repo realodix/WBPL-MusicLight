@@ -113,7 +113,7 @@
 		<?php
 		if(isset($_SESSION['username'])){
 		
-			$hour = date("G");
+			$hour = (date("G")+5);// harus ditambah 5 agar jamnya sama.
 			if ($hour >= 0 && $hour <= 11) {
 				echo "Good morning, ";
 			} else if ($hour >= 12 && $hour <= 17) {
@@ -176,6 +176,10 @@
 
 				<li>
 					<a href="index.php?page=bayar_form_add">Pembayaran</a>
+				</li>
+				
+				<li>
+					<a href="testimony.php">Testimony</a>
 				</li>
 
               </ul>
