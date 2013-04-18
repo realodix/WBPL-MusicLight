@@ -43,3 +43,4 @@
 [closed] #35 Menyatukan file index.php & home.php
 [closed] #13 Mengimplementasikan Bootstrap
 [closed] #25 Merombak UI home
+[closed] #41 Menyatukan Module Action Add & Edit

@@ -7,25 +7,25 @@ $result = mysql_query($sql) or die(mysql_error());
 ?>
 <h2>Change Biaya Kirim</h2>
 <table>
-	<form id="form1" name="form1" name="form2" method="post" action="inc/wbpl-biaya_edit.php">
+	<form id="form1" name="form1" name="form2" method="post" action="wbpl_add-edit.php?action=update_biaya">
 		<?php
 //proses menampilkan data
 while($rows=mysql_fetch_array($result)){
 		?>
 
-		<td width="120">id_kota</td>
+		<td width="120">ID KOta</td>
 		<td width="350"><?php  echo $rows['id_kota'];?></td>
 		</tr>
 		<input type="hidden" id="id_kota" name="id_kota" value=<?php echo $rows['id_kota'];?> />
 		<tr>
-			<td width="120">nama_kota</td>
+			<td width="120">Nama Kota</td>
 			<td width="350">
 			<input name="nama_kota" type="nama_kota" id="nama_kota" size="40"
 			value=<?php echo $rows['nama_kota'];?>>
 			</td>
 		</tr>
 		<tr>
-			<td width="120">biaya</td>
+			<td width="120">Biaya</td>
 			<td width="350">
 			<input name="biaya" type="biaya" id="biaya" size="40"
 			value=<?php echo $rows['biaya'];?>>

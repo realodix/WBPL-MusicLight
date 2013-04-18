@@ -1,15 +1,15 @@
-<form id="form1" name="form1" method="post" action="inc/wbpl-biaya_add.php">
+<form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=insert_biaya">
 	<td>
 	<table>
 	
 		<tr>
-			<td width="120">nama_kota</td>
+			<td width="120">Nama Kota</td>
 			<td width="350">
 			<input name="nama_kota" type="nama_kota" id="nama_kota" size="40" />
 			</td>
 		</tr>
 		<tr>
-			<td width="120">biaya</td>
+			<td width="120">Biaya</td>
 			<td width="350">
 			<input name="biaya" type="biaya" id="biaya" size="40" />
 			</td>

@@ -7,7 +7,7 @@ $result = mysql_query($sql) or die(mysql_error());
 ?>
 <h2>Change Instrument</h2>
 <table>
-	<form id="form1" name="form1" method="post" action="inc/wbpl-brandINS_edit.php">
+	<form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=update_instype">
 		<?php
 //proses menampilkan data
 while($rows=mysql_fetch_array($result)){

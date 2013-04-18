@@ -1,7 +1,7 @@
 <?php
 	include ('inc/config.php');?><table  width="600px" border=0>
 <tr style="background-color:#F79307">
-<td>id_kota</td><td>nama_kota</td><td>biaya</td><td>Operasi</td></tr>
+<td>ID Kota</td><td>Nama Kota</td><td>Biaya</td><td>Operasi</td></tr>
 
 <?php
 /*
@@ -59,7 +59,7 @@ $no++;
 
 //tutup koneksi
 ?>
-<tr><td align=right colspan='2'>
+<tr><td align=right colspan='3'>
 <?php
 if(isset($_GET['status'])) {
 	if($_GET['status'] == 0) {

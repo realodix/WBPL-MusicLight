@@ -1,5 +1,5 @@
 
-<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="inc/wbpl-updateproduct_edit.php">
+<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="wbpl_add-edit.php?action=updateproduct">
 	<td>
 	<table>
 	
@@ -76,22 +76,5 @@
 		</tr>
 	</table></td>
 </form>
-<script language="javaScript" type="text/javascript"
-xml:space="preserve">
-//You should create the validator only after the definition of the HTML form
-var frmvalidator  = new Validator("form1");
-frmvalidator.EnableOnPageErrorDisplaySingleBox();
-frmvalidator.EnableMsgsTogether();
-
-frmvalidator.addValidation("kd_buku","req","kode buku masih kosong ");
-frmvalidator.addValidation("kd_kategori","req","kode kategori  masih kosong ");
-frmvalidator.addValidation("judul","req","judul masih kosong ");
-frmvalidator.addValidation("judul","min=5","judul terlalu pendek");
-frmvalidator.addValidation("pengarang","req","pengarang masih kosong ");
-
-frmvalidator.addValidation("harga","req","harga masih kosong ");
 
 
-
-
-</script>
