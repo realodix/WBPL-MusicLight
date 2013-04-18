@@ -1,3 +1,6 @@
+a, div, h1, h2, h3, font, input, label, ul, li, tr, td, p, select, strong{
+	font-family: Segoe UI !important;
+}
 .clear {
   clear: both;
 }
