@@ -94,8 +94,3 @@ if(isset($_GET['status'])) {
 <br>
 Jumlah data :<?php echo $jmldata;?>
 
-<?php mysql_close();
-//close database
-
-//tampilan siapa yang login?>
-
