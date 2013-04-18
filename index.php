@@ -1,12 +1,10 @@
 <?php	// Include MySQL class
 	session_start();
-
-	//include('admin/inc/config.php');
-	require_once ('inc/mysql.class.php');
-	// Include database connection
-	require_once ('inc/global.inc.php');
-	// Include functions
+	
+	require_once ('admin/inc/config.php');
 	require_once ('inc/functions.inc.php');
+	//require_once ('inc/mysql.class.php');
+	//require_once ('inc/global.inc.php');
 ?>
 
 
