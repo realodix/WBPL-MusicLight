@@ -60,9 +60,9 @@ $jumlah_halaman=ceil($jmldata/$batas);
 echo "Halaman :";
 for($i=1;$i<=$jumlah_halaman;$i++)
 if ($i!=$halaman){
-	echo "<a href=index.php?page=detail&halaman=$i>$i</a>|";
+	echo "<a href=index.php?page=detail&halaman=$i> $i</a> | ";
 }else{
-	echo "<b>$i</b>|";
+	echo "<b> $i</b> | ";
 }
 mysql_close();
 ?>

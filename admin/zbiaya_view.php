@@ -86,9 +86,9 @@ if(isset($_GET['status'])) {
 	echo "Halaman :";
 	for($i = 1; $i <= $jumlah_halaman; $i++)
 		if($i != $halaman) {
-			echo "<a href=index.php?page=zbiaya_view&halaman=$i>$i</a>|";
+			echo "<a href=index.php?page=zbiaya_view&halaman=$i> $i</a> | ";
 		} else {
-			echo "<b>$i</b>|";
+			echo "<b> $i</b> | ";
 		}
 	mysql_close();?>
 <br>
