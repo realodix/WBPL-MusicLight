@@ -265,6 +265,8 @@
 							if (isset($_GET['err'])) {
 								if ($_GET['err'] == 4) {
 									echo "Password must be filled.";
+								}else if ($_GET['err'] == 41) {
+									echo "Password must be filled more than 5 characters..";
 								}
 							}
 							?>
