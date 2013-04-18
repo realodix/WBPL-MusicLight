@@ -129,6 +129,27 @@
 		<form style="float:right;" method="post" action="admin/inc/wbpl-login_check.php">
 			<input name="username" type="text" class="input-small" placeholder="Username">
 			<input name="password" type="password" class="input-small" placeholder="Password">
+			
+			<div class="mustbe">
+			<?php 
+			
+			if (isset($_GET['err'])) {
+				if ($_GET['err'] == 1) {
+					echo "The username must be filled";
+				}else if ($_GET['err'] == 2) {
+					echo "The password must be filled";
+				}else if ($_GET['err'] == 3) {
+					echo "The username or password you entered is incorrect";
+				}
+			}else if (isset($_GET['loggedout'])) {
+				if ($_GET['loggedout'] == true) {
+					echo "You are now logged out.";
+				}
+			}
+			 
+			?>
+			</div>
+			
 			<label class="checkbox">
 				<input type="checkbox"> Remember me
 			</label>
@@ -136,6 +157,7 @@
 			<input type="submit" class="btn" name="Home_Submit_Login" value="Sign in"/>
 			or
 			<input class="btn btn-primary" type="submit" name="Home_Submit_Regiter" value="Register"/>
+			
 		</form>
 		<?php
 		}else{ ?>

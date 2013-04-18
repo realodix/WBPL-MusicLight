@@ -2,7 +2,6 @@
 //file konfigurasi
 include ('config.php');
 
-
 /**
 * Validasi khusus untuk halaman login.
 */
@@ -41,28 +40,36 @@ if ($valid == false) {
 */
 if (isset($_POST['Home_Submit_Login'])) {
 	
-	session_start();
-	$session = array('username');
-
 	$username = $_POST['username'];
 	$password = $_POST['password'];
-
-	$password = md5($password);
-
-	$sql= "select * from wbpl_member
-		where
-		username='$username' and password='$password' ";
-
-	$userquery = mysql_query($sql) or die(mysql_error());
-	// 	$valid=false;
-	if (mysql_num_rows($userquery) == 1) {
-		header('location:../../index.php');
-		$valid = true;
-		$_SESSION['username'] = $username;
+	
+	if(strlen($username) == 0){
+		header('location:../../index.php?&err=1');
 	}
+	else if(strlen($password) == 0){
+		header('location:../../index.php?&err=2');
+	}else{
+	
+		session_start();
+		$session = array('username');
 
-	if ($valid == false) {
-		header("Location:../../index.php?status=1");
+		$password = md5($password);
+
+		$sql= "select * from wbpl_member
+			where
+			username='$username' and password='$password' ";
+
+		$userquery = mysql_query($sql) or die(mysql_error());
+		// 	$valid=false;
+		if (mysql_num_rows($userquery) == 1) {
+			header('location:../../index.php');
+			$valid = true;
+			$_SESSION['username'] = $username;
+		}
+
+		if ($valid == false) {
+			header("Location:../../index.php?err=3");
+		}
 	}
 
 }else if (isset($_POST['Home_Submit_Regiter'])) {

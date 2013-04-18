@@ -12,7 +12,7 @@ header("location:login.php?status=2");
 */
 if (isset($_GET['logout'])) {
 	if ($_GET['logout'] == 1) {
-		header("location:../index.php");
+		header("location:../index.php?loggedout=true");
 	}
 }
 ?>
