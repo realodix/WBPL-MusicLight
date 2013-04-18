@@ -10,7 +10,6 @@
 
 #23 Menyesuaikan susunan html admin dengan Bootstrap
 #26 Merombak UI admin
-#20 Menempatkan file koneksi database ke dalam 1 folder
 #21 Update jQuery ke versi terbaru
 #36 Session time out in PHP
 
@@ -44,3 +43,4 @@
 [closed] #11 Testimony page (testimony.php)
 [closed] #22 Merubah class pada tombol menyesuaikan Bootstrap
 [closed] #24 Menyesuaikan susunan html home dengan Bootstrap
+[closed] #20 Menempatkan file koneksi database ke dalam 1 folder
