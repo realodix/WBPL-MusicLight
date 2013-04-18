@@ -1,15 +1,17 @@
 <?php
-// Include MySQL class
+
+/*
+Pengujian. Sudah ada di index.php
+
 require_once ('inc/mysql.class.php');
-// Include database connection
-//require_once ('inc/global.inc.php');
+require_once ('inc/global.inc.php');
 require_once ('admin/inc/config.php');
-// Include functions
 require_once ('inc/functions.inc.php');
-// Start the session
-//session_start();
+session_start();
+*/
 
 // Process actions
+if(isset($_GET['action'])){
 $cart = $_SESSION['cart'];
 if(isset($_GET['action'])){
 	$action = $_GET['action'];
@@ -73,6 +75,7 @@ switch ($action) {
 }
 }
 $_SESSION['cart'] = $cart;
+}
 ?>
 
 <div id="shoppingcart">
