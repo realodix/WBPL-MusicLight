@@ -4,9 +4,8 @@ if(!isset($_SESSION['username'])){
 		header("location:login.php");
 	}
 
-	require_once 'inc/config.php';
+require_once 'inc/config.php';
 require_once('../inc/common_function.php');
-
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -17,9 +16,7 @@ require_once('../inc/common_function.php');
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-
-
-  <title>Administrasi website </title>
+	<title>Administrasi website </title>
 
 
   <link rel="stylesheet" type="text/css" media="screen, tv, projection" href="../css/html.css" />
@@ -32,108 +29,77 @@ require_once('../inc/common_function.php');
   </script>
   <script type="text/javascript" src="../js/validjs.js"></script>
 
-  </head>
+</head>
 
 <body>
 
-<!-- Full site width container -->
 <div class="width100">
 
-  <!-- #header: holds main image, menu and top actions bar -->
-  <div id="header" class="floatLeft width100">
+	<div id="header" class="floatLeft width100">
+		<div class="floatLeft width100 rightBorder">
+		  <div id="title">
+			<a href="./"><h1>Admin page</h1>
+			<p>Halaman Administrasi</p>
+			</a>
+		  </div>
+		</div>
+	</div>
 
-    <div class="floatLeft width100 rightBorder">
+	
+	<div id="content">
 
-      <div id="title">
-        <a href="./"><h1>Admin page</h1>
-        <p>
-         Halaman Administrasi
-        </p>
-		</a>
-      </div>
+		<!-- Right column, 25% width -->
+		<div class="floatLeft width25 rightMargin">
+	  
+			<h2>Catalog</h2>
+			<ul >
+				<li><a href="index.php?page=product">Product</a></li>
+				<li><a href="index.php?page=brand_view">Brand & Ins. Type</a></li>
+			</ul>
+			
+			<h2>Pesan</h2>
+			<ul>
+				<li><a href="index.php?page=detail">Detail</a></li>
+				<li><a href="index.php?page=zcustomer_view">Customer</a></li>
+				<li><a href="index.php?page=zpesan_view">Pesan</a></li>
+				<li><a href="index.php?page=testimony">Testimony</a></li>
+			</ul>
 
+			<h2>Biaya kirim</h2>
+			<ul>
+				<li><a href="index.php?page=zbiaya_view">Biaya per kota</a></li>
+			</ul>
 
-    </div>
+			<h2>Setting</h2>
+			<ul>
+				<li><a href="index.php?page=member">Member</a></li>
+			</ul>
 
+		</div>
+		<!-- end right column, 25% width -->
+    
+		<!-- Left column, 75% width -->
+		<div class=" floatLeft width75">
+			<?php
+			/* kode untuk meload halaman yang berbeda*/
+			if (isset($_GET['page'])) {
+				$page = $_GET['page'] . ".php";
+				include ($page);
 
+			} else {
+				include ('product.php');
+			}
+			?>
+		</div>
+		<!-- end left column, 75% width -->
 
-
-  </div>
-  <!-- end #header -->
-
-
-
-  <!-- #content: holds site content -->
-  <div id="content">
-
-
-
-    <!-- Right column, 25% width -->
-    <div class="floatLeft width25 rightMargin">
-  
-		<h2>Koleksi</h2>
-		<ul >
-			<li><a href="index.php?page=product">Product</a></li>
-			<li><a href="index.php?page=brand_view">Brand & Ins. Type</a></li>
-		</ul>
-        
-		<h2>Pesan</h2>
-		<ul>
-			<li><a href="index.php?page=detail">Detail</a></li>
-			<li><a href="index.php?page=zcustomer_view">Customer</a></li>
-			<li><a href="index.php?page=zpesan_view">Pesan</a></li>
-			<li><a href="index.php?page=testimony">Testimony</a></li>
-		</ul>
-
-		<h2>Biaya kirim</h2>
-		<ul>
-			<li><a href="index.php?page=zbiaya_view">Biaya per kota</a></li>
-		</ul>
-
-		<h2>Setting</h2>
-		<ul>
-			<li><a href="index.php?page=member">Member</a></li>
-		</ul>
-
-    </div>
-    <!-- end right column, 25% width -->
-    <!-- Left column, 75% width -->
-    <div class=" floatLeft width75">
-
-<!--table pengolahan data nanti disini-->
-<?php
-/* kode untuk meload halaman yang berbeda*/
-if (isset($_GET['page'])) {
-	$page = $_GET['page'] . ".php";
-	include ($page);
-
-} else {
-	include ('product.php');
-}
-?>
-
-
-    </div>
-    <!-- end left column, 75% width -->
-
-  </div>
+	</div>
   <!-- end #content -->
 
 
-
-  <!-- #footer: holds submenu and copyright info -->
-  <div id="footer" class="floatRight  width100">
-
-
-
-
-    <p>
-    copyright(c) 2012,|<a href="../index.php">home</a>|<a href="logout.php">Logout</a>
-    </p>
-
-  </div>
-  <!-- end #footer -->
-
+	<div id="footer" class="floatRight  width100">
+		<p>copyright(c) 2012,|<a href="../index.php">home</a>|<a href="logout.php">Logout</a></p>
+	</div>
 
 </div>
 <!-- end full site width container -->

@@ -1,14 +1,10 @@
 <?php
-$host = "localhost";
-// Host name
+$host		= "localhost";
+$username	= "root";
+$password	= "";
+$db_name	= "wbpl_ml";
 
-$username = "root";
-// Mysql username
-$password = "";
-// Mysql password
-$db_name = "wbpl_ml";
-// Database name
-// Connect to server and select database.
-mysql_connect("$host", "$username", "$password") or die("cannot connect" . mysql_error());
+$db			= mysql_connect("$host", "$username", "$password") or die("cannot connect" . mysql_error());
+
 mysql_select_db("$db_name") or die(mysql_error());
 ?>
