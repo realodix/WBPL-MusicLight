@@ -8,9 +8,7 @@
 
 #14 Menghapus file yang tidak dibutuhkan
 
-#22 Merubah class pada tombol menyesuaikan Bootstrap
 #23 Menyesuaikan susunan html admin dengan Bootstrap
-#24 Menyesuaikan susunan html home dengan Bootstrap
 #26 Merombak UI admin
 #20 Menempatkan file koneksi database ke dalam 1 folder
 #21 Update jQuery ke versi terbaru
@@ -44,3 +42,5 @@
 [closed] #25 Merombak UI home
 [closed] #41 Menyatukan Module Action Add & Edit
 [closed] #11 Testimony page (testimony.php)
+[closed] #22 Merubah class pada tombol menyesuaikan Bootstrap
+[closed] #24 Menyesuaikan susunan html home dengan Bootstrap
