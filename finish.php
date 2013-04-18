@@ -26,6 +26,3 @@ $totalBayar = $_SESSION['totalbayar'];
 	Konfirmasi pembayaran dapat anda lakukan di menu konfirmasi pembayaran, setelah anda melakukan
 	Transfer uang ke rekening kami
 </p>
-<?php
-session_destroy();
-?>
