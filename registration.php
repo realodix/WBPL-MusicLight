@@ -223,7 +223,20 @@
 						<td>Name</td>
 						<td></td>
 						<td></td>
-						<td><input type="text" name="name_user" id="name_user" style="width:187px;"></input></td>
+						<td>
+							<input type="text" name="name_user" id="name_user" style="width:187px;"></input>
+						</td>
+						<td class="mustbe">
+							<?php
+							if (isset($_GET['err'])) {
+								if ($_GET['err'] == 1) {
+									echo "Name must be filled.";
+								}else if ($_GET['err'] == 2) {
+									echo "Only alphabet letters.";
+								}
+							}
+							?>
+						</td>
 					</tr>
 					
 					<tr>
@@ -231,6 +244,15 @@
 						<td></td>
 						<td></td>
 						<td><input type="text" name="username_user" id="username_user" style="width:187px;"></input></td>
+						<td class="mustbe">
+							<?php
+							if (isset($_GET['err'])) {
+								if ($_GET['err'] == 3) {
+									echo "Username must be filled.";
+								}
+							}
+							?>
+						</td>
 					</tr>
 	
 					<tr>
@@ -238,6 +260,15 @@
 						<td></td>
 						<td></td>
 						<td><input type="text" name="pass_user" id="pass_user" style="width:187px;"></input></td>
+						<td class="mustbe">
+							<?php
+							if (isset($_GET['err'])) {
+								if ($_GET['err'] == 4) {
+									echo "Password must be filled.";
+								}
+							}
+							?>
+						</td>
 					</tr>
 	
 					<tr>
@@ -245,6 +276,17 @@
 						<td></td>
 						<td></td>
 						<td><input type="text" name="cpass_user" id="cpass_user" style="width:187px;"></input></td>
+						<td class="mustbe">
+							<?php
+							if (isset($_GET['err'])) {
+								if ($_GET['err'] == 5) {
+									echo "Confirm password must be filled.";
+								}else if ($_GET['err'] == 51) {
+									echo "Match with password.";
+								}
+							}
+							?>
+						</td>
 					</tr>
 	
 					<tr>
@@ -255,6 +297,15 @@
 							<input type="radio" name="gender_user" id="gender_user_male" value="Male">Male</input>
 							<input type="radio" name="gender_user" id="gender_female" value="Female">Female</input>
 						</td>
+						<td class="mustbe">
+							<?php
+							if (isset($_GET['err'])) {
+								if ($_GET['err'] == 6) {
+									echo "Gender must be choosen.";
+								}
+							}
+							?>
+						</td>
 					</tr>
 	
 					<tr>
@@ -262,6 +313,17 @@
 						<td></td>
 						<td></td>
 						<td><textarea name="address_user" id="address_user"></textarea></td>
+						<td class="mustbe">
+							<?php
+							if (isset($_GET['err'])) {
+								if ($_GET['err'] == 7) {
+									echo "Address must be filled.";
+								}else if ($_GET['err'] == 71) {
+									echo "Must be contain “street” word.";
+								}
+							}
+							?>
+						</td>
 					</tr>
 	
 					<tr>
@@ -269,6 +331,17 @@
 						<td></td>
 						<td></td>
 						<td><input type="text" name="phone_user" id="phone_user" style="width:187px;"></input></td>
+						<td class="mustbe">
+							<?php
+							if (isset($_GET['err'])) {
+								if ($_GET['err'] == 8) {
+									echo "Phone must be filled.";
+								}else if ($_GET['err'] == 81) {
+									echo "Must be contain only numbers.";
+								}
+							}
+							?>
+						</td>
 					</tr>
 	
 					<tr>
@@ -276,6 +349,17 @@
 						<td></td>
 						<td></td>
 						<td><input type="text" name="email_user" id="email_user" style="width:187px;"></input></td>
+						<td class="mustbe">
+							<?php
+							if (isset($_GET['err'])) {
+								if ($_GET['err'] == 9) {
+									echo "E-Mail must be filled.";
+								}else if ($_GET['err'] == 91) {
+									echo "Must be contain match with email format.";
+								}
+							}
+							?>
+						</td>
 					</tr>
 	
 					<tr>
