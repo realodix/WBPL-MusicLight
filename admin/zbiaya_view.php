@@ -9,14 +9,18 @@
 */
 //===================paging
 $batas=4;
-$halaman=$_GET['halaman'];
+if(isset($_GET['halaman'])){
+	$halaman=$_GET['halaman'];
+}
+
 $posisi=null;
 if(empty($halaman)){
-$posisi=0;
-$halaman=1;
+	$posisi=0;
+	$halaman=1;
 }else{
-$posisi=($halaman-1)* $batas;
+	$posisi=($halaman-1)* $batas;
 }
+
 //===========================
 if(isset($_GET['del'])){
 $id_kota=$_GET['id'];
