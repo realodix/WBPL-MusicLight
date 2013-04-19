@@ -220,7 +220,7 @@
 			
 			<p>Please enter your testimonial in columm below.</p>
 			
-			<form name="testimony" method="post" action="testimony_add.php">
+			<form name="testimony" method="post" action="admin/wbpl_add-edit.php?action=insert_testimony">
 				<textarea name="testimony_isi" style="width: 550px; height: 160px; resize: none;"></textarea>
 				<br>
 				<input class="btn btn-primary" type="submit" name="testimony_submit" value="Post Testimony"/>

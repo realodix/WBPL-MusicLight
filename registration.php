@@ -217,7 +217,7 @@
 		<div class="span9">
 			<h1>Registration</h2>
 
-			<form id="registration" name="registration" method="post" action="registration _add.php">
+			<form id="registration" name="registration" method="post" action="admin/wbpl_add-edit.php?action=insert_registration">
 				<table>
 					<tr>
 						<td>Name</td>
