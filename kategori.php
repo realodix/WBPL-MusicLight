@@ -1,10 +1,12 @@
 
 <ul>
 	<?php
+	
+	include('admin/inc/config.php');
+	
 	/**
 	* Kategori Brand
 	*/
-	include('admin/inc/config.php');
 	$kat="select wbpl_brand.nama_brand, wbpl_brand.kd_brand,
             count(wbpl_product.nama_brand) as jumlah 
           from wbpl_brand, wbpl_product 
@@ -45,7 +47,6 @@
 	/**
 	* Instrument Type
 	*/
-	include('admin/inc/config.php');
 	$kat="select wbpl_instype.nama_instype,wbpl_instype.kd_instype,
             count(wbpl_product.kd_product) as jumlah 
             from wbpl_instype, wbpl_product 
