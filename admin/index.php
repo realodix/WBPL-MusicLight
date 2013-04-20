@@ -54,20 +54,20 @@ require_once('../inc/common_function.php');
 			<h2>Catalog</h2>
 			<ul >
 				<li><a href="index.php?page=product">Product</a></li>
-				<li><a href="index.php?page=brand_view">Brand & Ins. Type</a></li>
+				<li><a href="index.php?page=wbpl-brand&action=view">Brand & Ins. Type</a></li>
 			</ul>
 			
 			<h2>Pesan</h2>
 			<ul>
 				<li><a href="index.php?page=detail">Detail</a></li>
-				<li><a href="index.php?page=zcustomer_view">Customer</a></li>
-				<li><a href="index.php?page=zpesan_view">Pesan</a></li>
+				<li><a href="index.php?page=wbpl-customer">Customer</a></li>
+				<li><a href="index.php?page=wbpl-pesan">Pesan</a></li>
 				<li><a href="index.php?page=testimony">Testimony</a></li>
 			</ul>
 
 			<h2>Biaya kirim</h2>
 			<ul>
-				<li><a href="index.php?page=zbiaya_view">Biaya per kota</a></li>
+				<li><a href="index.php?page=wbpl-biaya&action=view">Biaya per kota</a></li>
 			</ul>
 
 			<h2>Setting</h2>

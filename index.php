@@ -1,8 +1,8 @@
 <?php	// Include MySQL class
 	session_start();
 	
-	require_once ('admin/inc/config.php');
-	require_once ('inc/functions.inc.php');
+	require_once('admin/inc/config.php');
+	require_once('inc/functions.inc.php');
 	//require_once ('inc/mysql.class.php');
 	//require_once ('inc/global.inc.php');
 ?>
@@ -199,7 +199,7 @@
 				</li>
 				
 				<li>
-					<a href="testimony.php">Testimony</a>
+					<a href="index.php?page=testimony">Testimony</a>
 				</li>
 
               </ul>
@@ -235,7 +235,15 @@
       <!-- Example row of columns -->
       <div class="row-fluid content">
         <div class="span9">
-		<div id="templatemo_slider">
+		<?php
+		/* kode untuk meload halaman yang berbeda*/
+		if(isset($_GET['page'])) {
+			$page = $_GET['page'] . ".php";
+			include ($page);
+		} else {
+		?>
+		
+			<div id="templatemo_slider">
             
 				<div id="one" class="contentslider">
                     <div class="cs_wrapper">
@@ -246,7 +254,6 @@
 
 						while($get_data=mysql_fetch_array($hasil)){
 						?>
-
                       
                         <div class="cs_article">
                             <div class="slider_content_wrapper">
@@ -292,16 +299,12 @@
             
 			<div class="cleaner"></div>
             	
-        </div>
-          <?php
-				/* kode untuk meload halaman yang berbeda*/
-				if(isset($_GET['page'])) {
-					$page = $_GET['page'] . ".php";
-					include ($page);
-				} else {
-					echo '<h3>Welcome to Music Light</h3>
-					<P>Music Light is a famous musical instrument shop in the town. It sells a wide range of musical instruments from the common to the rare. As time passed, the owner of this store realized how important the internet today and decided to develop a website that can ease customer to make transactions in Music Light. This website will be used by the customer/member to order musical instruments via online and promote Music Light’s product to non-member visitor.</p>';
-				}?>
+			</div>
+ 
+			<h3>Welcome to Music Light</h3>
+			<P style="text-align: justify;">Music Light is a famous musical instrument shop in the town. It sells a wide range of musical instruments from the common to the rare. As time passed, the owner of this store realized how important the internet today and decided to develop a website that can ease customer to make transactions in Music Light. This website will be used by the customer/member to order musical instruments via online and promote Music Light’s product to non-member visitor.</p>
+		<?php
+		}?>
         </div>
 		
         <div class="span3">

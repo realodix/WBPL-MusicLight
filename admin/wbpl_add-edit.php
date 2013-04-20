@@ -136,9 +136,9 @@ switch ($action) {
 
 		//check if query successful
 		if ($result) {
-			header('location:index.php?page=brand_view&status=0');
+			header('location:index.php?page=wbpl-brand&action=view&status=0');
 		} else {
-			header('location:index.php?page=brand_view&status=1');
+			header('location:index.php?page=wbpl-brand&action=view&status=1');
 		}
 		mysql_close();
 	break;
@@ -158,9 +158,9 @@ switch ($action) {
 
 		//check if query successful
 		if ($result) {
-			header('location:index.php?page=brand_view&status=0');
+			header('location:index.php?page=wbpl-brand&action=view&status=0');
 		} else {
-			header('location:index.php?page=brand_view&status=1');
+			header('location:index.php?page=wbpl-brand&action=view&status=1');
 		}
 		mysql_close();
 	break;
@@ -176,9 +176,9 @@ switch ($action) {
 
 		//check if query successful
 		if ($result) {
-			header('location:index.php?page=brand_view&status=2');
+			header('location:index.php?page=wbpl-brand&action=view&status=2');
 		} else {
-			header('location:index.php?page=brand_view&status=3');
+			header('location:index.php?page=wbpl-brand&action=view&status=3');
 		}
 		mysql_close();
 	break;
@@ -198,9 +198,9 @@ switch ($action) {
 
 		//check if query successful
 		if ($result) {
-			header('location:index.php?page=brand_view&status=0');
+			header('location:index.php?page=wbpl-brand&action=view&status=2');
 		} else {
-			header('location:index.php?page=brand_view&status=1');
+			header('location:index.php?page=wbpl-brand&action=view&status=3');
 		}
 		mysql_close();
 	break;
@@ -240,9 +240,9 @@ switch ($action) {
 
 		//check if query successful
 		if ($result) {
-			header('location:index.php?page=zbiaya_view&status=0');
+			header('location:index.php?page=wbpl-biaya&action=view&status=0');
 		} else {
-			header('location:index.php?page=zbiaya_view&status=1');
+			header('location:index.php?page=wbpl-biaya&action=view&status=1');
 		}
 		mysql_close();
 	break;
@@ -259,9 +259,9 @@ switch ($action) {
 
 		//check if query successful
 		if ($result) {
-			header('location:index.php?page=zbiaya_view&status=0');
+			header('location:index.php?page=wbpl-biaya&action=view&status=0');
 		} else {
-			header('location:index.php?page=zbiaya_view&status=1');
+			header('location:index.php?page=wbpl-biaya&action=view&status=1');
 		}
 		mysql_close();
 	break;
