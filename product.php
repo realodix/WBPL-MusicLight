@@ -33,7 +33,12 @@ while($get_data=mysql_fetch_array($hasil)){
 
 ?>
 <h3><?php echo $get_data['judul']?></h3>
-<div class="image_wrapper image_fl"><img src="cover/<?php echo $get_data['cover']?>" width='150px' heigth='150px'></a>
+<div class="image_wrapper image_fl"><img src="cover/<?php echo $get_data['cover']?>"
+alt="<?php
+	$imagee = $get_data['cover'];
+	if ($imagee == 0 ){
+		echo 'Image Not Avaible';
+	}?>" width='150px' heigth='150px'></a>
 </div>
 <p>
 	<em>Penulis: <?php echo $get_data['pengarang'];	?></em> </br>
@@ -57,7 +62,7 @@ $jumlah_halaman=ceil($jmldata/$batas);
 echo "<br> <br> Halaman :";
 for($i=1;$i<=$jumlah_halaman;$i++)
 if ($i!=$halaman){
-	echo "<a href=index.php?page=detail&halaman=$i> $i</a> | ";
+	echo "<a href=index.php?page=product&halaman=$i> $i</a> | ";
 }else{
 	echo "<b> $i</b> | ";
 }

@@ -64,13 +64,16 @@ alt="<?php
 				?>
 	</em>
 </p>
-<p>
+<p style="text-align: justify;">
 	<?php echo $get_data['deskripsi'];?>
 </p>
 <div class="btn_more">
 	<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>">Add to cart</a>
 </div>
+
 <div style="clear: both"></div>
+
+<br><br>
 <?php
 }
 
@@ -78,23 +81,39 @@ alt="<?php
 if(isset($_GET['id'])){
 	$product_brand=$_GET['id'];
 	$tampil2=mysql_query("select * from wbpl_product where nama_brand='$product_brand'");
+	
+	$jmldata=mysql_num_rows($tampil2);
+	$jumlah_halaman=ceil($jmldata/$batas);
+
+	echo "<br> <br> Halaman :";
+	for($i=1;$i<=$jumlah_halaman;$i++)
+
+	if ($i!=$halaman){
+		echo "<a href=index.php?page=detail&id=". $product_brand ."&halaman=$i> $i</a> | ";
+	}else{
+		echo "<b> $i</b> | ";
+	}
+	
 }else if(isset($_GET['p'])){
 	$product_ins_type=$_GET['p'];
 	$tampil2=mysql_query("select * from wbpl_product where nama_instype='$product_ins_type'");
+	
+	$jmldata=mysql_num_rows($tampil2);
+	$jumlah_halaman=ceil($jmldata/$batas);
+
+	echo "<br> <br> Halaman :";
+	for($i=1;$i<=$jumlah_halaman;$i++)
+
+	if ($i!=$halaman){
+		echo "<a href=index.php?page=detail&p=". $product_ins_type ."&halaman=$i> $i</a> | ";
+	}else{
+		echo "<b> $i</b> | ";
+	}
 }
 
-$jmldata=mysql_num_rows($tampil2);
-$jumlah_halaman=ceil($jmldata/$batas);
-
-echo "<br> <br> Halaman :";
-for($i=1;$i<=$jumlah_halaman;$i++)
-if ($i!=$halaman){
-	echo "<a href=index.php?page=detail&halaman=$i> $i</a> | ";
-}else{
-	echo "<b> $i</b> | ";
-}
 mysql_close();
 ?>
+
 <br>
 Jumlah data: <?php echo $jmldata;
 ?>
