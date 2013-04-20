@@ -5,14 +5,18 @@ $batas=2;
 if(isset($_GET['halaman'])){
 	$halaman=$_GET['halaman'];
 }
+
 $posisi=null;
+
 if(empty($halaman)){
 	$posisi=0;
 	$halaman=1;
 }else{
 	$posisi=($halaman-1)* $batas;
 }
+
 $sql=null;
+
 if(isset($_GET['id'])){
 	$product_brand=$_GET['id'];
 	$sql="select * from wbpl_product where nama_brand='$product_brand' 
@@ -29,7 +33,7 @@ if(isset($_GET['id'])){
 	$sql="select * from wbpl_product  limit $posisi,$batas";
 }
 
-include('admin/inc/config.php');
+
 
 $hasil=mysql_query($sql) or die(mysql_error());
 
@@ -82,7 +86,7 @@ if(isset($_GET['id'])){
 $jmldata=mysql_num_rows($tampil2);
 $jumlah_halaman=ceil($jmldata/$batas);
 
-echo "Halaman :";
+echo "<br> <br> Halaman :";
 for($i=1;$i<=$jumlah_halaman;$i++)
 if ($i!=$halaman){
 	echo "<a href=index.php?page=detail&halaman=$i> $i</a> | ";

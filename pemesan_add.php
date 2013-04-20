@@ -1,17 +1,15 @@
 <?php
 session_start();
 include ('admin/inc/config.php');
-// Include MySQL class
-require_once ('inc/mysql.class.php');
-// Include database connection
-//require_once ('inc/global.inc.php');
-// Include functions
 require_once ('inc/functions.inc.php');
 require_once ('inc/common_function.php');
-// Start the session
 
-//session_register('id_kota');
-//session_register('kd_pesan');
+/*
+require_once ('inc/mysql.class.php');
+require_once ('inc/global.inc.php');
+session_register('id_kota');
+session_register('kd_pesan');
+*/
 
 session_start();
 $id_kota = array();
@@ -36,7 +34,7 @@ if (isset($_POST['tambah'])) {
 	$Email = $_POST['Email'];
 	$id_kota = $_POST['id_kota'];
 	$_SESSION['id_kota'] = $id_kota;
-$kd_customer=kode_customer();
+	$kd_customer=kode_customer();
 
 	$sql = "INSERT INTO customer(kd_pemesan,Nama,Alamat,kd_pos,No_telp,Email,id_kota,kd_pesan)
 		VALUES('$kd_customer', '$Nama', '$Alamat','$kd_pos','$No_telp','$Email','$id_kota','$kode_pesan')";

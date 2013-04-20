@@ -25,7 +25,6 @@ if(isset($_GET['id'])){
 	$sql="select * from buku  limit $posisi,$batas";
 }
 
-include('admin/inc/config.php');
 
 $hasil=mysql_query($sql) or die(mysql_error());
 
@@ -33,13 +32,11 @@ while($get_data=mysql_fetch_array($hasil)){
 	
 
 ?>
-<h2><?php echo $get_data['judul']?></h2>
+<h3><?php echo $get_data['judul']?></h3>
 <div class="image_wrapper image_fl"><img src="cover/<?php echo $get_data['cover']?>" width='150px' heigth='150px'></a>
 </div>
 <p>
-	<em>Penulis: <?php echo $get_data['pengarang'];	?></em>
-</p>
-<p>
+	<em>Penulis: <?php echo $get_data['pengarang'];	?></em> </br>
 	<em>Harga: <?php echo $get_data['harga']; ?></em>
 </p>
 <p>
@@ -57,7 +54,7 @@ $tampil2=mysql_query("select * from buku");
 $jmldata=mysql_num_rows($tampil2);
 $jumlah_halaman=ceil($jmldata/$batas);
 
-echo "Halaman :";
+echo "<br> <br> Halaman :";
 for($i=1;$i<=$jumlah_halaman;$i++)
 if ($i!=$halaman){
 	echo "<a href=index.php?page=detail&halaman=$i> $i</a> | ";
