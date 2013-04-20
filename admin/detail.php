@@ -36,9 +36,9 @@ while($rows=mysql_fetch_array($result)){
 
 <td>
 <!--<a href="index.php?page=det_pesan_form_edit&id=<?php echo $rows['no_det_pesan']?>">
-<img src="image/b_edit.png"></a>-->
+<img src="image/admin/dit.png"></a>-->
 <a href="index.php?page=det_pesan_view&del=true&id=<?php echo $rows['no_det_pesan']?>"  onclick="return askUser()";>
-<img src="image/b_drop.png"></a>
+<img src="image/admin/drop.png"></a>
 </td>
 </tr>
 

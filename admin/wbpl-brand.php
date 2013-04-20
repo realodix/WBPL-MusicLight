@@ -74,9 +74,9 @@ switch ($action) {
 
 				<td>
 					<a href="index.php?page=wbpl-brand&action=editb&id=<?php echo $rows['kd_brand']?>">
-					<img src="image/b_edit.png"></a>
+					<img src="image/admin/edit.png"></a>
 					<a href="index.php?page=wbpl-brand&action=view&del=true&id=<?php echo $rows['kd_brand']?>"  onclick="return askUser()";>
-					<img src="image/b_drop.png"></a>
+					<img src="image/admin/drop.png"></a>
 				</td>
 			</tr>
 
@@ -175,9 +175,9 @@ switch ($action) {
 
 				<td>
 					<a href="index.php?page=wbpl-brand&action=editit&id=<?php echo $rows['kd_instype']?>">
-					<img src="image/b_edit.png"></a>
+					<img src="image/admin/edit.png"></a>
 					<a href="index.php?page=wbpl-brand&action=view&del=true&id=<?php echo $rows['kd_instype']?>"  onclick="return askUser()";>
-					<img src="image/b_drop.png"></a>
+					<img src="image/admin/drop.png"></a>
 				</td>
 			</tr>
 

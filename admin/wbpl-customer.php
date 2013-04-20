@@ -50,9 +50,9 @@ while($rows=mysql_fetch_array($result)){
 
 <td>
 <!--<a href="index.php?page=customer_form_edit&id=<?php echo $rows['kd_customer']?>">
-<img src="image/b_edit.png"></a>-->
+<img src="image/admin/edit.png"></a>-->
 <a href="index.php?page=customer_view&del=true&id=<?php echo $rows['kd_customer']?>"  onclick="return askUser()";>
-<img src="image/b_drop.png"></a>
+<img src="image/admin/drop.png"></a>
 </td>
 </tr>
 
@@ -74,7 +74,7 @@ echo "operasi gagal";
 ?>
  </td>
  <td align=right><!--<a href="index.php?page=customer_form_add"> 
-<img src="image/add.jpg"> Add</a>--></td></tr>
+<img src="image/admin/add.jpg"> Add</a>--></td></tr>
 <tr></tr>
 </table>
 

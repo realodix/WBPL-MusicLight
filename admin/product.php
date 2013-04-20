@@ -40,9 +40,9 @@ while($rows=mysql_fetch_array($result)){
 	<td><?php  echo $rows['stock'];?></td>
 	<td>
 		<a href="index.php?page=updateproduct&id=<?php echo $rows['kd_product']?>">
-		<img src="image/b_edit.png"></a>
+		<img src="image/admin/edit.png"></a>
 		<a href="index.php?page=product&del=true&id=<?php echo $rows['kd_product']?>"  onclick="return askUser()";>
-		<img src="image/b_drop.png"></a>|detail
+		<img src="image/admin/drop.png"></a>|detail
 	</td>
 </tr>
 
@@ -63,7 +63,7 @@ if (isset($_GET['status'])) {
 ?>
 </td>
 <td align=right><a href="index.php?page=insertproduct">
-<img src="image/add.jpg">Insert product</a></td></tr>
+<img src="image/admin/add.jpg">Insert product</a></td></tr>
 <td align=right><a href="buku_cetak.php" target='_blank'>
 cetak</a></td></tr>
 <tr></tr>

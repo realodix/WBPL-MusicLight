@@ -35,9 +35,9 @@ while($rows=mysql_fetch_array($result)){
 <td><?php  echo $rows['total_bayar'];?></td>
 <td>
 <!--<a href="index.php?page=pesan_form_edit&id=<?php echo $rows['kd_pesan']?>">
-<img src="image/b_edit.png"></a>-->
+<img src="image/admin/edit.png"></a>-->
 <a href="index.php?page=pesan_view&del=true&id=<?php echo $rows['kd_pesan']?>"  onclick="return askUser()";>
-<img src="image/b_drop.png"></a>
+<img src="image/admin/drop.png"></a>
 </td>
 </tr>
 
@@ -58,7 +58,7 @@ if (isset($_GET['status'])) {
 ?>
 </td>
 <td align=right><!--<a href="index.php?page=pesan_form_add">
-<img src="image/add.jpg"> Add</a>--> </td></tr>
+<img src="image/admin/add.jpg"> Add</a>--> </td></tr>
 <tr></tr>
 </table>
 <?php

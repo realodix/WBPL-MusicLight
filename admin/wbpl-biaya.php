@@ -57,9 +57,9 @@ switch ($action) {
 
 				<td>
 					<a href="index.php?page=wbpl-biaya&action=edit&id=<?php echo $rows['id_kota']?>">
-					<img src="image/b_edit.png"></a>
+					<img src="image/admin/edit.png"></a>
 					<a href="index.php?page=wbpl-biaya&action=view&del=true&id=<?php echo $rows['id_kota']?>"  onclick="return askUser()";>
-					<img src="image/b_drop.png"></a>
+					<img src="image/admin/drop.png"></a>
 				</td>
 			</tr>
 
@@ -81,7 +81,7 @@ switch ($action) {
 				}?>
 				</td>
 				<td align=right><a href="index.php?page=wbpl-biaya&action=add">
-				<img src="image/add.jpg"> Add</a>
+				<img src="image/admin/add.jpg"> Add</a>
 				</td>
 			</tr>
 			<tr></tr>
