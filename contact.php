@@ -10,4 +10,4 @@ Jalan Lurus no 5 Yogyakarta
 <p> Gabung di groub kami di facebook <a href="http://www.facebook/page/buku_lukis/">Facebook fans Page</a><br/>
 atau follow di
 <a href="http://www.facebook/page/buku_lukis/">@bukumurah</a><br/>  </p>
-<blockquote>
+</blockquote>
