@@ -28,8 +28,8 @@
 			<td>&nbsp;</td>
 		
 			<td>
-			<input class="btn" type="submit" name="tambah" value="Tambah" />
-			<input class="btn" type="reset" name="resetbtn" value="Reset" />
+			<input class="btn" type="submit" name="tambah" value="Submit" />
+			<input class="btn btn-danger" type="reset" name="resetbtn" value="Reset" />
 			</td>
 		</tr>
 		<tr>
