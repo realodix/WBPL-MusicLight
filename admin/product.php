@@ -2,7 +2,7 @@
 //include ('ind/config.php');
 ?>
 
-<table   border=0>
+<table>
 <tr style="background-color:#F79307">
 <td>Product ID</td><td>Brand</td><td>Instrument Type</td><td>Price</td><td>Stock</td><td>Operasi</td></tr>
 

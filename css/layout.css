@@ -5,7 +5,7 @@
 
 #header {
 	margin-top: 25px;
-	background: #D1FFFE url(../img/images/branch.jpg) repeat bottom right;
+	background: url(../images/bg/title.gif) repeat-x top left;
 }
 /**************************************************************
  #title: Red block with leaves, title and tagline
@@ -13,7 +13,6 @@
 
 #header #title {
 	color: #FFF;
-	background: #c02b0e url(../images/bg/title.gif) repeat-x top left;
 	border-bottom: 1px solid #9a2116;
 }
 #header #title h1 {

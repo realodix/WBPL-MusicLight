@@ -11,23 +11,23 @@ require_once('../inc/common_function.php');
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
-
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
 
 <head>
 	<title>Administrasi website </title>
+	
+	<style type="text/css" media="all">
+		@import "../css/html.css";
+		@import "../css/layout.css";
+		@import "../css/bootstrap.css";
+	</style>
 
-
-  <link rel="stylesheet" type="text/css" media="screen, tv, projection" href="../css/html.css" />
-  <link rel="stylesheet" type="text/css" media="screen, tv, projection" href="../css/layout.css" />
-
-  <script type="text/javascript">
-	function askUser() {
-		return window.confirm("Yakin ingin menghapus record ini?");
-	}
-  </script>
-  <script type="text/javascript" src="../js/validjs.js"></script>
+	<script type="text/javascript">
+		function askUser() {
+			return window.confirm("Yakin ingin menghapus record ini?");
+		}
+	</script>
+	<script type="text/javascript" src="../js/validjs.js"></script>
 
 </head>
 
@@ -51,13 +51,13 @@ require_once('../inc/common_function.php');
 		<!-- Right column, 25% width -->
 		<div class="floatLeft width25 rightMargin">
 	  
-			<h2>Catalog</h2>
+			<h4>Catalog</h4>
 			<ul >
 				<li><a href="index.php?page=product">Product</a></li>
 				<li><a href="index.php?page=wbpl-brand&action=view">Brand & Ins. Type</a></li>
 			</ul>
 			
-			<h2>Pesan</h2>
+			<h4>Pesan</h4>
 			<ul>
 				<li><a href="index.php?page=detail">Detail</a></li>
 				<li><a href="index.php?page=wbpl-customer">Customer</a></li>
@@ -65,12 +65,12 @@ require_once('../inc/common_function.php');
 				<li><a href="index.php?page=testimony">Testimony</a></li>
 			</ul>
 
-			<h2>Biaya kirim</h2>
+			<h4>Biaya kirim</h4>
 			<ul>
 				<li><a href="index.php?page=wbpl-biaya&action=view">Biaya per kota</a></li>
 			</ul>
 
-			<h2>Setting</h2>
+			<h4>Setting</h4>
 			<ul>
 				<li><a href="index.php?page=member">Member</a></li>
 			</ul>
