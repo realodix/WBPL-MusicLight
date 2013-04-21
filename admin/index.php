@@ -17,9 +17,8 @@ require_once('../inc/common_function.php');
 	<title>Administrasi website </title>
 	
 	<style type="text/css" media="all">
-		@import "../css/html.css";
-		@import "../css/layout.css";
 		@import "../css/bootstrap.css";
+		@import "../css/master_admin.css";
 	</style>
 
 	<script type="text/javascript">
@@ -49,7 +48,7 @@ require_once('../inc/common_function.php');
 	<div id="content">
 
 		<!-- Right column, 25% width -->
-		<div class="floatLeft width25 rightMargin">
+		<div class="menu-sidebar floatLeft">
 	  
 			<h4>Catalog</h4>
 			<ul >

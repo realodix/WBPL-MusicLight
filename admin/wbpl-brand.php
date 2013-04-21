@@ -19,7 +19,7 @@ switch ($action) {
 					<tr>
 						<td width="120">Brand</td>
 						<td width="150">
-						<input name="nama_brand" type="nama_brand" id="nama_brand" size="20"/>
+						<input name="nama_brand" type="text" id="nama_brand" size="20"/>
 						</td>
 					</tr>
 				
@@ -105,7 +105,7 @@ switch ($action) {
 
 
 
-		<table  width="320px" border=0 style="float: right;">
+		<table  width="360px" border=0 style="float: right;">
 
 			<form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=insert_instype">
 				<tr><td colspan="3" >
@@ -120,7 +120,7 @@ switch ($action) {
 					<tr>
 						<td width="120">Ins. Type</td>
 						<td width="150">
-						<input name="nama_instype" type="nama_instype" id="nama_instype" size="20" />
+						<input name="nama_instype" type="text" id="nama_instype" size="20" />
 						</td>
 					</tr>
 				
