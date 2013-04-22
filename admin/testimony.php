@@ -9,6 +9,17 @@ if(isset($_GET['aprv'])){
 				where kd_testimony='$kd_testimony'";
 	mysql_query($setuju)or die(mysql_error());
 }
+
+/*
+ * kode untuk unapprove data
+ */
+if(isset($_GET['unaprv'])){
+	$kd_testimony=$_GET['id'];
+	$setuju ="update wbpl_testimony set
+				testimony_status='pending'
+				where kd_testimony='$kd_testimony'";
+	mysql_query($setuju)or die(mysql_error());
+}
  
  
 /*
@@ -30,11 +41,25 @@ if(isset($_GET['del'])){
 	while($rows=mysql_fetch_array($result)){
 ?>
 
-	<p>#<?php echo $rows['kd_testimony'];?> |  <?php echo ucfirst($rows['testimony_status']);?><br>
+	<p>#<?php echo $rows['kd_testimony'];
+	if($rows['testimony_status'] == 'pending'){
+		echo ' <i>[pending]</i>';
+	}
+	?>
+	
+	<br>
 	<?php echo $rows['testimony_isi'];?>
 	
 	<br><br>
-	<a href="index.php?page=testimony&aprv=true&id=<?php echo $rows['kd_testimony']?>">Approve</a> | <a href="index.php?page=testimony&del=true&id=<?php echo $rows['kd_testimony']?>">Delete</a> | <a href="#">Edit</a></p>
+	<?php
+	if($rows['testimony_status'] == 'pending'){
+	?>
+		<a href="index.php?page=testimony&aprv=true&id=<?php echo $rows['kd_testimony']?>">Approve</a> | 
+<?php }else{ ?>
+		<a href="index.php?page=testimony&unaprv=true&id=<?php echo $rows['kd_testimony']?>">Unapprove</a> | 
+<?php } ?>
+	<a href="index.php?page=testimony&del=true&id=<?php echo $rows['kd_testimony']?>">Delete</a> | 
+	<a href="#">Edit</a></p>
 	<hr>
 <?php 
 }
