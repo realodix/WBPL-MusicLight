@@ -40,9 +40,9 @@ while($rows=mysql_fetch_array($result)){
 	<td><?php  echo $rows['stock'];?></td>
 	<td>
 		<a href="index.php?page=updateproduct&id=<?php echo $rows['kd_product']?>">
-		<img src="image/admin/edit.png"></a>
+		<i class="icon-edit" title="Edit"></i></a>
 		<a href="index.php?page=product&del=true&id=<?php echo $rows['kd_product']?>"  onclick="return askUser()";>
-		<img src="image/admin/drop.png"></a>|detail
+		<i class="icon-remove" title="Remove"></i></a>
 	</td>
 </tr>
 

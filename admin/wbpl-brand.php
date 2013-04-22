@@ -12,8 +12,7 @@ switch ($action) {
 					<tr>
 						<td width="120">ID</td>
 						<td width="150">
-						<input name="kd_brand" type="text" id="kd_brand" 
-						value=<?php echo kode_brand()?> size="10"/>
+						<?php echo kode_brand();?>
 						</td>
 					</tr>
 					<tr>
@@ -27,8 +26,7 @@ switch ($action) {
 						<td>&nbsp;</td>
 						
 						<td>
-						<input type="submit" name="tambahLogin" value="Tambah" />
-						<input type="reset" name="resetbtn" value="Reset" />
+							<input class="btn floatRight" type="submit" name="tambahLogin" value="Add" />
 						</td>
 					</tr>
 					<tr>
@@ -69,14 +67,14 @@ switch ($action) {
 			while($rows=mysql_fetch_array($result)){
 			?>
 			<tr>
-				<td><?php  echo $rows['kd_brand'];?></td>
-				<td><?php  echo $rows['nama_brand'];?></td>
+				<td><?php echo $rows['kd_brand'];?></td>
+				<td><?php echo $rows['nama_brand'];?></td>
 
 				<td>
 					<a href="index.php?page=wbpl-brand&action=editb&id=<?php echo $rows['kd_brand']?>">
-					<img src="image/admin/edit.png"></a>
+					<i class="icon-edit" title="Edit <?php echo $rows['nama_brand'];?>"></i></a>
 					<a href="index.php?page=wbpl-brand&action=view&del=true&id=<?php echo $rows['kd_brand']?>"  onclick="return askUser()";>
-					<img src="image/admin/drop.png"></a>
+					<i class="icon-remove" title="Remove <?php echo $rows['nama_brand'];?>"></i></a>
 				</td>
 			</tr>
 
@@ -113,8 +111,7 @@ switch ($action) {
 					<tr>
 						<td width="120">ID</td>
 						<td width="150">
-						<input name="kd_instype" type="text" id="kd_instype" 
-						value=<?php echo kode_instype()?> size="10"/>
+						<?php echo kode_instype()?>
 						</td>
 					</tr>
 					<tr>
@@ -126,10 +123,8 @@ switch ($action) {
 				
 					<tr>
 						<td>&nbsp;</td>
-						
 						<td>
-						<input type="submit" name="tambahLoginIT" value="Tambah" />
-						<input type="reset" name="resetbtn" value="Reset" />
+						<input class="btn floatRight" type="submit" name="tambahLoginIT" value="Add" />
 						</td>
 					</tr>
 					<tr>
@@ -175,9 +170,9 @@ switch ($action) {
 
 				<td>
 					<a href="index.php?page=wbpl-brand&action=editit&id=<?php echo $rows['kd_instype']?>">
-					<img src="image/admin/edit.png"></a>
+					<i class="icon-edit" title="Edit <?php echo $rows['nama_instype'];?>"></i></a>
 					<a href="index.php?page=wbpl-brand&action=view&del=true&id=<?php echo $rows['kd_instype']?>"  onclick="return askUser()";>
-					<img src="image/admin/drop.png"></a>
+					<i class="icon-remove" title="Remove <?php echo $rows['nama_instype'];?>"></i></a>
 				</td>
 			</tr>
 
@@ -236,10 +231,9 @@ switch ($action) {
 			
 				<tr>
 					<td>&nbsp;</td>
-				
 					<td>
-					<input type="submit" name="submitUser" value="Submit" />
-					<input type="reset" name="resetbtn" value="Reset" />
+						<input class="btn" type="submit" name="submitUser" value="Save" />
+						<a href="index.php?page=wbpl-brand&action=view" class="btn btn-danger floatRight">Cancel</a>
 					</td>
 				</tr>
 				<?php
@@ -288,8 +282,8 @@ switch ($action) {
 					<td>&nbsp;</td>
 				
 					<td>
-					<input type="submit" name="submitUser" value="Submit" />
-					<input type="reset" name="resetbtn" value="Reset" />
+						<input class="btn" type="submit" name="submitUser" value="Save" />
+						<a href="index.php?page=wbpl-brand&action=view" class="btn btn-danger floatRight">Cancel</a>
 					</td>
 				</tr>
 				<?php

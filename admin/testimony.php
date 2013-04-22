@@ -33,8 +33,9 @@ if(isset($_GET['del'])){
 	<p>#<?php echo $rows['kd_testimony'];?> |  <?php echo ucfirst($rows['testimony_status']);?><br>
 	<?php echo $rows['testimony_isi'];?>
 	
-	<br>
+	<br><br>
 	<a href="index.php?page=testimony&aprv=true&id=<?php echo $rows['kd_testimony']?>">Approve</a> | <a href="index.php?page=testimony&del=true&id=<?php echo $rows['kd_testimony']?>">Delete</a> | <a href="#">Edit</a></p>
+	<hr>
 <?php 
 }
  

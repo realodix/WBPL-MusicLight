@@ -126,7 +126,7 @@ switch ($action) {
 	break;
 	
 	case 'insert_brand':
-		$kd_brand = $_POST['kd_brand'];
+		$kd_brand = kode_brand();
 		$nama_brand = $_POST['nama_brand'];
 
 
@@ -166,7 +166,7 @@ switch ($action) {
 	break;
 	
 	case 'insert_instype':
-		$kd_instype = $_POST['kd_instype'];
+		$kd_instype = kode_instype();
 		$nama_instype = $_POST['nama_instype'];
 
 

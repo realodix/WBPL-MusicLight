@@ -45,25 +45,6 @@ body{
 	margin-right: 10px;
 }
 
-.btn_more a {
-	float: right;
-	display: block;
-	width: 100px;
-	height: 26px;
-	margin-top: 10px;
-	padding-top: 4px;
-	font-size: 12px;
-	font-weight: bold;
-	color: #a9a9a9;
-	text-align: center;
-	background: url(../images/templatemo_btn.png) no-repeat;
-}
-
-.btn_more a:hover {
-	/* text-shadow: 1px 1px 1px #000; */
-	text-decoration: none;
-	background: url(../images/templatemo_btn_hover.png) no-repeat;
-}
 #templatemo_slider_wrapper {
 	clear: both;
 	width: 940px;
@@ -227,4 +208,27 @@ body{
 	border: medium none;
 	border-radius: 4px;
 	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/**************************************************************
+ Utility Classes
+ **************************************************************/
+
+.floatRight {
+	float: right;
+}
+.floatLeft {
+	float: left;
+}
+.clear {
+	clear: both;
+}
+.block {
+	display: block;
+}
+.alignRight {
+	text-align: right;
+}
+.alignJustify {
+	text-align: justify;
 }

@@ -17,6 +17,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	
+	<style type="text/css" media="all">
+		@import "css/bootstrap.css";
+		@import "css/bootstrap-responsive.css";
+		@import "css/master.css";
+	</style>
+	
     <style type="text/css">
       body {
         padding-top: 20px;
@@ -85,12 +91,6 @@
         border-radius: 0 3px 3px 0;
       }
     </style>
-
-	<style type="text/css" media="all">
-		@import "css/bootstrap.css";
-		@import "css/bootstrap-responsive.css";
-		@import "css/master.css";
-	</style>
 	
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -261,7 +261,13 @@
                             <div class="slider_content_wrapper">
 									
 								<div class="slider_image">
-									<img src="cover/<?php echo $get_data['image']?>" width='150px' heigth='150px'>
+									<img src="<?php
+									$imagee = $get_data['image'];
+										if ($imagee == 0 ){
+											echo 'images/Image Not Available.jpg';
+										}else{
+									?>
+									cover/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" heigth="150px">
 								</div>
 									
 								<div class="slider_content">
@@ -270,7 +276,7 @@
 									Price: Rp. <?php echo $get_data['price'];?></p>
 									<p>aa<?php echo $get_data['deskripsi'];?></p>
                                    
-									<div class="btn_more"><a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>">Add to cart</a></div>
+									<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>" class="btn btn-inverse floatRight">Add to cart</a>
 								</div>
                                 
 							</div>

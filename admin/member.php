@@ -12,7 +12,7 @@ include ('inc/config.php');
 <a href='index.php?page=member'>all data</a>
 <table  width="600px" border=0>
 	<tr style="background-color:#F79307">
-		<td width="65px">Kode User</td>
+		<td width="100px">Kode User</td>
 		<td width="250px">Username</td>
 		<td width="60px">Operation</td>
 	</tr>
@@ -47,8 +47,8 @@ while($rows=mysql_fetch_array($result)){
 		<td><a href="index.php?page=profile&id=<?php echo $rows['kd_member']?>"><?php echo $rows['name'];?></a></td>
 		
 		<td>
-			<a href="index.php?page=profile&id=<?php echo $rows['kd_member']?>"> <img src="image/admin/edit.png"></a>
-			<a href="index.php?page=member&del=true&id=<?php echo $rows['kd_member']?>"  onclick="return askUser()";> <img src="image/admin/drop.png"></a>
+			<a href="index.php?page=profile&id=<?php echo $rows['kd_member']?>"><i class="icon-edit" title="Edit"></i></a>
+			<a href="index.php?page=member&del=true&id=<?php echo $rows['kd_member']?>"  onclick="return askUser()";> <i class="icon-remove" title="Remove"></i> </a>
 		</td>
 	</tr>
 	<?php
@@ -68,7 +68,7 @@ while($rows=mysql_fetch_array($result)){
 		}
 		?>
 		</td>
-		<td align=right><a href="index.php?page=pengelola_form_add"> <img src="image/admin/add.jpg"> Add</a></td>
+		<!--<td align=right><a href="index.php?page=pengelola_form_add"> <img src="image/admin/add.jpg"> Add</a></td>-->
 	</tr>
 	<tr></tr>
 </table>

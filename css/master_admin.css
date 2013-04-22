@@ -43,10 +43,48 @@
 form {
 	padding: 20px 0;
 }
+ 
+/**************************************************************
+ Header: holds title box, menu, main image and top actions
+ **************************************************************/
+
+#header {
+	margin-top: 25px;
+	padding-left: 20px;
+	background: url(../images/bg/title.gif) repeat-x top left;
+}
+/**************************************************************
+ #title: Red block with leaves, title and tagline
+ **************************************************************/
+
+#header #title {
+	color: #FFF;
+	border-bottom: 1px solid #9a2116;
+}
+#header #title h1 {
+	padding-top: 60px;
+	color: #FFF;
+	background: url(../images/bg/title_leaves.gif) no-repeat top right;
+}
+#header #title a {
+	color: #FFF5BD;
+}
+#header #title a:hover {
+	border-color: #FFF5BD;
+}
+
 
 /**************************************************************
- Tables
+ #content: Main content section (holds columns)
  **************************************************************/
+
+#content {
+	margin-top: 20px;
+}
+.menu-sidebar{
+	padding-left: 10px;
+	margin-right: 10px;
+}
 
 table {
 	margin: 0 12px 20px 12px;
@@ -77,47 +115,7 @@ tbody tr:hover td {
 	border-bottom: 1px solid #ffd909;
 }
 
- 
-/**************************************************************
- Header: holds title box, menu, main image and top actions
- **************************************************************/
 
-#header {
-	margin-top: 25px;
-	background: url(../images/bg/title.gif) repeat-x top left;
-}
-/**************************************************************
- #title: Red block with leaves, title and tagline
- **************************************************************/
-
-#header #title {
-	color: #FFF;
-	border-bottom: 1px solid #9a2116;
-}
-#header #title h1 {
-	padding-top: 60px;
-	color: #FFF;
-	background: url(../images/bg/title_leaves.gif) no-repeat top right;
-}
-#header #title a {
-	color: #FFF5BD;
-}
-#header #title a:hover {
-	border-color: #FFF5BD;
-}
-
-
-/**************************************************************
- #content: Main content section (holds columns)
- **************************************************************/
-
-#content {
-	clear: both;
-}
-.menu-sidebar{
-	padding-left: 10px;
-	margin-right: 10px;
-}
 /**************************************************************
  #footer: Holds bottom menu and copyright info
  **************************************************************/

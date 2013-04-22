@@ -57,9 +57,9 @@ switch ($action) {
 
 				<td>
 					<a href="index.php?page=wbpl-biaya&action=edit&id=<?php echo $rows['id_kota']?>">
-					<img src="image/admin/edit.png"></a>
+					<i class="icon-edit" title="Edit"></i></a>
 					<a href="index.php?page=wbpl-biaya&action=view&del=true&id=<?php echo $rows['id_kota']?>"  onclick="return askUser()";>
-					<img src="image/admin/drop.png"></a>
+					<i class="icon-remove" title="Remove"></i></a>
 				</td>
 			</tr>
 
@@ -116,21 +116,21 @@ switch ($action) {
 					<tr>
 						<td width="120">Nama Kota</td>
 						<td width="350">
-						<input name="nama_kota" type="nama_kota" id="nama_kota" size="40" />
+						<input name="nama_kota" type="text" id="nama_kota" size="40" />
 						</td>
 					</tr>
 					<tr>
 						<td width="120">Biaya</td>
 						<td width="350">
-						<input name="biaya" type="biaya" id="biaya" size="40" />
+						<input name="biaya" type="text" id="biaya" size="40" />
 						</td>
 					</tr>
 					<tr>
 						<td>&nbsp;</td>
 				
 						<td>
-						<input type="submit" name="tambahLogin" value="Tambah" />
-						<input type="reset" name="resetbtn" value="Reset" />
+							<input class="btn" type="submit" name="tambahLogin" value="Save" />
+							<a href="index.php?page=wbpl-biaya&action=view" class="btn btn-danger floatRight">Cancel</a>
 						</td>
 					</tr>
 					<tr>
@@ -170,14 +170,14 @@ switch ($action) {
 				<tr>
 					<td width="120">Nama Kota</td>
 					<td width="350">
-					<input name="nama_kota" type="nama_kota" id="nama_kota" size="40"
+					<input name="nama_kota" type="text" id="nama_kota" size="40"
 					value=<?php echo $rows['nama_kota'];?>>
 					</td>
 				</tr>
 				<tr>
 					<td width="120">Biaya</td>
 					<td width="350">
-					<input name="biaya" type="biaya" id="biaya" size="40"
+					<input name="biaya" type="text" id="biaya" size="40"
 					value=<?php echo $rows['biaya'];?>>
 					</td>
 				</tr>
@@ -185,8 +185,8 @@ switch ($action) {
 					<td>&nbsp;</td>
 			
 					<td>
-					<input type="submit" name="submitUser" value="Submit" />
-					<input type="reset" name="resetbtn" value="Reset" />
+						<input class="btn" type="submit" name="submitUser" value="Save" />
+						<a href="index.php?page=wbpl-biaya&action=view" class="btn btn-danger floatRight">Cancel</a>
 					</td>
 				</tr>
 				<?php

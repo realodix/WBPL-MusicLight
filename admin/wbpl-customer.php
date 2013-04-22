@@ -52,7 +52,7 @@ while($rows=mysql_fetch_array($result)){
 <!--<a href="index.php?page=customer_form_edit&id=<?php echo $rows['kd_customer']?>">
 <img src="image/admin/edit.png"></a>-->
 <a href="index.php?page=customer_view&del=true&id=<?php echo $rows['kd_customer']?>"  onclick="return askUser()";>
-<img src="image/admin/drop.png"></a>
+<i class="icon-remove" title="Remove"></i></a>
 </td>
 </tr>
 

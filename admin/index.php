@@ -44,41 +44,38 @@ require_once('../inc/common_function.php');
 		</div>
 	</div>
 
-	
-	<div id="content">
 
-		<!-- Right column, 25% width -->
-		<div class="menu-sidebar floatLeft">
+	<div class="menu-sidebar floatLeft">
 	  
-			<h4>Catalog</h4>
-			<ul >
-				<li><a href="index.php?page=product">Product</a></li>
-				<li><a href="index.php?page=wbpl-brand&action=view">Brand & Ins. Type</a></li>
-			</ul>
-			
-			<h4>Pesan</h4>
-			<ul>
-				<li><a href="index.php?page=detail">Detail</a></li>
-				<li><a href="index.php?page=wbpl-customer">Customer</a></li>
-				<li><a href="index.php?page=wbpl-pesan">Pesan</a></li>
-				<li><a href="index.php?page=testimony">Testimony</a></li>
-			</ul>
+		<h4>Catalog</h4>
+		<ul >
+			<li><a href="index.php?page=product">Product</a></li>
+			<li><a href="index.php?page=wbpl-brand&action=view">Brand & Ins. Type</a></li>
+		</ul>
+		
+		<h4>Pesan</h4>
+		<ul>
+			<li><a href="index.php?page=detail">Detail</a></li>
+			<li><a href="index.php?page=wbpl-customer">Customer</a></li>
+			<li><a href="index.php?page=wbpl-pesan">Pesan</a></li>
+			<li><a href="index.php?page=testimony">Testimony</a></li>
+		</ul>
 
-			<h4>Biaya kirim</h4>
-			<ul>
-				<li><a href="index.php?page=wbpl-biaya&action=view">Biaya per kota</a></li>
-			</ul>
+		<h4>Biaya kirim</h4>
+		<ul>
+			<li><a href="index.php?page=wbpl-biaya&action=view">Biaya per kota</a></li>
+		</ul>
 
-			<h4>Setting</h4>
-			<ul>
-				<li><a href="index.php?page=member">Member</a></li>
-			</ul>
+		<h4>Setting</h4>
+		<ul>
+			<li><a href="index.php?page=member">Member</a></li>
+		</ul>
 
-		</div>
-		<!-- end right column, 25% width -->
+	</div>
     
-		<!-- Left column, 75% width -->
-		<div class=" floatLeft width75">
+	
+	<div id="content" class="floatRight width75">
+		<div class="floatRight width75">
 			<?php
 			/* kode untuk meload halaman yang berbeda*/
 			if (isset($_GET['page'])) {
@@ -90,14 +87,12 @@ require_once('../inc/common_function.php');
 			}
 			?>
 		</div>
-		<!-- end left column, 75% width -->
-
 	</div>
-  <!-- end #content -->
+
 
 
 	<div id="footer" class="floatRight  width100">
-		<p>copyright(c) 2012,|<a href="../index.php">home</a>|<a href="logout.php">Logout</a></p>
+		<p>copyright &copy; 2013, | <a href="../index.php">Home</a> | <a href="logout.php">Logout</a></p>
 	</div>
 
 </div>

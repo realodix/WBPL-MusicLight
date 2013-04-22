@@ -42,12 +42,14 @@ while($get_data=mysql_fetch_array($hasil)){
 
 ?>
 
-<div class="image_wrapper image_fl"><img class="img-polaroid" src="cover/<?php echo $get_data['image'] ?>"
-alt="<?php
-	$imagee = $get_data['image'];
+<div class="image_wrapper image_fl"><img class="img-polaroid" src="
+<?php
+$imagee = $get_data['image'];
 	if ($imagee == 0 ){
-		echo 'Image Not Avaible';
-	}?>" width="150px" heigth="150px"></a>
+		echo 'images/Image Not Available.jpg';
+	}else{
+?>
+cover/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" heigth="150px">
 </div>
 <p>
 	<em>Product ID: <?php echo $get_data['kd_product']?></em><br>
@@ -67,9 +69,9 @@ alt="<?php
 <p style="text-align: justify;">
 	<?php echo $get_data['deskripsi'];?>
 </p>
-<div class="btn_more">
-	<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>">Add to cart</a>
-</div>
+
+	<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>" class="btn btn-inverse floatRight">Add to cart</a>
+
 
 <div style="clear: both"></div>
 

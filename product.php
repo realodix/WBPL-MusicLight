@@ -33,12 +33,7 @@ while($get_data=mysql_fetch_array($hasil)){
 
 ?>
 <h3><?php echo $get_data['judul']?></h3>
-<div class="image_wrapper image_fl"><img src="cover/<?php echo $get_data['cover']?>"
-alt="<?php
-	$imagee = $get_data['cover'];
-	if ($imagee == 0 ){
-		echo 'Image Not Avaible';
-	}?>" width='150px' heigth='150px'></a>
+<div class="image_wrapper image_fl"><img src="cover/<?php echo $get_data['cover']?>" alt="Image Not Avaible" width='150px' heigth='150px'></a>
 </div>
 <p>
 	<em>Penulis: <?php echo $get_data['pengarang'];	?></em> </br>
@@ -47,9 +42,9 @@ alt="<?php
 <p>
 	<?php echo $get_data['deskripsi']; ?>
 </p>
-<div class="btn_more">
-	<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_buku']; ?>">Add to cart</a>
-</div>
+
+<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_buku']; ?>" class="btn btn-inverse floatRight">Add to cart</a>
+
 <div style="clear: both"></div>
 <?php
 }

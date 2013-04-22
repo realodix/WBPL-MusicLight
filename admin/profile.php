@@ -25,25 +25,25 @@ while($rows=mysql_fetch_array($result)){
 			<tr>
 				<td width="120">Name</td>
 				<td width="350">
-				<input name="Name" type="Name" id="Name" size="40" value="<?php echo $rows['name'];?>"/>
+				<input name="Name" type="text" id="Name" size="40" value="<?php echo $rows['name'];?>"/>
 				</td>
 			</tr>
 			<tr>
 				<td width="120">Address</td>
 				<td width="350">
-				<input name="Address" type="Address" id="Address" size="40" value="<?php echo $rows['address'];?>"/
+				<input name="Address" type="text" id="Address" size="40" value="<?php echo $rows['address'];?>"/
 				</td>
 			</tr>
 			<tr>
 				<td width="120">Phone</td>
 				<td width="350">
-				<input name="Phone" type="Phone" id="Phone" size="40" value="<?php echo $rows['phone'];?>"/
+				<input name="Phone" type="text" id="Phone" size="40" value="<?php echo $rows['phone'];?>"/
 				</td>
 			</tr>
 			<tr>
 				<td width="120">Email</td>
 				<td width="350">
-				<input name="Email" type="Email" id="Email" size="40" value="<?php echo $rows['email'];?>"/
+				<input name="Email" type="text" id="Email" size="40" value="<?php echo $rows['email'];?>"/
 				</td>
 			</tr>
 <?php } ?>
@@ -75,8 +75,9 @@ while($rows=mysql_fetch_array($result)){
 				<td>&nbsp;</td>
 			
 				<td>
-				<input type="submit" name="UpdateProfile" value="Update" />
-				<input type="reset" name="resetbtn" value="Reset" />
+				<input class="btn" type="submit" name="UpdateProfile" value="Update" />
+				<input class="btn btn-warning"type="reset" name="resetbtn" value="Reset" />
+				<a href="index.php?page=member" class="btn btn-danger floatRight">Cancel</a>
 				</td>
 			</tr>
 			<tr>
