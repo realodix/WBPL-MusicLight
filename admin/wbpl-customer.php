@@ -51,8 +51,8 @@ while($rows=mysql_fetch_array($result)){
 <td>
 <!--<a href="index.php?page=customer_form_edit&id=<?php echo $rows['kd_customer']?>">
 <img src="image/admin/edit.png"></a>-->
-<a href="index.php?page=customer_view&del=true&id=<?php echo $rows['kd_customer']?>"  onclick="return askUser()";>
-<i class="icon-remove" title="Remove"></i></a>
+<a class="btn btn-danger" href="index.php?page=customer_view&del=true&id=<?php echo $rows['kd_customer']?>"  onclick="return askUser()";>
+<i class="icon-trash" title="Remove"></i></a>
 </td>
 </tr>
 

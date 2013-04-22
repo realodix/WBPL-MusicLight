@@ -132,25 +132,23 @@
 			<input name="username" type="text" class="input-small" placeholder="Username">
 			<input name="password" type="password" class="input-small" placeholder="Password">
 			
-			<div class="mustbe">
+			<br>
+
 			<?php 
-			
 			if (isset($_GET['err'])) {
-				if ($_GET['err'] == 1) {
-					echo "The username must be filled";
-				}else if ($_GET['err'] == 2) {
-					echo "The password must be filled";
-				}else if ($_GET['err'] == 3) {
-					echo "The username or password you entered is incorrect";
-				}
+				if ($_GET['err'] == 1) { ?>
+					<span class="label label-important">The username must be filled!</span>
+			<?php }else if ($_GET['err'] == 2) { ?>
+					<span class="label label-important">The password must be filled!</span>
+			<?php }else if ($_GET['err'] == 3) { ?>
+					<span class="label label-important">The username or password you entered is incorrect.</span>
+			<?php }
 			}else if (isset($_GET['loggedout'])) {
-				if ($_GET['loggedout'] == true) {
-					echo "You are now logged out.";
-				}
+				if ($_GET['loggedout'] == true) { ?>
+					<span class="label label-success">You are now logged out.</span>
+			<?php }
 			}
-			 
 			?>
-			</div>
 			
 			<label class="checkbox">
 				<input type="checkbox"> Remember me

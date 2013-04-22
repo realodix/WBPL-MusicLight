@@ -1,10 +1,14 @@
+<?php
+	$id = $_GET['id'];
+?>
 
-<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="wbpl_add-edit.php?action=updateproduct">
+
+<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="wbpl_add-edit.php?action=updateproduct&id=<?php echo $id ?>">
 	<td>
 	<table>
 	
 	<?php
-	$id = $_GET['id'];
+	//$id = $_GET['id'];
 	//$sql="SELECT * FROM  wbpl_member where kd_member='$id' ";
 	$sql="select * from wbpl_product, wbpl_brand, wbpl_instype
           where kd_product='$id' AND wbpl_product.nama_brand = wbpl_brand.nama_brand AND
@@ -16,7 +20,7 @@
 		<tr>
 			<td width="120">Product ID</td>
 			<td width="350">
-			<input name="kd_product" type="text" id="kd_product" size="10" value="<?php echo $rows['kd_product'];?>" style="width:164px;"/>
+			<?php echo $rows['kd_product'];?>
 			</td>
 		</tr>
 		
@@ -57,7 +61,7 @@
 		<tr>
 			<td width="120">Deskription</td>
 			<td width="350">
-			<textarea name="product_deskripsi" rows="10" style="width: 512px;">
+			<textarea name="product_deskripsi" rows="5" style="width: 512px;">
 				<?php echo $rows['deskripsi'];?></textarea>
 			</td>
 		</tr>
@@ -68,7 +72,7 @@
 			<td>&nbsp;</td>
 
 			<td>
-			<input type="submit" name="tambah" value="Update" />
+			<input class="btn" type="submit" name="tambah" value="Update" />
 			</td>
 		</tr>
 		<tr>

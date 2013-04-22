@@ -19,7 +19,7 @@ require_once('../inc/common_function.php');
 $action = $_GET['action'];
 switch ($action) {
 	case 'insertproduct':
-		$kd_product = $_POST['kd_product'];
+		$kd_product = kode_product();
 		$kd_brand = $_POST['kd_brand'];
 		$kd_instype = $_POST['kd_instype'];
 		$product_price = $_POST['product_price'];
@@ -78,7 +78,7 @@ switch ($action) {
 	case 'updateproduct':
 		//$kd_brand = $_POST['kd_brand'];
 		//$kd_instype = $_POST['kd_instype'];
-		$kd_product = $_POST['kd_product'];
+		$kd_product = $_GET['id'];
 		$product_price = $_POST['product_price'];
 		$product_stock = $_POST['product_stock'];
 		$product_deskripsi = $_POST['product_deskripsi'];

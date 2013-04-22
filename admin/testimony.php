@@ -1,3 +1,4 @@
+<h3>Testimony</h3>
 <?php
 /*
  * kode untuk approve data
@@ -41,7 +42,7 @@ if(isset($_GET['del'])){
 	while($rows=mysql_fetch_array($result)){
 ?>
 
-	<p>#<?php echo $rows['kd_testimony'];
+	<p>#<?php echo '<b>'.$rows['kd_testimony'].'</b>';
 	if($rows['testimony_status'] == 'pending'){
 		echo ' <i>[pending]</i>';
 	}

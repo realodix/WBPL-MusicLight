@@ -37,8 +37,8 @@ while($rows=mysql_fetch_array($result)){
 <td>
 <!--<a href="index.php?page=det_pesan_form_edit&id=<?php echo $rows['no_det_pesan']?>">
 <img src="image/admin/dit.png"></a>-->
-<a href="index.php?page=det_pesan_view&del=true&id=<?php echo $rows['no_det_pesan']?>"  onclick="return askUser()";>
-    <i class="icon-remove" title="Remove"></i></a>
+<a class="btn btn-danger" href="index.php?page=det_pesan_view&del=true&id=<?php echo $rows['no_det_pesan']?>"  onclick="return askUser()";>
+    <i class="icon-trash" title="Remove"></i></a>
 </td>
 </tr>
 

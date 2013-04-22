@@ -4,17 +4,21 @@ include ('inc/config.php');
 
 ?>
 <h1> Tabel Member</h1>
-<form action='index.php?page=member'method="post">
-	<input type='text' name='cari' value=''>
-	<input type='submit' name='btnCari' value='cari'>
-	
+<form action="index.php?page=member" method="post">
+	<div class="input-append">
+		<input class="span3" id="appendedInputButton" type="text" name="cari" placeholder="Type something">
+		<button class="btn" type="subit" name='btnCari'>Go!</button>
+    </div>
 </form>
-<a href='index.php?page=member'>all data</a>
+
+<a href='index.php?page=member'>Vie all data</a>
+
+
 <table  width="600px" border=0>
 	<tr style="background-color:#F79307">
 		<td width="100px">Kode User</td>
 		<td width="250px">Username</td>
-		<td width="60px">Operation</td>
+		<td width="90px">Operation</td>
 	</tr>
 
 <?php
@@ -31,7 +35,7 @@ $sql="";
 if(isset($_POST['btnCari'])){
 $cari=$_POST['cari'];
 //ambil data dari table admin
-$sql="SELECT * FROM  wbpl_member where name like '%$cari%'";
+$sql="SELECT * FROM  wbpl_member where username like '%$cari%'";
 }else{
 $sql="SELECT * FROM  wbpl_member";
 }
@@ -44,11 +48,15 @@ while($rows=mysql_fetch_array($result)){
 ?>
 	<tr>
 		<td><a href="index.php?page=profile&id=<?php echo $rows['kd_member']?>"><?php echo $rows['kd_member'];?></a></td>
-		<td><a href="index.php?page=profile&id=<?php echo $rows['kd_member']?>"><?php echo $rows['name'];?></a></td>
+		<td><a href="index.php?page=profile&id=<?php echo $rows['kd_member']?>"><?php echo $rows['username'];?></a></td>
 		
 		<td>
-			<a href="index.php?page=profile&id=<?php echo $rows['kd_member']?>"><i class="icon-edit" title="Edit"></i></a>
-			<a href="index.php?page=member&del=true&id=<?php echo $rows['kd_member']?>"  onclick="return askUser()";> <i class="icon-remove" title="Remove"></i> </a>
+			<a class="btn" href="index.php?page=profile&id=<?php echo $rows['kd_member']?>">
+				<i class="icon-edit" title="Edit"></i>
+			</a>
+			<a class="btn btn-danger" href="index.php?page=member&del=true&id=<?php echo $rows['kd_member']?>"  onclick="return askUser()";> 
+				<i class="icon-remove" title="Remove"></i>
+			</a>
 		</td>
 	</tr>
 	<?php

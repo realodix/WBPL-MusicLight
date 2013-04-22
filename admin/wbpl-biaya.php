@@ -56,10 +56,10 @@ switch ($action) {
 				<td><?php echo $rows['biaya'];?></td>
 
 				<td>
-					<a href="index.php?page=wbpl-biaya&action=edit&id=<?php echo $rows['id_kota']?>">
+					<a class="btn" href="index.php?page=wbpl-biaya&action=edit&id=<?php echo $rows['id_kota']?>">
 					<i class="icon-edit" title="Edit"></i></a>
-					<a href="index.php?page=wbpl-biaya&action=view&del=true&id=<?php echo $rows['id_kota']?>"  onclick="return askUser()";>
-					<i class="icon-remove" title="Remove"></i></a>
+					<a class="btn btn-danger" href="index.php?page=wbpl-biaya&action=view&del=true&id=<?php echo $rows['id_kota']?>"  onclick="return askUser()";>
+					<i class="icon-trash" title="Remove"></i></a>
 				</td>
 			</tr>
 
@@ -80,8 +80,12 @@ switch ($action) {
 					}
 				}?>
 				</td>
-				<td align=right><a href="index.php?page=wbpl-biaya&action=add">
-				<img src="image/admin/add.jpg"> Add</a>
+				
+				<td align=right>
+					<a class="btn btn-primary" href="index.php?page=wbpl-biaya&action=add">
+						<i class="icon-plus icon-white"></i>
+						Add
+					</a>
 				</td>
 			</tr>
 			<tr></tr>

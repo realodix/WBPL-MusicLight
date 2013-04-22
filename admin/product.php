@@ -39,10 +39,10 @@ while($rows=mysql_fetch_array($result)){
 	<td><?php  echo $rows['price'];?></td>
 	<td><?php  echo $rows['stock'];?></td>
 	<td>
-		<a href="index.php?page=updateproduct&id=<?php echo $rows['kd_product']?>">
+		<a class="btn" href="index.php?page=updateproduct&id=<?php echo $rows['kd_product']?>">
 		<i class="icon-edit" title="Edit"></i></a>
-		<a href="index.php?page=product&del=true&id=<?php echo $rows['kd_product']?>"  onclick="return askUser()";>
-		<i class="icon-remove" title="Remove"></i></a>
+		<a class="btn btn-danger" href="index.php?page=product&del=true&id=<?php echo $rows['kd_product']?>"  onclick="return askUser()";>
+		<i class="icon-trash" title="Remove"></i></a>
 	</td>
 </tr>
 
@@ -51,21 +51,30 @@ while($rows=mysql_fetch_array($result)){
 
 //tutup koneksi
 ?>
-<tr><td align=right colspan='5'>
-<?php
-if (isset($_GET['status'])) {
-	if ($_GET['status'] == 0) {
-		echo " Operasi data berhasil";
-	} else {
-		echo "operasi gagal";
+<tr>
+	<td align=right colspan='5'>
+	<?php
+	if (isset($_GET['status'])) {
+		if ($_GET['status'] == 0) {
+			echo " Operasi data berhasil";
+		} else {
+			echo "operasi gagal";
+		}
 	}
-}
-?>
-</td>
-<td align=right><a href="index.php?page=insertproduct">
-<img src="image/admin/add.jpg">Insert product</a></td></tr>
-<td align=right><a href="buku_cetak.php" target='_blank'>
-cetak</a></td></tr>
+	?>
+	</td>
+
+	<td align=right><a class="btn btn-primary" href="index.php?page=insertproduct">
+	<i class="icon-plus icon-white" title="Edit"></i> Insert product</a></td>
+</tr>
+
+<tr>
+	<td align=right>
+		<a class="btn" href="wbpl_cetak.php" target='_blank'>
+		<i class="icon-print" title="Edit"></i> Print
+		</a>
+	</td>
+</tr>
 <tr></tr>
 </table>
 

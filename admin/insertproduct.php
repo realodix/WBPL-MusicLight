@@ -4,8 +4,7 @@
 		<tr>
 			<td width="120">Product ID</td>
 			<td width="350">
-			<input name="kd_product" type="text" id="kd_product" size="10" 
-			value=<?php echo kode_product();?> style="width:164px;"/>
+			<?php echo kode_product();?>
 			</td>
 		</tr>
 		
@@ -51,7 +50,7 @@
 		<tr>
 			<td width="120">Deskription</td>
 			<td width="350">
-			<textarea name='product_deskripsi' cols='60' rows='10'></textarea>
+			<textarea name='product_deskripsi' rows="5" style="width: 512px;"></textarea>
 			</td>
 		</tr>
 	
@@ -59,8 +58,8 @@
 			<td>&nbsp;</td>
 
 			<td>
-			<input type="submit" name="tambah" value="Insert" />
-			<input type="reset" name="resetbtn" value="Reset" />
+			<input class="btn" type="submit" name="tambah" value="Insert" />
+			<input class="btn btn-danger floatRight" type="reset" name="resetbtn" value="Reset" />
 			</td>
 		</tr>
 		<tr>

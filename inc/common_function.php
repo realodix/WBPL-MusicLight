@@ -110,6 +110,7 @@ function combo_brand($kode) {
 			echo "<option value='$row[0]'" . selected($row[0], $kode) . "> " . ucwords($row[0]) . " </option>";
 	}
 }
+
 function combo_ins_type($kode) {
 	echo "<option value='' selected>- Pilih Instrument Type-</option>";
 	$query = query("SELECT nama_instype FROM wbpl_instype ORDER BY nama_instype ASC");

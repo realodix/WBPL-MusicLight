@@ -26,7 +26,7 @@ switch ($action) {
 						<td>&nbsp;</td>
 						
 						<td>
-							<input class="btn floatRight" type="submit" name="tambahLogin" value="Add" />
+							<input class="btn btn-primary floatRight" type="submit" name="tambahLogin" value="Add" />
 						</td>
 					</tr>
 					<tr>
@@ -71,10 +71,10 @@ switch ($action) {
 				<td><?php echo $rows['nama_brand'];?></td>
 
 				<td>
-					<a href="index.php?page=wbpl-brand&action=editb&id=<?php echo $rows['kd_brand']?>">
+					<a class="btn" href="index.php?page=wbpl-brand&action=editb&id=<?php echo $rows['kd_brand']?>">
 					<i class="icon-edit" title="Edit <?php echo $rows['nama_brand'];?>"></i></a>
-					<a href="index.php?page=wbpl-brand&action=view&del=true&id=<?php echo $rows['kd_brand']?>"  onclick="return askUser()";>
-					<i class="icon-remove" title="Remove <?php echo $rows['nama_brand'];?>"></i></a>
+					<a class="btn btn-danger" href="index.php?page=wbpl-brand&action=view&del=true&id=<?php echo $rows['kd_brand']?>"  onclick="return askUser()";>
+					<i class="icon-trash" title="Remove <?php echo $rows['nama_brand'];?>"></i></a>
 				</td>
 			</tr>
 
@@ -124,7 +124,7 @@ switch ($action) {
 					<tr>
 						<td>&nbsp;</td>
 						<td>
-						<input class="btn floatRight" type="submit" name="tambahLoginIT" value="Add" />
+							<input class="btn btn-primary floatRight" type="submit" name="tambahLoginIT" value="Add" />
 						</td>
 					</tr>
 					<tr>
@@ -169,9 +169,9 @@ switch ($action) {
 				<td><?php  echo $rows['nama_instype'];?></td>
 
 				<td>
-					<a href="index.php?page=wbpl-brand&action=editit&id=<?php echo $rows['kd_instype']?>">
+					<a class="btn" href="index.php?page=wbpl-brand&action=editit&id=<?php echo $rows['kd_instype']?>">
 					<i class="icon-edit" title="Edit <?php echo $rows['nama_instype'];?>"></i></a>
-					<a href="index.php?page=wbpl-brand&action=view&del=true&id=<?php echo $rows['kd_instype']?>"  onclick="return askUser()";>
+					<a class="btn btn-danger" href="index.php?page=wbpl-brand&action=view&del=true&id=<?php echo $rows['kd_instype']?>"  onclick="return askUser()";>
 					<i class="icon-remove" title="Remove <?php echo $rows['nama_instype'];?>"></i></a>
 				</td>
 			</tr>
