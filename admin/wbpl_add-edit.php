@@ -278,9 +278,9 @@ switch ($action) {
 
 		//check if query successful
 		if ($result) {
-			header('location:../testimony.php?status=0#waiting');
+			header('location:../index.php?page=testimony&status=0#waiting');
 		} else {
-			header('location:../testimony.php');
+			header('location:../index.php?page=testimony');
 		}
 		mysql_close();
 	break;
