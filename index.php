@@ -109,7 +109,7 @@
 			<h2 class="site-description">Musical Instrument Shop</h2>
 		</hgroup>
 
-		<div style="float:right;">
+		<div class="pull-right">
 		<?php
 		if(isset($_SESSION['username'])){
 		
@@ -128,7 +128,7 @@
 		<br>
 		<?php
 		if(!isset($_SESSION['username'])){?>
-		<form style="float:right;" method="post" action="admin/inc/wbpl-login_check.php">
+		<form method="post" action="admin/inc/wbpl-login_check.php">
 			<input name="username" type="text" class="input-small" placeholder="Username">
 			<input name="password" type="password" class="input-small" placeholder="Password">
 			
@@ -167,7 +167,7 @@
 		}	?>
 		</div>
 		
-	<div class="clear"></div>
+	<div class="clearfix"></div>
 	
         <div class="navbar">
           <div class="navbar-inner">
@@ -308,7 +308,7 @@
 			</div>
  
 			<h3>Welcome to Music Light</h3>
-			<P style="text-align: justify;">Music Light is a famous musical instrument shop in the town. It sells a wide range of musical instruments from the common to the rare. As time passed, the owner of this store realized how important the internet today and decided to develop a website that can ease customer to make transactions in Music Light. This website will be used by the customer/member to order musical instruments via online and promote Music Light’s product to non-member visitor.</p>
+			<P class="alignJustify">Music Light is a famous musical instrument shop in the town. It sells a wide range of musical instruments from the common to the rare. As time passed, the owner of this store realized how important the internet today and decided to develop a website that can ease customer to make transactions in Music Light. This website will be used by the customer/member to order musical instruments via online and promote Music Light’s product to non-member visitor.</p>
 		<?php
 		}?>
         </div>

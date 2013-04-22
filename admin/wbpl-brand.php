@@ -4,7 +4,7 @@ $action = $_GET['action'];
 switch ($action) {
 	case 'view':
 ?>
-		<table  width="320px" border=0 style="float: left;">
+		<table  width="320px" border=0 class="pull-left">
 
 			<form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=insert_brand">
 				<tr><td colspan="3" >
@@ -26,7 +26,7 @@ switch ($action) {
 						<td>&nbsp;</td>
 						
 						<td>
-							<input class="btn btn-primary floatRight" type="submit" name="tambahLogin" value="Add" />
+							<input class="btn btn-primary pull-right" type="submit" name="tambahLogin" value="Add" />
 						</td>
 					</tr>
 					<tr>
@@ -84,7 +84,7 @@ switch ($action) {
 			//tutup koneksi
 			?>
 			<tr>
-				<td align=right colspan='2'>
+				<td colspan="2">
 				<?php
 				if (isset($_GET['status'])) {
 					if ($_GET['status'] == 0) {
@@ -103,7 +103,7 @@ switch ($action) {
 
 
 
-		<table  width="360px" border=0 style="float: right;">
+		<table  width="360px" border=0 class="pull-right">
 
 			<form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=insert_instype">
 				<tr><td colspan="3" >
@@ -124,7 +124,7 @@ switch ($action) {
 					<tr>
 						<td>&nbsp;</td>
 						<td>
-							<input class="btn btn-primary floatRight" type="submit" name="tambahLoginIT" value="Add" />
+							<input class="btn btn-primary pull-right" type="submit" name="tambahLoginIT" value="Add" />
 						</td>
 					</tr>
 					<tr>
@@ -233,7 +233,7 @@ switch ($action) {
 					<td>&nbsp;</td>
 					<td>
 						<input class="btn" type="submit" name="submitUser" value="Save" />
-						<a href="index.php?page=wbpl-brand&action=view" class="btn btn-danger floatRight">Cancel</a>
+						<a href="index.php?page=wbpl-brand&action=view" class="btn btn-danger pull-right">Cancel</a>
 					</td>
 				</tr>
 				<?php
@@ -283,7 +283,7 @@ switch ($action) {
 				
 					<td>
 						<input class="btn" type="submit" name="submitUser" value="Save" />
-						<a href="index.php?page=wbpl-brand&action=view" class="btn btn-danger floatRight">Cancel</a>
+						<a href="index.php?page=wbpl-brand&action=view" class="btn btn-danger pull-right">Cancel</a>
 					</td>
 				</tr>
 				<?php

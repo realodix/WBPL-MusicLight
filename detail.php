@@ -73,7 +73,7 @@ cover/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" 
 	<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>" class="btn btn-inverse floatRight">Add to cart</a>
 
 
-<div style="clear: both"></div>
+<div class="clearfix"></div>
 
 <br><br>
 <?php

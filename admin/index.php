@@ -34,8 +34,8 @@ require_once('../inc/common_function.php');
 
 <div class="width100">
 
-	<div id="header" class="floatLeft width100">
-		<div class="floatLeft width100 rightBorder">
+	<div id="header" class="pull-left width100">
+		<div class="pull-left width100 rightBorder">
 		  <div id="title">
 			<a href="./"><h1>Admin page</h1>
 			<p>Halaman Administrasi</p>
@@ -45,7 +45,7 @@ require_once('../inc/common_function.php');
 	</div>
 
 
-	<div class="menu-sidebar floatLeft">
+	<div class="menu-sidebar pull-left">
 	  
 		<h4>Catalog</h4>
 		<ul >
@@ -74,8 +74,8 @@ require_once('../inc/common_function.php');
 	</div>
     
 	
-	<div id="content" class="floatRight width75">
-		<div class="floatRight width75">
+	<div id="content" class="pull-right width75">
+		<div class="pull-right width75">
 			<?php
 			/* kode untuk meload halaman yang berbeda*/
 			if (isset($_GET['page'])) {
@@ -91,7 +91,7 @@ require_once('../inc/common_function.php');
 
 
 
-	<div id="footer" class="floatRight  width100">
+	<div id="footer" class="pull-right  width100">
 		<p>copyright &copy; 2013, | <a href="../index.php">Home</a> | <a href="logout.php">Logout</a></p>
 	</div>
 

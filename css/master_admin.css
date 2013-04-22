@@ -17,21 +17,11 @@
  Utility Classes
  **************************************************************/
 
-.floatRight {
-	float: right;
-}
-.floatLeft {
-	float: left;
-}
-.clear {
-	clear: both;
-}
+
 .block {
 	display: block;
 }
-.alignRight {
-	text-align: right;
-}
+
 .alignJustify {
 	text-align: justify;
 }

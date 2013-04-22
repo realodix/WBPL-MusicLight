@@ -77,7 +77,7 @@ while($rows=mysql_fetch_array($result)){
 				<td>
 				<input class="btn" type="submit" name="UpdateProfile" value="Update" />
 				<input class="btn btn-warning"type="reset" name="resetbtn" value="Reset" />
-				<a href="index.php?page=member" class="btn btn-danger floatRight">Cancel</a>
+				<a href="index.php?page=member" class="btn btn-danger pull-right">Cancel</a>
 				</td>
 			</tr>
 			<tr>

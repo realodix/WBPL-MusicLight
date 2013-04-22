@@ -45,7 +45,7 @@ while($get_data=mysql_fetch_array($hasil)){
 
 <a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_buku']; ?>" class="btn btn-inverse floatRight">Add to cart</a>
 
-<div style="clear: both"></div>
+<div class="clearfix"></div>
 <?php
 }
 

@@ -1,9 +1,6 @@
 a, div, h1, h2, h3, font, input, label, ul, li, tr, td, p, select, strong{
 	font-family: Segoe UI !important;
 }
-.clear {
-  clear: both;
-}
 body{
 	background:url("../images/bg.jpg") repeat scroll 0% 0% transparent;
 }
@@ -211,20 +208,8 @@ body{
  Utility Classes
  **************************************************************/
 
-.floatRight {
-	float: right;
-}
-.floatLeft {
-	float: left;
-}
-.clear {
-	clear: both;
-}
 .block {
 	display: block;
-}
-.alignRight {
-	text-align: right;
 }
 .alignJustify {
 	text-align: justify;

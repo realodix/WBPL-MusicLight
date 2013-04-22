@@ -1,17 +1,18 @@
 <html>
 	<head>
-		<link rel="stylesheet" type="text/css" media="screen" href="style2.css" />
+		<title>Music Light | Print</title>
+		<link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.css" />
 	</head>
 	<body>
-		<h2 align="center"> List Product </h2>
-		<h1 align="center"> Music Light </h1>
-		<p align="center">
-			Jakarta Barat
-		</p>
+		<div class="text-center">
+			<h2> List Product </h2>
+			<h1> Music Light </h1>
+			<p> Jakarta Barat </p>
+		<div>
 		<hr>
 		<br/>
 
-		<table align='center'>
+		<table class="table">
 			<tr style="background-color:#F79307">
 				<td>No</td><td>Product ID</td><td>Brand</td><td>Instrument Type</td>
 				<td>Price</td><td>Stock</td>

@@ -59,7 +59,7 @@
 
 			<td>
 			<input class="btn" type="submit" name="tambah" value="Insert" />
-			<input class="btn btn-danger floatRight" type="reset" name="resetbtn" value="Reset" />
+			<input class="btn btn-danger pull-right" type="reset" name="resetbtn" value="Reset" />
 			</td>
 		</tr>
 		<tr>
