@@ -96,18 +96,25 @@ switch ($action) {
 		$tampil2 = mysql_query("select * from biaya_kirim");
 		$jmldata = mysql_num_rows($tampil2);
 		$jumlah_halaman = ceil($jmldata / $batas);
-
-		echo "Halaman :";
-		for($i = 1; $i <= $jumlah_halaman; $i++)
-			if($i != $halaman) {
-				echo "<a href=index.php?page=wbpl-biaya&action=view&halaman=$i> $i</a> | ";
-			} else {
-				echo "<b> $i</b> | ";
-			}
-		mysql_close();
 		?>
-		<br>
+		
 		Jumlah data :<?php echo $jmldata;?>
+	
+			<div class="pagination">
+				<ul>
+				<?php
+				for($i = 1; $i <= $jumlah_halaman; $i++)
+					if($i != $halaman) {
+					echo "<li><a href=index.php?page=wbpl-biaya&action=view&halaman=$i> $i </a></li>";
+				}else {
+					echo "<li class=".'active'."><a href="."> $i </a></li>";
+				}
+				mysql_close();
+				?>
+				</ul>
+			</div>
+		
+		
 	<?php
 	break;
 	
