@@ -4,7 +4,7 @@ $action = $_GET['action'];
 switch ($action) {
 	case 'view':
 ?>
-		<table  width="320px" border=0 class="pull-left">
+		<table style="max-width: 320px;" class="pull-left table table-condensed">
 
 			<form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=insert_brand">
 				<tr><td colspan="3" >
@@ -30,7 +30,7 @@ switch ($action) {
 						</td>
 					</tr>
 					<tr>
-						<td colspan='2'><div id="form1_errorloc" style="color:red"></div></td>
+						<td colspan="2"><div id="form1_errorloc" style="color:red"></div></td>
 					</tr>
 				</table></td></tr>
 			</form>
@@ -84,7 +84,7 @@ switch ($action) {
 			//tutup koneksi
 			?>
 			<tr>
-				<td colspan="2">
+				<td colspan="3">
 				<?php
 				if (isset($_GET['status'])) {
 					if ($_GET['status'] == 0) {
@@ -103,7 +103,7 @@ switch ($action) {
 
 
 
-		<table  width="360px" border=0 class="pull-right">
+		<table style="max-width: 360px;" class="pull-right table table-condensed">
 
 			<form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=insert_instype">
 				<tr><td colspan="3" >

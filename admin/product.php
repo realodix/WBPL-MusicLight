@@ -2,9 +2,9 @@
 //include ('ind/config.php');
 ?>
 
-<table>
+<table class="table">
 <tr style="background-color:#F79307">
-<td>Product ID</td><td>Brand</td><td>Instrument Type</td><td>Price</td><td>Stock</td><td>Operasi</td></tr>
+<td>Product ID</td><td>Brand</td><td>Instrument Type</td><td>Price</td><td>Stock</td><td width="131">Operation</td></tr>
 
 <?php
 /*
@@ -24,7 +24,8 @@ $sql="SELECT * FROM  wbpl_product where wbpl_product like '%$cari%'";
 }else{
 $sql="select * from wbpl_product, wbpl_brand, wbpl_instype
           where wbpl_product.nama_brand = wbpl_brand.nama_brand AND
-				wbpl_product.nama_instype = wbpl_instype.nama_instype";
+				wbpl_product.nama_instype = wbpl_instype.nama_instype
+			ORDER BY `wbpl_product`.`kd_product` ASC ";
 }
 
 $result=mysql_query($sql) or die(mysql_error());
