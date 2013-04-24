@@ -55,6 +55,7 @@ require_once('../inc/common_function.php');
 		
 		<h4>Pesan</h4>
 		<ul>
+			<li><a href="index.php?page=transaction">Transaction</a></li>
 			<li><a href="index.php?page=detail">Detail</a></li>
 			<li><a href="index.php?page=wbpl-customer">Customer</a></li>
 			<li><a href="index.php?page=wbpl-pesan">Pesan</a></li>
