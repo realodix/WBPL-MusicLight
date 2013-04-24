@@ -20,6 +20,7 @@ include ('inc/config.php');
 $id = $_GET['id'];
 $sql="SELECT * FROM  wbpl_member where kd_member='$id' ";
 $result=mysql_query($sql) or die(mysql_error());
+
 while($rows=mysql_fetch_array($result)){
 ?>
 			<tr>

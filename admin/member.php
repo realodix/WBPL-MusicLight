@@ -33,11 +33,11 @@ if(isset($_GET['del'])){
 
 $sql="";
 if(isset($_POST['btnCari'])){
-$cari=$_POST['cari'];
-//ambil data dari table admin
-$sql="SELECT * FROM  wbpl_member where username like '%$cari%'";
+	$cari=$_POST['cari'];
+	//ambil data dari table admin
+	$sql="SELECT * FROM  wbpl_member where username like '%$cari%'";
 }else{
-$sql="SELECT * FROM  wbpl_member";
+	$sql="SELECT * FROM  wbpl_member";
 }
 
 $result=mysql_query($sql) or die(mysql_error());

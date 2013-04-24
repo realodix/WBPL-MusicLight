@@ -30,21 +30,24 @@ switch ($action) {
 
 			//===========================
 			if(isset($_GET['del'])){
-			$id_kota=$_GET['id'];
-			$hapus ="delete from biaya_kirim where id_kota='$id_kota'";
-			mysql_query($hapus);
+				$id_kota=$_GET['id'];
+				$hapus ="delete from biaya_kirim where id_kota='$id_kota'";
+				mysql_query($hapus);
 			}
+			
 			$sql="";
+			
 			if(isset($_POST['btnCari'])){
-			$cari=$_POST['cari'];
-			//ambil data dari table admin
-			$sql="SELECT * FROM  biaya_kirim where id_kota like '%$cari%'";
+				$cari=$_POST['cari'];
+				//ambil data dari table admin
+				$sql="SELECT * FROM  biaya_kirim where id_kota like '%$cari%'";
 			}else{
-			$sql="SELECT * FROM  biaya_kirim limit $posisi,$batas";
+				$sql="SELECT * FROM  biaya_kirim limit $posisi,$batas";
 			}
 
 			$result=mysql_query($sql) or die(mysql_error());
 			$no=1;
+			
 			//proses menampilkan data
 			while($rows=mysql_fetch_array($result)){
 			?>
