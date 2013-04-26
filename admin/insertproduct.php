@@ -9,6 +9,13 @@
 		</tr>
 		
 		<tr>
+			<td width="120">Product Name</td>
+			<td width="350">
+			<input name="nama_product" type="text" id="nama_product" style="width:264px;"/>
+			</td>
+		</tr>
+		
+		<tr>
 			<td width="120">Brand</td>
 			<td width="350">
 				<select name='kd_brand' style="width:164px;">

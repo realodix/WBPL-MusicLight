@@ -45,11 +45,11 @@ while($get_data=mysql_fetch_array($hasil)){
 <div class="image_wrapper image_fl"><img class="img-polaroid" src="
 <?php
 $imagee = $get_data['image'];
-	if ($imagee == 0 ){
-		echo 'images/Image Not Available.jpg';
+	if ($imagee == "" ){
+		echo 'admin/image/Image Not Available.jpg';
 	}else{
 ?>
-cover/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" heigth="150px">
+admin/image/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" heigth="150px">
 </div>
 <p>
 	<em>Product ID: <?php echo $get_data['kd_product']?></em><br>

@@ -5,6 +5,7 @@
 <table class="table">
 	<tr style="background-color:#F79307">
 		<td>Product ID</td>
+		<td>Product Name</td>
 		<td>Brand</td>
 		<td>Instrument Type</td>
 		<td>Price</td>
@@ -42,6 +43,7 @@
 	?>
 	<tr>
 		<td><?php  echo $rows['kd_product'];?></td>
+		<td><?php  echo $rows['nama_product'];?></td>
 		<td><?php  echo $rows['nama_brand'];?></td>
 		<td><?php  echo $rows['nama_instype'];?></td>
 		<td><?php  echo $rows['price'];?></td>
@@ -60,7 +62,7 @@
 	//tutup koneksi
 	?>
 	<tr>
-		<td align=right colspan='5'>
+		<td align=right colspan="6">
 		<?php
 		if (isset($_GET['status'])) {
 			if ($_GET['status'] == 0) {
@@ -80,7 +82,7 @@
 	</tr>
 
 	<tr>
-		<td align=right>
+		<td align=right colspan="2">
 			<a class="btn" href="wbpl_cetak.php" target='_blank'>
 			<i class="icon-print" title="Edit"></i> Print
 			</a>

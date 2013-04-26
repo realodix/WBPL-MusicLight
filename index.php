@@ -261,15 +261,15 @@
 								<div class="slider_image">
 									<img src="<?php
 									$imagee = $get_data['image'];
-										if ($imagee == 0 ){
-											echo 'images/Image Not Available.jpg';
+										if ($imagee == "" ){
+											echo 'admin/image/Image Not Available.jpg';
 										}else{
 									?>
-									cover/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" heigth="150px">
+									admin/image/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" heigth="150px">
 								</div>
 									
 								<div class="slider_content">
-                                    <h2><?php echo $get_data['nama_brand']?></h2>
+                                    <h2><?php echo $get_data['nama_product']?></h2>
 									<p>Product ID: <?php echo $get_data['kd_product'];?></br>
 									Price: Rp. <?php echo $get_data['price'];?></p>
 									<p>aa<?php echo $get_data['deskripsi'];?></p>

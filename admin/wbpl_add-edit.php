@@ -20,6 +20,7 @@ $action = $_GET['action'];
 switch ($action) {
 	case 'insertproduct':
 		$kd_product = kode_product();
+		$nama_product = $_POST['nama_product'];
 		$kd_brand = $_POST['kd_brand'];
 		$kd_instype = $_POST['kd_instype'];
 		$product_price = $_POST['product_price'];
@@ -28,12 +29,13 @@ switch ($action) {
 
 		$lokasi_file = $_FILES['product_image']['tmp_name'];
 		$nama_file = $_FILES['product_image']['name'];
-		$product_image=$nama_file;
-		$direktori = "../cover/$nama_file";
+		$product_image = $nama_file;
+		$direktori = "image/$nama_file";
 
 		if (move_uploaded_file($lokasi_file, $direktori)) {
 
 			$sql = "INSERT INTO wbpl_product(kd_product,
+									nama_product,
 									nama_brand,
 									nama_instype,
 									price,
@@ -41,6 +43,7 @@ switch ($action) {
 									image,
 									deskripsi)
 				VALUES('$kd_product',
+						'$nama_product',
 						'$kd_brand',
 						'$kd_instype',
 						'$product_price',
@@ -76,6 +79,7 @@ switch ($action) {
 	break;
 	
 	case 'updateproduct':
+		$nama_product = $_POST['nama_product'];
 		//$kd_brand = $_POST['kd_brand'];
 		//$kd_instype = $_POST['kd_instype'];
 		$kd_product = $_GET['id'];
@@ -86,12 +90,13 @@ switch ($action) {
 		$lokasi_file = $_FILES['product_image']['tmp_name'];
 		$nama_file = $_FILES['product_image']['name'];
 		$product_image=$nama_file;
-		$direktori = "../cover/$nama_file";
+		$direktori = "image/$nama_file";
 
 		if (move_uploaded_file($lokasi_file, $direktori)) {
 						
 			$sql = "UPDATE wbpl_product
 					SET
+						nama_product='$nama_product',
 						price='$product_price',
 						stock='$product_stock',
 						image='$product_image',
@@ -105,6 +110,7 @@ switch ($action) {
 
 			$sql = "UPDATE wbpl_product
 					SET
+						nama_product='$nama_product',
 						price='$product_price',
 						stock='$product_stock',
 						image='$product_image',

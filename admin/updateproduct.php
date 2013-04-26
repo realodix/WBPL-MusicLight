@@ -25,6 +25,13 @@
 		</tr>
 		
 		<tr>
+			<td width="120">Product Name</td>
+			<td width="350">
+			<input name="nama_product" type="text" id="nama_product" value="<?php echo $rows['nama_product'];?>" style="width:264px;"/>
+			</td>
+		</tr>
+		
+		<tr>
 			<td width="120">Brand</td>
 			<td width="350">
 				<input name="kd_brand" type="text" id="kd_brand" size="10" value="<?php echo $rows['nama_brand'];?>" style="width:164px;"/>

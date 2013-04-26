@@ -88,6 +88,9 @@ body{
  * it's not absolutely necessary.
  ******************************************************************************
  */
+ .slider_content h2{
+	font-weight: 500;
+ }
 .contentslider {
   position:relative;
   display:block;
