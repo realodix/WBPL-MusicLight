@@ -14,18 +14,6 @@
           group by wbpl_brand.nama_brand";
 	$hasil=mysql_query($kat) or die(mysql_error());
 	while($get_data=mysql_fetch_array($hasil)){
-
-	/**
-	* Boneka Kategori
-	*
-	include('admin/inc/config.php');
-	$kat="select kategori.nama_kategori, kategori.kd_kategori,
-            count(buku.kd_buku) as jumlah 
-          from kategori, buku 
-          where buku.kd_kategori=kategori.kd_kategori 
-          group by kategori.nama_kategori";
-	$hasil=mysql_query($kat) or die(mysql_error());
-	while($get_data=mysql_fetch_array($hasil)){*/
 	?>
 	
 	<li>
@@ -41,6 +29,7 @@
 	}
 	?>
 </ul>
+
 <h3>Instrument Type</h3>
 <ul>
 	<?php
@@ -54,18 +43,6 @@
             group by wbpl_instype.nama_instype";
 	$hasil=mysql_query($kat) or die(mysql_error());
 	while($get_data=mysql_fetch_array($hasil)){
-	
-	/**
-	* Boneka Instrument Type
-	
-	include('admin/inc/config.php');
-	$kat="select penerbit.nama,penerbit.kd_penerbit,
-                       count(buku.kd_buku) as jumlah 
-                       from penerbit, buku 
-                       where buku.kd_penerbit=penerbit.kd_penerbit 
-                       group by penerbit.nama";
-	$hasil=mysql_query($kat) or die(mysql_error());
-	while($get_data=mysql_fetch_array($hasil)){*/
 	?>
 	
 	<li>
