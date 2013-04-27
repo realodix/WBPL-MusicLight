@@ -42,10 +42,9 @@ function getDiskon($qty) {
 
 function wbpl_showCart() {
 	global $db;
-	if(isset($_GET['action'])){
-		$cart = $_SESSION['cart'];
+	if ($cart = $_SESSION['cart']){
+		if(isset($_GET['action'])){
 
-		if ($cart) {
 			$items = explode(',', $cart);
 			//$contents = array();
 			foreach ($items as $item) {
@@ -53,7 +52,7 @@ function wbpl_showCart() {
 			}
 			echo '<form action="index.php?page=cart&action=update" method="post" id="cart">';
 			echo '<table border=0 align="center" class="table table-bordered">';
-			
+				
 			$total = 0;
 			foreach ($contents as $id => $qty) {
 				$sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
@@ -74,35 +73,81 @@ function wbpl_showCart() {
 								<td colspan="4">'. $rows['nama_instype'] .'</td>
 						</tr>
 						<tr">
-						<td rowspan="2">Price</td>
-						<td rowspan="2">Rp. ' . $rows['price'] . '</td>
-						<td rowspan="2"><input type="text" name="qty' . $id . '" value="' . $qty . '" size="2" maxlength="3" /></td>
+							<td rowspan="2">Price</td>
+							<td rowspan="2">Rp. ' . $rows['price'] . '</td>
+							<td rowspan="2"><input type="text" name="qty' . $id . '" value="' . $qty . '" size="2" maxlength="3" /></td>
 
-						<td rowspan="2">Rp. ' . ($rows['price'] * $qty) . '</td>
-				
-						<td><a href="index.php?page=cart&action=delete&id=' . $id . '" class="btn btn-danger">Hapus</a></td>
+							<td rowspan="2">Rp. ' . ($rows['price'] * $qty) . '</td>
+						
+							<td><a href="index.php?page=cart&action=delete&id=' . $id . '" class="btn btn-danger">Hapus</a></td>
 						</tr>
 						<tr><td><br></td></tr>';
-				
+					
 				$total += $rows['price'] * $qty;
 			}
 			echo '</table>';
 			$qty = getQty();
-			
-		
+						
 			echo '<p>Sub Total: <strong> Rp. ' . $total . '</strong></p>';
-		
-
-
+			
 			//session_register('totalbayar');
 			$_SESSION['totalbayar'] = $total;
 			echo '<div><button type="submit" class="btn btn-primary">Update cart</button></div>';
 			echo '</form>';
-		} else {
-			echo '<p>Keranjang belanja masih kosong.</p>';
+
+		}else{
+			$items = explode(',', $cart);
+			//$contents = array();
+			foreach ($items as $item) {
+				$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
+			}
+			echo '<form action="index.php?page=cart&action=update" method="post" id="cart">';
+			echo '<table border=0 align="center" class="table table-bordered">';
+				
+			$total = 0;
+			foreach ($contents as $id => $qty) {
+				$sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
+				$result = mysql_query($sql) or die(mysql_error());
+				$rows=mysql_fetch_array($result);
+				//extract($row);
+
+				echo 	'<tr>
+							<td>Brand</td>
+							<td colspan="4">'. $rows['kd_product'] .'</td>
+						<tr>
+						<tr>
+							<td>Brand</td>
+							<td colspan="4">'. $rows['nama_brand'] .'</td>
+						<tr>
+						<tr>
+							<td>Instrument Type</td>
+							<td colspan="4">'. $rows['nama_instype'] .'</td>
+						</tr>
+						<tr">
+							<td rowspan="2">Price</td>
+							<td rowspan="2">Rp. ' . $rows['price'] . '</td>
+							<td rowspan="2"><input type="text" name="qty' . $id . '" value="' . $qty . '" size="2" maxlength="3" /></td>
+
+							<td rowspan="2">Rp. ' . ($rows['price'] * $qty) . '</td>
+					
+							<td><a href="index.php?page=cart&action=delete&id=' . $id . '" class="btn btn-danger">Hapus</a></td>
+						</tr>
+						<tr><td><br></td></tr>';
+					
+				$total += $rows['price'] * $qty;
+			}
+			echo '</table>';
+			$qty = getQty();
+					
+			echo '<p>Sub Total: <strong> Rp. ' . $total . '</strong></p>';
+			
+			//session_register('totalbayar');
+			$_SESSION['totalbayar'] = $total;
+			echo '<div><button type="submit" class="btn btn-primary">Update cart</button></div>';
+			echo '</form>';
 		}
 	}else{
-		echo '<p>Keranjang belanja masih kosong.</p>';
+		echo "Keranjang belanjaan Anda masih kosong";
 	}
 	//return join('', $output);
 }
