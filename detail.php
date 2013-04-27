@@ -38,10 +38,9 @@ if(isset($_GET['id'])){
 $hasil=mysql_query($sql) or die(mysql_error());
 
 while($get_data=mysql_fetch_array($hasil)){
-	
-
 ?>
 
+<h4><?php echo $get_data['nama_product']?></h4>
 <div class="image_wrapper image_fl"><img class="img-polaroid" src="
 <?php
 $imagee = $get_data['image'];
@@ -51,27 +50,48 @@ $imagee = $get_data['image'];
 ?>
 admin/image/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" heigth="150px">
 </div>
-<p>
-	<em>Product ID: <?php echo $get_data['kd_product']?></em><br>
-	<em>Brand: <?php echo $get_data['nama_brand']?></em><br>
-	<em>Instrument Type: <?php echo $get_data['nama_instype']?></em><br>
-	<em>Price: Rp. <?php echo $get_data['price']?></em><br>
-	<em>Stock: <?php
-				$product_stock = $get_data['stock'];
-				if ($product_stock == 0 ){
-					echo 'Stock Not Avaible';
-				}else{
-					echo $get_data['stock'];
-				}
-				?>
-	</em>
-</p>
+
+<table>
+	<tr>
+		<td>Product ID</td>
+		<td>: <?php echo $get_data['kd_product']?></td>
+	</tr>
+	<tr>
+		<td>Brand</td>
+		<td>: <?php echo $get_data['nama_brand']?></td>
+	</tr>
+	<tr>
+		<td>Instrument Type</td>
+		<td>: <?php echo $get_data['nama_instype']?></td>
+	</tr>
+	<tr>
+		<td>Price</td>
+		<td>: Rp. <?php echo $get_data['price']?></td>
+	</tr>
+	<tr>
+		<td>Stock</td>
+		<td>: <?php
+					$product_stock = $get_data['stock'];
+					if ($product_stock == 0 ){
+						echo 'Stock Not Avaible';
+					}else{
+						echo $get_data['stock'];
+					}
+					?>
+		</em></td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>" class="btn btn-inverse floatRight">Add to cart</a></td>
+	</tr>
+</table>
+
+<br><br>
+<strong>Description</strong>
+
 <p style="text-align: justify;">
 	<?php echo $get_data['deskripsi'];?>
 </p>
-
-	<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>" class="btn btn-inverse floatRight">Add to cart</a>
-
 
 <div class="clearfix"></div>
 
