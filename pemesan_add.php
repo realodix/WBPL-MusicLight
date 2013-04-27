@@ -46,10 +46,10 @@ if (isset($_POST['tambah'])) {
 
 	if ($result) {
 
-		header('location:index.php?page=finish');
+		header('location:index.php?page=cart&view=finish');
 
 	} else {
-		header('location:index.php?page=cart');
+		header('location:index.php?page=cart&view=cart');
 	}
 	mysql_close();
 }

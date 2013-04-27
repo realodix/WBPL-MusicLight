@@ -81,7 +81,7 @@ switch ($view) {
 			</tr>
 			<tr>
 				<td></td>
-				<td><a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>" class="btn btn-inverse floatRight">Add to cart</a></td>
+				<td><a href="index.php?page=cart&view=cart&action=add&id=<?php echo $get_data['kd_product']?>" class="btn btn-inverse floatRight">Add to cart</a></td>
 			</tr>
 		</table>
 
@@ -196,7 +196,7 @@ switch ($view) {
 			</tr>
 			<tr>
 				<td></td>
-				<td><a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>" class="btn btn-inverse floatRight">Add to cart</a></td>
+				<td><a href="index.php?page=cart&view=cart&action=add&id=<?php echo $get_data['kd_product']?>" class="btn btn-inverse floatRight">Add to cart</a></td>
 			</tr>
 		</table>
 

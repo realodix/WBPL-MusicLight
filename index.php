@@ -185,7 +185,7 @@
 				if(isset($_SESSION['username'])){
 				echo
 				'<li>
-					<a href="index.php?page=cart">Cart</a>
+					<a href="index.php?page=cart&view=cart">Cart</a>
 				</li>';
 				}
 				?>
@@ -270,7 +270,7 @@
 									Price: Rp. <?php echo $get_data['price'];?></p>
 									<p>aa<?php echo $get_data['deskripsi'];?></p>
                                    
-									<a href="index.php?page=cart&action=add&id=<?php echo $get_data['kd_product']?>" class="btn btn-inverse floatRight">Add to cart</a>
+									<a href="index.php?page=cart&view=cart&action=add&id=<?php echo $get_data['kd_product']?>" class="btn btn-inverse floatRight">Add to cart</a>
 								</div>
                                 
 							</div>
