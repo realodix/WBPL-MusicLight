@@ -178,7 +178,7 @@
 				</li>
 				
 				<li>
-					<a href="index.php?page=product">Product</a>
+					<a href="index.php?page=product&view=product">Product</a>
 				</li>
 				
 				<?php

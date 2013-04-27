@@ -17,7 +17,7 @@
 	?>
 	
 	<li>
-		<a href="index.php?page=detail&id=<?php echo $get_data['nama_brand']?>">
+		<a href="index.php?page=product&view=detail&id=<?php echo $get_data['nama_brand']?>">
 		<?php
 		echo $get_data['nama_brand'];
 		echo "(".$get_data['jumlah'].")";
@@ -46,7 +46,7 @@
 	?>
 	
 	<li>
-		<a href="index.php?page=detail&p=<?php echo $get_data['nama_instype']	?>">
+		<a href="index.php?page=product&view=detail&p=<?php echo $get_data['nama_instype']	?>">
 		<?php
 		echo $get_data['nama_instype'];
 		echo "(".$get_data['jumlah'].")";
