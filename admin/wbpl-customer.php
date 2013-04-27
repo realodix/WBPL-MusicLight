@@ -14,14 +14,14 @@ include('inc/config.php');
  */
 if(isset($_GET['del'])){
 	$kd_customer=$_GET['id'];
-	$hapus ="delete from customer where kd_customer='$kd_customer'";
+	$hapus ="delete from customer where kd_pemesan='$kd_customer'";
 	mysql_query($hapus);
 }
 $sql="";
 if(isset($_POST['btnCari'])){
 $cari=$_POST['cari'];
 //ambil data dari table admin
-$sql="SELECT * FROM  customer where kd_customer like '%$cari%'";
+$sql="SELECT * FROM  customer where kd_pemesan like '%$cari%'";
 }else{
 $sql="SELECT * FROM  customer";
 }
@@ -51,7 +51,7 @@ while($rows=mysql_fetch_array($result)){
 <td>
 <!--<a href="index.php?page=customer_form_edit&id=<?php echo $rows['kd_customer']?>">
 <img src="image/admin/edit.png"></a>-->
-<a class="btn btn-danger" href="index.php?page=customer_view&del=true&id=<?php echo $rows['kd_customer']?>"  onclick="return askUser()";>
+<a class="btn btn-danger" href="index.php?page=wbpl-customer&del=true&id=<?php echo $rows['kd_pemesan']?>"  onclick="return askUser()";>
 <i class="icon-trash" title="Remove"></i></a>
 </td>
 </tr>
