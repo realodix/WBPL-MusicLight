@@ -1,6 +1,6 @@
 <?php
 //file konfigurasi
-include ('config.php');
+include ('../../wbpl-config.php');
 
 /**
 * Validasi khusus untuk halaman login.

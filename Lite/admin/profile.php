@@ -1,6 +1,6 @@
 <?php
 
-include ('inc/config.php');
+include ('../wbpl-config.php');
 
 ?>
 <h1> Tabel Profile</h1>
