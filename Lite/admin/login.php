@@ -63,9 +63,7 @@
 		
 		<label class="text-error">
         <?php
-		//if (isset($_GET['status'] == 0)) {
-		//echo "The username or password you entered is incorrect";
-		//}
+
 		if (isset($_GET['status'])) {
 			if ($_GET['status'] == 1) {
 				echo "The username or password you entered is incorrect";
@@ -84,7 +82,7 @@
 		<input class="btn btn-large btn-primary" type="submit" name="Home_Submit_Regiter" value="Register"/> </br></br>
 		<a href="../">← Back to Music Light</a>
       </form>
-    </div> <!-- /container -->
+    </div>
 
   </body>
 </html>

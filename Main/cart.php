@@ -18,8 +18,7 @@ switch ($view) {
 						$cart = $_GET['id'];
 					}
 				break;
-					//
-					//B002,5,B003,10
+
 				case 'delete' :
 					if ($cart) {
 						$items = explode(',', $cart);

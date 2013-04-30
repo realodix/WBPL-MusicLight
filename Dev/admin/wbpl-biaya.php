@@ -11,9 +11,6 @@ switch ($action) {
 			</tr>
 
 			<?php
-			/*
-			* kode untuk menghapus data
-			*/
 			//===================paging
 			$batas=4;
 			if(isset($_GET['halaman'])){
@@ -70,7 +67,6 @@ switch ($action) {
 			$no++;
 			}
 
-			//tutup koneksi
 			?>
 			<tr>
 				<td align=right colspan='3'>
@@ -204,7 +200,7 @@ switch ($action) {
 					</td>
 				</tr>
 				<?php
-				//loop while
+
 				}
 				?>
 			</form>

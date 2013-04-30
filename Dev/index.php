@@ -199,11 +199,9 @@
               </ul>
             </div>
           </div>
-        </div><!-- /.navbar -->
+        </div>
       </div>
 
-      <!-- Jumbotron 
-    <h2>Mengapa membeli product di sini adalah pilihan tepat</h2>-->
 	
 	<div class="row-fluid">
 	<div class="reasons span4">
@@ -272,15 +270,15 @@
 								</div>
                                 
 							</div>
-                        </div><!-- End cs_article -->
+                        </div>
                             
 						<?php
-						}//end while
+						}
 						?>
 
-                        </div><!-- End cs_slider -->
-                    </div><!-- End cs_wrapper -->
-                </div><!-- End contentslider -->
+                        </div>
+                    </div>
+                </div>
                 
                 <!-- Site JavaScript -->
                 <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
@@ -322,7 +320,7 @@
         <p>Copyright &copy 2013 <a href="#">Budi Hermawan</a></p>
       </div>
 
-    </div> <!-- /container -->
+    </div>
 
   </body>
 </html>

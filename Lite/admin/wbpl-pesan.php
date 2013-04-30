@@ -28,18 +28,17 @@ $result=mysql_query($sql) or die(mysql_error());
 //proses menampilkan data
 while($rows=mysql_fetch_array($result)){
 ?>
-<tr>
 
-<td><?php  echo $rows['kd_pesan'];?></td>
-<td><?php  echo $rows['tgl_pesan'];?></td>
-<td><?php  echo $rows['total_bayar'];?></td>
-<td>
-<!--<a href="index.php?page=pesan_form_edit&id=<?php echo $rows['kd_pesan']?>">
-<img src="image/admin/edit.png"></a>-->
-<a class="btn btn-danger" href="index.php?page=wbpl-pesan&del=true&id=<?php echo $rows['kd_pesan']?>" onclick="return askUser()";>
-	<i class="icon-trash" title="Remove"></i>
-</a>
-</td>
+<tr>
+	<td><?php  echo $rows['kd_pesan'];?></td>
+	<td><?php  echo $rows['tgl_pesan'];?></td>
+	<td><?php  echo $rows['total_bayar'];?></td>
+	<td>
+
+	<a class="btn btn-danger" href="index.php?page=wbpl-pesan&del=true&id=<?php echo $rows['kd_pesan']?>" onclick="return askUser()";>
+		<i class="icon-trash" title="Remove"></i>
+	</a>
+	</td>
 </tr>
 
 <?php

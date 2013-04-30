@@ -178,9 +178,8 @@ switch ($action) {
 
 			<?php
 			}
-
-			//tutup koneksi
 			?>
+			
 			<tr>
 				<td align=right colspan='2'>
 				<?php
@@ -287,7 +286,7 @@ switch ($action) {
 					</td>
 				</tr>
 				<?php
-				//loop while
+
 				}
 				?>
 				<tr>

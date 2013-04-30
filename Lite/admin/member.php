@@ -78,9 +78,8 @@ while($rows=mysql_fetch_array($result)){
 	</tr>
 	<?php
 	}
-
-	//tutup koneksi
 	?>
+	
 	<tr>
 		<td></td>
 		<td align=right colspan='1'><?php
@@ -93,7 +92,6 @@ while($rows=mysql_fetch_array($result)){
 		}
 		?>
 		</td>
-		<!--<td align=right><a href="index.php?page=pengelola_form_add"> <img src="image/admin/add.jpg"> Add</a></td>-->
 	</tr>
 	<tr></tr>
 </table>

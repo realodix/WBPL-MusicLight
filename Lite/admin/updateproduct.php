@@ -8,8 +8,6 @@
 	<table>
 	
 	<?php
-	//$id = $_GET['id'];
-	//$sql="SELECT * FROM  wbpl_member where kd_member='$id' ";
 	$sql="select * from wbpl_product, wbpl_brand, wbpl_instype
           where kd_product='$id' AND wbpl_product.nama_brand = wbpl_brand.nama_brand AND
 				wbpl_product.nama_instype = wbpl_instype.nama_instype";

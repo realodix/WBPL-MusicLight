@@ -5,18 +5,11 @@ include ('../wbpl-config.php');
 ?>
 <h1> Tabel Profile</h1>
 
-<?php 
-//$sql="SELECT * FROM  buku";
-//$result=mysql_query($sql) or die(mysql_error());
-//while($rows=mysql_fetch_array($result)){
-?>
 
 <form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=update_profile">
 	<td>
 		<table>
 <?php
-/*where kd_member='M0001' ditambahkan agar
-* data yang muncul tidak semuanya*/
 $id = $_GET['id'];
 $sql="SELECT * FROM  wbpl_member where kd_member='$id' ";
 $result=mysql_query($sql) or die(mysql_error());
@@ -87,11 +80,10 @@ while($rows=mysql_fetch_array($result)){
 		</table>
 	</td>
 </form>
+
 <?php
 
 mysql_close();
-//close database
 
-//tampilan siapa yang pengelola
 ?>
 

@@ -20,7 +20,7 @@ $sql= "select * from wbpl_member
 		username='$username' and password='$password' ";
 
 $userquery = mysql_query($sql) or die(mysql_error());
-// 	$valid=false;
+
 if (mysql_num_rows($userquery) == 1) {
 
 	header('location:../index.php');
@@ -60,7 +60,7 @@ if (isset($_POST['Home_Submit_Login'])) {
 			username='$username' and password='$password' ";
 
 		$userquery = mysql_query($sql) or die(mysql_error());
-		// 	$valid=false;
+
 		if (mysql_num_rows($userquery) == 1) {
 			header('location:../../index.php');
 			$valid = true;
