@@ -26,7 +26,6 @@ require_once('../inc/common_function.php');
 			return window.confirm("Yakin ingin menghapus record ini?");
 		}
 	</script>
-	<script type="text/javascript" src="../js/validjs.js"></script>
 
 </head>
 
