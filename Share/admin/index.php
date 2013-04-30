@@ -99,14 +99,4 @@ require_once('../inc/common_function.php');
 
 
 </body>
-</html
-
-<?php
-
-/*
-}else{
-header("location:form_login.php");
-}
-*/
- 
-?>
+</html>
