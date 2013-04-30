@@ -18,8 +18,6 @@
     <meta name="author" content="">
 	
 	<style type="text/css" media="all">
-		@import "css/bootstrap.css";
-		@import "css/bootstrap-responsive.css";
 		@import "css/master.css";
 	</style>
 	

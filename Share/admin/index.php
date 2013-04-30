@@ -17,7 +17,6 @@ require_once('../inc/common_function.php');
 	<title>Administrasi website </title>
 	
 	<style type="text/css" media="all">
-		@import "../css/bootstrap.css";
 		@import "../css/master_admin.css";
 	</style>
 
