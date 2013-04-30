@@ -37,7 +37,8 @@ if(isset($_POST['btnCari'])){
 	//ambil data dari table admin
 	$sql="SELECT * FROM  wbpl_member where username like '%$cari%'";
 }else{
-	$sql="SELECT * FROM  wbpl_member";
+	$sql="SELECT * FROM  wbpl_member
+			ORDER BY kd_member ASC";
 }
 
 $result=mysql_query($sql) or die(mysql_error());
