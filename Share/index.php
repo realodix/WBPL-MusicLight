@@ -219,15 +219,7 @@
 		}?>
         </div>
 		
-        <div class="span3">
-			<h3>Brand</h3>
-			<?php
-			include('kategori.php');
-			?>
-			<h2>Alamat kami</h2>
-			<p>Jakarta</p>
-       </div>
-       
+      
       </div>
 
       <div class="footer">
