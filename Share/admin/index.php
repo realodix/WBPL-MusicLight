@@ -40,36 +40,20 @@ require_once('../inc/common_function.php');
 			</a>
 		  </div>
 		</div>
-	</div>
-
-
-	<div class="menu-sidebar pull-left">
-	  
-		<h4>Catalog</h4>
-		<ul >
-			<li><a href="index.php?page=product">Product</a></li>
-			<li><a href="index.php?page=wbpl-brand&action=view">Brand & Ins. Type</a></li>
-		</ul>
 		
-		<h4>Pesan</h4>
-		<ul>
-			<li><a href="index.php?page=transaction">Transaction</a></li>
-			<li><a href="index.php?page=detail">Detail</a></li>
-			<li><a href="index.php?page=wbpl-customer">Customer</a></li>
-			<li><a href="index.php?page=wbpl-pesan">Pesan</a></li>
-			<li><a href="index.php?page=testimony">Testimony</a></li>
-		</ul>
-
-		<h4>Biaya kirim</h4>
-		<ul>
-			<li><a href="index.php?page=wbpl-biaya&action=view">Biaya per kota</a></li>
-		</ul>
-
-		<h4>Setting</h4>
-		<ul>
-			<li><a href="index.php?page=member">Member</a></li>
-		</ul>
-
+		<table>
+			<tr>
+				<td><a href="index.php?page=product">Product</a></td>
+				<td><a href="index.php?page=wbpl-brand&action=view">Brand & Ins. Type</a></td>
+				<td><a href="index.php?page=transaction">Transaction</a></td>
+				<td><a href="index.php?page=detail">Detail</a></td>
+				<td><a href="index.php?page=wbpl-customer">Customer</a></td>
+				<td><a href="index.php?page=wbpl-pesan">Pesan</a></td>
+				<td><a href="index.php?page=testimony">Testimony</a></td>
+				<td><a href="index.php?page=wbpl-biaya&action=view">Biaya per kota</a></td>
+				<td><a href="index.php?page=member">Member</a></td>
+			</tr>
+		</table>
 	</div>
     
 	

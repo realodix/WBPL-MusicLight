@@ -44,29 +44,21 @@
         <div class="navbar">
           <div class="navbar-inner">
             <div class="container">
-              <ul class="nav">
-                <li>
-					<a href="./">Home</a>
-				</li>
-				
-				<li>
-					<a href="index.php?page=product&view=product">Product</a>
-				</li>
-				
-				<?php
-				if(isset($_SESSION['username'])){
-				echo
-				'<li>
-					<a href="index.php?page=cart&view=cart">Cart</a>
-				</li>';
-				}
-				?>
-				
-				<li>
-					<a href="index.php?page=testimony">Testimony</a>
-				</li>
-
-              </ul>
+			<table>
+				<tr>
+					<td><a href="./">Home</a></td>
+					<td><a href="index.php?page=product&view=product">Product</a></td>
+					<?php
+					if(isset($_SESSION['username'])){
+					echo
+					'<td>
+						<a href="index.php?page=cart&view=cart">Cart</a>
+					</td>';
+					}
+					?>
+					<td><a href="index.php?page=testimony">Testimony</a></td>
+				</tr>
+			</table>
             </div>
           </div>
         </div><!-- /.navbar -->
