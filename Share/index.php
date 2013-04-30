@@ -204,30 +204,6 @@
         </div><!-- /.navbar -->
       </div>
 
-      <!-- Jumbotron 
-    <h2>Mengapa membeli product di sini adalah pilihan tepat</h2>-->
-	
-	<div class="row-fluid">
-	<div class="reasons span4">
-		<h3>Cheap</h3>
-		<img src="images/reason1.png" alt="Reason1" />
-		<p>Product that you could have prices below average of other stores.</p>
-	</div>
-                
-	<div class="reasons span4">
-		<h3>Fast</h3>
-		<img src="images/reason2.png" alt="Reason2" />
-		<p>Fast and easy ordering. All you can get just by clicking the product.</p>
-	</div>
-                
-	<div class="reasons span4">
-		<h3>100% Satisfaction</h3>
-		<img src="images/reason3.png" alt="Reason3" />
-		<p>You are not satisfied, money back.</p>
-	</div>
-    </div>
-	
-
       <!-- Example row of columns -->
       <div class="row-fluid content">
         <div class="span9">
