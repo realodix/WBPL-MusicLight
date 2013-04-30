@@ -1,8 +1,7 @@
 <?php
 session_start();
 include ('wbpl-config.php');
-require_once ('inc/functions.inc.php');
-require_once ('inc/common_function.php');
+require_once ('wbpl-function.php');
 
 session_start();
 $id_kota = array();

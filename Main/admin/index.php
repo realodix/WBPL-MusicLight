@@ -5,7 +5,7 @@ if(!isset($_SESSION['username'])){
 	}
 
 require_once '../wbpl-config.php';
-require_once('../inc/common_function.php');
+require_once('../wbpl-function.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"

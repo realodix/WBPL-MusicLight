@@ -2,7 +2,7 @@
 	session_start();
 	
 	require_once('wbpl-config.php');
-	require_once('inc/functions.inc.php');
+	require_once('wbpl-function.php');
 ?>
 
 

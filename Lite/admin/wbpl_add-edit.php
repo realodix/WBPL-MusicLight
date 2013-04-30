@@ -14,7 +14,7 @@
 */
 
 include ('../wbpl-config.php');
-require_once('../inc/common_function.php');
+require_once('../wbpl-function.php');
 
 $action = $_GET['action'];
 switch ($action) {
