@@ -2,7 +2,6 @@
 #4 [admin]Insert product page (insertproduct.php)
 #5 [admin]Update product page (updateproduct.php)
 #6 [admin]Profile page (profile.php)
-#7 [admin]Member page (member.php)
 #9 Transaction page (transaction.php)
 #10 [admin]Detail page (detail.php)
 
@@ -44,3 +43,4 @@
 [closed] #20 Menempatkan file koneksi database ke dalam 1 folder
 [closed] #23 Menyesuaikan susunan html admin dengan Bootstrap
 [closed] #26 Merombak UI admin
+[closed] #7 [admin]Member page (member.php)

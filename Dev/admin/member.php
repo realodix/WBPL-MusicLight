@@ -31,14 +31,30 @@ if(isset($_GET['del'])){
 	mysql_query($hapus)or die(mysql_error());
 }
 
-$sql="";
+
+$batas = 5;
+if(isset($_GET['halaman'])){
+	$halaman = $_GET['halaman'];
+}
+
+$posisi=null;
+if(empty($halaman)){
+	$posisi=0;
+	$halaman=1;
+}else{
+	$posisi=($halaman-1)* $batas;
+}
+
+$sql=null;
+
 if(isset($_POST['btnCari'])){
 	$cari=$_POST['cari'];
 	//ambil data dari table admin
 	$sql="SELECT * FROM  wbpl_member where username like '%$cari%'";
 }else{
 	$sql="SELECT * FROM  wbpl_member
-			ORDER BY kd_member ASC";
+			ORDER BY kd_member ASC
+			limit $posisi,$batas";
 }
 
 $result=mysql_query($sql) or die(mysql_error());
@@ -82,11 +98,22 @@ while($rows=mysql_fetch_array($result)){
 	<tr></tr>
 </table>
 
-
 <?php
 
-mysql_close();
-//close database
+	//=============CUT HERE====================================
+	$tampil2=mysql_query("select * from wbpl_member");
+	$jmldata=mysql_num_rows($tampil2);
+	$jumlah_halaman=ceil($jmldata/$batas);
 
-//tampilan siapa yang pengelola
-?>
+	echo "<br> <br> Halaman: ";
+	for($i=1;$i<=$jumlah_halaman;$i++)
+	if ($i!=$halaman){
+		echo "<a href=index.php?page=member&halaman=$i> $i</a> | ";
+	}else{
+		echo "<b> $i</b> | ";
+	}
+	mysql_close();
+	?>
+
+	<br>
+	Jumlah Halaman: <?php echo $jmldata; ?>
