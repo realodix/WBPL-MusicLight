@@ -1,7 +1,3 @@
-<?php
-//include ('ind/config.php');
-?>
-
 <table class="table">
 	<tr style="background-color:#F79307">
 		<td>Product ID</td>
