@@ -104,16 +104,20 @@ while($rows=mysql_fetch_array($result)){
 	$tampil2=mysql_query("select * from wbpl_member");
 	$jmldata=mysql_num_rows($tampil2);
 	$jumlah_halaman=ceil($jmldata/$batas);
+?>
 
-	echo "<br> <br> Halaman: ";
-	for($i=1;$i<=$jumlah_halaman;$i++)
-	if ($i!=$halaman){
-		echo "<a href=index.php?page=member&halaman=$i> $i</a> | ";
-	}else{
-		echo "<b> $i</b> | ";
-	}
-	mysql_close();
-	?>
-
-	<br>
-	Jumlah Halaman: <?php echo $jmldata; ?>
+	Jumlah data :<?php echo $jmldata;?>
+	
+	<div class="pagination">
+		<ul>
+		<?php
+		for($i = 1; $i <= $jumlah_halaman; $i++)
+			if($i != $halaman) {
+			echo "<li><a href=index.php?page=member&halaman=$i> $i </a></li>";
+		}else {
+			echo "<li class=".'active'."><a href="."> $i </a></li>";
+		}
+		mysql_close();
+		?>
+		</ul>
+	</div>
