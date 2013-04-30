@@ -106,8 +106,52 @@
 			<h1 class="site-title">MusicLight</h1>
 			<h2 class="site-description">Musical Instrument Shop</h2>
 		</hgroup>
+		
+	<div class="clearfix"></div>
+	
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <ul class="nav">
+                <li>
+					<a href="./">Home</a>
+				</li>
+				
+				<li>
+					<a href="index.php?page=product&view=product">Product</a>
+				</li>
+				
+				<?php
+				if(isset($_SESSION['username'])){
+				echo
+				'<li>
+					<a href="index.php?page=cart&view=cart">Cart</a>
+				</li>';
+				}
+				?>
+				
+				<li>
+					<a href="index.php?page=testimony">Testimony</a>
+				</li>
 
-		<div class="pull-right">
+              </ul>
+            </div>
+          </div>
+        </div><!-- /.navbar -->
+      </div>
+
+      <!-- Example row of columns -->
+      <div class="row-fluid content">
+        <div class="span9">
+		<?php
+		/* kode untuk meload halaman yang berbeda*/
+		if(isset($_GET['page'])) {
+			$page = $_GET['page'] . ".php";
+			include ($page);
+		} else {
+		?>
+		 
+		 		<div class="">
 		<?php
 		if(isset($_SESSION['username'])){
 		
@@ -164,50 +208,6 @@
 		<?php
 		}	?>
 		</div>
-		
-	<div class="clearfix"></div>
-	
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-              <ul class="nav">
-                <li>
-					<a href="./">Home</a>
-				</li>
-				
-				<li>
-					<a href="index.php?page=product&view=product">Product</a>
-				</li>
-				
-				<?php
-				if(isset($_SESSION['username'])){
-				echo
-				'<li>
-					<a href="index.php?page=cart&view=cart">Cart</a>
-				</li>';
-				}
-				?>
-				
-				<li>
-					<a href="index.php?page=testimony">Testimony</a>
-				</li>
-
-              </ul>
-            </div>
-          </div>
-        </div><!-- /.navbar -->
-      </div>
-
-      <!-- Example row of columns -->
-      <div class="row-fluid content">
-        <div class="span9">
-		<?php
-		/* kode untuk meload halaman yang berbeda*/
-		if(isset($_GET['page'])) {
-			$page = $_GET['page'] . ".php";
-			include ($page);
-		} else {
-		?>
 		 
 			<h3>Welcome to Music Light</h3>
 			<P class="alignJustify">Music Light is a famous musical instrument shop in the town. It sells a wide range of musical instruments from the common to the rare. As time passed, the owner of this store realized how important the internet today and decided to develop a website that can ease customer to make transactions in Music Light. This website will be used by the customer/member to order musical instruments via online and promote Music Light’s product to non-member visitor.</p>

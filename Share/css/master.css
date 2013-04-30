@@ -4,6 +4,9 @@ a, div, h1, h2, h3, font, input, label, ul, li, tr, td, p, select, strong{
 body{
 	background:url("../images/bg.jpg") repeat scroll 0% 0% transparent;
 }
+.clearfix{
+	clear: both;
+}
 .masthead{
 	width: 1010px;
 }
