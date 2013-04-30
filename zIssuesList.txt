@@ -8,8 +8,6 @@
 
 #14 Menghapus file yang tidak dibutuhkan
 
-#23 Menyesuaikan susunan html admin dengan Bootstrap
-#26 Merombak UI admin
 #21 Update jQuery ke versi terbaru
 #36 Session time out in PHP
 
@@ -44,3 +42,5 @@
 [closed] #22 Merubah class pada tombol menyesuaikan Bootstrap
 [closed] #24 Menyesuaikan susunan html home dengan Bootstrap
 [closed] #20 Menempatkan file koneksi database ke dalam 1 folder
+[closed] #23 Menyesuaikan susunan html admin dengan Bootstrap
+[closed] #26 Merombak UI admin
