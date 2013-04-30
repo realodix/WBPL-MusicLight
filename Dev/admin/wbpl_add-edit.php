@@ -53,6 +53,7 @@ switch ($action) {
 			$result = mysql_query($sql) or die(mysql_error());
 		}else{
 			$sql = "INSERT INTO wbpl_product(kd_product,
+									nama_product,
 									nama_brand,
 									nama_instype,
 									price,
@@ -60,6 +61,7 @@ switch ($action) {
 									image,
 									deskripsi)
 				VALUES('$kd_product',
+						'$nama_product',
 						'$kd_brand',
 						'$kd_instype',
 						'$product_price',
