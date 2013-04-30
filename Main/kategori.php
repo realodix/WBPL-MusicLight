@@ -2,7 +2,7 @@
 <ul>
 	<?php
 	
-	include('wbpl-config.php');
+	include('admin/inc/config.php');
 	
 	/**
 	* Kategori Brand

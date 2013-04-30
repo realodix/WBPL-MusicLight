@@ -1,6 +1,6 @@
 <?php
 
-include ('../wbpl-config.php');
+include ('inc/config.php');
 
 ?>
 <h1> Tabel Member</h1>

@@ -1,5 +1,5 @@
 <?php
-include ('../wbpl-config.php');
+include ('inc/config.php');
 ?><table  width="600px" border=0>
 <tr style="background-color:#F79307">
 <td>No Pesan</td><td>Tgl Pesan</td><td>Total Bayar</td><td>Operasi</td></tr>

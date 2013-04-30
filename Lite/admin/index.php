@@ -4,7 +4,7 @@ if(!isset($_SESSION['username'])){
 		header("location:login.php");
 	}
 
-require_once '../wbpl-config.php';
+require_once 'inc/config.php';
 require_once('../inc/common_function.php');
 ?>
 

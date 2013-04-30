@@ -1,8 +1,10 @@
 <?php	// Include MySQL class
 	session_start();
 	
-	require_once('wbpl-config.php');
+	require_once('admin/inc/config.php');
 	require_once('inc/functions.inc.php');
+	//require_once ('inc/mysql.class.php');
+	//require_once ('inc/global.inc.php');
 ?>
 
 

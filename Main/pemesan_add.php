@@ -1,6 +1,6 @@
 <?php
 session_start();
-include ('wbpl-config.php');
+include ('admin/inc/config.php');
 require_once ('inc/functions.inc.php');
 require_once ('inc/common_function.php');
 

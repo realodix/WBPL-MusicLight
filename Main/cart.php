@@ -1,5 +1,15 @@
 <?php
 
+/*
+Pengujian. Sudah ada di index.php
+
+require_once ('inc/mysql.class.php');
+require_once ('inc/global.inc.php');
+require_once ('admin/inc/config.php');
+require_once ('inc/functions.inc.php');
+session_start();
+*/
+
 $view = $_GET['view'];
 
 switch ($view) {
