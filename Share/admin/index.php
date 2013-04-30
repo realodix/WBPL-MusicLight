@@ -17,6 +17,7 @@ require_once('../inc/common_function.php');
 	<title>Administrasi website </title>
 	
 	<style type="text/css" media="all">
+		@import "../css/master.css";
 		@import "../css/master_admin.css";
 	</style>
 
@@ -30,16 +31,9 @@ require_once('../inc/common_function.php');
 
 <body>
 
-<div class="width100">
+<div class="row-fluid content">
 
 	<div id="header" class="pull-left width100">
-		<div class="pull-left width100 rightBorder">
-		  <div id="title">
-			<a href="./"><h1>Admin page</h1>
-			<p>Halaman Administrasi</p>
-			</a>
-		  </div>
-		</div>
 		
 		<table>
 			<tr>
@@ -74,12 +68,11 @@ require_once('../inc/common_function.php');
 
 
 
-	<div id="footer" class="pull-right  width100">
+	<div>
 		<p>copyright &copy; 2013, | <a href="../index.php">Home</a> | <a href="logout.php">Logout</a></p>
 	</div>
 
 </div>
-<!-- end full site width container -->
 
 
 </body>
