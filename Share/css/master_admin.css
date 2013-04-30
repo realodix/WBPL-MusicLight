@@ -1,0 +1,129 @@
+/**************************************************************
+ Global width classes
+ **************************************************************/
+
+.width75 {
+	width: 744px;
+}
+.width100 {
+	width: 994px;
+	margin: 0 auto;
+	text-align: left;
+}
+.rightBorder {
+	border-right: 6px solid #FFF;
+}
+/**************************************************************
+ Utility Classes
+ **************************************************************/
+
+
+.block {
+	display: block;
+}
+
+.alignJustify {
+	text-align: justify;
+}
+
+/**************************************************************
+ Form Elements
+ **************************************************************/
+
+form {
+	padding: 20px 0;
+}
+ 
+/**************************************************************
+ Header: holds title box, menu, main image and top actions
+ **************************************************************/
+
+#header {
+	margin-top: 25px;
+	background: url(../images/bg/title.gif) repeat-x top left;
+}
+/**************************************************************
+ #title: Red block with leaves, title and tagline
+ **************************************************************/
+
+#header #title {
+	color: #FFF;
+	padding-left: 20px;
+	border-bottom: 1px solid #9a2116;
+}
+#header #title h1 {
+	padding-top: 60px;
+	color: #FFF;
+	background: url(../images/bg/title_leaves.gif) no-repeat top right;
+}
+#header #title a {
+	color: #FFF5BD;
+}
+#header #title a:hover {
+	border-color: #FFF5BD;
+}
+
+
+/**************************************************************
+ #content: Main content section (holds columns)
+ *************************************************************
+
+#content {
+	margin-top: 20px;
+}
+.menu-sidebar{
+	padding-left: 10px;
+	margin-right: 10px;
+}
+
+table {
+	mmargin: 0 12px 20px 12px;
+	padding: 0;
+	mdisplay: block;
+	font-size: 1em;
+	border-collapse: collapse;
+}
+table th, table td {
+	text-align: left;
+	vertical-align: top;
+	padding: 4px 7px !important;
+	padding: 6px 10px;
+}
+thead th {
+	color: #FFF;
+	background-color: #5F371C;
+	border-bottom: 1px solid #261204;
+}
+tbody tr.dark {
+	background-color: #f1e3da;
+}
+tbody td {
+	border-bottom: 1px solid #e7d6cc;
+}
+tbody tr:hover td {
+	background: #fffdcd;
+	border-bottom: 1px solid #ffd909;
+}
+*/
+
+/**************************************************************
+ #footer: Holds bottom menu and copyright info
+ **************************************************************/
+
+#footer {
+	font-size: 0.85em;
+	color: #BF9A82;
+	background: #D65600; /*url(../images/bg/footer.gif) repeat-x top left;*/
+	/* Force all browsers to respect space underneath footer - margins are inconsistent */
+	border-top: 5px solid #FFF;
+	border-bottom: 5px solid #FFF;
+}
+#footer a {
+	color: #FFF;
+}
+#footer a:hover {
+	border-color: #7f563a;
+}
+#footer p {
+	padding: 5px 6px;
+}

@@ -1,0 +1,219 @@
+a, div, h1, h2, h3, font, input, label, ul, li, tr, td, p, select, strong{
+	font-family: Segoe UI !important;
+}
+body{
+	background:url("../images/bg.jpg") repeat scroll 0% 0% transparent;
+}
+.masthead{
+	width: 1010px;
+}
+.masthead hgroup{
+	float: left;
+	margin-left: 10px;
+	line-height: 1;
+	padding-top: 20px;
+}
+.masthead hgroup .site-title{
+	margin: 0px;
+	padding: 0px;
+}
+.masthead hgroup .site-description{
+	font-size: 24px;
+	font-weight: 300;
+	margin: 0px;
+	padding: 0px;
+}
+.login{
+	background:url("../images/bg_login.png") repeat scroll 0% 0% transparent;
+}
+.reasons {
+	float: left;
+	width: 240px;
+	padding-right: 40px;
+	text-align: justify;
+}
+
+.reasons img {
+	float: left;
+	margin-top: 3px;
+	margin-right: 10px;
+}
+
+#templatemo_slider_wrapper {
+	clear: both;
+	width: 940px;
+	padding: 30px 10px 0;
+	background: url(../images/templateo_slider_wrapper.png) repeat-y center;
+}
+
+#templatemo_slider {
+	width: 760px;
+	height: 156px;
+	padding: 40px 0;
+}
+
+.image_fl { float: left; margin: 3px 15px 0 0; }
+
+/*
+ * CONTENT SLIDER
+ */
+
+
+/*
+ * Color, Border, and Button Rules
+ */
+.contentslider {
+  padding: 0; /* This acts as a border for the content slider */
+  background: none; /* This is the color of said border */
+} 
+.cs_wrapper, .cs_article {
+  background: none; /* Background color for the entries */
+}
+.cs_leftBtn, .cs_rightBtn {
+  width: 50px; /* Should be as wide as the button graphic being used */
+  background: none; /* This will probably match the contentslider bg color */
+}
+
+/*
+ * Article styles (font, color, etc.)
+ *
+ * If textResize is set to TRUE, sizing shouldn't need to be touched. However,
+ * depending on the sizes you have defined, additional tweaking may be
+ * required in order to get the text to display properly.
+ */
+
+/*
+ ******************************************************************************
+ * These styles may be affected by the plugin, so avoid changing them if 
+ * it's not absolutely necessary.
+ ******************************************************************************
+ */
+ .slider_content h2{
+	font-weight: 500;
+ }
+.contentslider {
+  position:relative;
+  display:block;
+  width: 920px;
+  height: 240px;
+  margin:0 auto;
+  overflow:hidden;
+}
+.cs_wrapper {
+  position:relative;
+  display:block;
+  width: 840px;
+  height:100%;
+  margin: 0 10px;
+  padding:0;
+  overflow:hidden;
+}
+.cs_slider {
+  position:absolute;
+  width:10000px;
+  height:100%;
+  margin:0;
+  padding:0;
+}
+.cs_article {
+  float:left;
+  position:relative;
+  top:0;
+  left:0;
+  display:block;
+  width: 840px;
+  height: 240px;
+  margin:0 auto;
+  padding: 0;
+}
+
+.cs_article .slider_content_wrapper {
+	margin: 0 50px;
+	display: block;
+	background: #00f;
+}
+
+.cs_article .slider_image {
+	float: left;
+	width: 150px;
+	background: #1a191c;
+	padding: 5px;
+	border: 1px solid #000;
+	margin-right: 20px;
+}
+
+
+.cs_article .slider_image img {
+	width: 150px;
+	height: 150px;
+}
+
+.cs_article .slider_content {
+	float: left;
+	width: 460px;
+}
+
+.cs_article h2 {
+	margin:0px;
+	padding: 0;
+	line-height: 26px;
+	color: black;
+}
+
+.cs_article p{
+	color: black;
+	font-size: 14px;
+	margin-bottom: 10px;
+}
+
+.cs_leftBtn, .cs_rightBtn {
+  position:absolute;
+  top: 100px;
+  padding: 0;
+  z-index:10000;
+}
+.cs_leftBtn {
+  left: 1px;
+  outline:0;
+}
+.cs_rightBtn {
+  right: 0px;
+  outline:0;
+}
+.cs_leftBtn img, .cs_rightBtn img {
+  border:0;
+  position:relative;
+  margin:0;
+}
+
+.row-fluid{
+	background: white;
+	padding: 10px 0px 10px 10px;
+	border: medium none;
+	border-radius: 4px;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+.content{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.footer{
+	min-width: 1000px;
+	background: white;
+	padding: 10px 0px 10px 10px;
+	border: medium none;
+	border-radius: 4px;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/**************************************************************
+ Utility Classes
+ **************************************************************/
+
+.block {
+	display: block;
+}
+.alignJustify {
+	text-align: justify;
+}
