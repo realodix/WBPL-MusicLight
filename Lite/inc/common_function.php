@@ -63,18 +63,6 @@ function paging($sql, $limit) {
 	return $pager;
 }
 
-function warning_delete() {
-	return "onclick=\"return confirm('Yakin data akan dihapus.?')\"";
-}
-
-function warning_update() {
-	return "onclick=\"return confirm('Yakin data akan diubah.?')\"";
-}
-
-function warning_cancel() {
-	return "onclick=\"return confirm('Yakin pemesanan akan dibatalkan.?')\"";
-}
-
 function pesan_error($s = '') {
 	echo "<script type=\"text/javascript\">alert(\"Maaf, $s..!!\");window.history.back();</script>";
 }
@@ -294,6 +282,18 @@ function cek_status_bayar($kode) {
 }
 
 /*
+function warning_delete() {
+	return "onclick=\"return confirm('Yakin data akan dihapus.?')\"";
+}
+
+function warning_update() {
+	return "onclick=\"return confirm('Yakin data akan diubah.?')\"";
+}
+
+function warning_cancel() {
+	return "onclick=\"return confirm('Yakin pemesanan akan dibatalkan.?')\"";
+}
+
 function cek_email($email, $check_domain = false) {
 	if ($check_domain) {
 	}
