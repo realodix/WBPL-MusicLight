@@ -189,10 +189,6 @@
 				?>
 				
 				<li>
-					<a href="index.php?page=cara_pesan">Cara pesan</a>
-				</li>
-				
-				<li>
 					<a href="index.php?page=testimony">Testimony</a>
 				</li>
 
