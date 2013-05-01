@@ -22,10 +22,10 @@
 		<?php
 		$imagee = $get_data['image'];
 			if ($imagee == "" ){
-				echo 'admin/image/Image Not Available.jpg';
+				echo 'image/Image Not Available.jpg';
 			}else{
 		?>
-		admin/image/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" heigth="150px">
+		image/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" heigth="150px">
 		</div>
 
 		<table>

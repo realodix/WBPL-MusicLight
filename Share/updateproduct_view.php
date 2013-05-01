@@ -23,10 +23,7 @@
 		mysql_query($hapus) or die(mysql_error());
 	}
 	
-	$sql="select * from wbpl_product, wbpl_brand, wbpl_instype
-				  where wbpl_product.nama_brand = wbpl_brand.nama_brand AND
-						wbpl_product.nama_instype = wbpl_instype.nama_instype
-					ORDER BY `wbpl_product`.`kd_product` ASC ";
+	$sql="select * from wbpl_product";
 
 	$result=mysql_query($sql) or die(mysql_error());
 
