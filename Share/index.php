@@ -3,8 +3,7 @@
 	
 	require_once('admin/inc/config.php');
 	require_once('inc/functions.inc.php');
-	//require_once ('inc/mysql.class.php');
-	//require_once ('inc/global.inc.php');
+	require_once('inc/common_function.php');
 ?>
 
 
@@ -44,7 +43,7 @@
 		<table>
 			<tr>
 				<td><a href="./">Home</a></td>
-				<td><a href="index.php?page=product&view=product">Product</a></td>
+				<td><a href="index.php?page=product">Product</a></td>
 				<?php
 				if(isset($_SESSION['username'])){
 				echo
@@ -58,7 +57,7 @@
 				<?php
 				if(isset($_SESSION['username'])){
 				echo
-				'<td><a href="#">Insert Product</a></td>
+				'<td><a href="index.php?page=insertproduct">Insert Product</a></td>
 				<td><a href="#">Update Product</a></td>
 				<td><a href="#">Member</a></td>';
 				}

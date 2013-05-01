@@ -1,4 +1,4 @@
-<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="wbpl_add-edit.php?action=insertproduct">
+<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="insertproduct_add.php">
 	<td>
 	<table>
 		<tr>
