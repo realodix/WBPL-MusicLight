@@ -96,7 +96,7 @@
 		<?php
 		}else{ ?>
 			<a href="./admin">Go to Admin page</a> </br>
-			<a href="admin/logout.php" name="Home_Submit_Logout">Logout</a>
+			<a href="logout.php">Logout</a>
 		<?php
 		}	?>
 		</div>
