@@ -11,22 +11,6 @@ switch ($action) {
 			</tr>
 
 			<?php
-			/*
-			* kode untuk menghapus data
-			*/
-			//===================paging
-			$batas=4;
-			if(isset($_GET['halaman'])){
-				$halaman=$_GET['halaman'];
-			}
-
-			$posisi=null;
-			if(empty($halaman)){
-				$posisi=0;
-				$halaman=1;
-			}else{
-				$posisi=($halaman-1)* $batas;
-			}
 
 			//===========================
 			if(isset($_GET['del'])){
@@ -42,7 +26,7 @@ switch ($action) {
 				//ambil data dari table admin
 				$sql="SELECT * FROM  biaya_kirim where id_kota like '%$cari%'";
 			}else{
-				$sql="SELECT * FROM  biaya_kirim limit $posisi,$batas";
+				$sql="SELECT * FROM  biaya_kirim";
 			}
 
 			$result=mysql_query($sql) or die(mysql_error());
@@ -52,7 +36,7 @@ switch ($action) {
 			while($rows=mysql_fetch_array($result)){
 			?>
 			<tr>
-				<td><?php echo $no+$posisi;?></td>
+				<td><?php echo $no;?></td>
 
 				<td><?php echo $rows['nama_kota'];?></td>
 
@@ -69,54 +53,19 @@ switch ($action) {
 			<?php
 			$no++;
 			}
-
-			//tutup koneksi
 			?>
 			<tr>
 				<td align=right colspan='3'>
-				<?php
-				if(isset($_GET['status'])) {
-					if($_GET['status'] == 0) {
-						echo " Operasi data berhasil";
-					} else {
-						echo "operasi gagal";
-					}
-				}?>
 				</td>
 				
 				<td align=right>
-					<a class="btn btn-primary" href="index.php?page=wbpl-biaya&action=add">
-						<i class="icon-plus icon-white"></i>
+					<a href="index.php?page=wbpl-biaya&action=add">
 						Add
 					</a>
 				</td>
 			</tr>
 			<tr></tr>
 		</table>
-
-		<?php
-		//=============CUT HERE====================================
-		$tampil2 = mysql_query("select * from biaya_kirim");
-		$jmldata = mysql_num_rows($tampil2);
-		$jumlah_halaman = ceil($jmldata / $batas);
-		?>
-		
-		Jumlah data :<?php echo $jmldata;?>
-	
-			<div class="pagination">
-				<ul>
-				<?php
-				for($i = 1; $i <= $jumlah_halaman; $i++)
-					if($i != $halaman) {
-					echo "<li><a href=index.php?page=wbpl-biaya&action=view&halaman=$i> $i </a></li>";
-				}else {
-					echo "<li class=".'active'."><a href="."> $i </a></li>";
-				}
-				mysql_close();
-				?>
-				</ul>
-			</div>
-		
 		
 	<?php
 	break;
