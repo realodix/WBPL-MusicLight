@@ -41,27 +41,30 @@
 		
 	<div class="clearfix"></div>
 	
-        <div class="navbar">
-          <div class="navbar-inner">
-            <div class="container">
-			<table>
-				<tr>
-					<td><a href="./">Home</a></td>
-					<td><a href="index.php?page=product&view=product">Product</a></td>
-					<?php
-					if(isset($_SESSION['username'])){
-					echo
-					'<td>
-						<a href="index.php?page=cart&view=cart">Cart</a>
-					</td>';
-					}
-					?>
-					<td><a href="index.php?page=testimony">Testimony</a></td>
-				</tr>
-			</table>
-            </div>
-          </div>
-        </div><!-- /.navbar -->
+		<table>
+			<tr>
+				<td><a href="./">Home</a></td>
+				<td><a href="index.php?page=product&view=product">Product</a></td>
+				<?php
+				if(isset($_SESSION['username'])){
+				echo
+				'<td>
+					<a href="index.php?page=cart&view=cart">Cart</a>
+				</td>';
+				}
+				?>
+				<td><a href="index.php?page=testimony">Testimony</a></td>
+				<td> | </td>
+				<?php
+				if(isset($_SESSION['username'])){
+				echo
+				'<td><a href="#">Insert Product</a></td>
+				<td><a href="#">Update Product</a></td>
+				<td><a href="#">Member</a></td>';
+				}
+				?>
+			</tr>
+		</table>
       </div>
 
       <!-- Example row of columns -->
