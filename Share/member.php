@@ -28,7 +28,6 @@ if(isset($_GET['del'])){
 $result=mysql_query($sql) or die(mysql_error());
 
 
-//proses menampilkan data 
 while($rows=mysql_fetch_array($result)){
 ?>
 	<tr>

@@ -1,8 +1,6 @@
 <?php
-
-
 include ('admin/inc/config.php');
-require_once('inc/common_function.php');
+require_once('wbpl_06pfm-function.php');
 
 
 		$kd_product = kode_product();

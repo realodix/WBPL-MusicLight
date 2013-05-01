@@ -1,9 +1,8 @@
-<?php	// Include MySQL class
+<?php
 	session_start();
 	
 	require_once('admin/inc/config.php');
-	require_once('inc/functions.inc.php');
-	require_once('inc/common_function.php');
+	require_once('wbpl_06pfm-function.php');
 ?>
 
 

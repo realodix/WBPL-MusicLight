@@ -1,32 +1,23 @@
 <?php
 session_start();
 include ('admin/inc/config.php');
-require_once ('inc/functions.inc.php');
-require_once ('inc/common_function.php');
+require_once ('wbpl_06pfm-function.php');
 
-/*
-require_once ('inc/mysql.class.php');
-require_once ('inc/global.inc.php');
-session_register('id_kota');
-session_register('kd_pesan');
-*/
 
 session_start();
 $id_kota = array();
 session_start();
 $kd_pesan = array();
 
-//data dari user
+
 if (isset($_POST['tambah'])) {
-	/* menambahkan kode pesan dan detail pesan kedalam database*/
+
 	$kode_pesan = kode_pesan();
-	//echo $kode_pesan;
-	//exit();
+
 	$_SESSION['kd_pesan']=$kode_pesan;
 	
 	insertToDB($kode_pesan);
-	/* the one line above is magic , please don't remove or your system will fail */
-	//exit();
+
 	$Nama = $_POST['Nama'];
 	$Alamat = $_POST['Alamat'];
 	$kd_pos = $_POST['kd_pos'];
@@ -42,7 +33,6 @@ if (isset($_POST['tambah'])) {
 	$result = mysql_query($sql) or die(mysql_error());
 
 	$_SESSION['cart'] = '';
-	//check if query successful
 
 	if ($result) {
 
