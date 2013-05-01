@@ -59,8 +59,7 @@ if(isset($_GET['del'])){
 <?php }else{ ?>
 		<a href="index.php?page=testimony&unaprv=true&id=<?php echo $rows['kd_testimony']?>">Unapprove</a> | 
 <?php } ?>
-	<a href="index.php?page=testimony&del=true&id=<?php echo $rows['kd_testimony']?>">Delete</a> | 
-	<a href="#">Edit</a></p>
+	<a href="index.php?page=testimony&del=true&id=<?php echo $rows['kd_testimony']?>">Delete</a>
 	<hr>
 <?php 
 }
