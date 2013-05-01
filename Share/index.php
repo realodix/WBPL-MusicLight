@@ -81,7 +81,7 @@
 		
 		if(!isset($_SESSION['username'])){?>
 		<form method="post" action="do_login.php">
-			User: admin & Pass: admin <br>
+			User: admin & Pass: 06pfm <br>
 			<input name="username" type="text">
 			<input name="password" type="password">
 			
