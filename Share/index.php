@@ -95,34 +95,15 @@
 		<?php
 		if(!isset($_SESSION['username'])){?>
 		<form method="post" action="admin/inc/wbpl-login_check.php">
-			<input name="username" type="text" class="input-small" placeholder="Username">
-			<input name="password" type="password" class="input-small" placeholder="Password">
+			User: admin & Pass: admin <br>
+			<input name="username" type="text">
+			<input name="password" type="password">
 			
 			<br>
 
-			<?php 
-			if (isset($_GET['err'])) {
-				if ($_GET['err'] == 1) { ?>
-					<span class="label label-important">The username must be filled!</span>
-			<?php }else if ($_GET['err'] == 2) { ?>
-					<span class="label label-important">The password must be filled!</span>
-			<?php }else if ($_GET['err'] == 3) { ?>
-					<span class="label label-important">The username or password you entered is incorrect.</span>
-			<?php }
-			}else if (isset($_GET['loggedout'])) {
-				if ($_GET['loggedout'] == true) { ?>
-					<span class="label label-success">You are now logged out.</span>
-			<?php }
-			}
-			?>
-			
-			<label class="checkbox">
-				<input type="checkbox"> Remember me
-			</label>
-			
 			<input type="submit" class="btn" name="Home_Submit_Login" value="Sign in"/>
 			or
-			<input class="btn btn-primary" type="submit" name="Home_Submit_Regiter" value="Register"/>
+			<a href="registration.php" style="text-decoration: none;"><input type="button" value="Register"/></a>
 			
 		</form>
 		<?php
@@ -132,6 +113,8 @@
 		<?php
 		}	?>
 		</div>
+		
+		<br>
 		 
 			This page can be accessed by <b>Guest</b>,<b> Member</b>, and<b> Admin</b>.<b> </b>This page displays general information about <b>Music Light, </b>username of logged in user, and today’s date with format “<b>dd-mm-yyyy</b>”. For guest/non-member visitor, there will be a login form so users can login to the website. Shows the error message when the login process is failed. The table below shows the list of validation for the login form:
 			

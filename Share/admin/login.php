@@ -23,30 +23,14 @@
 
       <form class="form-signin" method="post" action="inc/wbpl-login_check.php">
         <h2 class="form-signin-heading">Music Light</h2>
-        <input name="username" id="username" type="text" class="input-block-level" placeholder="Username">
-        <input name="password" id="password" type="password" class="input-block-level" placeholder="Password">
+        <input name="username" id="username" type="text">
+        <input name="password" id="password" type="password">
 		
-		<label class="text-error">
-        <?php
-		//if (isset($_GET['status'] == 0)) {
-		//echo "The username or password you entered is incorrect";
-		//}
-		if (isset($_GET['status'])) {
-			if ($_GET['status'] == 1) {
-				echo "The username or password you entered is incorrect";
-			}if ($_GET['status'] == 2) {
-				echo "You are now logged out.";
-			}
-		}
-		?>
-        </label>
+		<br>
 		
-        <label class="checkbox">
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
 		<input type="submit" class="btn btn-large" name="Submit_Login" value="Sign in"/>
 		or
-		<input class="btn btn-large btn-primary" type="submit" name="Home_Submit_Regiter" value="Register"/> </br></br>
+		<a href="registration.php" style="text-decoration: none;"><input type="button" value="Register"/></a> </br></br>
 		<a href="../">← Back to Music Light</a>
       </form>
     </div> <!-- /container -->
