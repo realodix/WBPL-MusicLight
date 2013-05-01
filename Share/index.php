@@ -96,7 +96,6 @@
 		</form>
 		<?php
 		}else{ ?>
-			<a href="./admin">Go to Admin page</a> </br>
 			<a href="logout.php">Logout</a>
 		<?php
 		}	?>
