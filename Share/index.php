@@ -77,22 +77,7 @@
 		 
 		<div>
 		<?php
-		if(isset($_SESSION['username'])){
 		
-			$hour = (date("G")+5);// harus ditambah 5 agar jamnya sama.
-			if ($hour >= 0 && $hour <= 11) {
-				echo "Good morning, ";
-			} else if ($hour >= 12 && $hour <= 17) {
-				echo "Good afternoon, ";
-			} else {
-				echo "Good evening, ";
-			}
-	
-			echo ucfirst($_SESSION['username']);
-		}
-		?>
-		<br>
-		<?php
 		if(!isset($_SESSION['username'])){?>
 		<form method="post" action="admin/inc/wbpl-login_check.php">
 			User: admin & Pass: admin <br>
