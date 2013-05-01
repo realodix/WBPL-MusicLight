@@ -5,33 +5,15 @@ switch ($view) {
 ?>
 		<h2> Pilih Product yang mau dibeli </h2>
 		<?php
-		//tentukan nilai batas
-		$batas=2;
-		if(isset($_GET['halaman'])){
-			$halaman = $_GET['halaman'];
-		}
-
-		$posisi=null;
-
-		if(empty($halaman)){
-			$posisi=0;
-			$halaman=1;
-		}else{
-			$posisi=($halaman-1)* $batas;
-		}
-
-		$sql=null;
 
 		if(isset($_GET['id'])){
 			$product_brand=$_GET['id'];
-			$sql="select * from wbpl_product where nama_brand='$product_brand' 
-			limit $posisi,$batas";
+			$sql="select * from wbpl_product where nama_brand='$product_brand'";
 		}else if(isset($_GET['p'])){
 			$product_ins_type=$_GET['p'];
-			$sql="select * from wbpl_product where nama_instype='$product_ins_type' 
-			limit $posisi,$batas ";
+			$sql="select * from wbpl_product where nama_instype='$product_ins_type'";
 		}else{
-			$sql="select * from wbpl_product  limit $posisi,$batas";
+			$sql="select * from wbpl_product";
 		}
 
 		$hasil=mysql_query($sql) or die(mysql_error());
@@ -92,28 +74,13 @@ switch ($view) {
 			<?php echo $get_data['deskripsi'];?>
 		</p>
 
-		<div class="clearfix"></div>
 
 		<?php
-		}
-
-		//=============CUT HERE====================================
-		$tampil2=mysql_query("select * from wbpl_product");
-		$jmldata=mysql_num_rows($tampil2);
-		$jumlah_halaman=ceil($jmldata/$batas);
-
-		echo "<br> <br> Halaman: ";
-		for($i=1;$i<=$jumlah_halaman;$i++)
-		if ($i!=$halaman){
-			echo "<a href=index.php?page=product&halaman=$i> $i</a> | ";
-		}else{
-			echo "<b> $i</b> | ";
 		}
 		mysql_close();
 		?>
 
-		<br>
-		Jumlah Halaman: <?php echo $jmldata; 
+		<?php 
 	break;
 	
 	case 'detail':
