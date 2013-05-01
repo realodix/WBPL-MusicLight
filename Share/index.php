@@ -80,7 +80,7 @@
 		<?php
 		
 		if(!isset($_SESSION['username'])){?>
-		<form method="post" action="admin/inc/wbpl-login_check.php">
+		<form method="post" action="do_login.php">
 			User: admin & Pass: admin <br>
 			<input name="username" type="text">
 			<input name="password" type="password">
