@@ -1,12 +1,8 @@
 <?php
-$host		= "localhost";
-$username	= "root";
-$password	= "";
-$db_name	= "wbpl_ml";
 
-mysql_connect("$host", "$username", "$password") or die("cannot connect" . mysql_error());
+mysql_connect("localhost", "root", "") or die("cannot connect" . mysql_error());
 
-mysql_select_db("$db_name") or die(mysql_error());
+mysql_select_db("wbpl_share") or die(mysql_error());
 
-$kelas = "06PFM";
+$kelas = "Dari 06PFM untuk 06PFM";
 ?>

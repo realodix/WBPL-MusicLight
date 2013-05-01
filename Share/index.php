@@ -142,7 +142,7 @@
       </div>
 
       <div class="footer">
-        <p>Copyright &copy 2013, Budi Hermawan | <?php echo $kelas; ?></p>
+        <p>Copyright &copy 2013, <?php echo $kelas; ?></p>
       </div>
 
     </div> <!-- /container -->
