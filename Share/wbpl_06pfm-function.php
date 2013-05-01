@@ -63,24 +63,6 @@ function paging($sql, $limit) {
 	return $pager;
 }
 
-function pesan_error($s = '') {
-	echo "<script type=\"text/javascript\">alert(\"Maaf, $s..!!\");window.history.back();</script>";
-}
-
-function pesan_comment($url = '') {
-	if ($url === '')
-		$url = './';
-	echo "<script type=\"text/javascript\">alert(\"Terima kasih telah mengisi komentar di sistem ini..!!\");</script>";
-	echo "<META HTTP-EQUIV = 'Refresh' Content = '0; URL = $url'>";
-}
-
-function pesan_submit($url = '') {
-	if ($url === '')
-		$url = './';
-	echo "<script type=\"text/javascript\">alert(\"Data Berhasil Disimpan..!!\");</script>";
-	echo "<META HTTP-EQUIV = 'Refresh' Content = '0; URL = $url'>";
-}
-
 function selected($t1, $t2) {
 	if (trim($t1) == trim($t2))
 		return "selected";
@@ -88,21 +70,6 @@ function selected($t1, $t2) {
 		return "";
 }
 
-function combo_brand() {
-	echo "<option value='' selected>- Pilih Brand-</option>";
-	$query = query("SELECT nama_brand FROM wbpl_brand ORDER BY nama_brand ASC");
-	while ($row = mysql_fetch_row($query)) {
-		echo "<option value='$row[0]'> " . ucwords($row[0]) . " </option>";
-	}
-}
-
-function combo_ins_type($kode) {
-	echo "<option value='' selected>- Pilih Instrument Type-</option>";
-	$query = query("SELECT nama_instype FROM wbpl_instype ORDER BY nama_instype ASC");
-	while ($row = mysql_fetch_row($query)) {
-		echo "<option value='$row[0]'> " . ucwords($row[0]) . " </option>";
-	}
-}
 
 function kode_pesan() {
 	$kode_temp = fetch_row("SELECT kd_pesan FROM pesan ORDER BY kd_pesan DESC LIMIT 0,1");
@@ -311,14 +278,6 @@ function getQty() {
 		return count($items);
 	}
 }
-
-function getDiskon($qty) {
-	if ($qty >= 10)
-		return 0.1;
-	else
-		return 0;
-}
-
 
 function wbpl_showCart() {
 	global $db;
