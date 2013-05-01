@@ -75,7 +75,7 @@
 		} else {
 		?>
 		 
-		 		<div class="">
+		<div>
 		<?php
 		if(isset($_SESSION['username'])){
 		
@@ -109,7 +109,7 @@
 		<?php
 		}else{ ?>
 			<a href="./admin">Go to Admin page</a> </br>
-			<a href="admin/logout.php?logout=1" name="Home_Submit_Logout">Logout</a>
+			<a href="admin/logout.php" name="Home_Submit_Logout">Logout</a>
 		<?php
 		}	?>
 		</div>
