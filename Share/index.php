@@ -33,8 +33,8 @@
 
       <div class="masthead">
 		<hgroup>
-			<h1 class="site-title">MusicLight</h1>
-			<h2 class="site-description">Musical Instrument Shop</h2>
+			<h1 class="site-title"><?php echo $stitle; ?></h1>
+			<h2 class="site-description"><?php echo $sdescription; ?></h2>
 		</hgroup>
 		
 	<div class="clearfix"></div>
@@ -143,7 +143,7 @@
       </div>
 
       <div class="footer">
-        <p>Copyright &copy 2013, <?php echo $kelas; ?></p>
+        <p><?php echo $footer; ?></p>
       </div>
 
     </div> <!-- /container -->
