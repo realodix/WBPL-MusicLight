@@ -59,7 +59,7 @@
 				echo
 				'<td><a href="index.php?page=insertproduct">Insert Product</a></td>
 				<td><a href="#">Update Product</a></td>
-				<td><a href="#">Member</a></td>';
+				<td><a href="index.php?page=member">Member</a></td>';
 				}
 				?>
 			</tr>

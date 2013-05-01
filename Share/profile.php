@@ -1,22 +1,15 @@
 <?php
 
-include ('inc/config.php');
+include ('admin/inc/config.php');
 
 ?>
 <h1> Tabel Profile</h1>
-
-<?php 
-//$sql="SELECT * FROM  buku";
-//$result=mysql_query($sql) or die(mysql_error());
-//while($rows=mysql_fetch_array($result)){
-?>
 
 <form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=update_profile">
 	<td>
 		<table>
 <?php
-/*where kd_member='M0001' ditambahkan agar
-* data yang muncul tidak semuanya*/
+
 $id = $_GET['id'];
 $sql="SELECT * FROM  wbpl_member where kd_member='$id' ";
 $result=mysql_query($sql) or die(mysql_error());
@@ -76,9 +69,9 @@ while($rows=mysql_fetch_array($result)){
 				<td>&nbsp;</td>
 			
 				<td>
-				<input class="btn" type="submit" name="UpdateProfile" value="Update" />
-				<input class="btn btn-warning"type="reset" name="resetbtn" value="Reset" />
-				<a href="index.php?page=member" class="btn btn-danger pull-right">Cancel</a>
+				<input name="UpdateProfile" value="Update" />
+				<input type="reset" name="resetbtn" value="Reset" />
+				<a href="index.php?page=member">Cancel</a>
 				</td>
 			</tr>
 			<tr>
@@ -90,8 +83,6 @@ while($rows=mysql_fetch_array($result)){
 <?php
 
 mysql_close();
-//close database
 
-//tampilan siapa yang pengelola
 ?>
 
