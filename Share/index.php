@@ -133,8 +133,38 @@
 		}	?>
 		</div>
 		 
-			<h3>Welcome to Music Light</h3>
-			<P class="alignJustify">Music Light is a famous musical instrument shop in the town. It sells a wide range of musical instruments from the common to the rare. As time passed, the owner of this store realized how important the internet today and decided to develop a website that can ease customer to make transactions in Music Light. This website will be used by the customer/member to order musical instruments via online and promote Music Light’s product to non-member visitor.</p>
+			This page can be accessed by <b>Guest</b>,<b> Member</b>, and<b> Admin</b>.<b> </b>This page displays general information about <b>Music Light, </b>username of logged in user, and today’s date with format “<b>dd-mm-yyyy</b>”. For guest/non-member visitor, there will be a login form so users can login to the website. Shows the error message when the login process is failed. The table below shows the list of validation for the login form:
+			
+			<br><br>
+			
+			<table width="656" border="1" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td nowrap="nowrap" width="186">
+			<p align="center"><b>Field</b></p>
+			</td>
+			<td nowrap="nowrap" width="470">
+			<p align="center"><b>Validation</b></p>
+			</td>
+			</tr>
+			<tr>
+			<td valign="bottom" nowrap="nowrap" width="186"><b>Username</b></td>
+			<td valign="bottom" nowrap="nowrap" width="470">Must be filled.</td>
+			</tr>
+			<tr>
+			<td valign="bottom" nowrap="nowrap" width="186"><b>Password</b></td>
+			<td valign="bottom" nowrap="nowrap" width="470">Must be filled.</td>
+			</tr>
+			<tr>
+			<td valign="bottom" nowrap="nowrap" width="186"><b>Username </b>&amp;<b> Password</b></td>
+			<td valign="bottom" nowrap="nowrap" width="470">Match with username and password in the database.</td>
+			</tr>
+			</tbody>
+			</table>
+			
+			<br>
+			
+			Use <b>MD5 </b>technique to encrypt the password. Also give <b>remember me</b> option to set cookie into web browser. If remember me is checked, the cookie will be set into web browser but if it is not checked, the cookie will not be set. Also validate <b>Username</b> textbox will be automatically filled every time users access this website again within 60 minutes since the cookie is set.
 		<?php
 		}?>
         </div>
@@ -143,7 +173,7 @@
       </div>
 
       <div class="footer">
-        <p>Copyright &copy 2013 <a href="#">Budi Hermawan</a></p>
+        <p>Copyright &copy 2013, Budi Hermawan | <?php echo $kelas; ?></p>
       </div>
 
     </div> <!-- /container -->
