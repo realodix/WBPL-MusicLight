@@ -1,7 +1,7 @@
 
 	<h1>Registration</h2>
 
-	<form id="registration" name="registration" method="post" action="admin/wbpl_add-edit.php?action=insert_registration">
+	<form id="registration" name="registration" method="post" action="registration_add.php">
 		<table>
 			<tr>
 				<td>Name</td>

@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	
-	require_once('admin/inc/config.php');
+	require_once('konfigurasi.php');
 	require_once('wbpl_06pfm-function.php');
 ?>
 
@@ -91,7 +91,7 @@
 
 			<input type="submit" class="btn" name="Home_Submit_Login" value="Sign in"/>
 			or
-			<a href="registration.php" style="text-decoration: none;"><input type="button" value="Register"/></a>
+			<a href="index.php?page=registration" style="text-decoration: none;"><input type="button" value="Register"/></a>
 			
 		</form>
 		<?php

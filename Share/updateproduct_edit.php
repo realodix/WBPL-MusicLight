@@ -1,6 +1,6 @@
 <?php
 
-include ('admin/inc/config.php');
+include ('konfigurasi.php');
 require_once('wbpl_06pfm-function.php');
 
 

@@ -4,7 +4,7 @@ if(!isset($_SESSION['username'])){
 		header("location:../index.php");
 	}
 
-require_once 'inc/config.php';
+require_once 'konfigurasi.php';
 require_once('../inc/common_function.php');
 ?>
 

@@ -1,6 +1,6 @@
 <?php
 
-include ('admin/inc/config.php');
+include ('konfigurasi.php');
 
 ?>
 <h1> Tabel Profile</h1>

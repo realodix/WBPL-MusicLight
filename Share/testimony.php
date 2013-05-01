@@ -18,7 +18,7 @@
 			
 	<p>Please enter your testimonial in columm below.</p>
 			
-	<form name="testimony" method="post" action="admin/wbpl_add-edit.php?action=insert_testimony">
+	<form name="testimony" method="post" action="testimony_add.php">
 		<textarea name="testimony_isi" style="width: 550px; height: 160px; resize: none;"></textarea>
 		<br>
 		
