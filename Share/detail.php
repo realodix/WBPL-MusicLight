@@ -1,1 +1,4 @@
-This page can only be accessed by <b>Member </b>and <b>Admin </b>through <b>Transaction page</b>. The function of this page is to display the detail about the transaction. This page only shows <b>Image</b>, <b>Product ID</b>,<b> Brand</b>, <b>Instrument Type</b>, <b>Price</b>,<b> Quantity</b>,<b> Sub Total</b> and <b>Total Price</b> of all products. Validate the <b>Member</b> can only view his/her transactions, while <b>Admin</b> can view all <b>Member</b>’s transactions.
+<?php
+echo base64_decode('VGhpcyBwYWdlIGNhbiBvbmx5IGJlIGFjY2Vzc2VkIGJ5IDxiPk1lbWJlciA8L2I+YW5kIDxiPkFkbWluIDwvYj50aHJvdWdoIDxiPlRyYW5zYWN0aW9uIHBhZ2U8L2I+LiBUaGUgZnVuY3Rpb24gb2YgdGhpcyBwYWdlIGlzIHRvIGRpc3BsYXkgdGhlIGRldGFpbCBhYm91dCB0aGUgdHJhbnNhY3Rpb24uIFRoaXMgcGFnZSBvbmx5IHNob3dzIDxiPkltYWdlPC9iPiwgPGI+UHJvZHVjdCBJRDwvYj4sPGI+IEJyYW5kPC9iPiwgPGI+SW5zdHJ1bWVudCBUeXBlPC9iPiwgPGI+UHJpY2U8L2I+LDxiPiBRdWFudGl0eTwvYj4sPGI+IFN1YiBUb3RhbDwvYj4gYW5kIDxiPlRvdGFsIFByaWNlPC9iPiBvZiBhbGwgcHJvZHVjdHMuIFZhbGlkYXRlIHRoZSA8Yj5NZW1iZXI8L2I+IGNhbiBvbmx5IHZpZXcgaGlzL2hlciB0cmFuc2FjdGlvbnMsIHdoaWxlIDxiPkFkbWluPC9iPiBjYW4gdmlldyBhbGwgPGI+TWVtYmVyPC9iPuKAmXMgdHJhbnNhY3Rpb25zLg==');
+
+?>
