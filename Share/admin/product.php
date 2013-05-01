@@ -42,9 +42,9 @@
 		<td><?php  echo $rows['stock'];?></td>
 		<td>
 			<a class="btn" href="index.php?page=updateproduct&id=<?php echo $rows['kd_product']?>">
-			<i class="icon-edit" title="Edit"></i></a>
+			Edit</a> or 
 			<a class="btn btn-danger" href="index.php?page=product&del=true&id=<?php echo $rows['kd_product']?>"  onclick="return askUser()";>
-			<i class="icon-trash" title="Remove"></i></a>
+			Del</a>
 		</td>
 	</tr>
 
@@ -55,29 +55,19 @@
 	?>
 	<tr>
 		<td align=right colspan="6">
-		<?php
-		if (isset($_GET['status'])) {
-			if ($_GET['status'] == 0) {
-				echo " Operasi data berhasil";
-			} else {
-				echo "operasi gagal";
-			}
-		}
-		?>
+
 		</td>
 
 		<td align=right>
 			<a class="btn btn-primary" href="index.php?page=insertproduct">
-			<i class="icon-plus icon-white" title="Edit"></i> Insert product
+			 Insert product
 			</a>
 		</td>
 	</tr>
 
 	<tr>
 		<td align=right colspan="2">
-			<a class="btn" href="wbpl_cetak.php" target='_blank'>
-			<i class="icon-print" title="Edit"></i> Print
-			</a>
+
 		</td>
 	</tr>
 	<tr></tr>
