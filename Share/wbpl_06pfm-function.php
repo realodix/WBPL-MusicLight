@@ -12,8 +12,6 @@ function fetch_row($qry) {
 	return $result;
 }
 
-
-
 function valid($tmp) {
 	return htmlentities(addslashes($tmp));
 }
@@ -100,11 +98,8 @@ function kd_testimony() {
 }
 
 
-
 if(!isset($_SESSION)){
 session_start();
 }
-
-
 
 ?>
