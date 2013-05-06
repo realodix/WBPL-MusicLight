@@ -89,41 +89,43 @@ switch ($view) {
 			<?php
 			if(isset($_GET['kirim'])){
 				?>
-				<h3>Form Pengiriman barang</h3>
+				<h3 id="fpb">Form Pengiriman barang</h3>
 				<form id="form1" name="form1" method="post" action="pemesan_add.php">
 					<td>
 					<table>
+					<?php
+					$asdf = $_SESSION['username'];
+					$sql="select * from wbpl_member
+							where username='$asdf'";
+					$hasil=mysql_query($sql) or die(mysql_error());
+
+					while($rows=mysql_fetch_array($hasil)){
+					?>
 						<tr>
 							<td width="120"><b>Nama</b></td>
 							<td width="350">
-							<input name="Nama" type="text" id="Nama" size="40" />
+							<input name="Nama" type="text" id="Nama" size="40" value=" <?php echo $rows['name'] ?>" />
 							</td>
 						</tr>
 						<tr>
 							<td width="120"><b>Alamat</b></td>
 							<td width="350">
-							<input name="Alamat" type="text" id="Alamat" size="40" />
-							</td>
-						</tr>
-						<tr>
-							<td width="120"><b>Kode Pos</b></td>
-							<td width="350">
-							<input name="kd_pos" type="text" id="kd_pos" size="40" />
+							<input name="Alamat" type="text" id="Alamat" size="40" value=" <?php echo $rows['address'] ?>"/>
 							</td>
 						</tr>
 						<tr>
 							<td width="120"><b>No. Telepon</b></td>
 							<td width="350">
-							<input name="No_telp" type="text" id="No_telp" size="40" />
+							<input name="No_telp" type="text" id="No_telp" size="40" value=" <?php echo $rows['phone'] ?>"/>
 							</td>
 						</tr>
 						<tr>
 							<td width="120"><b>E-Mail</b></td>
 							<td width="350">
-							<input name="Email" type="Email" id="Email" size="40" />
+							<input name="Email" type="Email" id="Email" size="40" value=" <?php echo $rows['email'] ?>"/>
 							</td>
 						</tr>
-						<?php ?>
+						<?php }?>
 						<tr>
 							<td width="120"><b>Kota</b></td>
 							<td width="350">

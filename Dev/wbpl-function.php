@@ -226,7 +226,7 @@ function wbpl_showCart() {
 				foreach ($items as $item) {
 					$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
 				}
-				echo '<form action="index.php?page=cart&view=cart&action=update" method="post" id="cart">';
+				echo '<form action="index.php?page=cart&view=cart&action=update#contents" method="post" id="cart">';
 				echo '<table border=0 align="center" class="table table-bordered">';
 					
 				$total = 0;
@@ -267,7 +267,7 @@ function wbpl_showCart() {
 				
 				$_SESSION['totalbayar'] = $total;
 				echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
-				<a href="index.php?page=cart&view=cart&action=finish&kirim=true" class="btn btn-inverse">Next</a></div>';
+				<a href="index.php?page=cart&view=cart&action=finish&kirim=true#fpb" class="btn btn-inverse">Next</a></div>';
 				echo '</form>';
 
 			}else{
@@ -316,7 +316,7 @@ function wbpl_showCart() {
 				
 				$_SESSION['totalbayar'] = $total;
 				echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
-				<a href="index.php?page=cart&view=cart&action=finish&kirim=true" class="btn btn-inverse">Next</a></div>';
+				<a href="index.php?page=cart&view=cart&action=finish&kirim=true#fpb" class="btn btn-inverse">Next</a></div>';
 				echo '</form>';
 			}
 		}
