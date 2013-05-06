@@ -5,7 +5,6 @@
 #9 Transaction page (transaction.php)
 #10 [admin]Detail page (detail.php)
 
-#14 Menghapus file yang tidak dibutuhkan
 #42 Menggunakan fungsi fetch bawaan.
 
 #21 Update jQuery ke versi terbaru
@@ -45,3 +44,4 @@
 [closed] #23 Menyesuaikan susunan html admin dengan Bootstrap
 [closed] #26 Merombak UI admin
 [closed] #7 [admin]Member page (member.php)
+[closed] #14 Menghapus file yang tidak dibutuhkan
