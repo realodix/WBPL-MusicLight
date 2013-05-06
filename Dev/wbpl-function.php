@@ -218,105 +218,107 @@ function getQty() {
 
 function wbpl_showCart() {
 	global $db;
-	if ($cart = $_SESSION['cart']){
-		if(isset($_GET['action'])){
+	if(isset($_SESSION['cart'])){
+		if ($cart = $_SESSION['cart']){
+			if(isset($_GET['action'])){
 
-			$items = explode(',', $cart);
-			foreach ($items as $item) {
-				$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
-			}
-			echo '<form action="index.php?page=cart&view=cart&action=update" method="post" id="cart">';
-			echo '<table border=0 align="center" class="table table-bordered">';
+				$items = explode(',', $cart);
+				foreach ($items as $item) {
+					$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
+				}
+				echo '<form action="index.php?page=cart&view=cart&action=update" method="post" id="cart">';
+				echo '<table border=0 align="center" class="table table-bordered">';
+					
+				$total = 0;
+				foreach ($contents as $id => $qty) {
+					$sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
+					$result = mysql_query($sql) or die(mysql_error());
+					$rows=mysql_fetch_array($result);
+
+					echo 	'<tr>
+								<td>Brand</td>
+								<td colspan="4">'. $rows['kd_product'] .'</td>
+							<tr>
+							<tr>
+								<td>Brand</td>
+								<td colspan="4">'. $rows['nama_brand'] .'</td>
+							<tr>
+							<tr>
+									<td>Instrument Type</td>
+									<td colspan="4">'. $rows['nama_instype'] .'</td>
+							</tr>
+							<tr">
+								<td rowspan="2">Price</td>
+								<td rowspan="2">Rp. ' . $rows['price'] . '</td>
+								<td rowspan="2"><input type="text" name="qty' . $id . '" value="' . $qty . '" size="2" maxlength="3" /></td>
+
+								<td rowspan="2">Rp. ' . ($rows['price'] * $qty) . '</td>
+							
+								<td><a href="index.php?page=cart&view=cart&action=delete&id=' . $id . '" class="btn btn-danger">Hapus</a></td>
+							</tr>
+							<tr><td><br></td></tr>';
+						
+					$total += $rows['price'] * $qty;
+				}
+				echo '</table>';
+				$qty = getQty();
+							
+				echo '<p>Sub Total: <strong> Rp. ' . $total . '</strong></p>';
 				
-			$total = 0;
-			foreach ($contents as $id => $qty) {
-				$sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
-				$result = mysql_query($sql) or die(mysql_error());
-				$rows=mysql_fetch_array($result);
+				$_SESSION['totalbayar'] = $total;
+				echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
+				<a href="index.php?page=cart&view=cart&action=finish&kirim=true" class="btn btn-inverse">Next</a></div>';
+				echo '</form>';
 
-				echo 	'<tr>
-							<td>Brand</td>
-							<td colspan="4">'. $rows['kd_product'] .'</td>
-						<tr>
-						<tr>
-							<td>Brand</td>
-							<td colspan="4">'. $rows['nama_brand'] .'</td>
-						<tr>
-						<tr>
+			}else{
+				$items = explode(',', $cart);
+				foreach ($items as $item) {
+					$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
+				}
+				echo '<form action="index.php?page=cart&view=cart&action=update" method="post" id="cart">';
+				echo '<table border=0 align="center" class="table table-bordered">';
+					
+				$total = 0;
+				foreach ($contents as $id => $qty) {
+					$sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
+					$result = mysql_query($sql) or die(mysql_error());
+					$rows=mysql_fetch_array($result);
+
+					echo 	'<tr>
+								<td>Brand</td>
+								<td colspan="4">'. $rows['kd_product'] .'</td>
+							<tr>
+							<tr>
+								<td>Brand</td>
+								<td colspan="4">'. $rows['nama_brand'] .'</td>
+							<tr>
+							<tr>
 								<td>Instrument Type</td>
 								<td colspan="4">'. $rows['nama_instype'] .'</td>
-						</tr>
-						<tr">
-							<td rowspan="2">Price</td>
-							<td rowspan="2">Rp. ' . $rows['price'] . '</td>
-							<td rowspan="2"><input type="text" name="qty' . $id . '" value="' . $qty . '" size="2" maxlength="3" /></td>
+							</tr>
+							<tr">
+								<td rowspan="2">Price</td>
+								<td rowspan="2">Rp. ' . $rows['price'] . '</td>
+								<td rowspan="2"><input type="text" name="qty' . $id . '" value="' . $qty . '" size="2" maxlength="3" /></td>
 
-							<td rowspan="2">Rp. ' . ($rows['price'] * $qty) . '</td>
+								<td rowspan="2">Rp. ' . ($rows['price'] * $qty) . '</td>
 						
-							<td><a href="index.php?page=cart&view=cart&action=delete&id=' . $id . '" class="btn btn-danger">Hapus</a></td>
-						</tr>
-						<tr><td><br></td></tr>';
-					
-				$total += $rows['price'] * $qty;
-			}
-			echo '</table>';
-			$qty = getQty();
+								<td><a href="index.php?page=cart&view=cart&action=delete&id=' . $id . '" class="btn btn-danger">Hapus</a></td>
+							</tr>
+							<tr><td><br></td></tr>';
 						
-			echo '<p>Sub Total: <strong> Rp. ' . $total . '</strong></p>';
-			
-			$_SESSION['totalbayar'] = $total;
-			echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
-			<a href="index.php?page=cart&view=cart&action=finish&kirim=true" class="btn btn-inverse">Next</a></div>';
-			echo '</form>';
-
-		}else{
-			$items = explode(',', $cart);
-			foreach ($items as $item) {
-				$contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
-			}
-			echo '<form action="index.php?page=cart&view=cart&action=update" method="post" id="cart">';
-			echo '<table border=0 align="center" class="table table-bordered">';
+					$total += $rows['price'] * $qty;
+				}
+				echo '</table>';
+				$qty = getQty();
+						
+				echo '<p>Sub Total: <strong> Rp. ' . $total . '</strong></p>';
 				
-			$total = 0;
-			foreach ($contents as $id => $qty) {
-				$sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
-				$result = mysql_query($sql) or die(mysql_error());
-				$rows=mysql_fetch_array($result);
-
-				echo 	'<tr>
-							<td>Brand</td>
-							<td colspan="4">'. $rows['kd_product'] .'</td>
-						<tr>
-						<tr>
-							<td>Brand</td>
-							<td colspan="4">'. $rows['nama_brand'] .'</td>
-						<tr>
-						<tr>
-							<td>Instrument Type</td>
-							<td colspan="4">'. $rows['nama_instype'] .'</td>
-						</tr>
-						<tr">
-							<td rowspan="2">Price</td>
-							<td rowspan="2">Rp. ' . $rows['price'] . '</td>
-							<td rowspan="2"><input type="text" name="qty' . $id . '" value="' . $qty . '" size="2" maxlength="3" /></td>
-
-							<td rowspan="2">Rp. ' . ($rows['price'] * $qty) . '</td>
-					
-							<td><a href="index.php?page=cart&view=cart&action=delete&id=' . $id . '" class="btn btn-danger">Hapus</a></td>
-						</tr>
-						<tr><td><br></td></tr>';
-					
-				$total += $rows['price'] * $qty;
+				$_SESSION['totalbayar'] = $total;
+				echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
+				<a href="index.php?page=cart&view=cart&action=finish&kirim=true" class="btn btn-inverse">Next</a></div>';
+				echo '</form>';
 			}
-			echo '</table>';
-			$qty = getQty();
-					
-			echo '<p>Sub Total: <strong> Rp. ' . $total . '</strong></p>';
-			
-			$_SESSION['totalbayar'] = $total;
-			echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
-			<a href="index.php?page=cart&view=cart&action=finish&kirim=true" class="btn btn-inverse">Next</a></div>';
-			echo '</form>';
 		}
 	}else{
 		echo "Keranjang belanjaan Anda masih kosong";
