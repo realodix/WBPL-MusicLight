@@ -5,40 +5,21 @@ function query($qry) {
 	 <br>$qry<br><br>Kode Salah : <br>&nbsp;&nbsp;&nbsp;" . mysql_error() . "!");
 	return $result;
 }
-
 function fetch_row($qry) {
 	$tmp = query($qry);
 	list($result) = mysql_fetch_row($tmp);
 	return $result;
 }
-
 function num_rows($qry) {
 	$tmp = query($qry);
 	$jum = mysql_num_rows($tmp);
 	return $jum;
 }
-
 function valid($tmp) {
 	return htmlentities(addslashes($tmp));
 }
 
-function pesan_error($s = '') {
-	echo "<script type=\"text/javascript\">alert(\"Maaf, $s..!!\");window.history.back();</script>";
-}
 
-function pesan_comment($url = '') {
-	if ($url === '')
-		$url = './';
-	echo "<script type=\"text/javascript\">alert(\"Terima kasih telah mengisi komentar di sistem ini..!!\");</script>";
-	echo "<META HTTP-EQUIV = 'Refresh' Content = '0; URL = $url'>";
-}
-
-function pesan_submit($url = '') {
-	if ($url === '')
-		$url = './';
-	echo "<script type=\"text/javascript\">alert(\"Data Berhasil Disimpan..!!\");</script>";
-	echo "<META HTTP-EQUIV = 'Refresh' Content = '0; URL = $url'>";
-}
 
 function selected($t1, $t2) {
 	if (trim($t1) == trim($t2))
@@ -203,15 +184,6 @@ function kd_testimony() {
 	return $kode;
 }
 
-function cek_status_bayar($kode) {
-	$br = fetch_row("SELECT status_pesan FROM pesan WHERE id_pesan='$kode'");
-	if ($br == '1')
-		return true;
-	else
-		return false;
-}
-
-
 if(!isset($_SESSION)){
 session_start();
 }
@@ -243,14 +215,6 @@ function getQty() {
 		return count($items);
 	}
 }
-
-function getDiskon($qty) {
-	if ($qty >= 10)
-		return 0.1;
-	else
-		return 0;
-}
-
 
 function wbpl_showCart() {
 	global $db;
@@ -432,7 +396,13 @@ function cek_bayar() {
 	else
 		return false;
 }
-
+function cek_status_bayar($kode) {
+	$br = fetch_row("SELECT status_pesan FROM pesan WHERE id_pesan='$kode'");
+	if ($br == '1')
+		return true;
+	else
+		return false;
+}
 
 */
 ?>
