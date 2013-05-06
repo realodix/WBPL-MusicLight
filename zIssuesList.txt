@@ -6,6 +6,7 @@
 #10 [admin]Detail page (detail.php)
 
 #14 Menghapus file yang tidak dibutuhkan
+#42 Menggunakan fungsi fetch bawaan.
 
 #21 Update jQuery ke versi terbaru
 #36 Session time out in PHP
