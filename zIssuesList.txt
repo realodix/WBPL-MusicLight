@@ -5,8 +5,6 @@
 #9 Transaction page (transaction.php)
 #10 [admin]Detail page (detail.php)
 
-#42 Menggunakan fungsi fetch bawaan.
-
 #21 Update jQuery ke versi terbaru
 #36 Session time out in PHP
 
@@ -45,3 +43,4 @@
 [closed] #26 Merombak UI admin
 [closed] #7 [admin]Member page (member.php)
 [closed] #14 Menghapus file yang tidak dibutuhkan
+[closed] #42 Menggunakan fungsi fetch bawaan.
