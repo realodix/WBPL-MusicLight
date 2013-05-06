@@ -22,15 +22,17 @@
 		<textarea name="testimony_isi" style="width: 550px; height: 160px; resize: none;"></textarea>
 		<br>
 		
-		<i id="waiting" class="label label-success">
 		<?php
-
 		if (isset($_GET['status'])) {
 			if ($_GET['status'] == 0) {
-				echo "Terima kasih, testimony Anda sudah masuk dan sedang menunggu moderasi dari Admin.";
+		?>
+				<i id="waiting" class="label label-success">
+				Terima kasih, testimony Anda sudah masuk dan sedang menunggu moderasi dari Admin
+				</i>
+		<?php
 			}
 		}
 		?>
-		</i> <br> <br>
+		<br> <br>
 		<input class="btn btn-primary" type="submit" name="testimony_submit" value="Post Testimony"/>
 	</form>
