@@ -265,7 +265,8 @@ function wbpl_showCart() {
 			echo '<p>Sub Total: <strong> Rp. ' . $total . '</strong></p>';
 			
 			$_SESSION['totalbayar'] = $total;
-			echo '<div><button type="submit" class="btn btn-primary">Update cart</button></div>';
+			echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
+			<a href="index.php?page=cart&view=cart&action=finish&kirim=true" class="btn btn-inverse">Next</a></div>';
 			echo '</form>';
 
 		}else{
@@ -313,7 +314,8 @@ function wbpl_showCart() {
 			echo '<p>Sub Total: <strong> Rp. ' . $total . '</strong></p>';
 			
 			$_SESSION['totalbayar'] = $total;
-			echo '<div><button type="submit" class="btn btn-primary">Update cart</button></div>';
+			echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
+			<a href="index.php?page=cart&view=cart&action=finish&kirim=true" class="btn btn-inverse">Next</a></div>';
 			echo '</form>';
 		}
 	}else{

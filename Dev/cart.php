@@ -85,12 +85,11 @@ switch ($view) {
 			echo wbpl_showCart();
 			?>
 
-			<h3>Form Pengiriman barang</h3>
-			<a href="index.php?page=cart&view=cart&action=finish&kirim=true">Isi Data pembeli</a>
 			
 			<?php
 			if(isset($_GET['kirim'])){
 				?>
+				<h3>Form Pengiriman barang</h3>
 				<form id="form1" name="form1" method="post" action="pemesan_add.php">
 					<td>
 					<table>
