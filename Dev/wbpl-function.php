@@ -22,47 +22,6 @@ function valid($tmp) {
 	return htmlentities(addslashes($tmp));
 }
 
-function user_member($user) {
-	$br = fetch_row("SELECT user FROM member WHERE user='$user'");
-	if ($br != '')
-		return true;
-	else
-		return false;
-}
-
-function pass_member($user, $pass) {
-	$br = fetch_row("SELECT user FROM member WHERE user='$user' AND pass=md5('$pass')");
-	if ($br != '')
-		return true;
-	else
-		return false;
-}
-
-function no_baris($j = "") {
-	if ($j == "")
-		$jum = 15;
-	else
-		$jum = $j;
-	if (isset($_GET["entrant"]) && ($_GET["entrant"] > 1))
-		return $jum * ($_GET["entrant"] - 1);
-	else
-		return 0;
-}
-
-function paging($sql, $limit) {
-	require_once (class_ . 'pager/Pager.php');
-	$isi = query($sql);
-	$data = array();
-	while ($row = mysql_fetch_row($isi)) {
-		$data[] = $row;
-	}
-	@mysql_free_result($isi);
-	$params = array('itemData' => $data, 'perPage' => $limit, 'delta' => 5, 'append' => true, 'separator' => '', 'clearIfVoid' => false, 'urlVar' => 'entrant', 'useSessions' => false, 'closeSession' => false, 'mode' => 'Jumping', );
-
-	$pager = &Pager::factory($params);
-	return $pager;
-}
-
 function pesan_error($s = '') {
 	echo "<script type=\"text/javascript\">alert(\"Maaf, $s..!!\");window.history.back();</script>";
 }
@@ -142,27 +101,7 @@ function kode_customer() {
 	}
 	return $kode;
 }
-function kode_buku() {
-	$kode_temp = fetch_row("SELECT kd_buku FROM buku ORDER BY kd_buku DESC LIMIT 0,1");
-	if ($kode_temp == '')
-		$kode = "B0001";
-	else {
-		$jum = substr($kode_temp, 1, 4);
-		$jum++;
-		if ($jum <= 9)
-			$kode = "B000" . $jum;
-		elseif ($jum <= 99)
-			$kode = "B00" . $jum;
-		elseif ($jum <= 999)
-			$kode = "B0" . $jum;
-		elseif ($jum <= 9999)
-			$kode = "B" . $jum;
-	
-		else
-			die("Kode buku melebihi batas");
-	}
-	return $kode;
-}
+
 function kode_product() {
 	$kode_temp = fetch_row("SELECT kd_product FROM wbpl_product ORDER BY kd_product DESC LIMIT 0,1");
 	if ($kode_temp == '')
@@ -262,15 +201,6 @@ function kd_testimony() {
 			die("Kode member melebihi batas");
 	}
 	return $kode;
-}
-
-function cek_bayar() {
-	$id_member = fetch_row("SELECT id_member FROM member WHERE user='" . $_SESSION['VIRTUALDOCTER_MEMBER'] . "'");
-	$temp = fetch_row("SELECT status_pesan FROM pesan WHERE status_pesan='0' AND id_member='$id_member'");
-	if ($temp == '')
-		return true;
-	else
-		return false;
 }
 
 function cek_status_bayar($kode) {
@@ -456,4 +386,53 @@ function insertToDB($kode_pesan) {
 
 }
 
+/*
+function user_member($user) {
+	$br = fetch_row("SELECT user FROM member WHERE user='$user'");
+	if ($br != '')
+		return true;
+	else
+		return false;
+}
+function pass_member($user, $pass) {
+	$br = fetch_row("SELECT user FROM member WHERE user='$user' AND pass=md5('$pass')");
+	if ($br != '')
+		return true;
+	else
+		return false;
+}
+function no_baris($j = "") {
+	if ($j == "")
+		$jum = 15;
+	else
+		$jum = $j;
+	if (isset($_GET["entrant"]) && ($_GET["entrant"] > 1))
+		return $jum * ($_GET["entrant"] - 1);
+	else
+		return 0;
+}
+function paging($sql, $limit) {
+	require_once (class_ . 'pager/Pager.php');
+	$isi = query($sql);
+	$data = array();
+	while ($row = mysql_fetch_row($isi)) {
+		$data[] = $row;
+	}
+	@mysql_free_result($isi);
+	$params = array('itemData' => $data, 'perPage' => $limit, 'delta' => 5, 'append' => true, 'separator' => '', 'clearIfVoid' => false, 'urlVar' => 'entrant', 'useSessions' => false, 'closeSession' => false, 'mode' => 'Jumping', );
+
+	$pager = &Pager::factory($params);
+	return $pager;
+}
+function cek_bayar() {
+	$id_member = fetch_row("SELECT id_member FROM member WHERE user='" . $_SESSION['VIRTUALDOCTER_MEMBER'] . "'");
+	$temp = fetch_row("SELECT status_pesan FROM pesan WHERE status_pesan='0' AND id_member='$id_member'");
+	if ($temp == '')
+		return true;
+	else
+		return false;
+}
+
+
+*/
 ?>
