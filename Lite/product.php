@@ -105,7 +105,7 @@ switch ($view) {
 		echo "<br> <br> Halaman: ";
 		for($i=1;$i<=$jumlah_halaman;$i++)
 		if ($i!=$halaman){
-			echo "<a href=index.php?page=product&halaman=$i> $i</a> | ";
+			echo "<a href=index.php?page=product&view=product&halaman=$i> $i</a> | ";
 		}else{
 			echo "<b> $i</b> | ";
 		}
