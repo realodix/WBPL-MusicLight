@@ -354,59 +354,5 @@ function insertToDB($kode_pesan) {
 
 }
 
-/*
-function user_member($user) {
-	$br = fetch_row("SELECT user FROM member WHERE user='$user'");
-	if ($br != '')
-		return true;
-	else
-		return false;
-}
-function pass_member($user, $pass) {
-	$br = fetch_row("SELECT user FROM member WHERE user='$user' AND pass=md5('$pass')");
-	if ($br != '')
-		return true;
-	else
-		return false;
-}
-function no_baris($j = "") {
-	if ($j == "")
-		$jum = 15;
-	else
-		$jum = $j;
-	if (isset($_GET["entrant"]) && ($_GET["entrant"] > 1))
-		return $jum * ($_GET["entrant"] - 1);
-	else
-		return 0;
-}
-function paging($sql, $limit) {
-	require_once (class_ . 'pager/Pager.php');
-	$isi = query($sql);
-	$data = array();
-	while ($row = mysql_fetch_row($isi)) {
-		$data[] = $row;
-	}
-	@mysql_free_result($isi);
-	$params = array('itemData' => $data, 'perPage' => $limit, 'delta' => 5, 'append' => true, 'separator' => '', 'clearIfVoid' => false, 'urlVar' => 'entrant', 'useSessions' => false, 'closeSession' => false, 'mode' => 'Jumping', );
 
-	$pager = &Pager::factory($params);
-	return $pager;
-}
-function cek_bayar() {
-	$id_member = fetch_row("SELECT id_member FROM member WHERE user='" . $_SESSION['VIRTUALDOCTER_MEMBER'] . "'");
-	$temp = fetch_row("SELECT status_pesan FROM pesan WHERE status_pesan='0' AND id_member='$id_member'");
-	if ($temp == '')
-		return true;
-	else
-		return false;
-}
-function cek_status_bayar($kode) {
-	$br = fetch_row("SELECT status_pesan FROM pesan WHERE id_pesan='$kode'");
-	if ($br == '1')
-		return true;
-	else
-		return false;
-}
-
-*/
 ?>
