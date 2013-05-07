@@ -1,0 +1,64 @@
+/**************************************************************
+ Global width classes
+ **************************************************************/
+
+.width75 {
+	width: 744px;
+}
+.width100 {
+	width: 994px;
+	margin: 0 auto;
+	text-align: left;
+}
+.rightBorder {
+	border-right: 6px solid #FFF;
+}
+/**************************************************************
+ Utility Classes
+ **************************************************************/
+
+
+.block {
+	display: block;
+}
+
+.alignJustify {
+	text-align: justify;
+}
+
+/**************************************************************
+ Form Elements
+ **************************************************************/
+
+form {
+	padding: 20px 0;
+}
+ 
+/**************************************************************
+ Header: holds title box, menu, main image and top actions
+ **************************************************************/
+
+#header {
+	margin-top: 25px;
+	background: url(../images/bg/title.gif) repeat-x top left;
+}
+/**************************************************************
+ #title: Red block with leaves, title and tagline
+ **************************************************************/
+
+#header #title {
+	color: #FFF;
+	padding-left: 20px;
+	border-bottom: 1px solid #9a2116;
+}
+#header #title h1 {
+	padding-top: 60px;
+	color: #FFF;
+	background: url(../images/bg/title_leaves.gif) no-repeat top right;
+}
+#header #title a {
+	color: #FFF5BD;
+}
+#header #title a:hover {
+	border-color: #FFF5BD;
+}
