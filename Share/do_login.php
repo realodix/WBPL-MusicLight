@@ -1,6 +1,6 @@
 <?php
 //file konfigurasi
-include ('admin/inc/config.php');
+include ('konfigurasi.php');
 
 
 	$username = $_POST['username'];
