@@ -15,7 +15,10 @@
 	<?php } ?>
 			
 	<hr>
-			
+	
+<?php
+if(isset($_SESSION['username'])){
+?>	
 	<p>Please enter your testimonial in columm below.</p>
 			
 	<form name="testimony" method="post" action="admin/wbpl_add-edit.php?action=insert_testimony">
@@ -36,3 +39,8 @@
 		<br> <br>
 		<input class="btn btn-primary" type="submit" name="testimony_submit" value="Post Testimony"/>
 	</form>
+<?php
+}else{
+	echo "Untuk mengisi testimony, Kamu harus login terlebih dahulu.";
+}
+?>

@@ -302,7 +302,7 @@ function wbpl_showCart() {
 								<td rowspan="2"><input type="text" name="qty' . $id . '" value="' . $qty . '" size="2" maxlength="3" /></td>
 
 								<td rowspan="2">Rp. ' . ($rows['price'] * $qty) . '</td>
-						
+
 								<td><a href="index.php?page=cart&view=cart&action=delete&id=' . $id . '" class="btn btn-danger">Hapus</a></td>
 							</tr>
 							<tr><td><br></td></tr>';
@@ -313,7 +313,7 @@ function wbpl_showCart() {
 				$qty = getQty();
 						
 				echo '<p>Sub Total: <strong> Rp. ' . $total . '</strong></p>';
-				
+
 				$_SESSION['totalbayar'] = $total;
 				echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
 				<a href="index.php?page=cart&view=cart&action=finish&kirim=true#fpb" class="btn btn-inverse">Next</a></div>';

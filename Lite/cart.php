@@ -1,5 +1,6 @@
 <?php
 
+if(isset($_SESSION['username'])){
 $view = $_GET['view'];
 
 switch ($view) {
@@ -193,5 +194,9 @@ switch ($view) {
 
 <?php
 	break;
+}
+
+}else{
+	echo "Kamu harus login terlebih dahulu.";
 }
 ?>
