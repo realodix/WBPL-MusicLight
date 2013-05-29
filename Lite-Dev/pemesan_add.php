@@ -21,12 +21,11 @@ if (isset($_POST['tambah'])) {
 	$kd_pos = $_POST['kd_pos'];
 	$No_telp = $_POST['No_telp'];
 	$Email = $_POST['Email'];
-	$id_kota = $_POST['id_kota'];
 	$_SESSION['id_kota'] = $id_kota;
 	$kd_customer=kode_customer();
 
-	$sql = "INSERT INTO customer(kd_pemesan,Nama,Alamat,kd_pos,No_telp,Email,id_kota,kd_pesan)
-		VALUES('$kd_customer', '$Nama', '$Alamat','$kd_pos','$No_telp','$Email','$id_kota','$kode_pesan')";
+	$sql = "INSERT INTO customer(kd_pemesan,Nama,Alamat,kd_pos,No_telp,Email,kd_pesan)
+		VALUES('$kd_customer', '$Nama', '$Alamat','$kd_pos','$No_telp','$Email','$kode_pesan')";
 
 	$result = mysql_query($sql) or die(mysql_error());
 

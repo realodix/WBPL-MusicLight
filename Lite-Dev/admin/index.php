@@ -61,11 +61,6 @@ require_once('../wbpl-function.php');
 			<li><a href="index.php?page=testimony">Testimony</a></li>
 		</ul>
 
-		<h4>Biaya kirim</h4>
-		<ul>
-			<li><a href="index.php?page=wbpl-biaya&action=view">Biaya per kota</a></li>
-		</ul>
-
 		<h4>Setting</h4>
 		<ul>
 			<li><a href="index.php?page=member">Member</a></li>
