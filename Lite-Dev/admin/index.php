@@ -49,7 +49,6 @@ require_once('../wbpl-function.php');
 		<h4>Catalog</h4>
 		<ul >
 			<li><a href="index.php?page=product">Product</a></li>
-			<li><a href="index.php?page=wbpl-brand&action=view">Brand & Ins. Type</a></li>
 		</ul>
 		
 		<h4>Pesan</h4>

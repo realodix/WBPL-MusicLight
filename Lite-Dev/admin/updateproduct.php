@@ -8,9 +8,8 @@
 	<table>
 	
 	<?php
-	$sql="select * from wbpl_product, wbpl_brand, wbpl_instype
-          where kd_product='$id' AND wbpl_product.nama_brand = wbpl_brand.nama_brand AND
-				wbpl_product.nama_instype = wbpl_instype.nama_instype";
+	$sql="select * from wbpl_product
+          where kd_product='$id'";
 	$result=mysql_query($sql) or die(mysql_error());
 	while($rows=mysql_fetch_array($result)){
 	?>
