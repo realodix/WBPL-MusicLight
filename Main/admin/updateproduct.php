@@ -64,10 +64,9 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="120">Deskription</td>
+			<td width="120">Description</td>
 			<td width="350">
-			<textarea name="product_deskripsi" rows="5" style="width: 512px;">
-				<?php echo $rows['deskripsi'];?></textarea>
+			<textarea name="product_deskripsi" rows="5" style="width: 512px;"><?php echo trim(htmlspecialchars($rows['deskripsi']));?></textarea>
 			</td>
 		</tr>
 		
