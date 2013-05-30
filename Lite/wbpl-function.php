@@ -28,22 +28,6 @@ function selected($t1, $t2) {
 		return "";
 }
 
-function combo_brand() {
-	echo "<option value='' selected>- Pilih Brand-</option>";
-	$query = query("SELECT nama_brand FROM wbpl_brand ORDER BY nama_brand ASC");
-	while ($row = mysql_fetch_row($query)) {
-		echo "<option value='$row[0]'> " . ucwords($row[0]) . " </option>";
-	}
-}
-
-function combo_ins_type($kode) {
-	echo "<option value='' selected>- Pilih Instrument Type-</option>";
-	$query = query("SELECT nama_instype FROM wbpl_instype ORDER BY nama_instype ASC");
-	while ($row = mysql_fetch_row($query)) {
-		echo "<option value='$row[0]'> " . ucwords($row[0]) . " </option>";
-	}
-}
-
 function kode_pesan() {
 	$kode_temp = fetch_row("SELECT kd_pesan FROM pesan ORDER BY kd_pesan DESC LIMIT 0,1");
 	if ($kode_temp == '')
@@ -101,41 +85,6 @@ function kode_product() {
 	
 		else
 			die("Kode product melebihi batas");
-	}
-	return $kode;
-}
-function kode_brand() {
-	$kode_temp = fetch_row("SELECT kd_brand FROM wbpl_brand ORDER BY kd_brand DESC LIMIT 0,1");
-	if ($kode_temp == '')
-		$kode = "B01";
-	else {
-		$jum = substr($kode_temp, 1, 2);
-		$jum++;
-		if ($jum <= 9)
-			$kode = "B0" . $jum;
-		elseif ($jum <= 99)
-			$kode = "B" . $jum;
-	
-		else
-			die("Kode Brand melebihi batas");
-	}
-	return $kode;
-}
-
-function kode_instype() {
-	$kode_temp = fetch_row("SELECT kd_instype FROM wbpl_instype ORDER BY kd_instype DESC LIMIT 0,1");
-	if ($kode_temp == '')
-		$kode = "I01";
-	else {
-		$jum = substr($kode_temp, 1, 2);
-		$jum++;
-		if ($jum <= 9)
-			$kode = "I0" . $jum;
-		elseif ($jum <= 99)
-			$kode = "I" . $jum;
-	
-		else
-			die("Kode Instrument Type melebihi batas");
 	}
 	return $kode;
 }
@@ -266,8 +215,8 @@ function wbpl_showCart() {
 				echo '<p>Sub Total: <strong> Rp. ' . $total . '</strong></p>';
 				
 				$_SESSION['totalbayar'] = $total;
-				echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
-				<a href="index.php?page=cart&view=cart&action=finish&kirim=true#fpb" class="btn btn-inverse">Next</a></div>';
+				echo '<div><button type="submit" class="btn btn-primary">Update Cart</button>
+				<a href="index.php?page=cart&view=cart&kirim=true#fpb" class="btn btn-inverse">Next</a></div>';
 				echo '</form>';
 
 			}else{
@@ -316,7 +265,7 @@ function wbpl_showCart() {
 
 				$_SESSION['totalbayar'] = $total;
 				echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
-				<a href="index.php?page=cart&view=cart&action=finish&kirim=true#fpb" class="btn btn-inverse">Next</a></div>';
+				<a href="index.php?page=cart&view=cart&kirim=true#fpb" class="btn btn-inverse">Next</a></div>';
 				echo '</form>';
 			}
 		}

@@ -8,9 +8,8 @@
 	<table>
 	
 	<?php
-	$sql="select * from wbpl_product, wbpl_brand, wbpl_instype
-          where kd_product='$id' AND wbpl_product.nama_brand = wbpl_brand.nama_brand AND
-				wbpl_product.nama_instype = wbpl_instype.nama_instype";
+	$sql="select * from wbpl_product
+          where kd_product='$id'";
 	$result=mysql_query($sql) or die(mysql_error());
 	while($rows=mysql_fetch_array($result)){
 	?>
@@ -64,10 +63,9 @@
 			</td>
 		</tr>
 		<tr>
-			<td width="120">Deskription</td>
+			<td width="120">Description</td>
 			<td width="350">
-			<textarea name="product_deskripsi" rows="5" style="width: 512px;">
-				<?php echo $rows['deskripsi'];?></textarea>
+			<textarea name="product_deskripsi" rows="5" style="width: 512px;"><?php echo trim(htmlspecialchars($rows['deskripsi']));?></textarea>
 			</td>
 		</tr>
 		

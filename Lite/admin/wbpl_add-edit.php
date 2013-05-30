@@ -2,13 +2,7 @@
 /*INDEX CASE
 *- insertproduct
 *- updateproduct
-*- insert_brand
-*- update_brand
-*- insert_instype
-*- update_instype
 *- update_profile
-*- insert_biaya
-*- update_biaya
 *- insert_testimony
 *- insert_registration
 */
@@ -133,86 +127,6 @@ switch ($action) {
 		mysql_close();
 	break;
 	
-	case 'insert_brand':
-		$kd_brand = kode_brand();
-		$nama_brand = $_POST['nama_brand'];
-
-
-		$sql = "INSERT INTO wbpl_brand(kd_brand,nama_brand)
-			VALUES('$kd_brand', '$nama_brand')";
-		$result = mysql_query($sql) or die(mysql_error());
-
-		//check if query successful
-		if ($result) {
-			header('location:index.php?page=wbpl-brand&action=view&status=0');
-		} else {
-			header('location:index.php?page=wbpl-brand&action=view&status=1');
-		}
-		mysql_close();
-	break;
-	
-	case 'update_brand':
-		$kd_brand = $_POST['kd_brand'];
-		$nama_brand = $_POST['nama_brand'];
-
-		$sql = " update wbpl_brand
-					set 
-						nama_brand='$nama_brand'
-					where 
-						kd_brand='$kd_brand'";
-
-		//echo $sql;
-		$result = mysql_query($sql) or die(mysql_error());
-
-		//check if query successful
-		if ($result) {
-			header('location:index.php?page=wbpl-brand&action=view&status=0');
-		} else {
-			header('location:index.php?page=wbpl-brand&action=view&status=1');
-		}
-		mysql_close();
-	break;
-	
-	case 'insert_instype':
-		$kd_instype = kode_instype();
-		$nama_instype = $_POST['nama_instype'];
-
-
-		$sql = "INSERT INTO wbpl_instype(kd_instype,nama_instype)
-			VALUES('$kd_instype', '$nama_instype')";
-		$result = mysql_query($sql) or die(mysql_error());
-
-		//check if query successful
-		if ($result) {
-			header('location:index.php?page=wbpl-brand&action=view&status=2');
-		} else {
-			header('location:index.php?page=wbpl-brand&action=view&status=3');
-		}
-		mysql_close();
-	break;
-	
-	case 'update_instype':
-		$kd_instype = $_POST['kd_instype'];
-		$nama_instype = $_POST['nama_instype'];
-
-		$sql = " update wbpl_instype
-						set 
-							nama_instype='$nama_instype'
-						where 
-							kd_instype='$kd_instype'";
-
-		//echo $sql;
-		$result = mysql_query($sql) or die(mysql_error());
-
-		//check if query successful
-		if ($result) {
-			header('location:index.php?page=wbpl-brand&action=view&status=2');
-		} else {
-			header('location:index.php?page=wbpl-brand&action=view&status=3');
-		}
-		mysql_close();
-	break;
-	
 	case 'update_profile':
 		$member_name = $_POST['Name'];
 		$member_address = $_POST['Address'];
@@ -233,43 +147,6 @@ switch ($action) {
 			header('location:index.php?page=member&status=0');
 		} else {
 			header('location:index.php?page=member&status=1');
-		}
-		mysql_close();
-	break;
-	
-	case 'insert_biaya':
-		$id_kota = $_POST['id_kota'];
-		$nama_kota = $_POST['nama_kota'];
-		$biaya = $_POST['biaya'];
-
-		$sql = "INSERT INTO biaya_kirim(id_kota,nama_kota,biaya)
-			VALUES('$id_kota', '$nama_kota','$biaya')";
-		$result = mysql_query($sql) or die(mysql_error());
-
-		//check if query successful
-		if ($result) {
-			header('location:index.php?page=wbpl-biaya&action=view&status=0');
-		} else {
-			header('location:index.php?page=wbpl-biaya&action=view&status=1');
-		}
-		mysql_close();
-	break;
-	
-	case 'update_biaya':
-		$id_kota = $_POST['id_kota'];
-		$nama_kota = $_POST['nama_kota'];
-		$biaya = $_POST['biaya'];
-
-		$sql = " update biaya_kirim set nama_kota='$nama_kota', biaya='$biaya' where id_kota='$id_kota'";
-
-		//echo $sql;
-		$result = mysql_query($sql) or die(mysql_error());
-
-		//check if query successful
-		if ($result) {
-			header('location:index.php?page=wbpl-biaya&action=view&status=0');
-		} else {
-			header('location:index.php?page=wbpl-biaya&action=view&status=1');
 		}
 		mysql_close();
 	break;

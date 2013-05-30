@@ -18,19 +18,14 @@
 		<tr>
 			<td width="120">Brand</td>
 			<td width="350">
-				<select name='kd_brand' style="width:164px;">
-						<?php echo combo_brand();?>
-				</select>
-		
+				<input name="kd_brand" type="text" id="nama_product" style="width:164px;"/>
 			</td>
 		</tr>
 		
 		<tr>
 			<td width="120">Instrument Type</td>
 			<td width="350">
-				<select
-				 name='kd_instype'><?php echo combo_ins_type()?></select>
-			
+				<input name="kd_instype" type="text" id="nama_product" style="width:164px;"/>
 			</td>
 		</tr>
 		
