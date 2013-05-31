@@ -74,7 +74,7 @@ if (isset($_POST['Home_Submit_Login'])) {
 
 }else if (isset($_POST['Home_Submit_Regiter'])) {
 
-	header("Location:../registration.php");
+	header("Location:../index.php?page=registration");
 
 }
 ?>
