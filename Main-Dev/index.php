@@ -123,7 +123,9 @@
 			echo ucfirst($_SESSION['username']);
 		}
 		?>
+		
 		<br>
+		
 		<?php
 		if(!isset($_SESSION['username'])){?>
 		<form method="post" action="admin/wbpl-login_check.php">
