@@ -306,6 +306,9 @@
         </div>
 		
         <div class="span3">
+			<?php
+				echo date("d-m-Y");
+			?>
 			<h3>Brand</h3>
 			<?php
 			include('kategori.php');
@@ -317,7 +320,7 @@
       </div>
 
       <div class="footer">
-        <p>Copyright &copy 2013 <a href="#">Budi Hermawan</a></p>
+        <p>Copyright &copy 2013 <a href="#">Budi Hermawan | 1401106964, Rio Sanjaya | 1401105690, Septianto Francisco | 1401104681, Ferdiansyah putra setiawan | 1401101906</a></p>
       </div>
 
     </div>

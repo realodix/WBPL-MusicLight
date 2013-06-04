@@ -7,11 +7,10 @@
 	/**
 	* Kategori Brand
 	*/
-	$kat="select wbpl_brand.nama_brand, wbpl_brand.kd_brand,
-            count(wbpl_product.nama_brand) as jumlah 
-          from wbpl_brand, wbpl_product 
-          where wbpl_product.nama_brand = wbpl_brand.nama_brand 
-          group by wbpl_brand.nama_brand";
+	$kat="select nama_brand,
+            count(nama_brand) as jumlah 
+          from wbpl_product 
+          group by nama_brand";
 	$hasil=mysql_query($kat) or die(mysql_error());
 	while($get_data=mysql_fetch_array($hasil)){
 	?>
@@ -36,11 +35,10 @@
 	/**
 	* Instrument Type
 	*/
-	$kat="select wbpl_instype.nama_instype,wbpl_instype.kd_instype,
-            count(wbpl_product.kd_product) as jumlah 
-            from wbpl_instype, wbpl_product 
-            where wbpl_product.nama_instype=wbpl_instype.nama_instype 
-            group by wbpl_instype.nama_instype";
+	$kat="select nama_instype,
+            count(nama_instype) as jumlah 
+            from wbpl_product 
+            group by nama_instype";
 	$hasil=mysql_query($kat) or die(mysql_error());
 	while($get_data=mysql_fetch_array($hasil)){
 	?>
