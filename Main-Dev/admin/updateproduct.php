@@ -65,9 +65,13 @@
 		</tr>
 		<tr>
 			<td width="120">Deskription</td>
-			<td width="350">
+			<td width="650">
 			<textarea name="product_deskripsi" rows="5" style="width: 512px;">
-				<?php echo $rows['deskripsi'];?></textarea>
+				<?php echo $rows['deskripsi'];?>
+			</textarea>
+			<script>
+                CKEDITOR.replace( 'product_deskripsi' );
+            </script>
 			</td>
 		</tr>
 		

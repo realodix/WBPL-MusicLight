@@ -20,12 +20,14 @@ require_once('../wbpl-function.php');
 		@import "../css/bootstrap.css";
 		@import "../css/master_admin.css";
 	</style>
+	
 
 	<script type="text/javascript">
 		function askUser() {
 			return window.confirm("Yakin ingin menghapus record ini?");
 		}
 	</script>
+	<script src="ckeditor/ckeditor.js"></script>
 
 </head>
 
