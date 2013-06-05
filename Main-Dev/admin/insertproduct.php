@@ -57,7 +57,7 @@
 		<tr>
 			<td width="120">Deskription</td>
 			<td width="650">
-			<textarea name='product_deskripsi' rows="5" style="width: 512px;">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
+			<textarea name='product_deskripsi' rows="5" style="width: 512px;"></textarea>
 			<script>
                 CKEDITOR.replace( 'product_deskripsi' );
             </script>
