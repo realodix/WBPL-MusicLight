@@ -21,7 +21,7 @@
 				<select name='kd_brand' style="width:164px;">
 						<?php echo combo_brand();?>
 				</select>
-				<input type='text' name='nama_brand' value='' id='nama_brand'>
+		
 			</td>
 		</tr>
 		
@@ -77,38 +77,3 @@
 		</tr>
 	</table></td>
 </form>
-
-<form>
-		<p>
-			Cari Kata :
-			<input type="text" name="nama_brand" id="nama_brand">
-		</p>
-	</form>
-
-	
-	<?php
-
-    $namePart=$_GET['term'];
-    $names = array();
-
-// Create connection
-        $con=mysqli_connect('localhost','root','','wbpl_ml'); 
-        // Query Database
-        $result = mysqli_query($con,"SELECT nama_brand FROM wbpl_product WHERE name like    '%".$namePart."%'");
-        $arr = '';
-
-                while($row = mysqli_fetch_array($result)){
-                    array_push($names,$row['name']);
-                }
-
-       echo json_encode($names);
-	?>
-	
-<script type="text/javascript">
-$(document).ready(function(){
-    $("#nama_brand").autocomplete({
-            source: "insertproduct.php",
-            minLength: 1
-     });
-});
-</script>

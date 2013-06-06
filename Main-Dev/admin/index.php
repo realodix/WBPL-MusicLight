@@ -100,8 +100,16 @@ require_once('../wbpl-function.php');
 </div>
 <!-- end full site width container -->
 
-<script src="../js/jquery-1.9.1.js"></script>
-<script src="../js/jquery-ui.js"></script>
 
 </body>
-</html>
+</html
+
+<?php
+
+/*
+}else{
+header("location:form_login.php");
+}
+*/
+ 
+?>
