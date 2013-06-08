@@ -102,7 +102,7 @@ require_once('../wbpl-function.php');
 
 
 </body>
-</html
+</html>
 
 <?php
 
