@@ -283,7 +283,7 @@
                 </div>
                 
                 <!-- Site JavaScript -->
-                <script type="text/javascript" src="js/jquery-1.3.1.min.js"></script>
+                <script type="text/javascript" src="js/jquery.min.js"></script>
                 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
                 <script type="text/javascript" src="js/jquery.ennui.contentslider.js"></script>
                 <script type="text/javascript">
