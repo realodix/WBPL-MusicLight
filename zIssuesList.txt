@@ -5,7 +5,6 @@
 #9 Transaction page (transaction.php)
 #10 [admin]Detail page (detail.php)
 
-#21 Update jQuery ke versi terbaru
 #36 Session time out in PHP
 #46 Pemilihan Brand & Instrument Type Menggunakan jQuery AutoComplete
 
@@ -45,3 +44,4 @@
 [closed] #14 Menghapus file yang tidak dibutuhkan
 [closed] #42 Menggunakan fungsi fetch bawaan.
 [closed] #8 Cart page (cart.php)
+[closed] #21 Update jQuery ke versi terbaru.
