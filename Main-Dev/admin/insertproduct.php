@@ -18,10 +18,7 @@
 		<tr>
 			<td width="120">Brand</td>
 			<td width="350">
-				<select name='kd_brand' style="width:164px;">
-						<?php echo combo_brand();?>
-				</select>
-		
+				<input type="text" name="nama_brand" id="nama_brand">
 			</td>
 		</tr>
 		
@@ -77,3 +74,13 @@
 		</tr>
 	</table></td>
 </form>
+
+<script type="text/javascript">
+$().ready(function() {
+	$("#nama_brand").autocomplete("insertproduct_pilih.php", {
+		width: 140,
+		matchContains: true,
+		selectFirst: true
+	});
+});
+</script>

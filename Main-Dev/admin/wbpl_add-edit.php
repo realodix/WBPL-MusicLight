@@ -21,7 +21,7 @@ switch ($action) {
 	case 'insertproduct':
 		$kd_product = kode_product();
 		$nama_product = $_POST['nama_product'];
-		$kd_brand = $_POST['kd_brand'];
+		$nama_brand = $_POST['nama_brand'];
 		$kd_instype = $_POST['kd_instype'];
 		$product_price = $_POST['product_price'];
 		$product_stock = $_POST['product_stock'];
@@ -44,7 +44,7 @@ switch ($action) {
 									deskripsi)
 				VALUES('$kd_product',
 						'$nama_product',
-						'$kd_brand',
+						'$nama_brand',
 						'$kd_instype',
 						'$product_price',
 						'$product_stock',
@@ -62,7 +62,7 @@ switch ($action) {
 									deskripsi)
 				VALUES('$kd_product',
 						'$nama_product',
-						'$kd_brand',
+						'$nama_brand',
 						'$kd_instype',
 						'$product_price',
 						'$product_stock',
