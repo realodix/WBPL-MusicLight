@@ -2,8 +2,8 @@
   $.fn.ContentSlider = function(options)
   {
     var defaults = {
-      leftBtn : 'images/templatemo_left_nav.png',
-      rightBtn : 'images/templatemo_right_nav.png',
+      leftBtn : 'images/wbpl_left_nav.png',
+      rightBtn : 'images/wbpl_right_nav.png',
       width : '610px',
       height : '250px',
       speed : 400,
