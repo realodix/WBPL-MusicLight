@@ -36,10 +36,15 @@ form {
 
 .ac_results {
 	padding: 0px;
-	border: 1px solid black;
+	border-color: rgba(82, 168, 236, 0.8);
 	background-color: white;
 	overflow: hidden;
 	z-index: 99999;
+	border-radius: 0px 0px 4px 4px;
+	
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+		box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
 }
 
 .ac_results ul {
@@ -48,6 +53,7 @@ form {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+
 }
 
 .ac_results li {
@@ -75,8 +81,7 @@ form {
 }
 
 .ac_over {
-	background-color: #0A246A;
-	color: white;
+	background-color: white;
 }
  
 /**************************************************************
