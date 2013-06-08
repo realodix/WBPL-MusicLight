@@ -103,13 +103,3 @@ require_once('../wbpl-function.php');
 
 </body>
 </html>
-
-<?php
-
-/*
-}else{
-header("location:form_login.php");
-}
-*/
- 
-?>
