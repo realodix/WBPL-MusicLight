@@ -1,9 +1,4 @@
-#3 Product page (product.php)
 #4 [admin]Insert product page (insertproduct.php)
-#5 [admin]Update product page (updateproduct.php)
-#6 [admin]Profile page (profile.php)
-#9 Transaction page (transaction.php)
-#10 [admin]Detail page (detail.php)
 
 #36 Session time out in PHP
 #46 Pemilihan Brand & Instrument Type Menggunakan jQuery AutoComplete
@@ -45,3 +40,8 @@
 [closed] #42 Menggunakan fungsi fetch bawaan.
 [closed] #8 Cart page (cart.php)
 [closed] #21 Update jQuery ke versi terbaru.
+[closed] #5 [admin]Update product page (updateproduct.php)
+[closed] #6 [admin]Profile page (profile.php)
+[closed] #9 Transaction page (transaction.php)
+[closed] #10 [admin]Detail page (detail.php)
+[closed] #3 Product page (product.php)
