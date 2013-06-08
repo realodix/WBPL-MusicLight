@@ -120,7 +120,7 @@ form {
 #footer {
 	font-size: 0.85em;
 	color: #BF9A82;
-	background: #D65600; /*url(../images/bg/footer.gif) repeat-x top left;*/
+	background: #D65600;
 	/* Force all browsers to respect space underneath footer - margins are inconsistent */
 	border-top: 5px solid #FFF;
 	border-bottom: 5px solid #FFF;
