@@ -28,14 +28,6 @@ function selected($t1, $t2) {
 		return "";
 }
 
-function combo_ins_type($kode) {
-	echo "<option value='' selected>- Pilih Instrument Type-</option>";
-	$query = query("SELECT nama_instype FROM wbpl_instype ORDER BY nama_instype ASC");
-	while ($row = mysql_fetch_row($query)) {
-		echo "<option value='$row[0]'> " . ucwords($row[0]) . " </option>";
-	}
-}
-
 function kode_pesan() {
 	$kode_temp = fetch_row("SELECT kd_pesan FROM pesan ORDER BY kd_pesan DESC LIMIT 0,1");
 	if ($kode_temp == '')

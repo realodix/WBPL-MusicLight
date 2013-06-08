@@ -25,9 +25,7 @@
 		<tr>
 			<td width="120">Instrument Type</td>
 			<td width="350">
-				<select
-				 name='kd_instype'><?php echo combo_ins_type()?></select>
-			
+				<input type="text" name="nama_instype" id="nama_instype">
 			</td>
 		</tr>
 		
@@ -77,7 +75,15 @@
 
 <script type="text/javascript">
 $().ready(function() {
-	$("#nama_brand").autocomplete("insertproduct_pilih.php", {
+	$("#nama_brand").autocomplete("insertproduct_pilih.php?action=nama_product", {
+		width: 140,
+		matchContains: true,
+		selectFirst: true
+	});
+});
+
+$().ready(function() {
+	$("#nama_instype").autocomplete("insertproduct_pilih.php?action=nama_instype", {
 		width: 140,
 		matchContains: true,
 		selectFirst: true

@@ -22,7 +22,7 @@ switch ($action) {
 		$kd_product = kode_product();
 		$nama_product = $_POST['nama_product'];
 		$nama_brand = $_POST['nama_brand'];
-		$kd_instype = $_POST['kd_instype'];
+		$nama_instype = $_POST['nama_instype'];
 		$product_price = $_POST['product_price'];
 		$product_stock = $_POST['product_stock'];
 		$product_deskripsi = $_POST['product_deskripsi'];
@@ -45,7 +45,7 @@ switch ($action) {
 				VALUES('$kd_product',
 						'$nama_product',
 						'$nama_brand',
-						'$kd_instype',
+						'$nama_instype',
 						'$product_price',
 						'$product_stock',
 						'$product_image',
@@ -63,7 +63,7 @@ switch ($action) {
 				VALUES('$kd_product',
 						'$nama_product',
 						'$nama_brand',
-						'$kd_instype',
+						'$nama_instype',
 						'$product_price',
 						'$product_stock',
 						'$product_image',
