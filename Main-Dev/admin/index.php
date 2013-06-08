@@ -28,8 +28,8 @@ require_once('../wbpl-function.php');
 		}
 	</script>
 	<script src="ckeditor/ckeditor.js"></script>
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-	<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/jquery-migrate.min.js"></script>
 	<script type='text/javascript' src="../js/jquery.autocomplete.js"></script>
 
 </head>
