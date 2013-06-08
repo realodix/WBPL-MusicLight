@@ -1,7 +1,4 @@
-#4 [admin]Insert product page (insertproduct.php)
-
 #36 Session time out in PHP
-#46 Pemilihan Brand & Instrument Type Menggunakan jQuery AutoComplete
 #47 CKEditor 4
 
 ### Fixes Issues
@@ -46,3 +43,5 @@
 [closed] #9 Transaction page (transaction.php)
 [closed] #10 [admin]Detail page (detail.php)
 [closed] #3 Product page (product.php)
+[closed] #46 Pemilihan Brand & Instrument Type Menggunakan jQuery AutoComplete
+[closed] #4 [admin]Insert product page (insertproduct.php)
