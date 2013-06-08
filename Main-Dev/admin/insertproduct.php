@@ -75,7 +75,7 @@
 
 <script type="text/javascript">
 $().ready(function() {
-	$("#nama_brand").autocomplete("insertproduct_pilih.php?action=nama_product", {
+	$("#nama_brand").autocomplete("wbpl_add-edit.php?action=insert_ac&ac=nama_product", {
 		width: 140,
 		matchContains: true,
 		selectFirst: true
@@ -83,7 +83,7 @@ $().ready(function() {
 });
 
 $().ready(function() {
-	$("#nama_instype").autocomplete("insertproduct_pilih.php?action=nama_instype", {
+	$("#nama_instype").autocomplete("wbpl_add-edit.php?action=insert_ac&ac=nama_instype", {
 		width: 140,
 		matchContains: true,
 		selectFirst: true

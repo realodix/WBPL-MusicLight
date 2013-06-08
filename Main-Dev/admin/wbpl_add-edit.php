@@ -133,6 +133,32 @@ switch ($action) {
 		mysql_close();
 	break;
 	
+	case 'insert_ac':
+		$q = strtolower($_GET["q"]);
+		if (!$q) return;
+
+		$ac = $_GET['ac'];
+		switch ($ac) {
+			case 'nama_product':
+				$sql = "select nama_brand from wbpl_brand where nama_brand LIKE '%$q%'";
+				$querysql = mysql_query($sql);
+				while($kt = mysql_fetch_array($querysql)) {
+					$kata = $kt['nama_brand'];
+					echo "$kata\n";
+				}
+			break;
+			
+			case 'nama_instype':
+				$sql = "select nama_instype from wbpl_instype where nama_instype LIKE '%$q%'";
+				$querysql = mysql_query($sql);
+				while($kt = mysql_fetch_array($querysql)) {
+					$kata = $kt['nama_instype'];
+					echo "$kata\n";
+				}
+			break;
+		}
+	break;
+	
 	case 'insert_brand':
 		$kd_brand = kode_brand();
 		$nama_brand = $_POST['nama_brand'];
