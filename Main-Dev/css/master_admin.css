@@ -108,49 +108,6 @@ form {
 	border-color: #FFF5BD;
 }
 
-
-/**************************************************************
- #content: Main content section (holds columns)
- *************************************************************
-
-#content {
-	margin-top: 20px;
-}
-.menu-sidebar{
-	padding-left: 10px;
-	margin-right: 10px;
-}
-
-table {
-	mmargin: 0 12px 20px 12px;
-	padding: 0;
-	mdisplay: block;
-	font-size: 1em;
-	border-collapse: collapse;
-}
-table th, table td {
-	text-align: left;
-	vertical-align: top;
-	padding: 4px 7px !important;
-	padding: 6px 10px;
-}
-thead th {
-	color: #FFF;
-	background-color: #5F371C;
-	border-bottom: 1px solid #261204;
-}
-tbody tr.dark {
-	background-color: #f1e3da;
-}
-tbody td {
-	border-bottom: 1px solid #e7d6cc;
-}
-tbody tr:hover td {
-	background: #fffdcd;
-	border-bottom: 1px solid #ffd909;
-}
-*/
-
 /**************************************************************
  #footer: Holds bottom menu and copyright info
  **************************************************************/
