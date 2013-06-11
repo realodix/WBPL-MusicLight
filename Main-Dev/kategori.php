@@ -20,7 +20,7 @@
 		<a href="index.php?page=product&view=detail&id=<?php echo $get_data['nama_brand']?>">
 		<?php
 		echo $get_data['nama_brand'];
-		echo "(".$get_data['jumlah'].")";
+		echo " (".$get_data['jumlah'].")";
 		?>
 		<!--(<?php echo $get_data['jumlah']?>)-->
 		</a>
@@ -49,7 +49,7 @@
 		<a href="index.php?page=product&view=detail&p=<?php echo $get_data['nama_instype']	?>">
 		<?php
 		echo $get_data['nama_instype'];
-		echo "(".$get_data['jumlah'].")";
+		echo " (".$get_data['jumlah'].")";
 		?>
 		</a>
 	</li>
