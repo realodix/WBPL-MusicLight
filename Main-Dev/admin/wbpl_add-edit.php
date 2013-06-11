@@ -348,8 +348,6 @@ switch ($action) {
 			header('location:../index.php?page=registration&err=6');
 		}else if(strlen($address_user) == 0){
 			header('location:../index.php?page=registration&err=7');
-		}else if(!strpos($address_user, "street")){
-			header('location:../index.php?page=registration&err=71');
 		}else if(strlen($phone_user) == 0){
 			header('location:../index.php?page=registration&err=8');
 		}
