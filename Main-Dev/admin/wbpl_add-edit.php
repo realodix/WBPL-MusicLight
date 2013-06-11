@@ -331,35 +331,35 @@ switch ($action) {
 		$email_user = $_POST['email_user'];
 		
 		if(strlen($name_user) == 0){
-			header('location:../registration.php?&err=1');
+			header('location:../index.php?page=registration&err=1');
 		}else if (filter_var($name_user, FILTER_VALIDATE_INT)){
-			header('location:../registration.php?err=2');
+			header('location:../index.php?page=registration&err=2');
 		}else if(strlen($username_user) == 0){
-			header('location:../registration.php?err=3');
+			header('location:../index.php?page=registration&err=3');
 		}else if(strlen($pass_user) == 0){
-			header('location:../registration.php?err=4');
+			header('location:../index.php?page=registration&err=4');
 		}else if(strlen($pass_user) < 5){
-			header('location:../registration.php?err=41');
+			header('location:../index.php?page=registration&err=41');
 		}else if(strlen($cpass_user) == 0){
-			header('location:../registration.php?err=5');
+			header('location:../index.php?page=registration&err=5');
 		}else if($cpass_user != $pass_user){
-			header('location:../registration.php?err=51');
+			header('location:../index.php?page=registration&err=51');
 		}else if(strlen($gender_user) == 0){
-			header('location:../registration.php?err=6');
+			header('location:../index.php?page=registration&err=6');
 		}else if(strlen($address_user) == 0){
-			header('location:../registration.php?err=7');
+			header('location:../index.php?page=registration&err=7');
 		}else if(!strpos($address_user, "street")){
-			header('location:../registration.php?err=71');
+			header('location:../index.php?page=registration&err=71');
 		}else if(strlen($phone_user) == 0){
-			header('location:../registration.php?err=8');
+			header('location:../index.php?page=registration&err=8');
 		}
 		//else if (!filter_var($phone_user, FILTER_VALIDATE_INT)){
 			//header('location:../registration.php?err=81');
 		//}
 		else if(strlen($email_user) == 0){
-			header('location:../registration.php?err=9');
+			header('location:../index.php?page=registration&err=9');
 		}else if(!filter_var($email_user, FILTER_VALIDATE_EMAIL)){
-			header('location:../registration.php?err=91');
+			header('location:../index.php?page=registration&err=91');
 		}else{
 			$cpass_user = md5($cpass_user);
 			
@@ -381,9 +381,9 @@ switch ($action) {
 
 			//check if query successful
 			if ($result) {
-				header('location:../registration.php?status=0');
+				header('location:../index.php?page=registration&status=0');
 			} else {
-				header('location:../registration.php?status=1');
+				header('location:../index.php?page=registration&status=1');
 			}
 			mysql_close();
 		}
