@@ -1,4 +1,4 @@
-#36 Session time out in PHP
+
 
 ### Fixes Issues
 [closed] #12 Logout page (logout.php)
@@ -45,3 +45,4 @@
 [closed] #46 Pemilihan Brand & Instrument Type Menggunakan jQuery AutoComplete
 [closed] #4 [admin]Insert product page (insertproduct.php)
 [closed] #47 CKEditor 4
+[closed] #36 Session time out in PHP
