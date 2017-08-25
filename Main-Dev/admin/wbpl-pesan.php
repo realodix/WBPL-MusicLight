@@ -30,15 +30,15 @@ while($rows=mysql_fetch_array($result)){
 ?>
 
 <tr>
-	<td><?php  echo $rows['kd_pesan'];?></td>
-	<td><?php  echo $rows['tgl_pesan'];?></td>
-	<td><?php  echo $rows['total_bayar'];?></td>
-	<td>
+  <td><?php  echo $rows['kd_pesan'];?></td>
+  <td><?php  echo $rows['tgl_pesan'];?></td>
+  <td><?php  echo $rows['total_bayar'];?></td>
+  <td>
 
-	<a class="btn btn-danger" href="index.php?page=wbpl-pesan&del=true&id=<?php echo $rows['kd_pesan']?>" onclick="return askUser()";>
-		<i class="icon-trash" title="Remove"></i>
-	</a>
-	</td>
+  <a class="btn btn-danger" href="index.php?page=wbpl-pesan&del=true&id=<?php echo $rows['kd_pesan']?>" onclick="return askUser()";>
+    <i class="icon-trash" title="Remove"></i>
+  </a>
+  </td>
 </tr>
 
 <?php
@@ -49,11 +49,11 @@ while($rows=mysql_fetch_array($result)){
 <tr><td align=right colspan='3'>
 <?php
 if (isset($_GET['status'])) {
-	if ($_GET['status'] == 0) {
-		echo " Operasi data berhasil";
-	} else {
-		echo "operasi gagal";
-	}
+  if ($_GET['status'] == 0) {
+    echo " Operasi data berhasil";
+  } else {
+    echo "operasi gagal";
+  }
 }
 ?>
 </td>
@@ -68,4 +68,3 @@ mysql_close();
 
 //tampilan siapa yang login
 ?>
-

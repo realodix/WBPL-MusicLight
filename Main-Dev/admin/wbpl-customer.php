@@ -15,9 +15,9 @@ include('../wbpl-config.php');
  * kode untuk menghapus data
  */
 if(isset($_GET['del'])){
-	$kd_customer=$_GET['id'];
-	$hapus ="delete from customer where kd_pemesan='$kd_customer'";
-	mysql_query($hapus);
+  $kd_customer=$_GET['id'];
+  $hapus ="delete from customer where kd_pemesan='$kd_customer'";
+  mysql_query($hapus);
 }
 $sql="";
 if(isset($_POST['btnCari'])){
@@ -31,22 +31,22 @@ $sql="SELECT * FROM  customer";
 $result=mysql_query($sql) or die(mysql_error());
 
 
-//proses menampilkan data 
+//proses menampilkan data
 while($rows=mysql_fetch_array($result)){
 ?>
 <tr>
-	<td><?php echo $rows['kd_pemesan']; ?></td>
-	<td><?php echo $rows['Nama']; ?></td>
-	<td><?php echo $rows['Alamat']; ?></td>
-	<td><?php echo $rows['kd_pos']; ?></td>
-	<td><?php echo $rows['No_telp']; ?></td>
-	<td><?php echo $rows['Email']; ?></td>
-	<td><?php echo $rows['kd_pesan']; ?></td>
+  <td><?php echo $rows['kd_pemesan']; ?></td>
+  <td><?php echo $rows['Nama']; ?></td>
+  <td><?php echo $rows['Alamat']; ?></td>
+  <td><?php echo $rows['kd_pos']; ?></td>
+  <td><?php echo $rows['No_telp']; ?></td>
+  <td><?php echo $rows['Email']; ?></td>
+  <td><?php echo $rows['kd_pesan']; ?></td>
 
-	<td>
-		<a class="btn btn-danger" href="index.php?page=wbpl-customer&del=true&id=<?php echo $rows['kd_pemesan']?>"  onclick="return askUser()";>
-		<i class="icon-trash" title="Remove"></i></a>
-	</td>
+  <td>
+    <a class="btn btn-danger" href="index.php?page=wbpl-customer&del=true&id=<?php echo $rows['kd_pemesan']?>"  onclick="return askUser()";>
+    <i class="icon-trash" title="Remove"></i></a>
+  </td>
 </tr>
 
 <?php
@@ -54,18 +54,18 @@ while($rows=mysql_fetch_array($result)){
 ?>
 
 <tr>
-	<td align=right colspan='6'>
-	<?php 
-	if(isset($_GET['status'])){
-	if($_GET['status']==0){
-	echo " Operasi data berhasil";
-	}else{
-	echo "operasi gagal";
-	}
-	}
-	?>
-	</td>
-	<td></td>
+  <td align=right colspan='6'>
+  <?php
+  if(isset($_GET['status'])){
+  if($_GET['status']==0){
+  echo " Operasi data berhasil";
+  }else{
+  echo "operasi gagal";
+  }
+  }
+  ?>
+  </td>
+  <td></td>
 </tr>
 
 <tr></tr>
@@ -76,4 +76,3 @@ while($rows=mysql_fetch_array($result)){
 mysql_close(); //close database
 
 ?>
-

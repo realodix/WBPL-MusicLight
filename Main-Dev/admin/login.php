@@ -43,7 +43,7 @@
 
     </style>
     <link href="../css/bootstrap-responsive.css" rel="stylesheet">
-	<link href="../css/master.css" rel="stylesheet">
+  <link href="../css/master.css" rel="stylesheet">
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -60,27 +60,27 @@
         <h2 class="form-signin-heading">Music Light</h2>
         <input name="username" id="username" type="text" class="input-block-level" placeholder="Username">
         <input name="password" id="password" type="password" class="input-block-level" placeholder="Password">
-		
-		<label class="text-error">
+
+    <label class="text-error">
         <?php
 
-		if (isset($_GET['status'])) {
-			if ($_GET['status'] == 1) {
-				echo "The username or password you entered is incorrect";
-			}if ($_GET['status'] == 2) {
-				echo "You are now logged out.";
-			}
-		}
-		?>
+    if (isset($_GET['status'])) {
+      if ($_GET['status'] == 1) {
+        echo "The username or password you entered is incorrect";
+      }if ($_GET['status'] == 2) {
+        echo "You are now logged out.";
+      }
+    }
+    ?>
         </label>
-		
+
         <label class="checkbox">
           <input type="checkbox" value="remember-me"> Remember me
         </label>
-		<input type="submit" class="btn btn-large" name="Submit_Login" value="Sign in"/>
-		or
-		<input class="btn btn-large btn-primary" type="submit" name="Home_Submit_Regiter" value="Register"/> </br></br>
-		<a href="../">← Back to Music Light</a>
+    <input type="submit" class="btn btn-large" name="Submit_Login" value="Sign in"/>
+    or
+    <input class="btn btn-large btn-primary" type="submit" name="Home_Submit_Regiter" value="Register"/> </br></br>
+    <a href="../">← Back to Music Light</a>
       </form>
     </div>
 
