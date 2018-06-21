@@ -70,13 +70,13 @@ switch ($view) {
             <tr>
                 <td>Stock</td>
                 <td>: <?php
-                            $product_stock = $get_data['stock'];
-                            if ($product_stock == 0 ){
-                                echo 'Stock Not Avaible';
-                            }else{
-                                echo $get_data['stock'];
-                            }
-                            ?>
+                        $product_stock = $get_data['stock'];
+                        if ($product_stock == 0 ){
+                            echo 'Stock Not Avaible';
+                        }else{
+                            echo $get_data['stock'];
+                        }
+                       ?>
                 </em></td>
             </tr>
             <tr>
@@ -187,13 +187,13 @@ switch ($view) {
             <tr>
                 <td>Stock</td>
                 <td>: <?php
-                            $product_stock = $get_data['stock'];
-                            if ($product_stock == 0 ){
-                                echo 'Stock Not Avaible';
-                            }else{
-                                echo $get_data['stock'];
-                            }
-                            ?>
+                        $product_stock = $get_data['stock'];
+                        if ($product_stock == 0 ){
+                            echo 'Stock Not Avaible';
+                        }else{
+                            echo $get_data['stock'];
+                        }
+                        ?>
                 </em></td>
             </tr>
             <tr>
