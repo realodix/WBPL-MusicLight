@@ -4,7 +4,14 @@ $username	= "root";
 $password	= "";
 $db_name	= "wbpl_ml";
 
-mysql_connect("$host", "$username", "$password") or die("cannot connect" . mysql_error());
+$mysqli = new mysqli($host, $username, $password);
 
-mysql_select_db("$db_name") or die(mysql_error());
+/* check connection */
+if ($mysqli->connect_errno) {
+    printf("Connect failed: %s\n", $mysqli->connect_error);
+    exit();
+}
+
+/* change db to world db */
+$mysqli->select_db($db_name);
 ?>

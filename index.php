@@ -234,10 +234,10 @@
                 <div class="cs_wrapper">
                     <div class="cs_slider">
                     <?php
-                    $sql="select * from wbpl_product order by rand() limit 3";
-                    $hasil=mysql_query($sql) or die(mysql_error());
+                    $sql = "select * from wbpl_product order by rand() limit 3";
+                    $hasil = $mysqli->query($sql);
 
-                    while($get_data=mysql_fetch_array($hasil)){
+                    while($get_data = $hasil -> fetch_array()){
                     ?>
 
                     <div class="cs_article">

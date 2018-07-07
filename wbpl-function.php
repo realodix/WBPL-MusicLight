@@ -1,7 +1,7 @@
 <?php
 
 function query($qry) {
-    $result = mysql_query($qry) or die("Gagal melakukan query pada :
+    $result = $mysqli->query($qry) or die("Gagal melakukan query pada :
      <br>$qry<br><br>Kode Salah : <br>&nbsp;&nbsp;&nbsp;" . mysql_error() . "!");
     return $result;
 }
@@ -216,8 +216,8 @@ function wbpl_showCart() {
                 $total = 0;
                 foreach ($contents as $id => $qty) {
                     $sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
-                    $result = mysql_query($sql) or die(mysql_error());
-                    $rows=mysql_fetch_array($result);
+                    $result = $mysqli->query($sql);
+                    $rows = $result -> fetch_array();
 
                     echo     '<tr>
                                 <td>Brand</td>
@@ -265,8 +265,8 @@ function wbpl_showCart() {
                 $total = 0;
                 foreach ($contents as $id => $qty) {
                     $sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
-                    $result = mysql_query($sql) or die(mysql_error());
-                    $rows=mysql_fetch_array($result);
+                    $result = $mysqli->query($sql);
+                    $rows = $result -> fetch_array();
 
                     echo     '<tr>
                                 <td>Brand</td>

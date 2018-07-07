@@ -15,11 +15,11 @@ $password = $_POST['password'];
 
 $password = md5($password);
 
-$sql= "select * from wbpl_member
-    where
-    username='$username' and password='$password' ";
+$sql = "select * from wbpl_member
+        where
+        username='$username' and password='$password' ";
 
-$userquery = mysql_query($sql) or die(mysql_error());
+$userquery = $mysqli->query($sql);
 
 if (mysql_num_rows($userquery) == 1) {
 
@@ -55,13 +55,13 @@ if (isset($_POST['Home_Submit_Login'])) {
 
     $password = md5($password);
 
-    $sql= "select * from wbpl_member
-      where
-      username='$username' and password='$password' ";
+    $sql = "select * from wbpl_member
+            where
+            username='$username' and password='$password' ";
 
-    $userquery = mysql_query($sql) or die(mysql_error());
+    $userquery = $mysqli->query($sql);
 
-    if (mysql_num_rows($userquery) == 1) {
+    if ($userquery->num_rows == 1) {
       header('location:../index.php');
       $valid = true;
       $_SESSION['username'] = $username;

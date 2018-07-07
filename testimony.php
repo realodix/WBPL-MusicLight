@@ -4,8 +4,8 @@
     <?php
 
     $sql="SELECT * FROM  wbpl_testimony where testimony_status='approved' ";
-    $result=mysql_query($sql) or die(mysql_error());
-    while($rows=mysql_fetch_array($result)){
+    $result = $mysqli->query($sql);
+    while($rows = $result -> fetch_array()){
     ?>
 
     <p><b>#<?php echo $rows['kd_testimony'];?></b> <br>

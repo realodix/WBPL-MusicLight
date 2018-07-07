@@ -32,10 +32,10 @@
           ORDER BY `wbpl_product`.`kd_product` ASC ";
   }
 
-  $result=mysql_query($sql) or die(mysql_error());
+  $result = $mysqli->query($sql);
 
   //proses menampilkan data
-  while($rows=mysql_fetch_array($result)){
+  while($rows = $result -> fetch_array()){
   ?>
   <tr>
     <td><?php  echo $rows['kd_product'];?></td>
@@ -90,6 +90,6 @@
 
 <?php
 
-mysql_close();
+$result -> close();
 
 ?>

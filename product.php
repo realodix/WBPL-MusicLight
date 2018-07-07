@@ -7,6 +7,7 @@ switch ($view) {
         <?php
         //tentukan nilai batas
         $batas=2;
+
         if(isset($_GET['halaman'])){
             $halaman = $_GET['halaman'];
         }
@@ -23,20 +24,20 @@ switch ($view) {
         $sql=null;
 
         if(isset($_GET['id'])){
-            $product_brand=$_GET['id'];
-            $sql="select * from wbpl_product where nama_brand='$product_brand'
+            $product_brand = $_GET['id'];
+            $sql = "select * from wbpl_product where nama_brand='$product_brand'
             limit $posisi,$batas";
         }else if(isset($_GET['p'])){
-            $product_ins_type=$_GET['p'];
-            $sql="select * from wbpl_product where nama_instype='$product_ins_type'
+            $product_ins_type = $_GET['p'];
+            $sql = "select * from wbpl_product where nama_instype='$product_ins_type'
             limit $posisi,$batas ";
         }else{
-            $sql="select * from wbpl_product  limit $posisi,$batas";
+            $sql = "select * from wbpl_product  limit $posisi,$batas";
         }
 
-        $hasil=mysql_query($sql) or die(mysql_error());
+        $hasil = $mysqli->query($sql);
 
-        while($get_data=mysql_fetch_array($hasil)){
+        while($get_data = $hasil -> fetch_array()){
         ?>
 
         <h4><?php echo $get_data['nama_product']?></h4>
@@ -100,8 +101,8 @@ switch ($view) {
         }
 
         //=============CUT HERE====================================
-        $tampil2=mysql_query("select * from wbpl_product");
-        $jmldata=mysql_num_rows($tampil2);
+        $tampil2 = $mysqli-> query("select * from wbpl_product");
+        $jmldata = $tampil2 -> num_rows;
         $jumlah_halaman=ceil($jmldata/$batas);
 
         echo "<br> <br> Halaman: ";
@@ -111,7 +112,7 @@ switch ($view) {
         }else{
             echo "<b> $i</b> | ";
         }
-        mysql_close();
+        $tampil2 -> close();
         ?>
 
         <br>
@@ -141,19 +142,21 @@ switch ($view) {
 
         if(isset($_GET['id'])){
             $product_brand=$_GET['id'];
-            $sql="select * from wbpl_product where nama_brand='$product_brand'
+
+            $sql = "select * from wbpl_product where nama_brand='$product_brand'
             limit $posisi,$batas";
         }else if(isset($_GET['p'])){
             $product_ins_type=$_GET['p'];
-            $sql="select * from wbpl_product where nama_instype='$product_ins_type'
+
+            $sql = "select * from wbpl_product where nama_instype='$product_ins_type'
             limit $posisi,$batas ";
         }else{
-            $sql="select * from wbpl_product  limit $posisi,$batas";
+            $sql = "select * from wbpl_product  limit $posisi,$batas";
         }
 
-        $hasil=mysql_query($sql) or die(mysql_error());
+        $hasil = $mysqli->query($sql);
 
-        while($get_data=mysql_fetch_array($hasil)){
+        while($get_data = $hasil -> fetch_array()){
         ?>
 
         <h4><?php echo $get_data['nama_product']?></h4>
@@ -217,39 +220,39 @@ switch ($view) {
 
         //=============CUT HERE====================================
         if(isset($_GET['id'])){
-            $product_brand=$_GET['id'];
-            $tampil2=mysql_query("select * from wbpl_product where nama_brand='$product_brand'");
+            $product_brand = $_GET['id'];
+            $tampil2 = $mysqli->query("select * from wbpl_product where nama_brand='$product_brand'");
 
-            $jmldata=mysql_num_rows($tampil2);
-            $jumlah_halaman=ceil($jmldata/$batas);
+            $jmldata = $tampil2 -> num_rows;
+            $jumlah_halaman = ceil($jmldata/$batas);
 
             echo "<br> <br> Halaman :";
-            for($i=1;$i<=$jumlah_halaman;$i++)
+            for($i=1; $i<=$jumlah_halaman; $i++)
 
             if ($i!=$halaman){
-                echo "<a href=index.php?page=detail&id=". $product_brand ."&halaman=$i> $i</a> | ";
+                echo "<a href=index.php?page=product&view=detail&id=". $product_brand ."&halaman=$i> $i</a> | ";
             }else{
                 echo "<b> $i</b> | ";
             }
 
         }else if(isset($_GET['p'])){
-            $product_ins_type=$_GET['p'];
-            $tampil2=mysql_query("select * from wbpl_product where nama_instype='$product_ins_type'");
+            $product_ins_type = $_GET['p'];
+            $tampil2 = $mysqli->query("select * from wbpl_product where nama_instype='$product_ins_type'");
 
-            $jmldata=mysql_num_rows($tampil2);
+            $jmldata = $tampil2 -> num_rows;
             $jumlah_halaman=ceil($jmldata/$batas);
 
             echo "<br> <br> Halaman :";
-            for($i=1;$i<=$jumlah_halaman;$i++)
+            for($i=1; $i<=$jumlah_halaman; $i++)
 
             if ($i!=$halaman){
-                echo "<a href=index.php?page=detail&p=". $product_ins_type ."&halaman=$i> $i</a> | ";
+                echo "<a href=index.php?page=product&view=detail&p=". $product_ins_type ."&halaman=$i> $i</a> | ";
             }else{
                 echo "<b> $i</b> | ";
             }
         }
 
-        mysql_close();
+        $tampil2 -> close();
         ?>
 
         <br>
