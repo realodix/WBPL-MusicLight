@@ -25,14 +25,14 @@ switch ($view) {
 
         if (isset($_GET['id'])) {
             $product_brand = $_GET['id'];
-            $sql = "select * from wbpl_product where nama_brand='$product_brand'
+            $sql = "SELECT * FROM wbpl_product WHERE nama_brand='$product_brand'
             limit $posisi,$batas";
         } elseif (isset($_GET['p'])) {
             $product_ins_type = $_GET['p'];
-            $sql = "select * from wbpl_product where nama_instype='$product_ins_type'
+            $sql = "SELECT * FROM wbpl_product WHERE nama_instype='$product_ins_type'
             limit $posisi,$batas ";
         } else {
-            $sql = "select * from wbpl_product  limit $posisi,$batas";
+            $sql = "SELECT * FROM wbpl_product LIMIT $posisi,$batas";
         }
 
         $hasil = $mysqli->query($sql);
@@ -101,7 +101,7 @@ switch ($view) {
         }
 
         //=============CUT HERE====================================
-        $tampil2 = $mysqli->query('select * from wbpl_product');
+        $tampil2 = $mysqli->query('SELECT * FROM wbpl_product');
         $jmldata = $tampil2->num_rows;
         $jumlah_halaman = ceil($jmldata / $batas);
 
@@ -144,15 +144,15 @@ switch ($view) {
         if (isset($_GET['id'])) {
             $product_brand = $_GET['id'];
 
-            $sql = "select * from wbpl_product where nama_brand='$product_brand'
+            $sql = "SELECT * FROM wbpl_product WHERE nama_brand='$product_brand'
             limit $posisi,$batas";
         } elseif (isset($_GET['p'])) {
             $product_ins_type = $_GET['p'];
 
-            $sql = "select * from wbpl_product where nama_instype='$product_ins_type'
+            $sql = "SELECT * FROM wbpl_product WHERE nama_instype='$product_ins_type'
             limit $posisi,$batas ";
         } else {
-            $sql = "select * from wbpl_product  limit $posisi,$batas";
+            $sql = "SELECT * FROM wbpl_product LIMIT $posisi,$batas";
         }
 
         $hasil = $mysqli->query($sql);

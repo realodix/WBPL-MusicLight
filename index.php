@@ -232,7 +232,7 @@
                 <div class="cs_wrapper">
                     <div class="cs_slider">
                     <?php
-                    $sql = 'select * from wbpl_product order by rand() limit 3';
+                    $sql = 'SELECT * FROM wbpl_product ORDER BY rand() LIMIT 3';
                 $hasil = $mysqli->query($sql);
 
                 while ($get_data = $hasil->fetch_array()) {

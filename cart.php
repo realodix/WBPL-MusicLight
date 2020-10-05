@@ -100,8 +100,8 @@ if (isset($_SESSION['username'])) {
                             <table>
 <?php
                             $asdf = $_SESSION['username'];
-                    $sql = "select * from wbpl_member
-                            where username='$asdf'";
+                    $sql = "SELECT * from wbpl_member
+                            WHERE username='$asdf'";
                     $hasil = mysql_query($sql) or die(mysql_error());
 
                     while ($rows = mysql_fetch_array($hasil)) {

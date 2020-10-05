@@ -6,6 +6,7 @@ $password = '';
 $db_name = 'wbpl_ml';
 
 $mysqli = new mysqli($host, $username, $password);
+mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 /* check connection */
 if ($mysqli->connect_errno) {
