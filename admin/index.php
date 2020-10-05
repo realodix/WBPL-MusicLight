@@ -17,8 +17,8 @@ require_once '../wbpl-function.php';
     <title>Administrasi website </title>
 
     <style type="text/css" media="all">
-        @import "../css/bootstrap.css";
-        @import "../css/master_admin.css";
+        @import "../resources/css/bootstrap.css";
+        @import "../resources/css/master_admin.css";
     </style>
 
 
@@ -28,9 +28,9 @@ require_once '../wbpl-function.php';
         }
     </script>
     <script src="ckeditor/ckeditor.js"></script>
-    <script type="text/javascript" src="../js/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/jquery-migrate.min.js"></script>
-    <script type='text/javascript' src="../js/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="../resources/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../resources/js/jquery-migrate.min.js"></script>
+    <script type='text/javascript' src="../resources/js/jquery.autocomplete.js"></script>
 
 </head>
 

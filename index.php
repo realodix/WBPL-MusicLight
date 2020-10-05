@@ -16,9 +16,9 @@
   <meta name="author" content="">
 
   <style type="text/css" media="all">
-    @import "css/bootstrap.css";
-    @import "css/bootstrap-responsive.css";
-    @import "css/master.css";
+    @import "resources/css/bootstrap.css";
+    @import "resources/css/bootstrap-responsive.css";
+    @import "resources/css/master.css";
   </style>
 
   <style type="text/css">
@@ -92,7 +92,7 @@
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
-    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../resources/js/html5shiv.js"></script>
   <![endif]-->
 </head>
 
@@ -273,9 +273,9 @@
             </div>
 
             <!-- Site JavaScript -->
-            <script type="text/javascript" src="js/jquery.min.js"></script>
-            <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-            <script type="text/javascript" src="js/jquery.ennui.contentslider.js"></script>
+            <script type="text/javascript" src="resources/js/jquery.min.js"></script>
+            <script type="text/javascript" src="resources/js/jquery.easing.1.3.js"></script>
+            <script type="text/javascript" src="resources/js/jquery.ennui.contentslider.js"></script>
             <script type="text/javascript">
                 $(function() {
                 $('#one').ContentSlider({

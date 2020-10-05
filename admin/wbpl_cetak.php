@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Music Light | Print</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../resources/css/bootstrap.css" />
   </head>
   <body>
     <div class="text-center">
