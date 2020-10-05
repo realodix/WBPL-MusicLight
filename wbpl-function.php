@@ -293,7 +293,7 @@ if (! function_exists('wbpl_showCart')) {
                         $result = $mysqli->query($sql);
                         $rows = $result->fetch_array();
 
-                        echo     '<tr>
+                        echo'<tr>
                                 <td>Brand</td>
                                 <td colspan="4">'.$rows['kd_product'].'</td>
                             <tr>
