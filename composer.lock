@@ -4,8 +4,60 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e04d9deaa6615a3759859508312adbd4",
+    "content-hash": "0d2c61944732b848a3b8d0c5c2637bb7",
     "packages": [
+        {
+            "name": "envms/fluentpdo",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/envms/fluentpdo.git",
+                "reference": "8684e2d22ebbcdf4cdcdf7bbe7558459ceb31260"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/envms/fluentpdo/zipball/8684e2d22ebbcdf4cdcdf7bbe7558459ceb31260",
+                "reference": "8684e2d22ebbcdf4cdcdf7bbe7558459ceb31260",
+                "shasum": ""
+            },
+            "require-dev": {
+                "envms/fluent-test": "^1.0",
+                "phpunit/phpunit": "^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Envms\\FluentPDO\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0",
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "envms",
+                    "homepage": "https://env.ms"
+                }
+            ],
+            "description": "FluentPDO is a quick and light PHP library for rapid query building. It features a smart join builder, which automatically creates table joins.",
+            "homepage": "https://github.com/envms/fluentpdo",
+            "keywords": [
+                "builder",
+                "database",
+                "db",
+                "dbal",
+                "fluent",
+                "mysql",
+                "oracle",
+                "pdo",
+                "query"
+            ],
+            "time": "2020-09-30T14:24:57+00:00"
+        }
+    ],
+    "packages-dev": [
         {
             "name": "composer/semver",
             "version": "1.7.1",
@@ -284,56 +336,6 @@
                 }
             ],
             "time": "2020-05-25T17:44:05+00:00"
-        },
-        {
-            "name": "envms/fluentpdo",
-            "version": "v2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/envms/fluentpdo.git",
-                "reference": "8684e2d22ebbcdf4cdcdf7bbe7558459ceb31260"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/envms/fluentpdo/zipball/8684e2d22ebbcdf4cdcdf7bbe7558459ceb31260",
-                "reference": "8684e2d22ebbcdf4cdcdf7bbe7558459ceb31260",
-                "shasum": ""
-            },
-            "require-dev": {
-                "envms/fluent-test": "^1.0",
-                "phpunit/phpunit": "^8.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Envms\\FluentPDO\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0",
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "envms",
-                    "homepage": "https://env.ms"
-                }
-            ],
-            "description": "FluentPDO is a quick and light PHP library for rapid query building. It features a smart join builder, which automatically creates table joins.",
-            "homepage": "https://github.com/envms/fluentpdo",
-            "keywords": [
-                "builder",
-                "database",
-                "db",
-                "dbal",
-                "fluent",
-                "mysql",
-                "oracle",
-                "pdo",
-                "query"
-            ],
-            "time": "2020-09-30T14:24:57+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
@@ -2095,7 +2097,6 @@
             "time": "2020-09-15T12:23:47+00:00"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
