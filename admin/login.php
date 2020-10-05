@@ -65,11 +65,12 @@
         <?php
 
     if (isset($_GET['status'])) {
-      if ($_GET['status'] == 1) {
-        echo "The username or password you entered is incorrect";
-      }if ($_GET['status'] == 2) {
-        echo "You are now logged out.";
-      }
+        if ($_GET['status'] == 1) {
+            echo 'The username or password you entered is incorrect';
+        }
+        if ($_GET['status'] == 2) {
+            echo 'You are now logged out.';
+        }
     }
     ?>
         </label>

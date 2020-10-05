@@ -4,7 +4,7 @@
         <tr>
             <td width="120">Product ID</td>
             <td width="350">
-            <?php echo kode_product();?>
+            <?php echo kode_product(); ?>
             </td>
         </tr>
 

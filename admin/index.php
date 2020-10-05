@@ -1,11 +1,11 @@
 <?php
 session_start();
-if(!isset($_SESSION['username'])){
-        header("location:login.php");
-    }
+if (! isset($_SESSION['username'])) {
+    header('location:login.php');
+}
 
 require_once '../wbpl-config.php';
-require_once('../wbpl-function.php');
+require_once '../wbpl-function.php';
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -84,11 +84,10 @@ require_once('../wbpl-function.php');
             <?php
             /* kode untuk meload halaman yang berbeda*/
             if (isset($_GET['page'])) {
-                $page = $_GET['page'] . ".php";
-                include ($page);
-
+                $page = $_GET['page'].'.php';
+                include $page;
             } else {
-                include ('product.php');
+                include 'product.php';
             }
             ?>
         </div>

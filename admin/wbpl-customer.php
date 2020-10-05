@@ -1,5 +1,5 @@
 <?php
-include('../wbpl-config.php');
+include '../wbpl-config.php';
 
 ?>
 
@@ -14,26 +14,25 @@ include('../wbpl-config.php');
 /*
  * kode untuk menghapus data
  */
-if(isset($_GET['del'])){
-  $kd_customer=$_GET['id'];
-  $hapus ="delete from customer where kd_pemesan='$kd_customer'";
-  mysql_query($hapus);
+if (isset($_GET['del'])) {
+    $kd_customer = $_GET['id'];
+    $hapus = "delete from customer where kd_pemesan='$kd_customer'";
+    mysql_query($hapus);
 }
-$sql="";
-if(isset($_POST['btnCari'])){
-$cari=$_POST['cari'];
-//ambil data dari table admin
-$sql="SELECT * FROM  customer where kd_pemesan like '%$cari%'";
-}else{
-$sql="SELECT * FROM  customer";
+$sql = '';
+if (isset($_POST['btnCari'])) {
+    $cari = $_POST['cari'];
+    //ambil data dari table admin
+    $sql = "SELECT * FROM  customer where kd_pemesan like '%$cari%'";
+} else {
+    $sql = 'SELECT * FROM  customer';
 }
 
-$result=mysql_query($sql) or die(mysql_error());
-
+$result = mysql_query($sql) or die(mysql_error());
 
 //proses menampilkan data
-while($rows=mysql_fetch_array($result)){
-?>
+while ($rows = mysql_fetch_array($result)) {
+    ?>
 <tr>
   <td><?php echo $rows['kd_pemesan']; ?></td>
   <td><?php echo $rows['Nama']; ?></td>
@@ -56,12 +55,12 @@ while($rows=mysql_fetch_array($result)){
 <tr>
   <td align=right colspan='6'>
   <?php
-  if(isset($_GET['status'])){
-  if($_GET['status']==0){
-  echo " Operasi data berhasil";
-  }else{
-  echo "operasi gagal";
-  }
+  if (isset($_GET['status'])) {
+      if ($_GET['status'] == 0) {
+          echo ' Operasi data berhasil';
+      } else {
+          echo 'operasi gagal';
+      }
   }
   ?>
   </td>

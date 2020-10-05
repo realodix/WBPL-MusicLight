@@ -6,49 +6,50 @@ switch ($view) {
         <h2> Pilih Product yang mau dibeli </h2>
         <?php
         //tentukan nilai batas
-        $batas=2;
+        $batas = 2;
 
-        if(isset($_GET['halaman'])){
+        if (isset($_GET['halaman'])) {
             $halaman = $_GET['halaman'];
         }
 
-        $posisi=null;
+        $posisi = null;
 
-        if(empty($halaman)){
-            $posisi=0;
-            $halaman=1;
-        }else{
-            $posisi=($halaman-1)* $batas;
+        if (empty($halaman)) {
+            $posisi = 0;
+            $halaman = 1;
+        } else {
+            $posisi = ($halaman - 1) * $batas;
         }
 
-        $sql=null;
+        $sql = null;
 
-        if(isset($_GET['id'])){
+        if (isset($_GET['id'])) {
             $product_brand = $_GET['id'];
             $sql = "select * from wbpl_product where nama_brand='$product_brand'
             limit $posisi,$batas";
-        }else if(isset($_GET['p'])){
+        } elseif (isset($_GET['p'])) {
             $product_ins_type = $_GET['p'];
             $sql = "select * from wbpl_product where nama_instype='$product_ins_type'
             limit $posisi,$batas ";
-        }else{
+        } else {
             $sql = "select * from wbpl_product  limit $posisi,$batas";
         }
 
         $hasil = $mysqli->query($sql);
 
-        while($get_data = $hasil -> fetch_array()){
-        ?>
+        while ($get_data = $hasil->fetch_array()) {
+            ?>
 
         <h4><?php echo $get_data['nama_product']?></h4>
         <div class="image_wrapper image_fl"><img class="img-polaroid" src="
         <?php
         $imagee = $get_data['image'];
-            if ($imagee == "" ){
+            if ($imagee == '') {
                 echo 'admin/image/Image Not Available.jpg';
-            }else{
-        ?>
-        admin/image/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" heigth="150px">
+            } else {
+                ?>
+        admin/image/<?php echo $get_data['image'];
+            } ?>" alt="Image Not Avaible" width="150px" heigth="150px">
         </div>
 
         <table>
@@ -72,12 +73,11 @@ switch ($view) {
                 <td>Stock</td>
                 <td>: <?php
                         $product_stock = $get_data['stock'];
-                        if ($product_stock == 0 ){
-                            echo 'Stock Not Avaible';
-                        }else{
-                            echo $get_data['stock'];
-                        }
-                       ?>
+            if ($product_stock == 0) {
+                echo 'Stock Not Avaible';
+            } else {
+                echo $get_data['stock'];
+            } ?>
                 </em></td>
             </tr>
             <tr>
@@ -92,7 +92,7 @@ switch ($view) {
         <strong>Description</strong>
 
         <p style="text-align: justify;">
-            <?php echo $get_data['deskripsi'];?>
+            <?php echo $get_data['deskripsi']; ?>
         </p>
 
         <div class="clearfix"></div>
@@ -101,18 +101,19 @@ switch ($view) {
         }
 
         //=============CUT HERE====================================
-        $tampil2 = $mysqli-> query("select * from wbpl_product");
-        $jmldata = $tampil2 -> num_rows;
-        $jumlah_halaman=ceil($jmldata/$batas);
+        $tampil2 = $mysqli->query('select * from wbpl_product');
+        $jmldata = $tampil2->num_rows;
+        $jumlah_halaman = ceil($jmldata / $batas);
 
-        echo "<br> <br> Halaman: ";
-        for($i=1;$i<=$jumlah_halaman;$i++)
-        if ($i!=$halaman){
-            echo "<a href=index.php?page=product&view=product&halaman=$i> $i</a> | ";
-        }else{
-            echo "<b> $i</b> | ";
+        echo '<br> <br> Halaman: ';
+        for ($i = 1; $i <= $jumlah_halaman; $i++) {
+            if ($i != $halaman) {
+                echo "<a href=index.php?page=product&view=product&halaman=$i> $i</a> | ";
+            } else {
+                echo "<b> $i</b> | ";
+            }
         }
-        $tampil2 -> close();
+        $tampil2->close();
         ?>
 
         <br>
@@ -124,50 +125,51 @@ switch ($view) {
         <h2> Pilih Product yang mau dibeli </h2>
         <?php
         //tentukan nilai batas
-        $batas=2;
-        if(isset($_GET['halaman'])){
-            $halaman=$_GET['halaman'];
+        $batas = 2;
+        if (isset($_GET['halaman'])) {
+            $halaman = $_GET['halaman'];
         }
 
-        $posisi=null;
+        $posisi = null;
 
-        if(empty($halaman)){
-            $posisi=0;
-            $halaman=1;
-        }else{
-            $posisi=($halaman-1)* $batas;
+        if (empty($halaman)) {
+            $posisi = 0;
+            $halaman = 1;
+        } else {
+            $posisi = ($halaman - 1) * $batas;
         }
 
-        $sql=null;
+        $sql = null;
 
-        if(isset($_GET['id'])){
-            $product_brand=$_GET['id'];
+        if (isset($_GET['id'])) {
+            $product_brand = $_GET['id'];
 
             $sql = "select * from wbpl_product where nama_brand='$product_brand'
             limit $posisi,$batas";
-        }else if(isset($_GET['p'])){
-            $product_ins_type=$_GET['p'];
+        } elseif (isset($_GET['p'])) {
+            $product_ins_type = $_GET['p'];
 
             $sql = "select * from wbpl_product where nama_instype='$product_ins_type'
             limit $posisi,$batas ";
-        }else{
+        } else {
             $sql = "select * from wbpl_product  limit $posisi,$batas";
         }
 
         $hasil = $mysqli->query($sql);
 
-        while($get_data = $hasil -> fetch_array()){
-        ?>
+        while ($get_data = $hasil->fetch_array()) {
+            ?>
 
         <h4><?php echo $get_data['nama_product']?></h4>
         <div class="image_wrapper image_fl"><img class="img-polaroid" src="
         <?php
         $imagee = $get_data['image'];
-            if ($imagee == "" ){
+            if ($imagee == '') {
                 echo 'admin/image/Image Not Available.jpg';
-            }else{
-        ?>
-        admin/image/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" heigth="150px">
+            } else {
+                ?>
+        admin/image/<?php echo $get_data['image'];
+            } ?>" alt="Image Not Avaible" width="150px" heigth="150px">
         </div>
 
         <table>
@@ -191,12 +193,11 @@ switch ($view) {
                 <td>Stock</td>
                 <td>: <?php
                         $product_stock = $get_data['stock'];
-                        if ($product_stock == 0 ){
-                            echo 'Stock Not Avaible';
-                        }else{
-                            echo $get_data['stock'];
-                        }
-                        ?>
+            if ($product_stock == 0) {
+                echo 'Stock Not Avaible';
+            } else {
+                echo $get_data['stock'];
+            } ?>
                 </em></td>
             </tr>
             <tr>
@@ -209,7 +210,7 @@ switch ($view) {
         <strong>Description</strong>
 
         <p style="text-align: justify;">
-            <?php echo $get_data['deskripsi'];?>
+            <?php echo $get_data['deskripsi']; ?>
         </p>
 
         <div class="clearfix"></div>
@@ -219,40 +220,39 @@ switch ($view) {
         }
 
         //=============CUT HERE====================================
-        if(isset($_GET['id'])){
+        if (isset($_GET['id'])) {
             $product_brand = $_GET['id'];
             $tampil2 = $mysqli->query("select * from wbpl_product where nama_brand='$product_brand'");
 
-            $jmldata = $tampil2 -> num_rows;
-            $jumlah_halaman = ceil($jmldata/$batas);
+            $jmldata = $tampil2->num_rows;
+            $jumlah_halaman = ceil($jmldata / $batas);
 
-            echo "<br> <br> Halaman :";
-            for($i=1; $i<=$jumlah_halaman; $i++)
-
-            if ($i!=$halaman){
-                echo "<a href=index.php?page=product&view=detail&id=". $product_brand ."&halaman=$i> $i</a> | ";
-            }else{
-                echo "<b> $i</b> | ";
+            echo '<br> <br> Halaman :';
+            for ($i = 1; $i <= $jumlah_halaman; $i++) {
+                if ($i != $halaman) {
+                    echo '<a href=index.php?page=product&view=detail&id='.$product_brand."&halaman=$i> $i</a> | ";
+                } else {
+                    echo "<b> $i</b> | ";
+                }
             }
-
-        }else if(isset($_GET['p'])){
+        } elseif (isset($_GET['p'])) {
             $product_ins_type = $_GET['p'];
             $tampil2 = $mysqli->query("select * from wbpl_product where nama_instype='$product_ins_type'");
 
-            $jmldata = $tampil2 -> num_rows;
-            $jumlah_halaman=ceil($jmldata/$batas);
+            $jmldata = $tampil2->num_rows;
+            $jumlah_halaman = ceil($jmldata / $batas);
 
-            echo "<br> <br> Halaman :";
-            for($i=1; $i<=$jumlah_halaman; $i++)
-
-            if ($i!=$halaman){
-                echo "<a href=index.php?page=product&view=detail&p=". $product_ins_type ."&halaman=$i> $i</a> | ";
-            }else{
-                echo "<b> $i</b> | ";
+            echo '<br> <br> Halaman :';
+            for ($i = 1; $i <= $jumlah_halaman; $i++) {
+                if ($i != $halaman) {
+                    echo '<a href=index.php?page=product&view=detail&p='.$product_ins_type."&halaman=$i> $i</a> | ";
+                } else {
+                    echo "<b> $i</b> | ";
+                }
             }
         }
 
-        $tampil2 -> close();
+        $tampil2->close();
         ?>
 
         <br>

@@ -18,27 +18,27 @@
         <td>Price</td><td>Stock</td>
       </tr>
       <?php
-      include ('../wbpl-config.php');
+      include '../wbpl-config.php';
 
-      $sql="SELECT * FROM  wbpl_product";
+      $sql = 'SELECT * FROM  wbpl_product';
 
-      $result=mysql_query($sql) or die(mysql_error());
+      $result = mysql_query($sql) or die(mysql_error());
 
       //proses menampilkan data
-      $no=1;
-      while($rows=mysql_fetch_array($result)){
-      ?>
+      $no = 1;
+      while ($rows = mysql_fetch_array($result)) {
+          ?>
       <tr>
-        <td><?php echo $no;?></td>
-        <td><?php echo $rows['kd_product'];?></td>
-        <td><?php echo $rows['nama_brand'];?></td>
-        <td><?php echo $rows['nama_instype'];?></td>
-        <td><?php echo $rows['price'];?></td>
-        <td><?php echo $rows['price'];?></td>
+        <td><?php echo $no; ?></td>
+        <td><?php echo $rows['kd_product']; ?></td>
+        <td><?php echo $rows['nama_brand']; ?></td>
+        <td><?php echo $rows['nama_instype']; ?></td>
+        <td><?php echo $rows['price']; ?></td>
+        <td><?php echo $rows['price']; ?></td>
       </tr>
       <?php
       $no++;
-        }
+      }
       ?>
     </table>
     <?php mysql_close();

@@ -1,8 +1,9 @@
 <?php
-$host		= "localhost";
-$username	= "root";
-$password	= "";
-$db_name	= "wbpl_ml";
+
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$db_name = 'wbpl_ml';
 
 $mysqli = new mysqli($host, $username, $password);
 
@@ -14,4 +15,3 @@ if ($mysqli->connect_errno) {
 
 /* change db to world db */
 $mysqli->select_db($db_name);
-?>

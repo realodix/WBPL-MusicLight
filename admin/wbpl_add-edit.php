@@ -13,8 +13,8 @@
 *- insert_registration
 */
 
-include ('../wbpl-config.php');
-require_once('../wbpl-function.php');
+include '../wbpl-config.php';
+require_once '../wbpl-function.php';
 
 $action = $_GET['action'];
 switch ($action) {
@@ -33,8 +33,7 @@ switch ($action) {
     $direktori = "image/$nama_file";
 
     if (move_uploaded_file($lokasi_file, $direktori)) {
-
-      $sql = "INSERT INTO wbpl_product(kd_product,
+        $sql = "INSERT INTO wbpl_product(kd_product,
                   nama_product,
                   nama_brand,
                   nama_instype,
@@ -50,9 +49,9 @@ switch ($action) {
             '$product_stock',
             '$product_image',
             '$product_deskripsi')";
-      $result = mysql_query($sql) or die(mysql_error());
-    }else{
-      $sql = "INSERT INTO wbpl_product(kd_product,
+        $result = mysql_query($sql) or die(mysql_error());
+    } else {
+        $sql = "INSERT INTO wbpl_product(kd_product,
                   nama_product,
                   nama_brand,
                   nama_instype,
@@ -68,14 +67,14 @@ switch ($action) {
             '$product_stock',
             '$product_image',
             '$product_deskripsi')";
-      $result = mysql_query($sql) or die(mysql_error());
+        $result = mysql_query($sql) or die(mysql_error());
     }
 
     //check if query successful
     if ($result) {
-      header('location:index.php?page=product&status=0');
+        header('location:index.php?page=product&status=0');
     } else {
-      header('location:index.php?page=product&status=1');
+        header('location:index.php?page=product&status=1');
     }
     mysql_close();
   break;
@@ -91,12 +90,11 @@ switch ($action) {
 
     $lokasi_file = $_FILES['product_image']['tmp_name'];
     $nama_file = $_FILES['product_image']['name'];
-    $product_image=$nama_file;
+    $product_image = $nama_file;
     $direktori = "image/$nama_file";
 
     if (move_uploaded_file($lokasi_file, $direktori)) {
-
-      $sql = "UPDATE wbpl_product
+        $sql = "UPDATE wbpl_product
           SET
             nama_product='$nama_product',
             price='$product_price',
@@ -106,11 +104,9 @@ switch ($action) {
           where
             kd_product='$kd_product'";
 
-      $result = mysql_query($sql) or die(mysql_error());
-
-    }else{
-
-      $sql = "UPDATE wbpl_product
+        $result = mysql_query($sql) or die(mysql_error());
+    } else {
+        $sql = "UPDATE wbpl_product
           SET
             nama_product='$nama_product',
             price='$product_price',
@@ -120,40 +116,41 @@ switch ($action) {
           where
             kd_product='$kd_product'";
 
-      $result = mysql_query($sql) or die(mysql_error());
-
+        $result = mysql_query($sql) or die(mysql_error());
     }
 
     //check if query successful
     if ($result) {
-      header('location:index.php?page=product&status=0');
+        header('location:index.php?page=product&status=0');
     } else {
-      header('location:index.php?page=product&status=1');
+        header('location:index.php?page=product&status=1');
     }
     mysql_close();
   break;
 
   case 'insert_ac':
-    $q = strtolower($_GET["q"]);
-    if (!$q) return;
+    $q = strtolower($_GET['q']);
+    if (! $q) {
+        return;
+    }
 
     $ac = $_GET['ac'];
     switch ($ac) {
       case 'nama_product':
         $sql = "select nama_brand from wbpl_brand where nama_brand LIKE '%$q%'";
         $querysql = mysql_query($sql);
-        while($kt = mysql_fetch_array($querysql)) {
-          $kata = $kt['nama_brand'];
-          echo "$kata\n";
+        while ($kt = mysql_fetch_array($querysql)) {
+            $kata = $kt['nama_brand'];
+            echo "$kata\n";
         }
       break;
 
       case 'nama_instype':
         $sql = "select nama_instype from wbpl_instype where nama_instype LIKE '%$q%'";
         $querysql = mysql_query($sql);
-        while($kt = mysql_fetch_array($querysql)) {
-          $kata = $kt['nama_instype'];
-          echo "$kata\n";
+        while ($kt = mysql_fetch_array($querysql)) {
+            $kata = $kt['nama_instype'];
+            echo "$kata\n";
         }
       break;
     }
@@ -163,16 +160,15 @@ switch ($action) {
     $kd_brand = kode_brand();
     $nama_brand = $_POST['nama_brand'];
 
-
     $sql = "INSERT INTO wbpl_brand(kd_brand,nama_brand)
       VALUES('$kd_brand', '$nama_brand')";
     $result = mysql_query($sql) or die(mysql_error());
 
     //check if query successful
     if ($result) {
-      header('location:index.php?page=wbpl-brand&action=view&status=0');
+        header('location:index.php?page=wbpl-brand&action=view&status=0');
     } else {
-      header('location:index.php?page=wbpl-brand&action=view&status=1');
+        header('location:index.php?page=wbpl-brand&action=view&status=1');
     }
     mysql_close();
   break;
@@ -192,9 +188,9 @@ switch ($action) {
 
     //check if query successful
     if ($result) {
-      header('location:index.php?page=wbpl-brand&action=view&status=0');
+        header('location:index.php?page=wbpl-brand&action=view&status=0');
     } else {
-      header('location:index.php?page=wbpl-brand&action=view&status=1');
+        header('location:index.php?page=wbpl-brand&action=view&status=1');
     }
     mysql_close();
   break;
@@ -203,16 +199,15 @@ switch ($action) {
     $kd_instype = kode_instype();
     $nama_instype = $_POST['nama_instype'];
 
-
     $sql = "INSERT INTO wbpl_instype(kd_instype,nama_instype)
       VALUES('$kd_instype', '$nama_instype')";
     $result = mysql_query($sql) or die(mysql_error());
 
     //check if query successful
     if ($result) {
-      header('location:index.php?page=wbpl-brand&action=view&status=2');
+        header('location:index.php?page=wbpl-brand&action=view&status=2');
     } else {
-      header('location:index.php?page=wbpl-brand&action=view&status=3');
+        header('location:index.php?page=wbpl-brand&action=view&status=3');
     }
     mysql_close();
   break;
@@ -232,9 +227,9 @@ switch ($action) {
 
     //check if query successful
     if ($result) {
-      header('location:index.php?page=wbpl-brand&action=view&status=2');
+        header('location:index.php?page=wbpl-brand&action=view&status=2');
     } else {
-      header('location:index.php?page=wbpl-brand&action=view&status=3');
+        header('location:index.php?page=wbpl-brand&action=view&status=3');
     }
     mysql_close();
   break;
@@ -256,9 +251,9 @@ switch ($action) {
 
     //check if query successful
     if ($result) {
-      header('location:index.php?page=member&status=0');
+        header('location:index.php?page=member&status=0');
     } else {
-      header('location:index.php?page=member&status=1');
+        header('location:index.php?page=member&status=1');
     }
     mysql_close();
   break;
@@ -274,9 +269,9 @@ switch ($action) {
 
     //check if query successful
     if ($result) {
-      header('location:index.php?page=wbpl-biaya&action=view&status=0');
+        header('location:index.php?page=wbpl-biaya&action=view&status=0');
     } else {
-      header('location:index.php?page=wbpl-biaya&action=view&status=1');
+        header('location:index.php?page=wbpl-biaya&action=view&status=1');
     }
     mysql_close();
   break;
@@ -293,9 +288,9 @@ switch ($action) {
 
     //check if query successful
     if ($result) {
-      header('location:index.php?page=wbpl-biaya&action=view&status=0');
+        header('location:index.php?page=wbpl-biaya&action=view&status=0');
     } else {
-      header('location:index.php?page=wbpl-biaya&action=view&status=1');
+        header('location:index.php?page=wbpl-biaya&action=view&status=1');
     }
     mysql_close();
   break;
@@ -312,9 +307,9 @@ switch ($action) {
 
     //check if query successful
     if ($result) {
-      header('location:../index.php?page=testimony&status=0#waiting');
+        header('location:../index.php?page=testimony&status=0#waiting');
     } else {
-      header('location:../index.php?page=testimony');
+        header('location:../index.php?page=testimony');
     }
     mysql_close();
   break;
@@ -330,38 +325,38 @@ switch ($action) {
     $phone_user = $_POST['phone_user'];
     $email_user = $_POST['email_user'];
 
-    if(strlen($name_user) == 0){
-      header('location:../index.php?page=registration&err=1');
-    }else if (filter_var($name_user, FILTER_VALIDATE_INT)){
-      header('location:../index.php?page=registration&err=2');
-    }else if(strlen($username_user) == 0){
-      header('location:../index.php?page=registration&err=3');
-    }else if(strlen($pass_user) == 0){
-      header('location:../index.php?page=registration&err=4');
-    }else if(strlen($pass_user) < 5){
-      header('location:../index.php?page=registration&err=41');
-    }else if(strlen($cpass_user) == 0){
-      header('location:../index.php?page=registration&err=5');
-    }else if($cpass_user != $pass_user){
-      header('location:../index.php?page=registration&err=51');
-    }else if(strlen($gender_user) == 0){
-      header('location:../index.php?page=registration&err=6');
-    }else if(strlen($address_user) == 0){
-      header('location:../index.php?page=registration&err=7');
-    }else if(strlen($phone_user) == 0){
-      header('location:../index.php?page=registration&err=8');
+    if (strlen($name_user) == 0) {
+        header('location:../index.php?page=registration&err=1');
+    } elseif (filter_var($name_user, FILTER_VALIDATE_INT)) {
+        header('location:../index.php?page=registration&err=2');
+    } elseif (strlen($username_user) == 0) {
+        header('location:../index.php?page=registration&err=3');
+    } elseif (strlen($pass_user) == 0) {
+        header('location:../index.php?page=registration&err=4');
+    } elseif (strlen($pass_user) < 5) {
+        header('location:../index.php?page=registration&err=41');
+    } elseif (strlen($cpass_user) == 0) {
+        header('location:../index.php?page=registration&err=5');
+    } elseif ($cpass_user != $pass_user) {
+        header('location:../index.php?page=registration&err=51');
+    } elseif (strlen($gender_user) == 0) {
+        header('location:../index.php?page=registration&err=6');
+    } elseif (strlen($address_user) == 0) {
+        header('location:../index.php?page=registration&err=7');
+    } elseif (strlen($phone_user) == 0) {
+        header('location:../index.php?page=registration&err=8');
     }
     //else if (!filter_var($phone_user, FILTER_VALIDATE_INT)){
       //header('location:../registration.php?err=81');
     //}
-    else if(strlen($email_user) == 0){
-      header('location:../index.php?page=registration&err=9');
-    }else if(!filter_var($email_user, FILTER_VALIDATE_EMAIL)){
-      header('location:../index.php?page=registration&err=91');
-    }else{
-      $cpass_user = md5($cpass_user);
+    elseif (strlen($email_user) == 0) {
+        header('location:../index.php?page=registration&err=9');
+    } elseif (! filter_var($email_user, FILTER_VALIDATE_EMAIL)) {
+        header('location:../index.php?page=registration&err=91');
+    } else {
+        $cpass_user = md5($cpass_user);
 
-      $sql = "INSERT INTO wbpl_member(Kd_member,name,
+        $sql = "INSERT INTO wbpl_member(Kd_member,name,
                       username,
                       password,
                       gender,
@@ -375,17 +370,15 @@ switch ($action) {
             '$address_user',
             '$phone_user',
             '$email_user')";
-      $result = mysql_query($sql) or die(mysql_error());
+        $result = mysql_query($sql) or die(mysql_error());
 
-      //check if query successful
-      if ($result) {
-        header('location:../index.php?page=registration&status=0');
-      } else {
-        header('location:../index.php?page=registration&status=1');
-      }
-      mysql_close();
+        //check if query successful
+        if ($result) {
+            header('location:../index.php?page=registration&status=0');
+        } else {
+            header('location:../index.php?page=registration&status=1');
+        }
+        mysql_close();
     }
   break;
 }
-
-?>

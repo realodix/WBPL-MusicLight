@@ -1,6 +1,6 @@
 <?php
 
-include ('../wbpl-config.php');
+include '../wbpl-config.php';
 
 ?>
 <table  width="600px" border=0>
@@ -16,33 +16,33 @@ include ('../wbpl-config.php');
     /*
     * kode untuk menghapus data
     */
-    if(isset($_GET['del'])){
-        $no_det_pesan=$_GET['id'];
-        $hapus ="delete from det_pesan where no_det_pesan='$no_det_pesan'";
+    if (isset($_GET['del'])) {
+        $no_det_pesan = $_GET['id'];
+        $hapus = "delete from det_pesan where no_det_pesan='$no_det_pesan'";
         mysql_query($hapus);
     }
 
-    $sql="";
+    $sql = '';
 
-    if(isset($_POST['btnCari'])){
-        $cari=$_POST['cari'];
+    if (isset($_POST['btnCari'])) {
+        $cari = $_POST['cari'];
         //ambil data dari table admin
-        $sql="SELECT * FROM  det_pesan where no_det_pesan like '%$cari%'";
-    }else{
-        $sql="SELECT * FROM  det_pesan";
+        $sql = "SELECT * FROM  det_pesan where no_det_pesan like '%$cari%'";
+    } else {
+        $sql = 'SELECT * FROM  det_pesan';
     }
 
-    $result=mysql_query($sql) or die(mysql_error());
+    $result = mysql_query($sql) or die(mysql_error());
 
     //proses menampilkan data
-    while($rows=mysql_fetch_array($result)){
-    ?>
+    while ($rows = mysql_fetch_array($result)) {
+        ?>
 
         <tr>
-            <td><?php  echo $rows['no_det_pesan'];?></td>
-            <td><?php  echo $rows['no_pesan'];?></td>
-            <td><?php  echo $rows['kd_buku'];?></td>
-            <td><?php  echo $rows['total_pesan'];?></td>
+            <td><?php  echo $rows['no_det_pesan']; ?></td>
+            <td><?php  echo $rows['no_pesan']; ?></td>
+            <td><?php  echo $rows['kd_buku']; ?></td>
+            <td><?php  echo $rows['total_pesan']; ?></td>
 
             <td>
             <!--<a href="index.php?page=det_pesan_form_edit&id=<?php echo $rows['no_det_pesan']?>">
@@ -61,9 +61,9 @@ include ('../wbpl-config.php');
         <?php
         if (isset($_GET['status'])) {
             if ($_GET['status'] == 0) {
-                echo " Operasi data berhasil";
+                echo ' Operasi data berhasil';
             } else {
-                echo "operasi gagal";
+                echo 'operasi gagal';
             }
         }
         ?>
