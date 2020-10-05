@@ -13,7 +13,6 @@
 *- insert_registration
 */
 
-include '../wbpl-config.php';
 require_once '../wbpl-function.php';
 
 $action = $_GET['action'];

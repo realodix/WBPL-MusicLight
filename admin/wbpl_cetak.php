@@ -18,7 +18,7 @@
         <td>Price</td><td>Stock</td>
       </tr>
       <?php
-      include '../wbpl-config.php';
+      include '../wbpl-function.php';
 
       $sql = 'SELECT * FROM  wbpl_product';
 

@@ -1,7 +1,6 @@
 <?php  // Include MySQL class
   session_start();
 
-  require_once 'wbpl-config.php';
   require_once 'wbpl-function.php';
 ?>
 

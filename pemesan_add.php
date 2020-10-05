@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include 'wbpl-config.php';
+
 require_once 'wbpl-function.php';
 
 session_start();

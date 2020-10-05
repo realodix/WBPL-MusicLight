@@ -1,8 +1,8 @@
 
 <ul>
-    <?php
+<?php
 
-    include 'wbpl-config.php';
+    include 'wbpl-function.php';
 
     /**
      * Kategori Brand

@@ -1,6 +1,6 @@
 <?php
 
-include '../wbpl-config.php';
+include '../wbpl-function.php';
 
 ?>
 <table  width="600px" border=0>
