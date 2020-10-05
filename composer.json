@@ -1,5 +1,6 @@
 {
     "require": {
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "envms/fluentpdo": "^2.2"
     }
 }
