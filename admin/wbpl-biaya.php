@@ -45,7 +45,7 @@ switch ($action) {
       $result = $mysqli->query($sql);
       $no = 1;
 
-      //proses menampilkan data
+      // Proses menampilkan data
       while ($rows = mysqli_fetch_array($result)) {
           ?>
       <tr>
@@ -169,7 +169,7 @@ switch ($action) {
     <table>
       <form id="form1" name="form1" name="form2" method="post" action="wbpl_add-edit.php?action=update_biaya">
         <?php
-        //proses menampilkan data
+        // Proses menampilkan data
         while ($rows = mysqli_fetch_array($result)) {
             ?>
 

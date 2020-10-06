@@ -34,7 +34,7 @@
 
   $result = $mysqli->query($sql);
 
-  //proses menampilkan data
+  // Proses menampilkan data
   while ($rows = $result->fetch_array()) {
       ?>
   <tr>

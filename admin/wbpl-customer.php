@@ -25,7 +25,7 @@ if (isset($_POST['btnCari'])) {
 
 $result = $mysqli->query($sql);
 
-//proses menampilkan data
+// Proses menampilkan data
 while ($rows = mysqli_fetch_array($result)) {
     ?>
 <tr>

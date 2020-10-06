@@ -259,7 +259,7 @@ switch ($action) {
     <table>
       <form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=update_instype">
         <?php
-        //proses menampilkan data
+        // Proses menampilkan data
         while ($rows = mysqli_fetch_array($result)) {
             ?>
 

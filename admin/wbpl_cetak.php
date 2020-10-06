@@ -24,7 +24,7 @@
 
       $result = $mysqli->query($sql);
 
-      //proses menampilkan data
+      // Proses menampilkan data
       $no = 1;
       while ($rows = mysqli_fetch_array($result)) {
           ?>
