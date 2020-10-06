@@ -18,9 +18,9 @@ require_once '../wbpl-function.php';
 $action = $_GET['action'];
 switch ($action) {
   case 'insertproduct':
-    $kd_product = kode_product();
+    $kdProduct = kode_product();
     $nama_product = $_POST['nama_product'];
-    $nama_brand = $_POST['nama_brand'];
+    $namaBrand = $_POST['nama_brand'];
     $nama_instype = $_POST['nama_instype'];
     $product_price = $_POST['product_price'];
     $product_stock = $_POST['product_stock'];
@@ -40,9 +40,9 @@ switch ($action) {
                   stock,
                   image,
                   deskripsi)
-        VALUES('$kd_product',
+        VALUES('$kdProduct',
             '$nama_product',
-            '$nama_brand',
+            '$namaBrand',
             '$nama_instype',
             '$product_price',
             '$product_stock',
@@ -58,9 +58,9 @@ switch ($action) {
                   stock,
                   image,
                   deskripsi)
-        VALUES('$kd_product',
+        VALUES('$kdProduct',
             '$nama_product',
-            '$nama_brand',
+            '$namaBrand',
             '$nama_instype',
             '$product_price',
             '$product_stock',
@@ -80,9 +80,9 @@ switch ($action) {
 
   case 'updateproduct':
     $nama_product = $_POST['nama_product'];
-    //$kd_brand = $_POST['kd_brand'];
-    //$kd_instype = $_POST['kd_instype'];
-    $kd_product = $_GET['id'];
+    //$kdBrand = $_POST['kd_brand'];
+    //$kdInstype = $_POST['kd_instype'];
+    $kdProduct = $_GET['id'];
     $product_price = $_POST['product_price'];
     $product_stock = $_POST['product_stock'];
     $product_deskripsi = $_POST['product_deskripsi'];
@@ -101,7 +101,7 @@ switch ($action) {
             image='$product_image',
             deskripsi='$product_deskripsi'
           where
-            kd_product='$kd_product'";
+            kd_product='$kdProduct'";
 
         $result = $mysqli->query($sql);
     } else {
@@ -113,7 +113,7 @@ switch ($action) {
             image='$product_image',
             deskripsi='$product_deskripsi'
           where
-            kd_product='$kd_product'";
+            kd_product='$kdProduct'";
 
         $result = $mysqli->query($sql);
     }
@@ -156,11 +156,11 @@ switch ($action) {
   break;
 
   case 'insert_brand':
-    $kd_brand = kode_brand();
-    $nama_brand = $_POST['nama_brand'];
+    $kdBrand = kode_brand();
+    $namaBrand = $_POST['nama_brand'];
 
     $sql = "INSERT INTO wbpl_brand(kd_brand,nama_brand)
-            VALUES('$kd_brand', '$nama_brand')";
+            VALUES('$kdBrand', '$namaBrand')";
     $result = $mysqli->query($sql);
 
     //check if query successful
@@ -173,12 +173,12 @@ switch ($action) {
   break;
 
   case 'update_brand':
-    $kd_brand = $_POST['kd_brand'];
-    $nama_brand = $_POST['nama_brand'];
+    $kdBrand = $_POST['kd_brand'];
+    $namaBrand = $_POST['nama_brand'];
 
     $sql = "UPDATE wbpl_brand
-            SET nama_brand='$nama_brand'
-            WHERE kd_brand='$kd_brand'";
+            SET nama_brand='$namaBrand'
+            WHERE kd_brand='$kdBrand'";
 
     //echo $sql;
     $result = $mysqli->query($sql);
@@ -193,11 +193,11 @@ switch ($action) {
   break;
 
   case 'insert_instype':
-    $kd_instype = kode_instype();
+    $kdInstype = kode_instype();
     $nama_instype = $_POST['nama_instype'];
 
     $sql = "INSERT INTO wbpl_instype(kd_instype,nama_instype)
-            VALUES('$kd_instype', '$nama_instype')";
+            VALUES('$kdInstype', '$nama_instype')";
     $result = $mysqli->query($sql);
 
     //check if query successful
@@ -210,12 +210,12 @@ switch ($action) {
   break;
 
   case 'update_instype':
-    $kd_instype = $_POST['kd_instype'];
+    $kdInstype = $_POST['kd_instype'];
     $nama_instype = $_POST['nama_instype'];
 
     $sql = "UPDATE wbpl_instype
             SET nama_instype='$nama_instype'
-            WHERE kd_instype='$kd_instype'";
+            WHERE kd_instype='$kdInstype'";
 
     //echo $sql;
     $result = $mysqli->query($sql);
@@ -288,11 +288,11 @@ switch ($action) {
   break;
 
   case 'insert_testimony':
-    $kd_testimony = kd_testimony();
+    $kdTestimony = kd_testimony();
     $testimony_isi = $_POST['testimony_isi'];
 
     $sql = "INSERT INTO wbpl_testimony(kd_testimony, testimony_isi)
-            VALUES('$kd_testimony', '$testimony_isi')";
+            VALUES('$kdTestimony', '$testimony_isi')";
     $result = $mysqli->query($sql);
 
     //check if query successful
@@ -305,7 +305,7 @@ switch ($action) {
   break;
 
   case 'insert_registration':
-    $Kd_member = kode_member();
+    $kdMember = kode_member();
     $name_user = $_POST['name_user'];
     $username_user = $_POST['username_user'];
     $pass_user = $_POST['pass_user'];
@@ -349,7 +349,7 @@ switch ($action) {
         $sql = "INSERT INTO wbpl_member(Kd_member,name,
                   username, password, gender, address,
                   phone, email)
-        VALUES('$Kd_member','$name_user',
+        VALUES('$kdMember','$name_user',
             '$username_user',
             '$cpass_user',
             '$gender_user',

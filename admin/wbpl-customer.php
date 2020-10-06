@@ -10,8 +10,8 @@
  * kode untuk menghapus data
  */
 if (isset($_GET['del'])) {
-    $kd_customer = $_GET['id'];
-    $hapus = "DELETE FROM customer WHERE kd_pemesan='$kd_customer'";
+    $kdCustomer = $_GET['id'];
+    $hapus = "DELETE FROM customer WHERE kd_pemesan='$kdCustomer'";
     $mysqli->query($hapus);
 }
 $sql = '';

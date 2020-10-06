@@ -172,8 +172,8 @@ if (isset($_SESSION['username'])) {
         case 'finish':
             //$id_kota = $_SESSION['id_kota'];
             $id_kota = isset($_SESSION['id_kota']) ? $_SESSION['id_kota'] : false;
-            //$kd_pesan=$_SESSION['kd_pesan'];
-            $kd_pesan = isset($_SESSION['kd_pesan']) ? $_SESSION['kd_pesan'] : false;
+            //$kdPesan=$_SESSION['kd_pesan'];
+            $kdPesan = isset($_SESSION['kd_pesan']) ? $_SESSION['kd_pesan'] : false;
             //echo "nama kota:".$id_kota;
             //echo "SESSION KOTA:".$_SESSION['id_kota'];
             $get_data = $mysqli->query("SELECT biaya FROM biaya_kirim WHERE id_kota='$id_kota'");
@@ -183,7 +183,7 @@ if (isset($_SESSION['username'])) {
 ?>
 
             <h3>Selamat,Transaksi sukses di lakukan</h2>
-            <h3>Kode Pesan : <?php echo $kd_pesan; ?></h2>
+            <h3>Kode Pesan : <?php echo $kdPesan; ?></h2>
             <h3>Total Harga : Rp. <?php echo $totalBayar; ?></h2>
             <h3>Biaya kirim : Rp. <?php echo $biaya; ?></h2>
             <h3>Total Transfer: Rp. <?php echo $totalBayar + $biaya; ?></h2>

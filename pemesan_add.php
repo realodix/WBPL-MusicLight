@@ -7,7 +7,7 @@ require_once 'wbpl-function.php';
 session_start();
 $id_kota = [];
 session_start();
-$kd_pesan = [];
+$kdPesan = [];
 
 //data dari user
 if (isset($_POST['tambah'])) {
@@ -24,10 +24,10 @@ if (isset($_POST['tambah'])) {
     $Email = $_POST['Email'];
     $id_kota = $_POST['id_kota'];
     $_SESSION['id_kota'] = $id_kota;
-    $kd_customer = kode_customer();
+    $kdCustomer = kode_customer();
 
     $sql = "INSERT INTO customer(kd_pemesan,Nama,Alamat,kd_pos,No_telp,Email,id_kota,kd_pesan)
-        VALUES('$kd_customer', '$Nama', '$Alamat','$kd_pos','$No_telp','$Email','$id_kota','$kode_pesan')";
+        VALUES('$kdCustomer', '$Nama', '$Alamat','$kd_pos','$No_telp','$Email','$id_kota','$kode_pesan')";
 
     $result = $mysqli->query($sql);
 

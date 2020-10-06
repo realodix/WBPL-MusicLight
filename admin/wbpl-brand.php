@@ -47,8 +47,8 @@ switch ($action) {
 
       // Kode untuk menghapus data
       if (isset($_GET['del'])) {
-          $kd_brand = $_GET['id'];
-          $hapus = "DELETE FROM wbpl_brand WHERE kd_brand='$kd_brand'";
+          $kdBrand = $_GET['id'];
+          $hapus = "DELETE FROM wbpl_brand WHERE kd_brand='$kdBrand'";
           $mysqli->query($hapus);
       }
       $sql = '';
@@ -143,8 +143,8 @@ switch ($action) {
       <?php
       // Kode untuk menghapus data
       if (isset($_GET['del'])) {
-          $kd_instype = $_GET['id'];
-          $hapus = "DELETE FROM wbpl_instype WHERE kd_instype='$kd_instype'";
+          $kdInstype = $_GET['id'];
+          $hapus = "DELETE FROM wbpl_instype WHERE kd_instype='$kdInstype'";
           $mysqli->query($hapus);
       }
       $sql = '';

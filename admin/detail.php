@@ -10,8 +10,8 @@
     <?php
     // kode untuk menghapus data
     if (isset($_GET['del'])) {
-        $no_det_pesan = $_GET['id'];
-        $hapus = "DELETE FROM det_pesan WHERE no_det_pesan='$no_det_pesan'";
+        $noDetPesan = $_GET['id'];
+        $hapus = "DELETE FROM det_pesan WHERE no_det_pesan='$noDetPesan'";
         $mysqli->query($hapus);
     }
 

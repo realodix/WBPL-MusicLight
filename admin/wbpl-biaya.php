@@ -94,7 +94,7 @@ switch ($action) {
     //=============CUT HERE====================================
     $tampil2 = $mysqli->query('SELECT * FROM biaya_kirim');
     $jmldata = mysqli_num_rows($tampil2);
-    $jumlah_halaman = ceil($jmldata / $batas);
+    $jumlahHalaman = ceil($jmldata / $batas);
     ?>
 
     Jumlah data :<?php echo $jmldata; ?>
@@ -102,7 +102,7 @@ switch ($action) {
       <div class="pagination">
         <ul>
         <?php
-        for ($i = 1; $i <= $jumlah_halaman; $i++) {
+        for ($i = 1; $i <= $jumlahHalaman; $i++) {
             if ($i != $halaman) {
                 echo "<li><a href=index.php?page=wbpl-biaya&action=view&halaman=$i> $i </a></li>";
             } else {

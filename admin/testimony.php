@@ -4,28 +4,26 @@
  * kode untuk approve data
  */
 if (isset($_GET['aprv'])) {
-    $kd_testimony = $_GET['id'];
+    $kdTestimony = $_GET['id'];
     $setuju = "UPDATE wbpl_testimony
         SET testimony_status='approved'
-        WHERE kd_testimony='$kd_testimony'";
+        WHERE kd_testimony='$kdTestimony'";
     $mysqli->query($setuju);
 }
 
-/*
- * kode untuk unapprove data
- */
+// kode untuk unapprove data
 if (isset($_GET['unaprv'])) {
-    $kd_testimony = $_GET['id'];
+    $kdTestimony = $_GET['id'];
     $setuju = "UPDATE wbpl_testimony
         SET testimony_status='pending'
-        WHERE kd_testimony='$kd_testimony'";
+        WHERE kd_testimony='$kdTestimony'";
     $mysqli->query($setuju);
 }
 
 // kode untuk menghapus data
 if (isset($_GET['del'])) {
-    $kd_testimony = $_GET['id'];
-    $hapus = "DELETE FROM wbpl_testimony WHERE kd_testimony='$kd_testimony'";
+    $kdTestimony = $_GET['id'];
+    $hapus = "DELETE FROM wbpl_testimony WHERE kd_testimony='$kdTestimony'";
     $mysqli->query($hapus);
 }
 

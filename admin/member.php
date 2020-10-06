@@ -21,8 +21,8 @@
  * kode untuk menghapus data
  */
 if (isset($_GET['del'])) {
-    $Kd_member = $_GET['id'];
-    $hapus = "DELETE FROM wbpl_member WHERE Kd_member='$Kd_member'";
+    $kdMember = $_GET['id'];
+    $hapus = "DELETE FROM wbpl_member WHERE Kd_member='$kdMember'";
     $mysqli->query($hapus) or die(mysql_error());
 }
 
@@ -94,7 +94,7 @@ while ($rows = mysqli_fetch_array($result)) {
   //=============CUT HERE====================================
   $tampil2 = $mysqli->query('SELECT * FROM wbpl_member');
   $jmldata = mysqli_num_rows($tampil2);
-  $jumlah_halaman = ceil($jmldata / $batas);
+  $jumlahHalaman = ceil($jmldata / $batas);
 ?>
 
   Jumlah data :<?php echo $jmldata; ?>
@@ -102,7 +102,7 @@ while ($rows = mysqli_fetch_array($result)) {
   <div class="pagination">
     <ul>
     <?php
-    for ($i = 1; $i <= $jumlah_halaman; $i++) {
+    for ($i = 1; $i <= $jumlahHalaman; $i++) {
         if ($i != $halaman) {
             echo "<li><a href=index.php?page=member&halaman=$i> $i </a></li>";
         } else {
