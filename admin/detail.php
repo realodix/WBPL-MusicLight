@@ -8,7 +8,7 @@
     </tr>
 
     <?php
-    // kode untuk menghapus data
+    // Kode untuk menghapus data
     if (isset($_GET['del'])) {
         $noDetPesan = $_GET['id'];
         $hapus = "DELETE FROM det_pesan WHERE no_det_pesan='$noDetPesan'";

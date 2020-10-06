@@ -1,8 +1,6 @@
 <h3>Testimony</h3>
 <?php
-/*
- * kode untuk approve data
- */
+// Kode untuk approve data
 if (isset($_GET['aprv'])) {
     $kdTestimony = $_GET['id'];
     $setuju = "UPDATE wbpl_testimony
@@ -11,7 +9,7 @@ if (isset($_GET['aprv'])) {
     $mysqli->query($setuju);
 }
 
-// kode untuk unapprove data
+// Kode untuk unapprove data
 if (isset($_GET['unaprv'])) {
     $kdTestimony = $_GET['id'];
     $setuju = "UPDATE wbpl_testimony
@@ -20,14 +18,14 @@ if (isset($_GET['unaprv'])) {
     $mysqli->query($setuju);
 }
 
-// kode untuk menghapus data
+// Kode untuk menghapus data
 if (isset($_GET['del'])) {
     $kdTestimony = $_GET['id'];
     $hapus = "DELETE FROM wbpl_testimony WHERE kd_testimony='$kdTestimony'";
     $mysqli->query($hapus);
 }
 
-  // kode untuk menampilkan data
+  // Kode untuk menampilkan data
   $sql = 'SELECT * FROM  wbpl_testimony';
   $result = $mysqli->query($sql);
 

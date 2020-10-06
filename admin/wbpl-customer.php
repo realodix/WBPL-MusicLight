@@ -7,7 +7,7 @@
 
 <?php
 /*
- * kode untuk menghapus data
+ * Kode untuk menghapus data
  */
 if (isset($_GET['del'])) {
     $kdCustomer = $_GET['id'];

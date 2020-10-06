@@ -18,7 +18,7 @@
 
 <?php
 /*
- * kode untuk menghapus data
+ * Kode untuk menghapus data
  */
 if (isset($_GET['del'])) {
     $kdMember = $_GET['id'];
