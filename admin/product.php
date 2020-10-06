@@ -15,7 +15,7 @@
   */
   if (isset($_GET['del'])) {
       $kd_product = $_GET['id'];
-      $hapus = "delete from wbpl_product where kd_product='$kd_product'";
+      $hapus = "DELETE FROM wbpl_product WHERE kd_product='$kd_product'";
       mysql_query($hapus) or die(mysql_error());
   }
 

@@ -2,8 +2,6 @@
 <ul>
 <?php
 
-    include 'wbpl-function.php';
-
     /**
      * Kategori Brand
      */

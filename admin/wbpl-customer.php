@@ -16,7 +16,7 @@ include '../wbpl-function.php';
  */
 if (isset($_GET['del'])) {
     $kd_customer = $_GET['id'];
-    $hapus = "delete from customer where kd_pemesan='$kd_customer'";
+    $hapus = "DELETE FROM customer WHERE kd_pemesan='$kd_customer'";
     mysql_query($hapus);
 }
 $sql = '';

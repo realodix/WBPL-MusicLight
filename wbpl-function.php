@@ -17,400 +17,370 @@ if ($mysqli->connect_errno) {
 /* change db to world db */
 $mysqli->select_db($db_name);
 
-if (! function_exists('query')) {
-    function query($qry)
-    {
-        $result = $mysqli->query($qry) or die("Gagal melakukan query pada :
-     <br>$qry<br><br>Kode Salah : <br>&nbsp;&nbsp;&nbsp;".mysql_error().'!');
+function query($qry)
+{
+    $result = $mysqli->query($qry) or die("Gagal melakukan query pada :
+    <br>$qry<br><br>Kode Salah : <br>&nbsp;&nbsp;&nbsp;".mysql_error().'!');
 
-        return $result;
-    }
+    return $result;
 }
 
-if (! function_exists('fetch_row')) {
-    function fetch_row($qry)
-    {
-        $tmp = query($qry);
-        [$result] = mysql_fetch_row($tmp);
+function fetch_row($qry)
+{
+    $tmp = query($qry);
+    [$result] = mysql_fetch_row($tmp);
 
-        return $result;
-    }
+    return $result;
 }
 
-if (! function_exists('num_rows')) {
-    function num_rows($qry)
-    {
-        $tmp = query($qry);
-        $jum = mysql_num_rows($tmp);
+function num_rows($qry)
+{
+    $tmp = query($qry);
+    $jum = mysql_num_rows($tmp);
 
-        return $jum;
-    }
+    return $jum;
 }
 
-if (! function_exists('valid')) {
-    function valid($tmp)
-    {
-        return htmlentities(addslashes($tmp));
-    }
+function valid($tmp)
+{
+    return htmlentities(addslashes($tmp));
 }
 
-if (! function_exists('selected')) {
-    function selected($t1, $t2)
-    {
-        if (trim($t1) == trim($t2)) {
-            return 'selected';
-        }
-
-        return '';
+function selected($t1, $t2)
+{
+    if (trim($t1) == trim($t2)) {
+        return 'selected';
     }
+
+    return '';
 }
 
-if (! function_exists('kode_pesan')) {
-    function kode_pesan()
-    {
-        $kode_temp = fetch_row('SELECT kd_pesan FROM pesan ORDER BY kd_pesan DESC LIMIT 0,1');
-        if ($kode_temp == '') {
-            $kode = 'P001';
+function kode_pesan()
+{
+    $kode_temp = fetch_row('SELECT kd_pesan FROM pesan ORDER BY kd_pesan DESC LIMIT 0,1');
+    if ($kode_temp == '') {
+        $kode = 'P001';
+    } else {
+        $jum = substr($kode_temp, 1, 6);
+        $jum++;
+        if ($jum <= 9) {
+            $kode = 'P00'.$jum;
+        } elseif ($jum <= 99) {
+            $kode = 'P0'.$jum;
+        } elseif ($jum <= 999) {
+            $kode = 'P'.$jum;
         } else {
-            $jum = substr($kode_temp, 1, 6);
-            $jum++;
-            if ($jum <= 9) {
-                $kode = 'P00'.$jum;
-            } elseif ($jum <= 99) {
-                $kode = 'P0'.$jum;
-            } elseif ($jum <= 999) {
-                $kode = 'P'.$jum;
-            } else {
-                die('Kode pemesanan melebihi batas');
-            }
+            die('Kode pemesanan melebihi batas');
         }
-
-        return $kode;
     }
+
+    return $kode;
 }
 
-if (! function_exists('kode_customer')) {
-    function kode_customer()
-    {
-        $kode_temp = fetch_row('SELECT kd_pemesan FROM customer ORDER BY kd_pemesan DESC LIMIT 0,1');
-        if ($kode_temp == '') {
-            $kode = 'C001';
+function kode_customer()
+{
+    $kode_temp = fetch_row('SELECT kd_pemesan FROM customer ORDER BY kd_pemesan DESC LIMIT 0,1');
+    if ($kode_temp == '') {
+        $kode = 'C001';
+    } else {
+        $jum = substr($kode_temp, 1, 6);
+        $jum++;
+        if ($jum <= 9) {
+            $kode = 'C00'.$jum;
+        } elseif ($jum <= 99) {
+            $kode = 'C0'.$jum;
+        } elseif ($jum <= 999) {
+            $kode = 'C'.$jum;
         } else {
-            $jum = substr($kode_temp, 1, 6);
-            $jum++;
-            if ($jum <= 9) {
-                $kode = 'C00'.$jum;
-            } elseif ($jum <= 99) {
-                $kode = 'C0'.$jum;
-            } elseif ($jum <= 999) {
-                $kode = 'C'.$jum;
-            } else {
-                die('Kode pemesanan melebihi batas');
-            }
+            die('Kode pemesanan melebihi batas');
         }
-
-        return $kode;
     }
+
+    return $kode;
 }
 
-if (! function_exists('kode_product')) {
-    function kode_product()
-    {
-        $kode_temp = fetch_row('SELECT kd_product FROM wbpl_product ORDER BY kd_product DESC LIMIT 0,1');
-        if ($kode_temp == '') {
-            $kode = 'P0001';
+function kode_product()
+{
+    $kode_temp = fetch_row('SELECT kd_product FROM wbpl_product ORDER BY kd_product DESC LIMIT 0,1');
+    if ($kode_temp == '') {
+        $kode = 'P0001';
+    } else {
+        $jum = substr($kode_temp, 1, 4);
+        $jum++;
+        if ($jum <= 9) {
+            $kode = 'P000'.$jum;
+        } elseif ($jum <= 99) {
+            $kode = 'P00'.$jum;
+        } elseif ($jum <= 999) {
+            $kode = 'P0'.$jum;
+        } elseif ($jum <= 9999) {
+            $kode = 'P'.$jum;
         } else {
-            $jum = substr($kode_temp, 1, 4);
-            $jum++;
-            if ($jum <= 9) {
-                $kode = 'P000'.$jum;
-            } elseif ($jum <= 99) {
-                $kode = 'P00'.$jum;
-            } elseif ($jum <= 999) {
-                $kode = 'P0'.$jum;
-            } elseif ($jum <= 9999) {
-                $kode = 'P'.$jum;
-            } else {
-                die('Kode product melebihi batas');
-            }
+            die('Kode product melebihi batas');
         }
-
-        return $kode;
     }
+
+    return $kode;
 }
 
-if (! function_exists('kode_brand')) {
-    function kode_brand()
-    {
-        $kode_temp = fetch_row('SELECT kd_brand FROM wbpl_brand ORDER BY kd_brand DESC LIMIT 0,1');
-        if ($kode_temp == '') {
-            $kode = 'B01';
+function kode_brand()
+{
+    $kode_temp = fetch_row('SELECT kd_brand FROM wbpl_brand ORDER BY kd_brand DESC LIMIT 0,1');
+    if ($kode_temp == '') {
+        $kode = 'B01';
+    } else {
+        $jum = substr($kode_temp, 1, 2);
+        $jum++;
+        if ($jum <= 9) {
+            $kode = 'B0'.$jum;
+        } elseif ($jum <= 99) {
+            $kode = 'B'.$jum;
         } else {
-            $jum = substr($kode_temp, 1, 2);
-            $jum++;
-            if ($jum <= 9) {
-                $kode = 'B0'.$jum;
-            } elseif ($jum <= 99) {
-                $kode = 'B'.$jum;
-            } else {
-                die('Kode Brand melebihi batas');
-            }
+            die('Kode Brand melebihi batas');
         }
-
-        return $kode;
     }
+
+    return $kode;
 }
 
-if (! function_exists('kode_instype')) {
-    function kode_instype()
-    {
-        $kode_temp = fetch_row('SELECT kd_instype FROM wbpl_instype ORDER BY kd_instype DESC LIMIT 0,1');
-        if ($kode_temp == '') {
-            $kode = 'I01';
+function kode_instype()
+{
+    $kode_temp = fetch_row('SELECT kd_instype FROM wbpl_instype ORDER BY kd_instype DESC LIMIT 0,1');
+    if ($kode_temp == '') {
+        $kode = 'I01';
+    } else {
+        $jum = substr($kode_temp, 1, 2);
+        $jum++;
+        if ($jum <= 9) {
+            $kode = 'I0'.$jum;
+        } elseif ($jum <= 99) {
+            $kode = 'I'.$jum;
         } else {
-            $jum = substr($kode_temp, 1, 2);
-            $jum++;
-            if ($jum <= 9) {
-                $kode = 'I0'.$jum;
-            } elseif ($jum <= 99) {
-                $kode = 'I'.$jum;
-            } else {
-                die('Kode Instrument Type melebihi batas');
-            }
+            die('Kode Instrument Type melebihi batas');
         }
-
-        return $kode;
     }
+
+    return $kode;
 }
 
-if (! function_exists('kode_member')) {
-    function kode_member()
-    {
-        $kode_temp = fetch_row('SELECT kd_member FROM wbpl_member ORDER BY kd_member DESC LIMIT 0,1');
-        if ($kode_temp == '') {
-            $kode = 'M0001';
+function kode_member()
+{
+    $kode_temp = fetch_row('SELECT kd_member FROM wbpl_member ORDER BY kd_member DESC LIMIT 0,1');
+    if ($kode_temp == '') {
+        $kode = 'M0001';
+    } else {
+        $jum = substr($kode_temp, 1, 4);
+        $jum++;
+        if ($jum <= 9) {
+            $kode = 'M000'.$jum;
+        } elseif ($jum <= 99) {
+            $kode = 'M00'.$jum;
+        } elseif ($jum <= 999) {
+            $kode = 'M0'.$jum;
+        } elseif ($jum <= 9999) {
+            $kode = 'M'.$jum;
         } else {
-            $jum = substr($kode_temp, 1, 4);
-            $jum++;
-            if ($jum <= 9) {
-                $kode = 'M000'.$jum;
-            } elseif ($jum <= 99) {
-                $kode = 'M00'.$jum;
-            } elseif ($jum <= 999) {
-                $kode = 'M0'.$jum;
-            } elseif ($jum <= 9999) {
-                $kode = 'M'.$jum;
-            } else {
-                die('Kode member melebihi batas');
-            }
+            die('Kode member melebihi batas');
         }
-
-        return $kode;
     }
+
+    return $kode;
 }
 
-if (! function_exists('kd_testimony')) {
-    function kd_testimony()
-    {
-        $kode_temp = fetch_row('SELECT kd_testimony FROM wbpl_testimony ORDER BY kd_testimony DESC LIMIT 0,1');
-        if ($kode_temp == '') {
-            $kode = 'T0001';
+function kd_testimony()
+{
+    $kode_temp = fetch_row('SELECT kd_testimony FROM wbpl_testimony ORDER BY kd_testimony DESC LIMIT 0,1');
+    if ($kode_temp == '') {
+        $kode = 'T0001';
+    } else {
+        $jum = substr($kode_temp, 1, 4);
+        $jum++;
+        if ($jum <= 9) {
+            $kode = 'T000'.$jum;
+        } elseif ($jum <= 99) {
+            $kode = 'T00'.$jum;
+        } elseif ($jum <= 999) {
+            $kode = 'T0'.$jum;
+        } elseif ($jum <= 9999) {
+            $kode = 'T'.$jum;
         } else {
-            $jum = substr($kode_temp, 1, 4);
-            $jum++;
-            if ($jum <= 9) {
-                $kode = 'T000'.$jum;
-            } elseif ($jum <= 99) {
-                $kode = 'T00'.$jum;
-            } elseif ($jum <= 999) {
-                $kode = 'T0'.$jum;
-            } elseif ($jum <= 9999) {
-                $kode = 'T'.$jum;
-            } else {
-                die('Kode member melebihi batas');
-            }
+            die('Kode member melebihi batas');
         }
-
-        return $kode;
     }
+
+    return $kode;
 }
 
 if (! isset($_SESSION)) {
     session_start();
 }
 
-if (! function_exists('writeShoppingCart')) {
-    function writeShoppingCart()
-    {
-        if (isset($_GET['action'])) {
-            $cart = $_SESSION['cart'];
-            if ($cart) {
-                // Parse the cart session variable
-                $items = explode(',', $cart);
-                $s = (count($items) > 1) ? 's' : '';
-
-                return '<p>Ada <a href="index.php?page=cart">'.count($items).' barang'.$s.' di keranjang belanja</a></p>';
-            }
-            echo '<p>Anda belum pesan apapun</p>';
-        } else {
-            echo '<p>Anda belum pesan apapun</p>';
-        }
-    }
-}
-
-if (! function_exists('getQty')) {
-    function getQty()
-    {
-        $cart = $_SESSION['cart'];
-        if (! $cart) {
-            return 0;
-        }
-        // Parse the cart session variable
-        $items = explode(',', $cart);
-        $s = (count($items) > 1) ? 's' : '';
-
-        return count($items);
-    }
-}
-
-if (! function_exists('wbpl_showCart')) {
-    function wbpl_showCart()
-    {
-        global $db;
-        if (isset($_SESSION['cart'])) {
-            if ($cart = $_SESSION['cart']) {
-                if (isset($_GET['action'])) {
-                    $items = explode(',', $cart);
-                    foreach ($items as $item) {
-                        $contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
-                    }
-                    echo '<form action="index.php?page=cart&view=cart&action=update#contents" method="post" id="cart">';
-                    echo '<table border=0 align="center" class="table table-bordered">';
-
-                    $total = 0;
-                    foreach ($contents as $id => $qty) {
-                        $sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
-                        $result = $mysqli->query($sql);
-                        $rows = $result->fetch_array();
-
-                        echo'<tr>
-                                <td>Brand</td>
-                                <td colspan="4">'.$rows['kd_product'].'</td>
-                            <tr>
-                            <tr>
-                                <td>Brand</td>
-                                <td colspan="4">'.$rows['nama_brand'].'</td>
-                            <tr>
-                            <tr>
-                                    <td>Instrument Type</td>
-                                    <td colspan="4">'.$rows['nama_instype'].'</td>
-                            </tr>
-                            <tr">
-                                <td rowspan="2">Price</td>
-                                <td rowspan="2">Rp. '.$rows['price'].'</td>
-                                <td rowspan="2"><input type="text" name="qty'.$id.'" value="'.$qty.'" size="2" maxlength="3" /></td>
-
-                                <td rowspan="2">Rp. '.($rows['price'] * $qty).'</td>
-
-                                <td><a href="index.php?page=cart&view=cart&action=delete&id='.$id.'" class="btn btn-danger">Hapus</a></td>
-                            </tr>
-                            <tr><td><br></td></tr>';
-
-                        $total += $rows['price'] * $qty;
-                    }
-                    echo '</table>';
-                    $qty = getQty();
-
-                    echo '<p>Sub Total: <strong> Rp. '.$total.'</strong></p>';
-
-                    $_SESSION['totalbayar'] = $total;
-                    echo '<div><button type="submit" class="btn btn-primary">Update Cart</button>
-                <a href="index.php?page=cart&view=cart&kirim=true#fpb" class="btn btn-inverse">Next</a></div>';
-                    echo '</form>';
-                } else {
-                    $items = explode(',', $cart);
-                    foreach ($items as $item) {
-                        $contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
-                    }
-                    echo '<form action="index.php?page=cart&view=cart&action=update" method="post" id="cart">';
-                    echo '<table border=0 align="center" class="table table-bordered">';
-
-                    $total = 0;
-                    foreach ($contents as $id => $qty) {
-                        $sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
-                        $result = $mysqli->query($sql);
-                        $rows = $result->fetch_array();
-
-                        echo     '<tr>
-                                <td>Brand</td>
-                                <td colspan="4">'.$rows['kd_product'].'</td>
-                            <tr>
-                            <tr>
-                                <td>Brand</td>
-                                <td colspan="4">'.$rows['nama_brand'].'</td>
-                            <tr>
-                            <tr>
-                                <td>Instrument Type</td>
-                                <td colspan="4">'.$rows['nama_instype'].'</td>
-                            </tr>
-                            <tr">
-                                <td rowspan="2">Price</td>
-                                <td rowspan="2">Rp. '.$rows['price'].'</td>
-                                <td rowspan="2"><input type="text" name="qty'.$id.'" value="'.$qty.'" size="2" maxlength="3" /></td>
-
-                                <td rowspan="2">Rp. '.($rows['price'] * $qty).'</td>
-
-                                <td><a href="index.php?page=cart&view=cart&action=delete&id='.$id.'" class="btn btn-danger">Hapus</a></td>
-                            </tr>
-                            <tr><td><br></td></tr>';
-
-                        $total += $rows['price'] * $qty;
-                    }
-                    echo '</table>';
-                    $qty = getQty();
-
-                    echo '<p>Sub Total: <strong> Rp. '.$total.'</strong></p>';
-
-                    $_SESSION['totalbayar'] = $total;
-                    echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
-                <a href="index.php?page=cart&view=cart&kirim=true#fpb" class="btn btn-inverse">Next</a></div>';
-                    echo '</form>';
-                }
-            }
-        } else {
-            echo 'Keranjang belanjaan Anda masih kosong';
-        }
-    }
-}
-
-if (! function_exists('insertToDB')) {
-    function insertToDB($kode_pesan)
-    {
-        global $db;
-        $total_bayar = $_SESSION['totalbayar'];
+function writeShoppingCart()
+{
+    if (isset($_GET['action'])) {
         $cart = $_SESSION['cart'];
         if ($cart) {
+            // Parse the cart session variable
             $items = explode(',', $cart);
-            $contents = [];
-            foreach ($items as $item) {
-                $contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
-            }
+            $s = (count($items) > 1) ? 's' : '';
 
-            $sql_pesan = "insert into pesan (kd_pesan,tgl_pesan,total_bayar)
-        values( '$kode_pesan', sysdate(),'$total_bayar')";
-
-            mysql_query($sql_pesan) or die(mysql_error());
-            foreach ($contents as $id => $qty) {
-                $sql = "insert into det_pesan(no_pesan,kd_buku,total_pesan)
-            values('$kode_pesan','$id','$qty')";
-
-                $result = mysql_query($sql) or die(mysql_error());
-            }
-        } else {
-            $output[] = '<p>Keranjang belanja masih kosong.</p>';
+            return '<p>Ada <a href="index.php?page=cart">'.count($items).' barang'.$s.' di keranjang belanja</a></p>';
         }
+        echo '<p>Anda belum pesan apapun</p>';
+    } else {
+        echo '<p>Anda belum pesan apapun</p>';
     }
 }
+
+function getQty()
+{
+    $cart = $_SESSION['cart'];
+    if (! $cart) {
+        return 0;
+    }
+    // Parse the cart session variable
+    $items = explode(',', $cart);
+    $s = (count($items) > 1) ? 's' : '';
+
+    return count($items);
+}
+
+function wbpl_showCart()
+{
+    global $db;
+    if (isset($_SESSION['cart'])) {
+        if ($cart = $_SESSION['cart']) {
+            if (isset($_GET['action'])) {
+                $items = explode(',', $cart);
+                foreach ($items as $item) {
+                    $contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
+                }
+                echo '<form action="index.php?page=cart&view=cart&action=update#contents" method="post" id="cart">';
+                echo '<table border=0 align="center" class="table table-bordered">';
+
+                $total = 0;
+                foreach ($contents as $id => $qty) {
+                    $sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
+                    $result = $mysqli->query($sql);
+                    $rows = $result->fetch_array();
+
+                    echo'<tr>
+                            <td>Brand</td>
+                            <td colspan="4">'.$rows['kd_product'].'</td>
+                        <tr>
+                        <tr>
+                            <td>Brand</td>
+                            <td colspan="4">'.$rows['nama_brand'].'</td>
+                        <tr>
+                        <tr>
+                                <td>Instrument Type</td>
+                                <td colspan="4">'.$rows['nama_instype'].'</td>
+                        </tr>
+                        <tr">
+                            <td rowspan="2">Price</td>
+                            <td rowspan="2">Rp. '.$rows['price'].'</td>
+                            <td rowspan="2"><input type="text" name="qty'.$id.'" value="'.$qty.'" size="2" maxlength="3" /></td>
+
+                            <td rowspan="2">Rp. '.($rows['price'] * $qty).'</td>
+
+                            <td><a href="index.php?page=cart&view=cart&action=delete&id='.$id.'" class="btn btn-danger">Hapus</a></td>
+                        </tr>
+                        <tr><td><br></td></tr>';
+
+                    $total += $rows['price'] * $qty;
+                }
+                echo '</table>';
+                $qty = getQty();
+
+                echo '<p>Sub Total: <strong> Rp. '.$total.'</strong></p>';
+
+                $_SESSION['totalbayar'] = $total;
+                echo '<div><button type="submit" class="btn btn-primary">Update Cart</button>
+            <a href="index.php?page=cart&view=cart&kirim=true#fpb" class="btn btn-inverse">Next</a></div>';
+                echo '</form>';
+            } else {
+                $items = explode(',', $cart);
+                foreach ($items as $item) {
+                    $contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
+                }
+                echo '<form action="index.php?page=cart&view=cart&action=update" method="post" id="cart">';
+                echo '<table border=0 align="center" class="table table-bordered">';
+
+                $total = 0;
+                foreach ($contents as $id => $qty) {
+                    $sql = "SELECT * from wbpl_product WHERE kd_product = '$id'";
+                    $result = $mysqli->query($sql);
+                    $rows = $result->fetch_array();
+
+                    echo     '<tr>
+                            <td>Brand</td>
+                            <td colspan="4">'.$rows['kd_product'].'</td>
+                        <tr>
+                        <tr>
+                            <td>Brand</td>
+                            <td colspan="4">'.$rows['nama_brand'].'</td>
+                        <tr>
+                        <tr>
+                            <td>Instrument Type</td>
+                            <td colspan="4">'.$rows['nama_instype'].'</td>
+                        </tr>
+                        <tr">
+                            <td rowspan="2">Price</td>
+                            <td rowspan="2">Rp. '.$rows['price'].'</td>
+                            <td rowspan="2"><input type="text" name="qty'.$id.'" value="'.$qty.'" size="2" maxlength="3" /></td>
+
+                            <td rowspan="2">Rp. '.($rows['price'] * $qty).'</td>
+
+                            <td><a href="index.php?page=cart&view=cart&action=delete&id='.$id.'" class="btn btn-danger">Hapus</a></td>
+                        </tr>
+                        <tr><td><br></td></tr>';
+
+                    $total += $rows['price'] * $qty;
+                }
+                echo '</table>';
+                $qty = getQty();
+
+                echo '<p>Sub Total: <strong> Rp. '.$total.'</strong></p>';
+
+                $_SESSION['totalbayar'] = $total;
+                echo '<div><button type="submit" class="btn btn-primary">Update cart</button>
+            <a href="index.php?page=cart&view=cart&kirim=true#fpb" class="btn btn-inverse">Next</a></div>';
+                echo '</form>';
+            }
+        }
+    } else {
+        echo 'Keranjang belanjaan Anda masih kosong';
+    }
+}
+
+function insertToDB($kode_pesan)
+{
+    global $db;
+    $total_bayar = $_SESSION['totalbayar'];
+    $cart = $_SESSION['cart'];
+    if ($cart) {
+        $items = explode(',', $cart);
+        $contents = [];
+        foreach ($items as $item) {
+            $contents[$item] = (isset($contents[$item])) ? $contents[$item] + 1 : 1;
+        }
+
+        $sql_pesan = "INSERT INTO pesan (kd_pesan,tgl_pesan,total_bayar)
+                        values( '$kode_pesan', sysdate(),'$total_bayar')";
+
+        mysql_query($sql_pesan) or die(mysql_error());
+
+        foreach ($contents as $id => $qty) {
+            $sql = "INSERT INTO det_pesan(no_pesan,kd_buku,total_pesan)
+                    values('$kode_pesan','$id','$qty')";
+
+            $result = mysql_query($sql) or die(mysql_error());
+        }
+    } else {
+        $output[] = '<p>Keranjang belanja masih kosong.</p>';
+    }
+}
+
 /*
 function user_member($user) {
     $br = fetch_row("SELECT user FROM member WHERE user='$user'");

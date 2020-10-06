@@ -136,7 +136,7 @@ switch ($action) {
     $ac = $_GET['ac'];
     switch ($ac) {
       case 'nama_product':
-        $sql = "select nama_brand from wbpl_brand where nama_brand LIKE '%$q%'";
+        $sql = "SELECT nama_brand FROM wbpl_brand WHERE nama_brand LIKE '%$q%'";
         $querysql = mysql_query($sql);
         while ($kt = mysql_fetch_array($querysql)) {
             $kata = $kt['nama_brand'];
@@ -145,7 +145,7 @@ switch ($action) {
       break;
 
       case 'nama_instype':
-        $sql = "select nama_instype from wbpl_instype where nama_instype LIKE '%$q%'";
+        $sql = "SELECT nama_instype FROM wbpl_instype WHERE nama_instype LIKE '%$q%'";
         $querysql = mysql_query($sql);
         while ($kt = mysql_fetch_array($querysql)) {
             $kata = $kt['nama_instype'];
@@ -160,7 +160,7 @@ switch ($action) {
     $nama_brand = $_POST['nama_brand'];
 
     $sql = "INSERT INTO wbpl_brand(kd_brand,nama_brand)
-      VALUES('$kd_brand', '$nama_brand')";
+            VALUES('$kd_brand', '$nama_brand')";
     $result = mysql_query($sql) or die(mysql_error());
 
     //check if query successful
@@ -176,11 +176,9 @@ switch ($action) {
     $kd_brand = $_POST['kd_brand'];
     $nama_brand = $_POST['nama_brand'];
 
-    $sql = " update wbpl_brand
-          set
-            nama_brand='$nama_brand'
-          where
-            kd_brand='$kd_brand'";
+    $sql = "UPDATE wbpl_brand
+            SET nama_brand='$nama_brand'
+            WHERE kd_brand='$kd_brand'";
 
     //echo $sql;
     $result = mysql_query($sql) or die(mysql_error());
@@ -199,7 +197,7 @@ switch ($action) {
     $nama_instype = $_POST['nama_instype'];
 
     $sql = "INSERT INTO wbpl_instype(kd_instype,nama_instype)
-      VALUES('$kd_instype', '$nama_instype')";
+            VALUES('$kd_instype', '$nama_instype')";
     $result = mysql_query($sql) or die(mysql_error());
 
     //check if query successful
@@ -215,11 +213,9 @@ switch ($action) {
     $kd_instype = $_POST['kd_instype'];
     $nama_instype = $_POST['nama_instype'];
 
-    $sql = " update wbpl_instype
-            set
-              nama_instype='$nama_instype'
-            where
-              kd_instype='$kd_instype'";
+    $sql = "UPDATE wbpl_instype
+            SET nama_instype='$nama_instype'
+            WHERE kd_instype='$kd_instype'";
 
     //echo $sql;
     $result = mysql_query($sql) or die(mysql_error());
@@ -239,11 +235,8 @@ switch ($action) {
     $member_phone = $_POST['Phone'];
     $member_email = $_POST['Email'];
 
-    $sql = " update wbpl_member set
-          name='$member_name',
-          address='$member_address',
-          phone='$member_phone',
-          email='$member_email'";
+    $sql = "UPDATE wbpl_member
+            SET name='$member_name', address='$member_address', phone='$member_phone', email='$member_email'";
 
     //echo $sql;
     $result = mysql_query($sql) or die(mysql_error());
@@ -263,7 +256,7 @@ switch ($action) {
     $biaya = $_POST['biaya'];
 
     $sql = "INSERT INTO biaya_kirim(id_kota,nama_kota,biaya)
-      VALUES('$id_kota', '$nama_kota','$biaya')";
+            VALUES('$id_kota', '$nama_kota','$biaya')";
     $result = mysql_query($sql) or die(mysql_error());
 
     //check if query successful
@@ -280,7 +273,7 @@ switch ($action) {
     $nama_kota = $_POST['nama_kota'];
     $biaya = $_POST['biaya'];
 
-    $sql = " update biaya_kirim set nama_kota='$nama_kota', biaya='$biaya' where id_kota='$id_kota'";
+    $sql = "UPDATE biaya_kirim SET nama_kota='$nama_kota', biaya='$biaya' WHERE id_kota='$id_kota'";
 
     //echo $sql;
     $result = mysql_query($sql) or die(mysql_error());
@@ -298,10 +291,8 @@ switch ($action) {
     $kd_testimony = kd_testimony();
     $testimony_isi = $_POST['testimony_isi'];
 
-    $sql = "INSERT INTO wbpl_testimony(kd_testimony,
-                    testimony_isi)
-        VALUES('$kd_testimony',
-            '$testimony_isi')";
+    $sql = "INSERT INTO wbpl_testimony(kd_testimony, testimony_isi)
+            VALUES('$kd_testimony', '$testimony_isi')";
     $result = mysql_query($sql) or die(mysql_error());
 
     //check if query successful
@@ -356,12 +347,8 @@ switch ($action) {
         $cpass_user = md5($cpass_user);
 
         $sql = "INSERT INTO wbpl_member(Kd_member,name,
-                      username,
-                      password,
-                      gender,
-                      address,
-                      phone,
-                      email)
+                  username, password, gender, address,
+                  phone, email)
         VALUES('$Kd_member','$name_user',
             '$username_user',
             '$cpass_user',

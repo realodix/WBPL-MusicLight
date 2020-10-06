@@ -28,7 +28,7 @@ switch ($action) {
       //===========================
       if (isset($_GET['del'])) {
           $id_kota = $_GET['id'];
-          $hapus = "delete from biaya_kirim where id_kota='$id_kota'";
+          $hapus = "DELETE FROM biaya_kirim WHERE id_kota='$id_kota'";
           mysql_query($hapus);
       }
 
@@ -92,7 +92,7 @@ switch ($action) {
 
     <?php
     //=============CUT HERE====================================
-    $tampil2 = mysql_query('select * from biaya_kirim');
+    $tampil2 = mysql_query('SELECT * FROM biaya_kirim');
     $jmldata = mysql_num_rows($tampil2);
     $jumlah_halaman = ceil($jmldata / $batas);
     ?>
@@ -162,7 +162,7 @@ switch ($action) {
     $id = $_GET['id'];
 
     //ambil data dari table feedback
-    $sql = "select * from biaya_kirim where id_kota='$id' ";
+    $sql = "SELECT * FROM biaya_kirim WHERE id_kota='$id' ";
     $result = mysql_query($sql) or die(mysql_error());
     ?>
 

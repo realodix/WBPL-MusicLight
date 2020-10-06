@@ -137,7 +137,7 @@ if (isset($_SESSION['username'])) {
                                 <td width="350">
                                 <select name='id_kota' id='id_kota'>
                                 <?php
-                                $get_kota = mysql_query('select * from biaya_kirim order by nama_kota');
+                                $get_kota = mysql_query('SELECT * FROM biaya_kirim ORDER BY nama_kota');
                     while ($rows = mysql_fetch_array($get_kota)) {
                         ?>
                                 <option value="<?php echo $rows['id_kota']?>"><?php echo $rows['nama_kota']
@@ -177,7 +177,7 @@ if (isset($_SESSION['username'])) {
             $kd_pesan = isset($_SESSION['kd_pesan']) ? $_SESSION['kd_pesan'] : false;
             //echo "nama kota:".$id_kota;
             //echo "SESSION KOTA:".$_SESSION['id_kota'];
-            $get_data = mysql_query("select biaya from biaya_kirim where id_kota='$id_kota'") or die(mysql_error());
+            $get_data = mysql_query("SELECT biaya FROM biaya_kirim WHERE id_kota='$id_kota'") or die(mysql_error());
             $biaya = mysql_fetch_array($get_data);
             $biaya = $biaya['biaya'];
             $totalBayar = $_SESSION['totalbayar'];

@@ -6,18 +6,16 @@ include '../wbpl-function.php';
 
 
 <?php
-/*
-* kode untuk menghapus data
-*/
+// Kode untuk menghapus data
 if (isset($_GET['del'])) {
     $no_pesan = $_GET['id'];
-    $hapus = "delete from pesan where kd_pesan='$no_pesan'";
+    $hapus = "DELETE FROM pesan WHERE kd_pesan='$no_pesan'";
     mysql_query($hapus);
 }
 $sql = '';
 if (isset($_POST['btnCari'])) {
     $cari = $_POST['cari'];
-    //ambil data dari table admin
+    // ambil data dari table admin
     $sql = "SELECT * FROM  pesan where kd_pesan like '%$cari%'";
 } else {
     $sql = 'SELECT * FROM  pesan';
@@ -25,7 +23,7 @@ if (isset($_POST['btnCari'])) {
 
 $result = mysql_query($sql) or die(mysql_error());
 
-//proses menampilkan data
+// proses menampilkan data
 while ($rows = mysql_fetch_array($result)) {
     ?>
 
@@ -44,7 +42,7 @@ while ($rows = mysql_fetch_array($result)) {
 <?php
 }
 
-//tutup koneksi
+// tutup koneksi
 ?>
 <tr><td align=right colspan='3'>
 <?php
@@ -64,7 +62,7 @@ if (isset($_GET['status'])) {
 <?php
 
 mysql_close();
-//close database
+// close database
 
-//tampilan siapa yang login
+// tampilan siapa yang login
 ?>

@@ -27,7 +27,7 @@ include '../wbpl-function.php';
  */
 if (isset($_GET['del'])) {
     $Kd_member = $_GET['id'];
-    $hapus = "delete from wbpl_member where Kd_member='$Kd_member'";
+    $hapus = "DELETE FROM wbpl_member WHERE Kd_member='$Kd_member'";
     mysql_query($hapus) or die(mysql_error());
 }
 
@@ -97,7 +97,7 @@ while ($rows = mysql_fetch_array($result)) {
 <?php
 
   //=============CUT HERE====================================
-  $tampil2 = mysql_query('select * from wbpl_member');
+  $tampil2 = mysql_query('SELECT * FROM wbpl_member');
   $jmldata = mysql_num_rows($tampil2);
   $jumlah_halaman = ceil($jmldata / $batas);
 ?>

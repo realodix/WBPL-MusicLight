@@ -5,9 +5,9 @@
  */
 if (isset($_GET['aprv'])) {
     $kd_testimony = $_GET['id'];
-    $setuju = "update wbpl_testimony set
-        testimony_status='approved'
-        where kd_testimony='$kd_testimony'";
+    $setuju = "UPDATE wbpl_testimony
+        SET testimony_status='approved'
+        WHERE kd_testimony='$kd_testimony'";
     mysql_query($setuju) or die(mysql_error());
 }
 
@@ -16,9 +16,9 @@ if (isset($_GET['aprv'])) {
  */
 if (isset($_GET['unaprv'])) {
     $kd_testimony = $_GET['id'];
-    $setuju = "update wbpl_testimony set
-        testimony_status='pending'
-        where kd_testimony='$kd_testimony'";
+    $setuju = "UPDATE wbpl_testimony
+        SET testimony_status='pending'
+        WHERE kd_testimony='$kd_testimony'";
     mysql_query($setuju) or die(mysql_error());
 }
 
@@ -27,7 +27,7 @@ if (isset($_GET['unaprv'])) {
  */
 if (isset($_GET['del'])) {
     $kd_testimony = $_GET['id'];
-    $hapus = "delete from wbpl_testimony where kd_testimony='$kd_testimony'";
+    $hapus = "DELETE FROM wbpl_testimony WHERE kd_testimony='$kd_testimony'";
     mysql_query($hapus) or die(mysql_error());
 }
 
