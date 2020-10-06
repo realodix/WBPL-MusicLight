@@ -1,6 +1,6 @@
 <?php
 
-include '../wbpl-function.php';
+// include '../wbpl-function.php';
 
 ?>
 <table  width="600px" border=0>
@@ -13,12 +13,10 @@ include '../wbpl-function.php';
     </tr>
 
     <?php
-    /*
-    * kode untuk menghapus data
-    */
+    // kode untuk menghapus data
     if (isset($_GET['del'])) {
         $no_det_pesan = $_GET['id'];
-        $hapus = "delete from det_pesan where no_det_pesan='$no_det_pesan'";
+        $hapus = "DELETE FROM det_pesan WHERE no_det_pesan='$no_det_pesan'";
         mysql_query($hapus);
     }
 
@@ -26,7 +24,7 @@ include '../wbpl-function.php';
 
     if (isset($_POST['btnCari'])) {
         $cari = $_POST['cari'];
-        //ambil data dari table admin
+        // ambil data dari table admin
         $sql = "SELECT * FROM  det_pesan where no_det_pesan like '%$cari%'";
     } else {
         $sql = 'SELECT * FROM  det_pesan';
@@ -34,7 +32,7 @@ include '../wbpl-function.php';
 
     $result = mysql_query($sql) or die(mysql_error());
 
-    //proses menampilkan data
+    // proses menampilkan data
     while ($rows = mysql_fetch_array($result)) {
         ?>
 
