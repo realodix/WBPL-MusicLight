@@ -28,7 +28,7 @@ function query($qry)
 function fetch_row($qry)
 {
     $tmp = query($qry);
-    [$result] = mysql_fetch_row($tmp);
+    [$result] = mysqli_fetch_row($tmp);
 
     return $result;
 }
@@ -36,7 +36,7 @@ function fetch_row($qry)
 function num_rows($qry)
 {
     $tmp = query($qry);
-    $jum = mysql_num_rows($tmp);
+    $jum = mysqli_num_rows($tmp);
 
     return $jum;
 }
@@ -368,13 +368,13 @@ function insertToDB($kode_pesan)
         $sql_pesan = "INSERT INTO pesan (kd_pesan,tgl_pesan,total_bayar)
                         values( '$kode_pesan', sysdate(),'$total_bayar')";
 
-        mysql_query($sql_pesan) or die(mysql_error());
+        $mysqli->query($sql_pesan);
 
         foreach ($contents as $id => $qty) {
             $sql = "INSERT INTO det_pesan(no_pesan,kd_buku,total_pesan)
                     values('$kode_pesan','$id','$qty')";
 
-            $result = mysql_query($sql) or die(mysql_error());
+            $result = $mysqli->query($sql);
         }
     } else {
         $output[] = '<p>Keranjang belanja masih kosong.</p>';
@@ -410,7 +410,7 @@ function paging($sql, $limit) {
     require_once (class_ . 'pager/Pager.php');
     $isi = query($sql);
     $data = array();
-    while ($row = mysql_fetch_row($isi)) {
+    while ($row = mysqli_fetch_row($isi)) {
         $data[] = $row;
     }
     @mysql_free_result($isi);

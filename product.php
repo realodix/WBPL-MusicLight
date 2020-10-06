@@ -103,10 +103,10 @@ switch ($view) {
         //=============CUT HERE====================================
         $tampil2 = $mysqli->query('SELECT * FROM wbpl_product');
         $jmldata = $tampil2->num_rows;
-        $jumlah_halaman = ceil($jmldata / $batas);
+        $jumlahHalaman = ceil($jmldata / $batas);
 
         echo '<br> <br> Halaman: ';
-        for ($i = 1; $i <= $jumlah_halaman; $i++) {
+        for ($i = 1; $i <= $jumlahHalaman; $i++) {
             if ($i != $halaman) {
                 echo "<a href=index.php?page=product&view=product&halaman=$i> $i</a> | ";
             } else {
@@ -225,10 +225,10 @@ switch ($view) {
             $tampil2 = $mysqli->query("select * from wbpl_product where nama_brand='$product_brand'");
 
             $jmldata = $tampil2->num_rows;
-            $jumlah_halaman = ceil($jmldata / $batas);
+            $jumlahHalaman = ceil($jmldata / $batas);
 
             echo '<br> <br> Halaman :';
-            for ($i = 1; $i <= $jumlah_halaman; $i++) {
+            for ($i = 1; $i <= $jumlahHalaman; $i++) {
                 if ($i != $halaman) {
                     echo '<a href=index.php?page=product&view=detail&id='.$product_brand."&halaman=$i> $i</a> | ";
                 } else {
@@ -240,10 +240,10 @@ switch ($view) {
             $tampil2 = $mysqli->query("select * from wbpl_product where nama_instype='$product_ins_type'");
 
             $jmldata = $tampil2->num_rows;
-            $jumlah_halaman = ceil($jmldata / $batas);
+            $jumlahHalaman = ceil($jmldata / $batas);
 
             echo '<br> <br> Halaman :';
-            for ($i = 1; $i <= $jumlah_halaman; $i++) {
+            for ($i = 1; $i <= $jumlahHalaman; $i++) {
                 if ($i != $halaman) {
                     echo '<a href=index.php?page=product&view=detail&p='.$product_ins_type."&halaman=$i> $i</a> | ";
                 } else {

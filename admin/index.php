@@ -81,7 +81,7 @@ require_once '../wbpl-function.php';
     <div id="content" class="pull-right width75">
         <div class="pull-right width75">
             <?php
-            /* kode untuk meload halaman yang berbeda*/
+            // Kode untuk meload halaman yang berbeda
             if (isset($_GET['page'])) {
                 $page = $_GET['page'].'.php';
                 include $page;

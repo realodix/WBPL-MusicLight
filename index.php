@@ -219,7 +219,7 @@
     <div class="row-fluid content">
         <div class="span9">
             <?php
-            /* kode untuk meload halaman yang berbeda*/
+            // Kode untuk meload halaman yang berbeda
             if (isset($_GET['page'])) {
                 $page = $_GET['page'].'.php';
                 include $page;

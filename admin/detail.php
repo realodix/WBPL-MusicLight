@@ -1,8 +1,3 @@
-<?php
-
-include '../wbpl-function.php';
-
-?>
 <table  width="600px" border=0>
     <tr style="background-color:#F79307">
         <td>No Detail Pesan</td>
@@ -13,29 +8,27 @@ include '../wbpl-function.php';
     </tr>
 
     <?php
-    /*
-    * kode untuk menghapus data
-    */
+    // Kode untuk menghapus data
     if (isset($_GET['del'])) {
-        $no_det_pesan = $_GET['id'];
-        $hapus = "delete from det_pesan where no_det_pesan='$no_det_pesan'";
-        mysql_query($hapus);
+        $noDetPesan = $_GET['id'];
+        $hapus = "DELETE FROM det_pesan WHERE no_det_pesan='$noDetPesan'";
+        $mysqli->query($hapus);
     }
 
     $sql = '';
 
     if (isset($_POST['btnCari'])) {
         $cari = $_POST['cari'];
-        //ambil data dari table admin
+        // ambil data dari table admin
         $sql = "SELECT * FROM  det_pesan where no_det_pesan like '%$cari%'";
     } else {
         $sql = 'SELECT * FROM  det_pesan';
     }
 
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
 
-    //proses menampilkan data
-    while ($rows = mysql_fetch_array($result)) {
+    // proses menampilkan data
+    while ($rows = mysqli_fetch_array($result)) {
         ?>
 
         <tr>
@@ -72,9 +65,3 @@ include '../wbpl-function.php';
     </tr>
 
 </table>
-
-<?php
-
-mysql_close();
-
-?>

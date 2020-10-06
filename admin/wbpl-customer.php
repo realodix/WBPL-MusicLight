@@ -1,8 +1,3 @@
-<?php
-include '../wbpl-function.php';
-
-?>
-
 <table  width="600px" border=0>
 <tr style="background-color:#F79307">
 <td>Kd customer</td><td>Nama</td><td>Alamat</td><td>Kode Pos</td><td>No Telp</td><td>Email</td>
@@ -12,12 +7,12 @@ include '../wbpl-function.php';
 
 <?php
 /*
- * kode untuk menghapus data
+ * Kode untuk menghapus data
  */
 if (isset($_GET['del'])) {
-    $kd_customer = $_GET['id'];
-    $hapus = "DELETE FROM customer WHERE kd_pemesan='$kd_customer'";
-    mysql_query($hapus);
+    $kdCustomer = $_GET['id'];
+    $hapus = "DELETE FROM customer WHERE kd_pemesan='$kdCustomer'";
+    $mysqli->query($hapus);
 }
 $sql = '';
 if (isset($_POST['btnCari'])) {
@@ -28,10 +23,10 @@ if (isset($_POST['btnCari'])) {
     $sql = 'SELECT * FROM  customer';
 }
 
-$result = mysql_query($sql) or die(mysql_error());
+$result = $mysqli->query($sql);
 
-//proses menampilkan data
-while ($rows = mysql_fetch_array($result)) {
+// Proses menampilkan data
+while ($rows = mysqli_fetch_array($result)) {
     ?>
 <tr>
   <td><?php echo $rows['kd_pemesan']; ?></td>
@@ -69,9 +64,3 @@ while ($rows = mysql_fetch_array($result)) {
 
 <tr></tr>
 </table>
-
-<?php
-
-mysql_close(); //close database
-
-?>

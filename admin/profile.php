@@ -12,9 +12,9 @@ include '../wbpl-function.php';
 <?php
 $id = $_GET['id'];
 $sql = "SELECT * FROM  wbpl_member where kd_member='$id' ";
-$result = mysql_query($sql) or die(mysql_error());
+$result = $mysqli->query($sql);
 
-while ($rows = mysql_fetch_array($result)) {
+while ($rows = mysqli_fetch_array($result)) {
     ?>
       <tr>
         <td width="120">Name</td>

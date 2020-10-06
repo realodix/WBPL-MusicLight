@@ -22,11 +22,11 @@
 
       $sql = 'SELECT * FROM  wbpl_product';
 
-      $result = mysql_query($sql) or die(mysql_error());
+      $result = $mysqli->query($sql);
 
-      //proses menampilkan data
+      // Proses menampilkan data
       $no = 1;
-      while ($rows = mysql_fetch_array($result)) {
+      while ($rows = mysqli_fetch_array($result)) {
           ?>
       <tr>
         <td><?php echo $no; ?></td>

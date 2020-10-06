@@ -100,11 +100,10 @@ if (isset($_SESSION['username'])) {
                             <table>
 <?php
                             $asdf = $_SESSION['username'];
-                    $sql = "SELECT * from wbpl_member
-                            WHERE username='$asdf'";
-                    $hasil = mysql_query($sql) or die(mysql_error());
+                    $sql = "SELECT * from wbpl_member WHERE username='$asdf'";
+                    $hasil = $mysqli->query($sql);
 
-                    while ($rows = mysql_fetch_array($hasil)) {
+                    while ($rows = mysqli_fetch_array($hasil)) {
                         ?>
                                 <tr>
                                     <td width="120"><b>Nama</b></td>
@@ -137,8 +136,8 @@ if (isset($_SESSION['username'])) {
                                 <td width="350">
                                 <select name='id_kota' id='id_kota'>
                                 <?php
-                                $get_kota = mysql_query('SELECT * FROM biaya_kirim ORDER BY nama_kota');
-                    while ($rows = mysql_fetch_array($get_kota)) {
+                                $get_kota = $mysqli->query('SELECT * FROM biaya_kirim ORDER BY nama_kota');
+                    while ($rows = mysqli_fetch_array($get_kota)) {
                         ?>
                                 <option value="<?php echo $rows['id_kota']?>"><?php echo $rows['nama_kota']
                                 ?></option>
@@ -173,18 +172,18 @@ if (isset($_SESSION['username'])) {
         case 'finish':
             //$id_kota = $_SESSION['id_kota'];
             $id_kota = isset($_SESSION['id_kota']) ? $_SESSION['id_kota'] : false;
-            //$kd_pesan=$_SESSION['kd_pesan'];
-            $kd_pesan = isset($_SESSION['kd_pesan']) ? $_SESSION['kd_pesan'] : false;
+            //$kdPesan=$_SESSION['kd_pesan'];
+            $kdPesan = isset($_SESSION['kd_pesan']) ? $_SESSION['kd_pesan'] : false;
             //echo "nama kota:".$id_kota;
             //echo "SESSION KOTA:".$_SESSION['id_kota'];
-            $get_data = mysql_query("SELECT biaya FROM biaya_kirim WHERE id_kota='$id_kota'") or die(mysql_error());
-            $biaya = mysql_fetch_array($get_data);
+            $get_data = $mysqli->query("SELECT biaya FROM biaya_kirim WHERE id_kota='$id_kota'");
+            $biaya = mysqli_fetch_array($get_data);
             $biaya = $biaya['biaya'];
             $totalBayar = $_SESSION['totalbayar'];
 ?>
 
             <h3>Selamat,Transaksi sukses di lakukan</h2>
-            <h3>Kode Pesan : <?php echo $kd_pesan; ?></h2>
+            <h3>Kode Pesan : <?php echo $kdPesan; ?></h2>
             <h3>Total Harga : Rp. <?php echo $totalBayar; ?></h2>
             <h3>Biaya kirim : Rp. <?php echo $biaya; ?></h2>
             <h3>Total Transfer: Rp. <?php echo $totalBayar + $biaya; ?></h2>

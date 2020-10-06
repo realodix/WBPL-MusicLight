@@ -12,8 +12,8 @@
           WHERE kd_product='$id'
           AND wbpl_product.nama_brand = wbpl_brand.nama_brand
           AND wbpl_product.nama_instype = wbpl_instype.nama_instype";
-  $result = mysql_query($sql) or die(mysql_error());
-  while ($rows = mysql_fetch_array($result)) {
+  $result = $mysqli->query($sql);
+  while ($rows = mysqli_fetch_array($result)) {
       ?>
 
     <tr>
