@@ -48,7 +48,7 @@ switch ($action) {
             '$product_stock',
             '$product_image',
             '$product_deskripsi')";
-        $result = mysql_query($sql) or die(mysql_error());
+        $result = $mysqli->query($sql);
     } else {
         $sql = "INSERT INTO wbpl_product(kd_product,
                   nama_product,
@@ -66,7 +66,7 @@ switch ($action) {
             '$product_stock',
             '$product_image',
             '$product_deskripsi')";
-        $result = mysql_query($sql) or die(mysql_error());
+        $result = $mysqli->query($sql);
     }
 
     //check if query successful
@@ -103,7 +103,7 @@ switch ($action) {
           where
             kd_product='$kd_product'";
 
-        $result = mysql_query($sql) or die(mysql_error());
+        $result = $mysqli->query($sql);
     } else {
         $sql = "UPDATE wbpl_product
           SET
@@ -115,7 +115,7 @@ switch ($action) {
           where
             kd_product='$kd_product'";
 
-        $result = mysql_query($sql) or die(mysql_error());
+        $result = $mysqli->query($sql);
     }
 
     //check if query successful
@@ -137,8 +137,8 @@ switch ($action) {
     switch ($ac) {
       case 'nama_product':
         $sql = "SELECT nama_brand FROM wbpl_brand WHERE nama_brand LIKE '%$q%'";
-        $querysql = mysql_query($sql);
-        while ($kt = mysql_fetch_array($querysql)) {
+        $querysql = $mysqli->query($sql);
+        while ($kt = mysqli_fetch_array($querysql)) {
             $kata = $kt['nama_brand'];
             echo "$kata\n";
         }
@@ -146,8 +146,8 @@ switch ($action) {
 
       case 'nama_instype':
         $sql = "SELECT nama_instype FROM wbpl_instype WHERE nama_instype LIKE '%$q%'";
-        $querysql = mysql_query($sql);
-        while ($kt = mysql_fetch_array($querysql)) {
+        $querysql = $mysqli->query($sql);
+        while ($kt = mysqli_fetch_array($querysql)) {
             $kata = $kt['nama_instype'];
             echo "$kata\n";
         }
@@ -161,7 +161,7 @@ switch ($action) {
 
     $sql = "INSERT INTO wbpl_brand(kd_brand,nama_brand)
             VALUES('$kd_brand', '$nama_brand')";
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
 
     //check if query successful
     if ($result) {
@@ -181,7 +181,7 @@ switch ($action) {
             WHERE kd_brand='$kd_brand'";
 
     //echo $sql;
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
 
     //check if query successful
     if ($result) {
@@ -198,7 +198,7 @@ switch ($action) {
 
     $sql = "INSERT INTO wbpl_instype(kd_instype,nama_instype)
             VALUES('$kd_instype', '$nama_instype')";
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
 
     //check if query successful
     if ($result) {
@@ -218,7 +218,7 @@ switch ($action) {
             WHERE kd_instype='$kd_instype'";
 
     //echo $sql;
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
 
     //check if query successful
     if ($result) {
@@ -239,7 +239,7 @@ switch ($action) {
             SET name='$member_name', address='$member_address', phone='$member_phone', email='$member_email'";
 
     //echo $sql;
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
 
     //check if query successful
     if ($result) {
@@ -257,7 +257,7 @@ switch ($action) {
 
     $sql = "INSERT INTO biaya_kirim(id_kota,nama_kota,biaya)
             VALUES('$id_kota', '$nama_kota','$biaya')";
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
 
     //check if query successful
     if ($result) {
@@ -276,7 +276,7 @@ switch ($action) {
     $sql = "UPDATE biaya_kirim SET nama_kota='$nama_kota', biaya='$biaya' WHERE id_kota='$id_kota'";
 
     //echo $sql;
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
 
     //check if query successful
     if ($result) {
@@ -293,7 +293,7 @@ switch ($action) {
 
     $sql = "INSERT INTO wbpl_testimony(kd_testimony, testimony_isi)
             VALUES('$kd_testimony', '$testimony_isi')";
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
 
     //check if query successful
     if ($result) {
@@ -356,7 +356,7 @@ switch ($action) {
             '$address_user',
             '$phone_user',
             '$email_user')";
-        $result = mysql_query($sql) or die(mysql_error());
+        $result = $mysqli->query($sql);
 
         //check if query successful
         if ($result) {

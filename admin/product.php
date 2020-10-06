@@ -16,7 +16,7 @@
   if (isset($_GET['del'])) {
       $kd_product = $_GET['id'];
       $hapus = "DELETE FROM wbpl_product WHERE kd_product='$kd_product'";
-      mysql_query($hapus) or die(mysql_error());
+      $mysqli->query($hapus) or die(mysql_error());
   }
 
   $sql = '';
@@ -26,7 +26,7 @@
       //ambil data dari table admin
       $sql = "SELECT * FROM  wbpl_product where wbpl_product like '%$cari%'";
   } else {
-      $sql ='SELECT * FROM wbpl_product, wbpl_brand, wbpl_instype
+      $sql = 'SELECT * FROM wbpl_product, wbpl_brand, wbpl_instype
             WHERE wbpl_product.nama_brand = wbpl_brand.nama_brand
             AND wbpl_product.nama_instype = wbpl_instype.nama_instype
             ORDER BY `wbpl_product`.`kd_product` ASC ';

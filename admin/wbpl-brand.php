@@ -49,7 +49,7 @@ switch ($action) {
       if (isset($_GET['del'])) {
           $kd_brand = $_GET['id'];
           $hapus = "DELETE FROM wbpl_brand WHERE kd_brand='$kd_brand'";
-          mysql_query($hapus);
+          $mysqli->query($hapus);
       }
       $sql = '';
       if (isset($_POST['btnCari'])) {
@@ -60,10 +60,10 @@ switch ($action) {
           $sql = 'SELECT * FROM  wbpl_brand';
       }
 
-      $result = mysql_query($sql) or die(mysql_error());
+      $result = $mysqli->query($sql);
 
       // Proses menampilkan data
-      while ($rows = mysql_fetch_array($result)) {
+      while ($rows = mysqli_fetch_array($result)) {
           ?>
       <tr>
         <td><?php echo $rows['kd_brand']; ?></td>
@@ -145,7 +145,7 @@ switch ($action) {
       if (isset($_GET['del'])) {
           $kd_instype = $_GET['id'];
           $hapus = "DELETE FROM wbpl_instype WHERE kd_instype='$kd_instype'";
-          mysql_query($hapus);
+          $mysqli->query($hapus);
       }
       $sql = '';
       if (isset($_POST['btnCari'])) {
@@ -156,10 +156,10 @@ switch ($action) {
           $sql = 'SELECT * FROM  wbpl_instype';
       }
 
-      $result = mysql_query($sql) or die(mysql_error());
+      $result = $mysqli->query($sql);
 
       // Proses menampilkan data
-      while ($rows = mysql_fetch_array($result)) {
+      while ($rows = mysqli_fetch_array($result)) {
           ?>
       <tr>
         <td><?php  echo $rows['kd_instype']; ?></td>
@@ -204,14 +204,14 @@ switch ($action) {
     $id = $_GET['id'];
     // ambil data dari table feedback
     $sql = "SELECT * FROM wbpl_brand WHERE kd_brand='$id' ";
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
     ?>
     <h2>Change Brand</h2>
     <table>
       <form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=update_brand">
         <?php
         // proses menampilkan data
-        while ($rows = mysql_fetch_array($result)) {
+        while ($rows = mysqli_fetch_array($result)) {
             ?>
 
         <td width="120">Kode Brand</td>
@@ -253,14 +253,14 @@ switch ($action) {
     $id = $_GET['id'];
     // ambil data dari table feedback
     $sql = "SELECT * FROM wbpl_instype WHERE kd_instype='$id' ";
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
     ?>
     <h2>Change Instrument</h2>
     <table>
       <form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=update_instype">
         <?php
         //proses menampilkan data
-        while ($rows = mysql_fetch_array($result)) {
+        while ($rows = mysqli_fetch_array($result)) {
             ?>
 
         <td width="120">Kode Instrument</td>

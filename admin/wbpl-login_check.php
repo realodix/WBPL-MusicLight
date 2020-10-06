@@ -21,7 +21,7 @@ if (isset($_POST['Submit_Login'])) {
 
     $userquery = $mysqli->query($sql);
 
-    if (mysql_num_rows($userquery) == 1) {
+    if (mysqli_num_rows($userquery) == 1) {
         header('location:index.php');
         $valid = true;
         $_SESSION['username'] = $username;

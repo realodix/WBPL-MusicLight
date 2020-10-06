@@ -17,7 +17,7 @@
     if (isset($_GET['del'])) {
         $no_det_pesan = $_GET['id'];
         $hapus = "DELETE FROM det_pesan WHERE no_det_pesan='$no_det_pesan'";
-        mysql_query($hapus);
+        $mysqli->query($hapus);
     }
 
     $sql = '';
@@ -30,10 +30,10 @@
         $sql = 'SELECT * FROM  det_pesan';
     }
 
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
 
     // proses menampilkan data
-    while ($rows = mysql_fetch_array($result)) {
+    while ($rows = mysqli_fetch_array($result)) {
         ?>
 
         <tr>
@@ -70,9 +70,3 @@
     </tr>
 
 </table>
-
-<?php
-
-mysql_close();
-
-?>

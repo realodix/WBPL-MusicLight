@@ -1,8 +1,3 @@
-<?php
-
-include '../wbpl-function.php';
-
-?>
 <h1> Tabel Member</h1>
 <form action="index.php?page=member" method="post">
   <div class="input-append">
@@ -28,7 +23,7 @@ include '../wbpl-function.php';
 if (isset($_GET['del'])) {
     $Kd_member = $_GET['id'];
     $hapus = "DELETE FROM wbpl_member WHERE Kd_member='$Kd_member'";
-    mysql_query($hapus) or die(mysql_error());
+    $mysqli->query($hapus) or die(mysql_error());
 }
 
 $batas = 5;
@@ -56,10 +51,10 @@ if (isset($_POST['btnCari'])) {
       limit $posisi,$batas";
 }
 
-$result = mysql_query($sql) or die(mysql_error());
+$result = $mysqli->query($sql);
 
 //proses menampilkan data
-while ($rows = mysql_fetch_array($result)) {
+while ($rows = mysqli_fetch_array($result)) {
     ?>
   <tr>
     <td><a href="index.php?page=profile&id=<?php echo $rows['kd_member']?>"><?php echo $rows['kd_member']; ?></a></td>
@@ -97,8 +92,8 @@ while ($rows = mysql_fetch_array($result)) {
 <?php
 
   //=============CUT HERE====================================
-  $tampil2 = mysql_query('SELECT * FROM wbpl_member');
-  $jmldata = mysql_num_rows($tampil2);
+  $tampil2 = $mysqli->query('SELECT * FROM wbpl_member');
+  $jmldata = mysqli_num_rows($tampil2);
   $jumlah_halaman = ceil($jmldata / $batas);
 ?>
 
@@ -114,7 +109,6 @@ while ($rows = mysql_fetch_array($result)) {
             echo '<li class='.'active'.'><a href='."> $i </a></li>";
         }
     }
-    mysql_close();
     ?>
     </ul>
   </div>

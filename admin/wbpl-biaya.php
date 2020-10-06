@@ -29,7 +29,7 @@ switch ($action) {
       if (isset($_GET['del'])) {
           $id_kota = $_GET['id'];
           $hapus = "DELETE FROM biaya_kirim WHERE id_kota='$id_kota'";
-          mysql_query($hapus);
+          $mysqli->query($hapus);
       }
 
       $sql = '';
@@ -42,11 +42,11 @@ switch ($action) {
           $sql = "SELECT * FROM  biaya_kirim limit $posisi,$batas";
       }
 
-      $result = mysql_query($sql) or die(mysql_error());
+      $result = $mysqli->query($sql);
       $no = 1;
 
       //proses menampilkan data
-      while ($rows = mysql_fetch_array($result)) {
+      while ($rows = mysqli_fetch_array($result)) {
           ?>
       <tr>
         <td><?php echo $no + $posisi; ?></td>
@@ -92,8 +92,8 @@ switch ($action) {
 
     <?php
     //=============CUT HERE====================================
-    $tampil2 = mysql_query('SELECT * FROM biaya_kirim');
-    $jmldata = mysql_num_rows($tampil2);
+    $tampil2 = $mysqli->query('SELECT * FROM biaya_kirim');
+    $jmldata = mysqli_num_rows($tampil2);
     $jumlah_halaman = ceil($jmldata / $batas);
     ?>
 
@@ -109,7 +109,6 @@ switch ($action) {
                 echo '<li class='.'active'.'><a href='."> $i </a></li>";
             }
         }
-        mysql_close();
         ?>
         </ul>
       </div>
@@ -163,7 +162,7 @@ switch ($action) {
 
     //ambil data dari table feedback
     $sql = "SELECT * FROM biaya_kirim WHERE id_kota='$id' ";
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
     ?>
 
     <h2>Change Biaya Kirim</h2>
@@ -171,7 +170,7 @@ switch ($action) {
       <form id="form1" name="form1" name="form2" method="post" action="wbpl_add-edit.php?action=update_biaya">
         <?php
         //proses menampilkan data
-        while ($rows = mysql_fetch_array($result)) {
+        while ($rows = mysqli_fetch_array($result)) {
             ?>
 
         <td width="120">ID KOta</td>

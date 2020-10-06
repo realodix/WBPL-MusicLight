@@ -8,7 +8,7 @@ if (isset($_GET['aprv'])) {
     $setuju = "UPDATE wbpl_testimony
         SET testimony_status='approved'
         WHERE kd_testimony='$kd_testimony'";
-    mysql_query($setuju) or die(mysql_error());
+    $mysqli->query($setuju);
 }
 
 /*
@@ -19,25 +19,21 @@ if (isset($_GET['unaprv'])) {
     $setuju = "UPDATE wbpl_testimony
         SET testimony_status='pending'
         WHERE kd_testimony='$kd_testimony'";
-    mysql_query($setuju) or die(mysql_error());
+    $mysqli->query($setuju);
 }
 
-/*
- * kode untuk menghapus data
- */
+// kode untuk menghapus data
 if (isset($_GET['del'])) {
     $kd_testimony = $_GET['id'];
     $hapus = "DELETE FROM wbpl_testimony WHERE kd_testimony='$kd_testimony'";
-    mysql_query($hapus) or die(mysql_error());
+    $mysqli->query($hapus);
 }
 
-/*
- * kode untuk menampilkan data
- */
+  // kode untuk menampilkan data
   $sql = 'SELECT * FROM  wbpl_testimony';
-  $result = mysql_query($sql) or die(mysql_error());
+  $result = $mysqli->query($sql);
 
-  while ($rows = mysql_fetch_array($result)) {
+  while ($rows = mysqli_fetch_array($result)) {
       ?>
 
   <p>#<?php echo '<b>'.$rows['kd_testimony'].'</b>';

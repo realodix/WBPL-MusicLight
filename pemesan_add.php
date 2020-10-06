@@ -29,7 +29,7 @@ if (isset($_POST['tambah'])) {
     $sql = "INSERT INTO customer(kd_pemesan,Nama,Alamat,kd_pos,No_telp,Email,id_kota,kd_pesan)
         VALUES('$kd_customer', '$Nama', '$Alamat','$kd_pos','$No_telp','$Email','$id_kota','$kode_pesan')";
 
-    $result = mysql_query($sql) or die(mysql_error());
+    $result = $mysqli->query($sql);
 
     $_SESSION['cart'] = '';
     //check if query successful
