@@ -1,33 +1,33 @@
 <?php
 
-if(isset($_SESSION['username'])){
+if (isset($_SESSION['username'])) {
     $view = $_GET['view'];
 
     switch ($view) {
-        case 'cart' :
+        case 'cart':
             // Process actions
-            if(isset($_GET['action'])){
+            if (isset($_GET['action'])) {
                 $cart = $_SESSION['cart'];
 
                 $action = $_GET['action'];
 
                 switch ($action) {
-                    case 'add' :
+                    case 'add':
                         if ($cart) {
-                            $cart .= ',' . $_GET['id'];
+                            $cart .= ','.$_GET['id'];
                         } else {
                             $cart = $_GET['id'];
                         }
                     break;
 
-                    case 'delete' :
+                    case 'delete':
                     if ($cart) {
                         $items = explode(',', $cart);
                         $newcart = '';
                         foreach ($items as $item) {
                             if ($_GET['id'] != $item) {
                                 if ($newcart != '') {
-                                    $newcart .= ',' . $item;
+                                    $newcart .= ','.$item;
                                 } else {
                                     $newcart = $item;
                                 }
@@ -37,14 +37,12 @@ if(isset($_SESSION['username'])){
                     }
                     break;
 
-                    case 'update' :
+                    case 'update':
                     if ($cart) {
-
                         $newcart = '';
 
                         foreach ($_POST as $key => $value) {
                             if (stristr($key, 'qty')) {
-
                                 $id = str_replace('qty', '', $key);
                                 $items = ($newcart != '') ? explode(',', $newcart) : explode(',', $cart);
                                 $newcart = '';
@@ -52,7 +50,7 @@ if(isset($_SESSION['username'])){
                                 foreach ($items as $item) {
                                     if ($id != $item) {
                                         if ($newcart != '') {
-                                            $newcart .= ',' . $item;
+                                            $newcart .= ','.$item;
                                         } else {
                                             $newcart = $item;
                                         }
@@ -61,7 +59,7 @@ if(isset($_SESSION['username'])){
 
                                 for ($i = 1; $i <= $value; $i++) {
                                     if ($newcart != '') {
-                                        $newcart .= ',' . $id;
+                                        $newcart .= ','.$id;
                                     } else {
                                         $newcart = $id;
                                     }
@@ -93,8 +91,8 @@ if(isset($_SESSION['username'])){
 
 
 <?php
-                if(isset($_GET['kirim'])){
-?>
+                if (isset($_GET['kirim'])) {
+                    ?>
                     <h3 id="fpb">Form Pengiriman barang</h3>
 
                     <form id="form1" name="form1" method="post" action="pemesan_add.php">
@@ -102,12 +100,12 @@ if(isset($_SESSION['username'])){
                             <table>
 <?php
                             $asdf = $_SESSION['username'];
-                            $sql="select * from wbpl_member
-                            where username='$asdf'";
-                            $hasil=mysql_query($sql) or die(mysql_error());
+                    $sql = "SELECT * from wbpl_member
+                            WHERE username='$asdf'";
+                    $hasil = mysql_query($sql) or die(mysql_error());
 
-                            while($rows=mysql_fetch_array($hasil)){
-?>
+                    while ($rows = mysql_fetch_array($hasil)) {
+                        ?>
                                 <tr>
                                     <td width="120"><b>Nama</b></td>
                                     <td width="350">
@@ -133,20 +131,19 @@ if(isset($_SESSION['username'])){
                                     </td>
                                 </tr>
 <?php
-                            }
-?>
+                    } ?>
                             <tr>
                                 <td width="120"><b>Kota</b></td>
                                 <td width="350">
                                 <select name='id_kota' id='id_kota'>
                                 <?php
-                                $get_kota=mysql_query('select * from biaya_kirim order by nama_kota');
-                                while ($rows=mysql_fetch_array($get_kota)){
-                                ?>
+                                $get_kota = mysql_query('SELECT * FROM biaya_kirim ORDER BY nama_kota');
+                    while ($rows = mysql_fetch_array($get_kota)) {
+                        ?>
                                 <option value="<?php echo $rows['id_kota']?>"><?php echo $rows['nama_kota']
                                 ?></option>
                                 <?php
-                                }//end while
+                    }//end while
                                 ?>
                                 </select></td>
                             </tr>
@@ -175,22 +172,22 @@ if(isset($_SESSION['username'])){
 
         case 'finish':
             //$id_kota = $_SESSION['id_kota'];
-            $id_kota = isset($_SESSION['id_kota'])?$_SESSION['id_kota']:false;
+            $id_kota = isset($_SESSION['id_kota']) ? $_SESSION['id_kota'] : false;
             //$kd_pesan=$_SESSION['kd_pesan'];
-            $kd_pesan = isset($_SESSION['kd_pesan'])?$_SESSION['kd_pesan']:false;
+            $kd_pesan = isset($_SESSION['kd_pesan']) ? $_SESSION['kd_pesan'] : false;
             //echo "nama kota:".$id_kota;
             //echo "SESSION KOTA:".$_SESSION['id_kota'];
-            $get_data = mysql_query("select biaya from biaya_kirim where id_kota='$id_kota'") or die(mysql_error());
+            $get_data = mysql_query("SELECT biaya FROM biaya_kirim WHERE id_kota='$id_kota'") or die(mysql_error());
             $biaya = mysql_fetch_array($get_data);
             $biaya = $biaya['biaya'];
             $totalBayar = $_SESSION['totalbayar'];
 ?>
 
             <h3>Selamat,Transaksi sukses di lakukan</h2>
-            <h3>Kode Pesan : <?php echo $kd_pesan;?></h2>
-            <h3>Total Harga : Rp. <?php echo $totalBayar;?></h2>
-            <h3>Biaya kirim : Rp. <?php echo $biaya;?></h2>
-            <h3>Total Transfer: Rp. <?php echo ($totalBayar+$biaya); ?></h2>
+            <h3>Kode Pesan : <?php echo $kd_pesan; ?></h2>
+            <h3>Total Harga : Rp. <?php echo $totalBayar; ?></h2>
+            <h3>Biaya kirim : Rp. <?php echo $biaya; ?></h2>
+            <h3>Total Transfer: Rp. <?php echo $totalBayar + $biaya; ?></h2>
             <p>Silahkan transfer uangnya yaa... ^_^</p>
 
             <hr>
@@ -200,8 +197,7 @@ if(isset($_SESSION['username'])){
 <?php
         break;
     }
-
-}else{
-    echo "Kamu harus login terlebih dahulu.";
+} else {
+    echo 'Kamu harus login terlebih dahulu.';
 }
 ?>

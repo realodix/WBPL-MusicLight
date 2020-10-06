@@ -12,48 +12,48 @@ switch ($action) {
 
       <?php
       //===================paging
-      $batas=4;
-      if(isset($_GET['halaman'])){
-        $halaman=$_GET['halaman'];
+      $batas = 4;
+      if (isset($_GET['halaman'])) {
+          $halaman = $_GET['halaman'];
       }
 
-      $posisi=null;
-      if(empty($halaman)){
-        $posisi=0;
-        $halaman=1;
-      }else{
-        $posisi=($halaman-1)* $batas;
+      $posisi = null;
+      if (empty($halaman)) {
+          $posisi = 0;
+          $halaman = 1;
+      } else {
+          $posisi = ($halaman - 1) * $batas;
       }
 
       //===========================
-      if(isset($_GET['del'])){
-        $id_kota=$_GET['id'];
-        $hapus ="delete from biaya_kirim where id_kota='$id_kota'";
-        mysql_query($hapus);
+      if (isset($_GET['del'])) {
+          $id_kota = $_GET['id'];
+          $hapus = "DELETE FROM biaya_kirim WHERE id_kota='$id_kota'";
+          mysql_query($hapus);
       }
 
-      $sql="";
+      $sql = '';
 
-      if(isset($_POST['btnCari'])){
-        $cari=$_POST['cari'];
-        //ambil data dari table admin
-        $sql="SELECT * FROM  biaya_kirim where id_kota like '%$cari%'";
-      }else{
-        $sql="SELECT * FROM  biaya_kirim limit $posisi,$batas";
+      if (isset($_POST['btnCari'])) {
+          $cari = $_POST['cari'];
+          //ambil data dari table admin
+          $sql = "SELECT * FROM  biaya_kirim where id_kota like '%$cari%'";
+      } else {
+          $sql = "SELECT * FROM  biaya_kirim limit $posisi,$batas";
       }
 
-      $result=mysql_query($sql) or die(mysql_error());
-      $no=1;
+      $result = mysql_query($sql) or die(mysql_error());
+      $no = 1;
 
       //proses menampilkan data
-      while($rows=mysql_fetch_array($result)){
-      ?>
+      while ($rows = mysql_fetch_array($result)) {
+          ?>
       <tr>
-        <td><?php echo $no+$posisi;?></td>
+        <td><?php echo $no + $posisi; ?></td>
 
-        <td><?php echo $rows['nama_kota'];?></td>
+        <td><?php echo $rows['nama_kota']; ?></td>
 
-        <td><?php echo $rows['biaya'];?></td>
+        <td><?php echo $rows['biaya']; ?></td>
 
         <td>
           <a class="btn" href="index.php?page=wbpl-biaya&action=edit&id=<?php echo $rows['id_kota']?>">
@@ -71,12 +71,12 @@ switch ($action) {
       <tr>
         <td align=right colspan='3'>
         <?php
-        if(isset($_GET['status'])) {
-          if($_GET['status'] == 0) {
-            echo " Operasi data berhasil";
-          } else {
-            echo "operasi gagal";
-          }
+        if (isset($_GET['status'])) {
+            if ($_GET['status'] == 0) {
+                echo ' Operasi data berhasil';
+            } else {
+                echo 'operasi gagal';
+            }
         }?>
         </td>
 
@@ -92,21 +92,22 @@ switch ($action) {
 
     <?php
     //=============CUT HERE====================================
-    $tampil2 = mysql_query("select * from biaya_kirim");
+    $tampil2 = mysql_query('SELECT * FROM biaya_kirim');
     $jmldata = mysql_num_rows($tampil2);
     $jumlah_halaman = ceil($jmldata / $batas);
     ?>
 
-    Jumlah data :<?php echo $jmldata;?>
+    Jumlah data :<?php echo $jmldata; ?>
 
       <div class="pagination">
         <ul>
         <?php
-        for($i = 1; $i <= $jumlah_halaman; $i++)
-          if($i != $halaman) {
-          echo "<li><a href=index.php?page=wbpl-biaya&action=view&halaman=$i> $i </a></li>";
-        }else {
-          echo "<li class=".'active'."><a href="."> $i </a></li>";
+        for ($i = 1; $i <= $jumlah_halaman; $i++) {
+            if ($i != $halaman) {
+                echo "<li><a href=index.php?page=wbpl-biaya&action=view&halaman=$i> $i </a></li>";
+            } else {
+                echo '<li class='.'active'.'><a href='."> $i </a></li>";
+            }
         }
         mysql_close();
         ?>
@@ -161,7 +162,7 @@ switch ($action) {
     $id = $_GET['id'];
 
     //ambil data dari table feedback
-    $sql = "select * from biaya_kirim where id_kota='$id' ";
+    $sql = "SELECT * FROM biaya_kirim WHERE id_kota='$id' ";
     $result = mysql_query($sql) or die(mysql_error());
     ?>
 
@@ -170,25 +171,25 @@ switch ($action) {
       <form id="form1" name="form1" name="form2" method="post" action="wbpl_add-edit.php?action=update_biaya">
         <?php
         //proses menampilkan data
-        while($rows=mysql_fetch_array($result)){
-        ?>
+        while ($rows = mysql_fetch_array($result)) {
+            ?>
 
         <td width="120">ID KOta</td>
-        <td width="350"><?php  echo $rows['id_kota'];?></td>
+        <td width="350"><?php  echo $rows['id_kota']; ?></td>
         </tr>
-        <input type="hidden" id="id_kota" name="id_kota" value=<?php echo $rows['id_kota'];?> />
+        <input type="hidden" id="id_kota" name="id_kota" value=<?php echo $rows['id_kota']; ?> />
         <tr>
           <td width="120">Nama Kota</td>
           <td width="350">
           <input name="nama_kota" type="text" id="nama_kota" size="40"
-          value=<?php echo $rows['nama_kota'];?>>
+          value=<?php echo $rows['nama_kota']; ?>>
           </td>
         </tr>
         <tr>
           <td width="120">Biaya</td>
           <td width="350">
           <input name="biaya" type="text" id="biaya" size="40"
-          value=<?php echo $rows['biaya'];?>>
+          value=<?php echo $rows['biaya']; ?>>
           </td>
         </tr>
         <tr>
@@ -200,7 +201,6 @@ switch ($action) {
           </td>
         </tr>
         <?php
-
         }
         ?>
       </form>

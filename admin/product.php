@@ -13,37 +13,37 @@
   /*
   * kode untuk menghapus data
   */
-  if(isset($_GET['del'])){
-    $kd_product=$_GET['id'];
-    $hapus ="delete from wbpl_product where kd_product='$kd_product'";
-    mysql_query($hapus) or die(mysql_error());
+  if (isset($_GET['del'])) {
+      $kd_product = $_GET['id'];
+      $hapus = "DELETE FROM wbpl_product WHERE kd_product='$kd_product'";
+      mysql_query($hapus) or die(mysql_error());
   }
 
-  $sql="";
+  $sql = '';
 
-  if(isset($_POST['btnCari'])){
-    $cari=$_POST['cari'];
-    //ambil data dari table admin
-    $sql="SELECT * FROM  wbpl_product where wbpl_product like '%$cari%'";
-  }else{
-    $sql="select * from wbpl_product, wbpl_brand, wbpl_instype
+  if (isset($_POST['btnCari'])) {
+      $cari = $_POST['cari'];
+      //ambil data dari table admin
+      $sql = "SELECT * FROM  wbpl_product where wbpl_product like '%$cari%'";
+  } else {
+      $sql = 'select * from wbpl_product, wbpl_brand, wbpl_instype
           where wbpl_product.nama_brand = wbpl_brand.nama_brand AND
             wbpl_product.nama_instype = wbpl_instype.nama_instype
-          ORDER BY `wbpl_product`.`kd_product` ASC ";
+          ORDER BY `wbpl_product`.`kd_product` ASC ';
   }
 
   $result = $mysqli->query($sql);
 
   //proses menampilkan data
-  while($rows = $result -> fetch_array()){
-  ?>
+  while ($rows = $result->fetch_array()) {
+      ?>
   <tr>
-    <td><?php  echo $rows['kd_product'];?></td>
-    <td><?php  echo $rows['nama_product'];?></td>
-    <td><?php  echo $rows['nama_brand'];?></td>
-    <td><?php  echo $rows['nama_instype'];?></td>
-    <td><?php  echo $rows['price'];?></td>
-    <td><?php  echo $rows['stock'];?></td>
+    <td><?php  echo $rows['kd_product']; ?></td>
+    <td><?php  echo $rows['nama_product']; ?></td>
+    <td><?php  echo $rows['nama_brand']; ?></td>
+    <td><?php  echo $rows['nama_instype']; ?></td>
+    <td><?php  echo $rows['price']; ?></td>
+    <td><?php  echo $rows['stock']; ?></td>
     <td>
       <a class="btn" href="index.php?page=updateproduct&id=<?php echo $rows['kd_product']?>">
       <i class="icon-edit" title="Edit"></i></a>
@@ -61,11 +61,11 @@
     <td align=right colspan="6">
     <?php
     if (isset($_GET['status'])) {
-      if ($_GET['status'] == 0) {
-        echo " Operasi data berhasil";
-      } else {
-        echo "operasi gagal";
-      }
+        if ($_GET['status'] == 0) {
+            echo ' Operasi data berhasil';
+        } else {
+            echo 'operasi gagal';
+        }
     }
     ?>
     </td>
@@ -90,6 +90,6 @@
 
 <?php
 
-$result -> close();
+$result->close();
 
 ?>

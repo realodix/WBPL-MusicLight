@@ -14,9 +14,9 @@
                     <?php
                     if (isset($_GET['err'])) {
                         if ($_GET['err'] == 1) {
-                            echo "Name must be filled.";
-                        }else if ($_GET['err'] == 2) {
-                            echo "Only alphabet letters.";
+                            echo 'Name must be filled.';
+                        } elseif ($_GET['err'] == 2) {
+                            echo 'Only alphabet letters.';
                         }
                     }
                     ?>
@@ -32,7 +32,7 @@
                     <?php
                     if (isset($_GET['err'])) {
                         if ($_GET['err'] == 3) {
-                            echo "Username must be filled.";
+                            echo 'Username must be filled.';
                         }
                     }
                     ?>
@@ -48,9 +48,9 @@
                     <?php
                     if (isset($_GET['err'])) {
                         if ($_GET['err'] == 4) {
-                            echo "Password must be filled.";
-                        }else if ($_GET['err'] == 41) {
-                            echo "Password must be filled more than 5 characters..";
+                            echo 'Password must be filled.';
+                        } elseif ($_GET['err'] == 41) {
+                            echo 'Password must be filled more than 5 characters..';
                         }
                     }
                     ?>
@@ -66,9 +66,9 @@
                     <?php
                     if (isset($_GET['err'])) {
                         if ($_GET['err'] == 5) {
-                            echo "Confirm password must be filled.";
-                        }else if ($_GET['err'] == 51) {
-                            echo "Match with password.";
+                            echo 'Confirm password must be filled.';
+                        } elseif ($_GET['err'] == 51) {
+                            echo 'Match with password.';
                         }
                     }
                     ?>
@@ -87,7 +87,7 @@
                     <?php
                     if (isset($_GET['err'])) {
                         if ($_GET['err'] == 6) {
-                            echo "Gender must be choosen.";
+                            echo 'Gender must be choosen.';
                         }
                     }
                     ?>
@@ -103,9 +103,9 @@
                     <?php
                     if (isset($_GET['err'])) {
                         if ($_GET['err'] == 7) {
-                            echo "Address must be filled.";
-                        }else if ($_GET['err'] == 71) {
-                            echo "Must be contain “street” word.";
+                            echo 'Address must be filled.';
+                        } elseif ($_GET['err'] == 71) {
+                            echo 'Must be contain “street” word.';
                         }
                     }
                     ?>
@@ -121,9 +121,9 @@
                     <?php
                     if (isset($_GET['err'])) {
                         if ($_GET['err'] == 8) {
-                            echo "Phone must be filled.";
-                        }else if ($_GET['err'] == 81) {
-                            echo "Must be contain only numbers.";
+                            echo 'Phone must be filled.';
+                        } elseif ($_GET['err'] == 81) {
+                            echo 'Must be contain only numbers.';
                         }
                     }
                     ?>
@@ -139,9 +139,9 @@
                     <?php
                     if (isset($_GET['err'])) {
                         if ($_GET['err'] == 9) {
-                            echo "E-Mail must be filled.";
-                        }else if ($_GET['err'] == 91) {
-                            echo "Must be contain match with email format.";
+                            echo 'E-Mail must be filled.';
+                        } elseif ($_GET['err'] == 91) {
+                            echo 'Must be contain match with email format.';
                         }
                     }
                     ?>
@@ -160,9 +160,9 @@
                     <?php
                     if (isset($_GET['status'])) {
                         if ($_GET['status'] == 0) {
-                            echo "Registrasi berhasil";
+                            echo 'Registrasi berhasil';
                         } else {
-                            echo "Registrasi gagal";
+                            echo 'Registrasi gagal';
                         }
                     }
                     ?>

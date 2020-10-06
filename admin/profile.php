@@ -1,6 +1,6 @@
 <?php
 
-include ('../wbpl-config.php');
+include '../wbpl-function.php';
 
 ?>
 <h1> Tabel Profile</h1>
@@ -11,36 +11,37 @@ include ('../wbpl-config.php');
     <table>
 <?php
 $id = $_GET['id'];
-$sql="SELECT * FROM  wbpl_member where kd_member='$id' ";
-$result=mysql_query($sql) or die(mysql_error());
+$sql = "SELECT * FROM  wbpl_member where kd_member='$id' ";
+$result = mysql_query($sql) or die(mysql_error());
 
-while($rows=mysql_fetch_array($result)){
-?>
+while ($rows = mysql_fetch_array($result)) {
+    ?>
       <tr>
         <td width="120">Name</td>
         <td width="350">
-        <input name="Name" type="text" id="Name" size="40" value="<?php echo $rows['name'];?>"/>
+        <input name="Name" type="text" id="Name" size="40" value="<?php echo $rows['name']; ?>"/>
         </td>
       </tr>
       <tr>
         <td width="120">Address</td>
         <td width="350">
-        <input name="Address" type="text" id="Address" size="40" value="<?php echo $rows['address'];?>"/
+        <input name="Address" type="text" id="Address" size="40" value="<?php echo $rows['address']; ?>"/
         </td>
       </tr>
       <tr>
         <td width="120">Phone</td>
         <td width="350">
-        <input name="Phone" type="text" id="Phone" size="40" value="<?php echo $rows['phone'];?>"/
+        <input name="Phone" type="text" id="Phone" size="40" value="<?php echo $rows['phone']; ?>"/
         </td>
       </tr>
       <tr>
         <td width="120">Email</td>
         <td width="350">
-        <input name="Email" type="text" id="Email" size="40" value="<?php echo $rows['email'];?>"/
+        <input name="Email" type="text" id="Email" size="40" value="<?php echo $rows['email']; ?>"/
         </td>
       </tr>
-<?php } ?>
+<?php
+} ?>
       <tr>
         <td colspan='2'><div id="form1_errorloc" style="color:red"></div></td>
       </tr>

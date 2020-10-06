@@ -12,7 +12,7 @@ switch ($action) {
           <tr>
             <td width="120">ID</td>
             <td width="150">
-            <?php echo kode_brand();?>
+            <?php echo kode_brand(); ?>
             </td>
           </tr>
           <tr>
@@ -44,37 +44,36 @@ switch ($action) {
       </tr>
 
       <?php
-      /*
-      * kode untuk menghapus data
-      */
-      if(isset($_GET['del'])){
-      $kd_brand=$_GET['id'];
-      $hapus ="delete from wbpl_brand where kd_brand='$kd_brand'";
-      mysql_query($hapus);
+
+      // Kode untuk menghapus data
+      if (isset($_GET['del'])) {
+          $kd_brand = $_GET['id'];
+          $hapus = "DELETE FROM wbpl_brand WHERE kd_brand='$kd_brand'";
+          mysql_query($hapus);
       }
-      $sql="";
-      if(isset($_POST['btnCari'])){
-      $cari=$_POST['cari'];
-      //ambil data dari table admin
-      $sql="SELECT * FROM  wbpl_brand where kd_brand like '%$cari%'";
-      }else{
-      $sql="SELECT * FROM  wbpl_brand";
+      $sql = '';
+      if (isset($_POST['btnCari'])) {
+          $cari = $_POST['cari'];
+          //ambil data dari table admin
+          $sql = "SELECT * FROM  wbpl_brand where kd_brand like '%$cari%'";
+      } else {
+          $sql = 'SELECT * FROM  wbpl_brand';
       }
 
-      $result=mysql_query($sql) or die(mysql_error());
+      $result = mysql_query($sql) or die(mysql_error());
 
-      //proses menampilkan data
-      while($rows=mysql_fetch_array($result)){
-      ?>
+      // Proses menampilkan data
+      while ($rows = mysql_fetch_array($result)) {
+          ?>
       <tr>
-        <td><?php echo $rows['kd_brand'];?></td>
-        <td><?php echo $rows['nama_brand'];?></td>
+        <td><?php echo $rows['kd_brand']; ?></td>
+        <td><?php echo $rows['nama_brand']; ?></td>
 
         <td>
           <a class="btn" href="index.php?page=wbpl-brand&action=editb&id=<?php echo $rows['kd_brand']?>">
-          <i class="icon-edit" title="Edit <?php echo $rows['nama_brand'];?>"></i></a>
+          <i class="icon-edit" title="Edit <?php echo $rows['nama_brand']; ?>"></i></a>
           <a class="btn btn-danger" href="index.php?page=wbpl-brand&action=view&del=true&id=<?php echo $rows['kd_brand']?>"  onclick="return askUser()";>
-          <i class="icon-trash" title="Remove <?php echo $rows['nama_brand'];?>"></i></a>
+          <i class="icon-trash" title="Remove <?php echo $rows['nama_brand']; ?>"></i></a>
         </td>
       </tr>
 
@@ -87,11 +86,11 @@ switch ($action) {
         <td colspan="3">
         <?php
         if (isset($_GET['status'])) {
-          if ($_GET['status'] == 0) {
-            echo " Operasi data berhasil";
-          } else if ($_GET['status'] == 1) {
-            echo "operasi gagal";
-          }
+            if ($_GET['status'] == 0) {
+                echo ' Operasi data berhasil';
+            } elseif ($_GET['status'] == 1) {
+                echo 'operasi gagal';
+            }
         }
         ?>
         </td>
@@ -142,37 +141,35 @@ switch ($action) {
       </tr>
 
       <?php
-      /*
-      * kode untuk menghapus data
-      */
-      if(isset($_GET['del'])){
-      $kd_instype=$_GET['id'];
-      $hapus ="delete from wbpl_instype where kd_instype='$kd_instype'";
-      mysql_query($hapus);
+      // Kode untuk menghapus data
+      if (isset($_GET['del'])) {
+          $kd_instype = $_GET['id'];
+          $hapus = "DELETE FROM wbpl_instype WHERE kd_instype='$kd_instype'";
+          mysql_query($hapus);
       }
-      $sql="";
-      if(isset($_POST['btnCari'])){
-      $cari=$_POST['cari'];
-      //ambil data dari table admin
-      $sql="SELECT * FROM  wbpl_instype where kd_instype like '%$cari%'";
-      }else{
-      $sql="SELECT * FROM  wbpl_instype";
+      $sql = '';
+      if (isset($_POST['btnCari'])) {
+          $cari = $_POST['cari'];
+          // Ambil data dari table admin
+          $sql = "SELECT * FROM  wbpl_instype where kd_instype like '%$cari%'";
+      } else {
+          $sql = 'SELECT * FROM  wbpl_instype';
       }
 
-      $result=mysql_query($sql) or die(mysql_error());
+      $result = mysql_query($sql) or die(mysql_error());
 
-      //proses menampilkan data
-      while($rows=mysql_fetch_array($result)){
-      ?>
+      // Proses menampilkan data
+      while ($rows = mysql_fetch_array($result)) {
+          ?>
       <tr>
-        <td><?php  echo $rows['kd_instype'];?></td>
-        <td><?php  echo $rows['nama_instype'];?></td>
+        <td><?php  echo $rows['kd_instype']; ?></td>
+        <td><?php  echo $rows['nama_instype']; ?></td>
 
         <td>
           <a class="btn" href="index.php?page=wbpl-brand&action=editit&id=<?php echo $rows['kd_instype']?>">
-          <i class="icon-edit" title="Edit <?php echo $rows['nama_instype'];?>"></i></a>
+          <i class="icon-edit" title="Edit <?php echo $rows['nama_instype']; ?>"></i></a>
           <a class="btn btn-danger" href="index.php?page=wbpl-brand&action=view&del=true&id=<?php echo $rows['kd_instype']?>"  onclick="return askUser()";>
-          <i class="icon-remove" title="Remove <?php echo $rows['nama_instype'];?>"></i></a>
+          <i class="icon-remove" title="Remove <?php echo $rows['nama_instype']; ?>"></i></a>
         </td>
       </tr>
 
@@ -184,11 +181,11 @@ switch ($action) {
         <td align=right colspan='2'>
         <?php
         if (isset($_GET['status'])) {
-          if ($_GET['status'] == 2) {
-            echo " Operasi data berhasil";
-          } else if ($_GET['status'] == 3) {
-            echo "operasi gagal";
-          }
+            if ($_GET['status'] == 2) {
+                echo ' Operasi data berhasil';
+            } elseif ($_GET['status'] == 3) {
+                echo 'operasi gagal';
+            }
         }
         ?>
         </td>
@@ -205,26 +202,26 @@ switch ($action) {
 
     <?php
     $id = $_GET['id'];
-    //ambil data dari table feedback
-    $sql = "select * from wbpl_brand where kd_brand='$id' ";
+    // ambil data dari table feedback
+    $sql = "SELECT * FROM wbpl_brand WHERE kd_brand='$id' ";
     $result = mysql_query($sql) or die(mysql_error());
     ?>
     <h2>Change Brand</h2>
     <table>
       <form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=update_brand">
         <?php
-        //proses menampilkan data
-        while($rows=mysql_fetch_array($result)){
-        ?>
+        // proses menampilkan data
+        while ($rows = mysql_fetch_array($result)) {
+            ?>
 
         <td width="120">Kode Brand</td>
         <td width="350">
-        <input type="text" id="kd_brand" name="kd_brand" value=<?php echo $rows['kd_brand'];?>  readonly />
+        <input type="text" id="kd_brand" name="kd_brand" value=<?php echo $rows['kd_brand']; ?>  readonly />
         </td>
         </tr> <td width="120">Brand</td>
         <td width="350">
         <input name="nama_brand" type="nama_brand" id="nama_brand" size="40"
-        value='<?php echo $rows['nama_brand'];?>'>
+        value='<?php echo $rows['nama_brand']; ?>'>
         </td>
         </tr>
 
@@ -254,8 +251,8 @@ switch ($action) {
 
     <?php
     $id = $_GET['id'];
-    //ambil data dari table feedback
-    $sql = "select * from wbpl_instype where kd_instype='$id' ";
+    // ambil data dari table feedback
+    $sql = "SELECT * FROM wbpl_instype WHERE kd_instype='$id' ";
     $result = mysql_query($sql) or die(mysql_error());
     ?>
     <h2>Change Instrument</h2>
@@ -263,17 +260,17 @@ switch ($action) {
       <form id="form1" name="form1" method="post" action="wbpl_add-edit.php?action=update_instype">
         <?php
         //proses menampilkan data
-        while($rows=mysql_fetch_array($result)){
-        ?>
+        while ($rows = mysql_fetch_array($result)) {
+            ?>
 
         <td width="120">Kode Instrument</td>
         <td width="350">
-        <input type="text" id="kd_instype" name="kd_instype" value=<?php echo $rows['kd_instype'];?>  readonly />
+        <input type="text" id="kd_instype" name="kd_instype" value=<?php echo $rows['kd_instype']; ?>  readonly />
         </td>
         </tr> <td width="120">Instrument Type</td>
         <td width="350">
         <input name="nama_instype" type="nama_instype" id="nama_instype" size="40"
-        value='<?php echo $rows['nama_instype'];?>'>
+        value='<?php echo $rows['nama_instype']; ?>'>
         </td>
         </tr>
 
@@ -286,7 +283,6 @@ switch ($action) {
           </td>
         </tr>
         <?php
-
         }
         ?>
         <tr>

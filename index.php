@@ -1,8 +1,7 @@
 <?php  // Include MySQL class
   session_start();
 
-  require_once('wbpl-config.php');
-  require_once('wbpl-function.php');
+  require_once 'wbpl-function.php';
 ?>
 
 
@@ -16,9 +15,9 @@
   <meta name="author" content="">
 
   <style type="text/css" media="all">
-    @import "css/bootstrap.css";
-    @import "css/bootstrap-responsive.css";
-    @import "css/master.css";
+    @import "resources/css/bootstrap.css";
+    @import "resources/css/bootstrap-responsive.css";
+    @import "resources/css/master.css";
   </style>
 
   <style type="text/css">
@@ -92,7 +91,7 @@
 
   <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
   <!--[if lt IE 9]>
-    <script src="../assets/js/html5shiv.js"></script>
+    <script src="../resources/js/html5shiv.js"></script>
   <![endif]-->
 </head>
 
@@ -107,25 +106,24 @@
 
         <div class="pull-right">
             <?php
-            if(isset($_SESSION['username'])){
+            if (isset($_SESSION['username'])) {
+                $hour = (date('G') + 5); // harus ditambah 5 agar jamnya sama.
+                if ($hour >= 0 && $hour <= 11) {
+                    echo 'Good morning, ';
+                } elseif ($hour >= 12 && $hour <= 17) {
+                    echo 'Good afternoon, ';
+                } else {
+                    echo 'Good evening, ';
+                }
 
-              $hour = (date("G")+5);// harus ditambah 5 agar jamnya sama.
-              if ($hour >= 0 && $hour <= 11) {
-                echo "Good morning, ";
-              } else if ($hour >= 12 && $hour <= 17) {
-                echo "Good afternoon, ";
-              } else {
-                echo "Good evening, ";
-              }
-
-              echo ucfirst($_SESSION['username']);
+                echo ucfirst($_SESSION['username']);
             }
             ?>
 
             <br>
 
             <?php
-            if(!isset($_SESSION['username'])){?>
+            if (! isset($_SESSION['username'])) {?>
             <form method="post" action="admin/wbpl-login_check.php">
             <input name="username" type="text" class="input-small" placeholder="Username">
             <input name="password" type="password" class="input-small" placeholder="Password">
@@ -134,15 +132,15 @@
 
             <?php
             if (isset($_GET['err'])) {
-              if ($_GET['err'] == 1) { ?>
+                if ($_GET['err'] == 1) { ?>
                 <span class="label label-important">The username must be filled!</span>
-            <?php }else if ($_GET['err'] == 2) { ?>
+            <?php } elseif ($_GET['err'] == 2) { ?>
                 <span class="label label-important">The password must be filled!</span>
-            <?php }else if ($_GET['err'] == 3) { ?>
+            <?php } elseif ($_GET['err'] == 3) { ?>
                 <span class="label label-important">The username or password you entered is incorrect.</span>
             <?php }
-            }else if (isset($_GET['loggedout'])) {
-              if ($_GET['loggedout'] == true) { ?>
+            } elseif (isset($_GET['loggedout'])) {
+                if ($_GET['loggedout'] == true) { ?>
                 <span class="label label-success">You are now logged out.</span>
             <?php }
             }
@@ -158,7 +156,7 @@
 
             </form>
             <?php
-            }else{ ?>
+            } else { ?>
             <a href="./admin">Go to Admin page</a> </br>
             <a href="admin/logout.php?logout=1" name="Home_Submit_Logout">Logout</a>
             <?php
@@ -175,8 +173,8 @@
                 <li><a href="index.php?page=product&view=product">Product</a></li>
 
                 <?php
-                if(isset($_SESSION['username'])){
-                echo
+                if (isset($_SESSION['username'])) {
+                    echo
                 '<li>
                   <a href="index.php?page=cart&view=cart">Cart</a>
                 </li>';
@@ -222,11 +220,11 @@
         <div class="span9">
             <?php
             /* kode untuk meload halaman yang berbeda*/
-            if(isset($_GET['page'])) {
-              $page = $_GET['page'] . ".php";
-              include ($page);
+            if (isset($_GET['page'])) {
+                $page = $_GET['page'].'.php';
+                include $page;
             } else {
-            ?>
+                ?>
 
             <div id="templatemo_slider">
 
@@ -234,10 +232,10 @@
                 <div class="cs_wrapper">
                     <div class="cs_slider">
                     <?php
-                    $sql = "select * from wbpl_product order by rand() limit 3";
-                    $hasil = $mysqli->query($sql);
+                    $sql = 'SELECT * FROM wbpl_product ORDER BY rand() LIMIT 3';
+                $hasil = $mysqli->query($sql);
 
-                    while($get_data = $hasil -> fetch_array()){
+                while ($get_data = $hasil->fetch_array()) {
                     ?>
 
                     <div class="cs_article">
@@ -246,18 +244,19 @@
                             <div class="slider_image">
                               <img src="<?php
                               $imagee = $get_data['image'];
-                                if ($imagee == "" ){
-                                  echo 'admin/image/Image Not Available.jpg';
-                                }else{
-                              ?>
-                              admin/image/<?php echo $get_data['image'];} ?>" alt="Image Not Avaible" width="150px" heigth="150px">
+                    if ($imagee == '') {
+                        echo 'admin/image/Image Not Available.jpg';
+                    } else {
+                        ?>
+                              admin/image/<?php echo $get_data['image'];
+                    } ?>" alt="Image Not Avaible" width="150px" heigth="150px">
                             </div>
 
                             <div class="slider_content">
                                 <h2><?php echo $get_data['nama_product']?></h2>
-                                <p>Product ID: <?php echo $get_data['kd_product'];?></br>
-                                Price: Rp. <?php echo $get_data['price'];?></p>
-                                <p>aa<?php echo $get_data['deskripsi'];?></p>
+                                <p>Product ID: <?php echo $get_data['kd_product']; ?></br>
+                                Price: Rp. <?php echo $get_data['price']; ?></p>
+                                <p>aa<?php echo $get_data['deskripsi']; ?></p>
 
                                 <a href="index.php?page=cart&view=cart&action=add&id=<?php echo $get_data['kd_product']?>" class="btn btn-inverse floatRight">Add to cart</a>
                             </div>
@@ -266,17 +265,16 @@
                     </div>
 
                     <?php
-                    }
-                    ?>
+                } ?>
 
                     </div>
                 </div>
             </div>
 
             <!-- Site JavaScript -->
-            <script type="text/javascript" src="js/jquery.min.js"></script>
-            <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-            <script type="text/javascript" src="js/jquery.ennui.contentslider.js"></script>
+            <script type="text/javascript" src="resources/js/jquery.min.js"></script>
+            <script type="text/javascript" src="resources/js/jquery.easing.1.3.js"></script>
+            <script type="text/javascript" src="resources/js/jquery.ennui.contentslider.js"></script>
             <script type="text/javascript">
                 $(function() {
                 $('#one').ContentSlider({
@@ -301,7 +299,7 @@
         <div class="span3">
           <h3>Brand</h3>
           <?php
-          include('kategori.php');
+          include 'kategori.php';
           ?>
           <h2>Alamat kami</h2>
           <p>Jakarta</p>
