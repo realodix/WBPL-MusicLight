@@ -1,8 +1,3 @@
-<?php
-
-// include '../wbpl-function.php';
-
-?>
 <table  width="600px" border=0>
     <tr style="background-color:#F79307">
         <td>No Detail Pesan</td>
